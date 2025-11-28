@@ -864,7 +864,7 @@
             
             <!-- Season Points Chart -->
             <div id="season-chart-container" style="display: none; margin-top: 2rem;">
-                <h3 style="color: #1e3c72; margin-bottom: 1rem;">Points Throughout Season</h3>
+                <h3 style="color: #1e3c72; margin-bottom: 1rem;">Summary</h3>
                 <div id="season-chart" style="position: relative; width: 100%; height: 450px; background: #fafafa; border-radius: 8px; overflow: visible;"></div>
             </div>
         </div>
@@ -1475,18 +1475,25 @@
                 }
                 
                 const scoresData = await scoresResponse.json();
+                console.log('Loaded scores data:', scoresData.length, 'entries');
                 
                 // Process scores into cumulative points per team per week
                 const teamWeeklyData = processScoresForChart(scoresData, standings, teamLogos, teamData);
+                console.log('Processed team data:', teamWeeklyData.length, 'teams');
                 
                 if (teamWeeklyData.length === 0) {
+                    console.log('No team data to display');
                     chartContainer.style.display = 'none';
                     return;
                 }
                 
-                // Render the chart
-                renderSeasonChart(chartEl, teamWeeklyData);
+                // Show container first so it has dimensions
                 chartContainer.style.display = 'block';
+                
+                // Use requestAnimationFrame to ensure DOM is updated before rendering
+                requestAnimationFrame(() => {
+                    renderSeasonChart(chartEl, teamWeeklyData);
+                });
                 
             } catch (error) {
                 console.error('Error loading season chart:', error);
@@ -1495,32 +1502,33 @@
         }
 
         function processScoresForChart(scoresData, standings, teamLogos, teamData) {
-            // Group scores by team and week
+            // Group scores by team and week - build directly from scores data
             const teamScores = {};
             
-            // Initialize teams from standings
-            standings.forEach(team => {
-                teamScores[team.team_key] = {
-                    team_key: team.team_key,
-                    team_name: team.team_name,
-                    manager: team.manager,
-                    logo: teamLogos[team.team_key] || '',
-                    weeks: {}
-                };
-            });
-            
-            // Process each score entry - data format is:
-            // { team_key, team_score, week, opponent_key, opponent_score }
+            // First pass: collect all team data from scores
             scoresData.forEach(entry => {
-                const week = entry.week;
                 const teamKey = entry.team_key;
+                const week = entry.week;
                 const score = entry.team_score;
                 
-                // Only process if we have this team in standings
-                if (teamScores[teamKey]) {
-                    teamScores[teamKey].weeks[week] = score;
+                if (!teamScores[teamKey]) {
+                    // Find matching team info from standings or teamData
+                    const standingTeam = standings.find(t => t.team_key === teamKey);
+                    const teamInfo = teamData.find(t => t.team_key === teamKey);
+                    
+                    teamScores[teamKey] = {
+                        team_key: teamKey,
+                        team_name: standingTeam?.team_name || teamInfo?.team_name || 'Unknown Team',
+                        manager: standingTeam?.manager || teamInfo?.manager || 'Unknown',
+                        logo: teamLogos[teamKey] || teamInfo?.team_logo || '',
+                        weeks: {}
+                    };
                 }
+                
+                teamScores[teamKey].weeks[week] = score;
             });
+            
+            console.log('Teams found in scores:', Object.keys(teamScores).length);
             
             // Convert to cumulative points array
             const result = [];
@@ -1549,6 +1557,8 @@
             // Sort by final points descending for consistent coloring
             result.sort((a, b) => b.finalPoints - a.finalPoints);
             
+            console.log('Teams with data:', result.length);
+            
             return result;
         }
 
@@ -1556,9 +1566,10 @@
             // Clear previous chart
             container.innerHTML = '';
             
-            // Chart dimensions
+            // Chart dimensions - use fallback width if container not yet sized
+            const containerWidth = container.clientWidth || container.offsetWidth || 800;
             const margin = { top: 20, right: 100, bottom: 50, left: 80 };
-            const width = container.clientWidth - margin.left - margin.right;
+            const width = Math.max(400, containerWidth - margin.left - margin.right);
             const height = 400 - margin.top - margin.bottom;
             
             // Find data bounds
@@ -1568,18 +1579,24 @@
             const maxWeek = Math.max(...allWeeks);
             const maxPoints = Math.max(...allPoints);
             
+            // Prevent division by zero
+            const weekRange = maxWeek - minWeek || 1;
+            const pointsRange = maxPoints || 1;
+            
             // Scale functions - fixed to go left to right
-            const xScale = (week) => margin.left + ((week - minWeek) / (maxWeek - minWeek)) * width;
-            const yScale = (points) => margin.top + height - (points / maxPoints) * height;
+            const xScale = (week) => margin.left + ((week - minWeek) / weekRange) * width;
+            const yScale = (points) => margin.top + height - (points / pointsRange) * height;
             
             // Generate colors for teams
             const colors = generateTeamColors(teamData.length);
             
             // Create SVG
             const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-            svg.setAttribute('width', container.clientWidth);
+            svg.setAttribute('width', width + margin.left + margin.right);
             svg.setAttribute('height', height + margin.top + margin.bottom);
             svg.setAttribute('class', 'chart-svg');
+            svg.style.display = 'block';
+            svg.style.maxWidth = '100%';
             
             // Draw grid lines
             const numGridLines = 5;
@@ -1599,7 +1616,7 @@
                 label.setAttribute('y', y + 4);
                 label.setAttribute('text-anchor', 'end');
                 label.setAttribute('class', 'chart-axis-label');
-                label.textContent = Math.round(maxPoints * (1 - i / numGridLines)).toLocaleString();
+                label.textContent = Math.round(pointsRange * (1 - i / numGridLines)).toLocaleString();
                 svg.appendChild(label);
             }
             
