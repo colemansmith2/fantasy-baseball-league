@@ -1510,9 +1510,9 @@
                 
                 // Process scores into both weekly and cumulative rankings
                 currentChartData = processScoresForChart(scoresData, standings, teamLogos, teamData);
-                console.log('Processed chart data:', currentChartData.teams.length, 'teams');
+                console.log('Processed chart data:', currentChartData.weeklyTeams.length, 'teams');
                 
-                if (currentChartData.teams.length === 0) {
+                if (currentChartData.weeklyTeams.length === 0) {
                     console.log('No team data to display');
                     chartContainer.style.display = 'none';
                     return;
