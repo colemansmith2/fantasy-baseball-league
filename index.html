@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fantasy Baseball League</title>
+    <title>Fantasy Baseball Civil War</title>
     <style>
         * {
             margin: 0;
@@ -16,28 +16,56 @@
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: #333;
             min-height: 100vh;
+            padding-top: 120px; /* Add space for fixed header */
         }
 
         header {
             background: rgba(255, 255, 255, 0.95);
-            padding: 2rem;
+            padding: 1.5rem 2rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .league-logo {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+        }
+        
+        .header-content {
+            flex: 1;
         }
 
         h1 {
-            text-align: center;
             color: #1e3c72;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 0.3rem;
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8rem;
+            body {
+                padding-top: 140px;
             }
             
             header {
-                padding: 1.5rem 1rem;
+                padding: 1rem;
+                gap: 1rem;
+            }
+            
+            .league-logo {
+                width: 50px;
+                height: 50px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
             }
             
             .section {
@@ -46,19 +74,27 @@
         }
 
         .tagline {
-            text-align: center;
             color: #666;
             font-style: italic;
+            font-size: 0.95rem;
         }
 
         nav {
             background: rgba(255, 255, 255, 0.9);
             padding: 1rem;
             text-align: center;
-            position: sticky;
-            top: 0;
+            position: fixed;
+            top: 120px;
+            left: 0;
+            right: 0;
             z-index: 100;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                top: 100px;
+            }
         }
 
         nav button {
@@ -685,8 +721,11 @@
 </head>
 <body>
     <header>
-        <h1>⚾ Yahoo Fantasy Baseball League</h1>
-        <p class="tagline">12-Team Points League | Est. 2017</p>
+        <img src="league_logo.png" alt="League Logo" class="league-logo">
+        <div class="header-content">
+            <h1>Fantasy Baseball Civil War</h1>
+            <p class="tagline">12-Team Points League | Est. 2017</p>
+        </div>
     </header>
 
     <nav>
