@@ -1,0 +1,930 @@
+[
+  {
+    "manager_name": "Rich",
+    "first_season": 2019,
+    "total_wins": 74,
+    "total_losses": 49,
+    "total_ties": 0,
+    "championships": 0,
+    "runner_ups": 3,
+    "playoff_appearances": 5,
+    "seasons_played": 7,
+    "total_points_for": 41554.53999999999,
+    "season_history": [
+      {
+        "year": 2019,
+        "team_name": "Team Beer",
+        "rank": 2,
+        "wins": 13,
+        "losses": 4,
+        "points_for": 5905.76
+      },
+      {
+        "year": 2020,
+        "team_name": "Team Beer",
+        "rank": 8,
+        "wins": 4,
+        "losses": 3,
+        "points_for": 1424.4
+      },
+      {
+        "year": 2021,
+        "team_name": "Team Beer",
+        "rank": 2,
+        "wins": 11,
+        "losses": 9,
+        "points_for": 7156.5
+      },
+      {
+        "year": 2022,
+        "team_name": "Team Beer",
+        "rank": 2,
+        "wins": 10,
+        "losses": 9,
+        "points_for": 5846.69
+      },
+      {
+        "year": 2023,
+        "team_name": "Team Beer",
+        "rank": 6,
+        "wins": 14,
+        "losses": 6,
+        "points_for": 6999.09
+      },
+      {
+        "year": 2024,
+        "team_name": "Team Beer",
+        "rank": 8,
+        "wins": 8,
+        "losses": 12,
+        "points_for": 6678.83
+      },
+      {
+        "year": 2025,
+        "team_name": "Team Beer",
+        "rank": 3,
+        "wins": 14,
+        "losses": 6,
+        "points_for": 7543.27
+      }
+    ],
+    "win_pct": 0.602,
+    "avg_finish": 4.3
+  },
+  {
+    "manager_name": "Tyler",
+    "first_season": 2019,
+    "total_wins": 72,
+    "total_losses": 50,
+    "total_ties": 1,
+    "championships": 2,
+    "runner_ups": 0,
+    "playoff_appearances": 6,
+    "seasons_played": 7,
+    "total_points_for": 41686.600000000006,
+    "season_history": [
+      {
+        "year": 2019,
+        "team_name": "Bryce is NOT Nice",
+        "rank": 3,
+        "wins": 8,
+        "losses": 9,
+        "points_for": 5588.43
+      },
+      {
+        "year": 2020,
+        "team_name": "JudgeJoey&Execution",
+        "rank": 1,
+        "wins": 6,
+        "losses": 1,
+        "points_for": 2179.08
+      },
+      {
+        "year": 2021,
+        "team_name": "Acu\u00f1a Fan Page",
+        "rank": 6,
+        "wins": 12,
+        "losses": 8,
+        "points_for": 6397.0
+      },
+      {
+        "year": 2022,
+        "team_name": "Tyler",
+        "rank": 5,
+        "wins": 12,
+        "losses": 7,
+        "points_for": 6574.76
+      },
+      {
+        "year": 2023,
+        "team_name": "Just Kremer\u2019d In My France",
+        "rank": 3,
+        "wins": 11,
+        "losses": 8,
+        "points_for": 6430.93
+      },
+      {
+        "year": 2024,
+        "team_name": "We Are Jung",
+        "rank": 7,
+        "wins": 10,
+        "losses": 10,
+        "points_for": 6958.18
+      },
+      {
+        "year": 2025,
+        "team_name": "Lightning McLean",
+        "rank": 4,
+        "wins": 13,
+        "losses": 7,
+        "points_for": 7558.22
+      }
+    ],
+    "win_pct": 0.59,
+    "avg_finish": 3.9
+  },
+  {
+    "manager_name": "Ryan",
+    "first_season": 2019,
+    "total_wins": 65,
+    "total_losses": 58,
+    "total_ties": 0,
+    "championships": 1,
+    "runner_ups": 1,
+    "playoff_appearances": 4,
+    "seasons_played": 7,
+    "total_points_for": 42501.37,
+    "season_history": [
+      {
+        "year": 2019,
+        "team_name": "Go Team",
+        "rank": 1,
+        "wins": 12,
+        "losses": 5,
+        "points_for": 6245.36
+      },
+      {
+        "year": 2020,
+        "team_name": "Cole World",
+        "rank": 7,
+        "wins": 3,
+        "losses": 4,
+        "points_for": 1903.26
+      },
+      {
+        "year": 2021,
+        "team_name": "Skuby Snacks",
+        "rank": 3,
+        "wins": 11,
+        "losses": 9,
+        "points_for": 6968.5
+      },
+      {
+        "year": 2022,
+        "team_name": "Rhys\u2019s Puffs",
+        "rank": 7,
+        "wins": 8,
+        "losses": 11,
+        "points_for": 6314.49
+      },
+      {
+        "year": 2023,
+        "team_name": "Ball Crushers",
+        "rank": 5,
+        "wins": 13,
+        "losses": 7,
+        "points_for": 7362.65
+      },
+      {
+        "year": 2024,
+        "team_name": "Jackson\u00b2",
+        "rank": 9,
+        "wins": 7,
+        "losses": 13,
+        "points_for": 6205.03
+      },
+      {
+        "year": 2025,
+        "team_name": "Fuck Bryan Woo",
+        "rank": 5,
+        "wins": 11,
+        "losses": 9,
+        "points_for": 7502.08
+      }
+    ],
+    "win_pct": 0.528,
+    "avg_finish": 5.4
+  },
+  {
+    "manager_name": "Josh B",
+    "first_season": 2019,
+    "total_wins": 73,
+    "total_losses": 50,
+    "total_ties": 0,
+    "championships": 1,
+    "runner_ups": 1,
+    "playoff_appearances": 7,
+    "seasons_played": 7,
+    "total_points_for": 43411.67,
+    "season_history": [
+      {
+        "year": 2019,
+        "team_name": "Judgement Day",
+        "rank": 4,
+        "wins": 10,
+        "losses": 7,
+        "points_for": 5623.26
+      },
+      {
+        "year": 2020,
+        "team_name": "Shrimp Fried Bryce",
+        "rank": 5,
+        "wins": 3,
+        "losses": 4,
+        "points_for": 1772.16
+      },
+      {
+        "year": 2021,
+        "team_name": "A Whitty Joke",
+        "rank": 1,
+        "wins": 13,
+        "losses": 7,
+        "points_for": 6870.0
+      },
+      {
+        "year": 2022,
+        "team_name": "Sho Time",
+        "rank": 3,
+        "wins": 14,
+        "losses": 5,
+        "points_for": 6774.1
+      },
+      {
+        "year": 2023,
+        "team_name": "Sho Boaters",
+        "rank": 4,
+        "wins": 11,
+        "losses": 9,
+        "points_for": 7313.78
+      },
+      {
+        "year": 2024,
+        "team_name": "Skenes Beans",
+        "rank": 4,
+        "wins": 12,
+        "losses": 8,
+        "points_for": 7848.43
+      },
+      {
+        "year": 2025,
+        "team_name": "Commish Charmanders",
+        "rank": 6,
+        "wins": 10,
+        "losses": 10,
+        "points_for": 7209.94
+      }
+    ],
+    "win_pct": 0.593,
+    "avg_finish": 3.6
+  },
+  {
+    "manager_name": "Coleman",
+    "first_season": 2019,
+    "total_wins": 75,
+    "total_losses": 47,
+    "total_ties": 1,
+    "championships": 2,
+    "runner_ups": 0,
+    "playoff_appearances": 4,
+    "seasons_played": 7,
+    "total_points_for": 43582.25,
+    "season_history": [
+      {
+        "year": 2019,
+        "team_name": "Bye Week",
+        "rank": 6,
+        "wins": 10,
+        "losses": 7,
+        "points_for": 5856.41
+      },
+      {
+        "year": 2020,
+        "team_name": "Catchers are a Myth",
+        "rank": 3,
+        "wins": 6,
+        "losses": 1,
+        "points_for": 2229.75
+      },
+      {
+        "year": 2021,
+        "team_name": "He is Risen Again",
+        "rank": 10,
+        "wins": 10,
+        "losses": 9,
+        "points_for": 7263.5
+      },
+      {
+        "year": 2022,
+        "team_name": "Cruz\u2019n Down the Street",
+        "rank": 8,
+        "wins": 7,
+        "losses": 12,
+        "points_for": 6035.48
+      },
+      {
+        "year": 2023,
+        "team_name": "Beefy Bottom Boys",
+        "rank": 1,
+        "wins": 18,
+        "losses": 2,
+        "points_for": 7548.88
+      },
+      {
+        "year": 2024,
+        "team_name": "He Went to Jared",
+        "rank": 1,
+        "wins": 14,
+        "losses": 6,
+        "points_for": 7499.2
+      },
+      {
+        "year": 2025,
+        "team_name": "For Whom The Bell Tolles",
+        "rank": 7,
+        "wins": 10,
+        "losses": 10,
+        "points_for": 7149.03
+      }
+    ],
+    "win_pct": 0.615,
+    "avg_finish": 4.7
+  },
+  {
+    "manager_name": "Josh S",
+    "first_season": 2019,
+    "total_wins": 27,
+    "total_losses": 36,
+    "total_ties": 0,
+    "championships": 0,
+    "runner_ups": 0,
+    "playoff_appearances": 2,
+    "seasons_played": 4,
+    "total_points_for": 18874.010000000002,
+    "season_history": [
+      {
+        "year": 2019,
+        "team_name": "Arizona Diamondsacks",
+        "rank": 5,
+        "wins": 9,
+        "losses": 8,
+        "points_for": 5013.18
+      },
+      {
+        "year": 2020,
+        "team_name": "Arizona Diamondsacks",
+        "rank": 6,
+        "wins": 2,
+        "losses": 5,
+        "points_for": 1665.33
+      },
+      {
+        "year": 2021,
+        "team_name": "Diamondsacks",
+        "rank": 7,
+        "wins": 10,
+        "losses": 10,
+        "points_for": 6780.0
+      },
+      {
+        "year": 2022,
+        "team_name": "Diamondsacks",
+        "rank": 9,
+        "wins": 6,
+        "losses": 13,
+        "points_for": 5415.5
+      }
+    ],
+    "win_pct": 0.429,
+    "avg_finish": 6.8
+  },
+  {
+    "manager_name": "Red",
+    "first_season": 2019,
+    "total_wins": 68,
+    "total_losses": 55,
+    "total_ties": 0,
+    "championships": 0,
+    "runner_ups": 2,
+    "playoff_appearances": 3,
+    "seasons_played": 7,
+    "total_points_for": 42184.51,
+    "season_history": [
+      {
+        "year": 2019,
+        "team_name": "Oh I Don\u2019t Think So",
+        "rank": 7,
+        "wins": 7,
+        "losses": 10,
+        "points_for": 5626.0
+      },
+      {
+        "year": 2020,
+        "team_name": "Finding Nimmo",
+        "rank": 2,
+        "wins": 7,
+        "losses": 0,
+        "points_for": 1946.59
+      },
+      {
+        "year": 2021,
+        "team_name": "The Body Count",
+        "rank": 9,
+        "wins": 9,
+        "losses": 11,
+        "points_for": 6671.0
+      },
+      {
+        "year": 2022,
+        "team_name": "Manifest Destiny",
+        "rank": 6,
+        "wins": 13,
+        "losses": 6,
+        "points_for": 6929.68
+      },
+      {
+        "year": 2023,
+        "team_name": "Manifest Destiny",
+        "rank": 7,
+        "wins": 7,
+        "losses": 13,
+        "points_for": 6472.58
+      },
+      {
+        "year": 2024,
+        "team_name": "Manifest Destiny",
+        "rank": 2,
+        "wins": 16,
+        "losses": 4,
+        "points_for": 7606.84
+      },
+      {
+        "year": 2025,
+        "team_name": "Swaggy V\u2019s \ud83d\udc4b\ud83c\udffb Hitters",
+        "rank": 9,
+        "wins": 9,
+        "losses": 11,
+        "points_for": 6931.82
+      }
+    ],
+    "win_pct": 0.553,
+    "avg_finish": 6.0
+  },
+  {
+    "manager_name": "JOHN",
+    "first_season": 2019,
+    "total_wins": 21,
+    "total_losses": 42,
+    "total_ties": 0,
+    "championships": 0,
+    "runner_ups": 0,
+    "playoff_appearances": 0,
+    "seasons_played": 4,
+    "total_points_for": 18400.91,
+    "season_history": [
+      {
+        "year": 2019,
+        "team_name": "The Dali Lama",
+        "rank": 8,
+        "wins": 6,
+        "losses": 11,
+        "points_for": 4944.33
+      },
+      {
+        "year": 2020,
+        "team_name": "The Dali Lama",
+        "rank": 10,
+        "wins": 2,
+        "losses": 5,
+        "points_for": 1206.76
+      },
+      {
+        "year": 2021,
+        "team_name": "The Dali Lama",
+        "rank": 8,
+        "wins": 6,
+        "losses": 14,
+        "points_for": 6164.0
+      },
+      {
+        "year": 2022,
+        "team_name": "The Dali Lama",
+        "rank": 10,
+        "wins": 7,
+        "losses": 12,
+        "points_for": 6085.82
+      }
+    ],
+    "win_pct": 0.333,
+    "avg_finish": 9.0
+  },
+  {
+    "manager_name": "Riley",
+    "first_season": 2019,
+    "total_wins": 47,
+    "total_losses": 76,
+    "total_ties": 0,
+    "championships": 1,
+    "runner_ups": 0,
+    "playoff_appearances": 2,
+    "seasons_played": 7,
+    "total_points_for": 37209.229999999996,
+    "season_history": [
+      {
+        "year": 2019,
+        "team_name": "iSuckAgain",
+        "rank": 9,
+        "wins": 6,
+        "losses": 11,
+        "points_for": 4775.51
+      },
+      {
+        "year": 2020,
+        "team_name": "GerritColeIsAYankee",
+        "rank": 11,
+        "wins": 1,
+        "losses": 6,
+        "points_for": 1265.25
+      },
+      {
+        "year": 2021,
+        "team_name": "4-16*",
+        "rank": 12,
+        "wins": 3,
+        "losses": 17,
+        "points_for": 5715.0
+      },
+      {
+        "year": 2022,
+        "team_name": "The Meat Heads",
+        "rank": 1,
+        "wins": 12,
+        "losses": 7,
+        "points_for": 6675.58
+      },
+      {
+        "year": 2023,
+        "team_name": "D3 Bandits",
+        "rank": 9,
+        "wins": 6,
+        "losses": 14,
+        "points_for": 5358.27
+      },
+      {
+        "year": 2024,
+        "team_name": "D3 Bandits",
+        "rank": 5,
+        "wins": 13,
+        "losses": 7,
+        "points_for": 7373.3
+      },
+      {
+        "year": 2025,
+        "team_name": "D3 Bandits",
+        "rank": 12,
+        "wins": 6,
+        "losses": 14,
+        "points_for": 6046.32
+      }
+    ],
+    "win_pct": 0.382,
+    "avg_finish": 8.4
+  },
+  {
+    "manager_name": "dylan",
+    "first_season": 2019,
+    "total_wins": 39,
+    "total_losses": 63,
+    "total_ties": 1,
+    "championships": 0,
+    "runner_ups": 0,
+    "playoff_appearances": 1,
+    "seasons_played": 6,
+    "total_points_for": 31826.2,
+    "season_history": [
+      {
+        "year": 2019,
+        "team_name": "Rick & Morton",
+        "rank": 10,
+        "wins": 4,
+        "losses": 13,
+        "points_for": 4826.32
+      },
+      {
+        "year": 2020,
+        "team_name": "All Hitting no Pitch",
+        "rank": 9,
+        "wins": 2,
+        "losses": 5,
+        "points_for": 1339.41
+      },
+      {
+        "year": 2021,
+        "team_name": "King Dylan\u2019s Knights",
+        "rank": 5,
+        "wins": 12,
+        "losses": 7,
+        "points_for": 7152.5
+      },
+      {
+        "year": 2022,
+        "team_name": "King Dylan\u2019s Knights",
+        "rank": 12,
+        "wins": 7,
+        "losses": 12,
+        "points_for": 5860.35
+      },
+      {
+        "year": 2023,
+        "team_name": "King Dylans Down Bad",
+        "rank": 8,
+        "wins": 10,
+        "losses": 10,
+        "points_for": 6804.25
+      },
+      {
+        "year": 2024,
+        "team_name": "King Dylan",
+        "rank": 12,
+        "wins": 4,
+        "losses": 16,
+        "points_for": 5843.37
+      }
+    ],
+    "win_pct": 0.382,
+    "avg_finish": 9.3
+  },
+  {
+    "manager_name": "Robert",
+    "first_season": 2020,
+    "total_wins": 67,
+    "total_losses": 39,
+    "total_ties": 0,
+    "championships": 0,
+    "runner_ups": 1,
+    "playoff_appearances": 5,
+    "seasons_played": 6,
+    "total_points_for": 37324.020000000004,
+    "season_history": [
+      {
+        "year": 2020,
+        "team_name": "Matt Chapman Stan",
+        "rank": 4,
+        "wins": 5,
+        "losses": 2,
+        "points_for": 1782.17
+      },
+      {
+        "year": 2021,
+        "team_name": "It\u2019s a Marte Partay!!!",
+        "rank": 4,
+        "wins": 15,
+        "losses": 5,
+        "points_for": 7150.0
+      },
+      {
+        "year": 2022,
+        "team_name": "chillin Witt da boys",
+        "rank": 4,
+        "wins": 14,
+        "losses": 5,
+        "points_for": 6807.09
+      },
+      {
+        "year": 2023,
+        "team_name": "GoodFellas",
+        "rank": 2,
+        "wins": 15,
+        "losses": 5,
+        "points_for": 7399.0
+      },
+      {
+        "year": 2024,
+        "team_name": "The Killer B\u2019s",
+        "rank": 6,
+        "wins": 12,
+        "losses": 8,
+        "points_for": 7165.86
+      },
+      {
+        "year": 2025,
+        "team_name": "Bob\u2019s Bois",
+        "rank": 11,
+        "wins": 6,
+        "losses": 14,
+        "points_for": 7019.9
+      }
+    ],
+    "win_pct": 0.632,
+    "avg_finish": 5.2
+  },
+  {
+    "manager_name": "Logan C",
+    "first_season": 2020,
+    "total_wins": 16,
+    "total_losses": 49,
+    "total_ties": 1,
+    "championships": 0,
+    "runner_ups": 0,
+    "playoff_appearances": 0,
+    "seasons_played": 4,
+    "total_points_for": 17102.4,
+    "season_history": [
+      {
+        "year": 2020,
+        "team_name": "Believe the Hype",
+        "rank": 12,
+        "wins": 1,
+        "losses": 6,
+        "points_for": 1140.59
+      },
+      {
+        "year": 2021,
+        "team_name": "Tasting Tatis",
+        "rank": 11,
+        "wins": 7,
+        "losses": 13,
+        "points_for": 5897.0
+      },
+      {
+        "year": 2022,
+        "team_name": "Draft Pool",
+        "rank": 11,
+        "wins": 4,
+        "losses": 15,
+        "points_for": 4745.49
+      },
+      {
+        "year": 2023,
+        "team_name": "Draft Pool",
+        "rank": 11,
+        "wins": 4,
+        "losses": 15,
+        "points_for": 5319.32
+      }
+    ],
+    "win_pct": 0.246,
+    "avg_finish": 11.2
+  },
+  {
+    "manager_name": "Logan S",
+    "first_season": 2023,
+    "total_wins": 20,
+    "total_losses": 40,
+    "total_ties": 0,
+    "championships": 0,
+    "runner_ups": 0,
+    "playoff_appearances": 0,
+    "seasons_played": 3,
+    "total_points_for": 19113.89,
+    "season_history": [
+      {
+        "year": 2023,
+        "team_name": "Peanut Butter & Elly",
+        "rank": 10,
+        "wins": 8,
+        "losses": 12,
+        "points_for": 6128.33
+      },
+      {
+        "year": 2024,
+        "team_name": "Peanut Butter & Elly",
+        "rank": 11,
+        "wins": 6,
+        "losses": 14,
+        "points_for": 6607.4
+      },
+      {
+        "year": 2025,
+        "team_name": "Peanut Butter & Elly",
+        "rank": 10,
+        "wins": 6,
+        "losses": 14,
+        "points_for": 6378.16
+      }
+    ],
+    "win_pct": 0.333,
+    "avg_finish": 10.3
+  },
+  {
+    "manager_name": "John",
+    "first_season": 2023,
+    "total_wins": 13,
+    "total_losses": 27,
+    "total_ties": 0,
+    "championships": 0,
+    "runner_ups": 0,
+    "playoff_appearances": 1,
+    "seasons_played": 2,
+    "total_points_for": 11919.9,
+    "season_history": [
+      {
+        "year": 2023,
+        "team_name": "The Dali Lama",
+        "rank": 12,
+        "wins": 2,
+        "losses": 18,
+        "points_for": 4838.99
+      },
+      {
+        "year": 2024,
+        "team_name": "The Dali Lama",
+        "rank": 3,
+        "wins": 11,
+        "losses": 9,
+        "points_for": 7080.91
+      }
+    ],
+    "win_pct": 0.325,
+    "avg_finish": 7.5
+  },
+  {
+    "manager_name": "Dalton",
+    "first_season": 2024,
+    "total_wins": 20,
+    "total_losses": 20,
+    "total_ties": 0,
+    "championships": 1,
+    "runner_ups": 0,
+    "playoff_appearances": 1,
+    "seasons_played": 2,
+    "total_points_for": 13761.560000000001,
+    "season_history": [
+      {
+        "year": 2024,
+        "team_name": "Wenceel Train",
+        "rank": 10,
+        "wins": 7,
+        "losses": 13,
+        "points_for": 6650.04
+      },
+      {
+        "year": 2025,
+        "team_name": "Asian domination",
+        "rank": 1,
+        "wins": 13,
+        "losses": 7,
+        "points_for": 7111.52
+      }
+    ],
+    "win_pct": 0.5,
+    "avg_finish": 5.5
+  },
+  {
+    "manager_name": "Nate",
+    "first_season": 2025,
+    "total_wins": 12,
+    "total_losses": 8,
+    "total_ties": 0,
+    "championships": 0,
+    "runner_ups": 1,
+    "playoff_appearances": 1,
+    "seasons_played": 1,
+    "total_points_for": 6661.01,
+    "season_history": [
+      {
+        "year": 2025,
+        "team_name": "Swamp Donkeys \ud83e\udecf",
+        "rank": 2,
+        "wins": 12,
+        "losses": 8,
+        "points_for": 6661.01
+      }
+    ],
+    "win_pct": 0.6,
+    "avg_finish": 2.0
+  },
+  {
+    "manager_name": "Dylan",
+    "first_season": 2025,
+    "total_wins": 10,
+    "total_losses": 10,
+    "total_ties": 0,
+    "championships": 0,
+    "runner_ups": 0,
+    "playoff_appearances": 0,
+    "seasons_played": 1,
+    "total_points_for": 6919.55,
+    "season_history": [
+      {
+        "year": 2025,
+        "team_name": "King Vylan",
+        "rank": 8,
+        "wins": 10,
+        "losses": 10,
+        "points_for": 6919.55
+      }
+    ],
+    "win_pct": 0.5,
+    "avg_finish": 8.0
+  }
+]

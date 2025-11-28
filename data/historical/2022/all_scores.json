@@ -1,0 +1,1794 @@
+[
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 356.75,
+    "week": 1,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 329.75
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 329.75,
+    "week": 1,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 356.75
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 368.83,
+    "week": 1,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 423.75
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 423.75,
+    "week": 1,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 368.83
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 304.58,
+    "week": 1,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 275.33
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 275.33,
+    "week": 1,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 304.58
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 461.83,
+    "week": 1,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 449.58
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 449.58,
+    "week": 1,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 461.83
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 412.08,
+    "week": 1,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 528.08
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 528.08,
+    "week": 1,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 412.08
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 508.75,
+    "week": 1,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 308.83
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 308.83,
+    "week": 1,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 508.75
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 262.42,
+    "week": 2,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 162.67
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 162.67,
+    "week": 2,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 262.42
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 267.33,
+    "week": 2,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 347.58
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 347.58,
+    "week": 2,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 267.33
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 302.17,
+    "week": 2,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 283.92
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 283.92,
+    "week": 2,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 302.17
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 177.67,
+    "week": 2,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 304.33
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 304.33,
+    "week": 2,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 177.67
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 212.0,
+    "week": 2,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 378.92
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 378.92,
+    "week": 2,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 212.0
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 318.17,
+    "week": 2,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 345.5
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 345.5,
+    "week": 2,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 318.17
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 351.17,
+    "week": 3,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 345.25
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 345.25,
+    "week": 3,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 351.17
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 375.58,
+    "week": 3,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 302.67
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 302.67,
+    "week": 3,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 375.58
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 309.75,
+    "week": 3,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 313.42
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 313.42,
+    "week": 3,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 309.75
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 393.25,
+    "week": 3,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 376.08
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 376.08,
+    "week": 3,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 393.25
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 297.42,
+    "week": 3,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 316.0
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 316.0,
+    "week": 3,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 297.42
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 319.08,
+    "week": 3,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 289.92
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 289.92,
+    "week": 3,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 319.08
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 269.08,
+    "week": 4,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 322.67
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 322.67,
+    "week": 4,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 269.08
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 330.25,
+    "week": 4,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 271.92
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 271.92,
+    "week": 4,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 330.25
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 237.67,
+    "week": 4,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 321.42
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 321.42,
+    "week": 4,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 237.67
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 255.5,
+    "week": 4,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 241.0
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 241.0,
+    "week": 4,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 255.5
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 316.08,
+    "week": 4,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 280.5
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 280.5,
+    "week": 4,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 316.08
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 303.42,
+    "week": 4,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 349.25
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 349.25,
+    "week": 4,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 303.42
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 293.25,
+    "week": 5,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 376.58
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 376.58,
+    "week": 5,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 293.25
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 339.08,
+    "week": 5,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 301.92
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 301.92,
+    "week": 5,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 339.08
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 294.58,
+    "week": 5,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 318.17
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 318.17,
+    "week": 5,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 294.58
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 320.25,
+    "week": 5,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 203.25
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 203.25,
+    "week": 5,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 320.25
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 352.0,
+    "week": 5,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 221.67
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 221.67,
+    "week": 5,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 352.0
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 303.67,
+    "week": 5,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 377.17
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 377.17,
+    "week": 5,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 303.67
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 304.0,
+    "week": 6,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 351.67
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 351.67,
+    "week": 6,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 304.0
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 346.17,
+    "week": 6,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 180.83
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 180.83,
+    "week": 6,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 346.17
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 386.5,
+    "week": 6,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 386.33
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 386.33,
+    "week": 6,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 386.5
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 334.5,
+    "week": 6,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 293.17
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 293.17,
+    "week": 6,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 334.5
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 262.25,
+    "week": 6,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 297.67
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 297.67,
+    "week": 6,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 262.25
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 298.92,
+    "week": 6,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 239.92
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 239.92,
+    "week": 6,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 298.92
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 331.5,
+    "week": 7,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 365.67
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 365.67,
+    "week": 7,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 331.5
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 340.42,
+    "week": 7,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 326.92
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 326.92,
+    "week": 7,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 340.42
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 334.25,
+    "week": 7,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 337.5
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 337.5,
+    "week": 7,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 334.25
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 247.25,
+    "week": 7,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 335.58
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 335.58,
+    "week": 7,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 247.25
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 354.83,
+    "week": 7,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 305.25
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 305.25,
+    "week": 7,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 354.83
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 267.58,
+    "week": 7,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 179.92
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 179.92,
+    "week": 7,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 267.58
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 385.83,
+    "week": 8,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 342.17
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 342.17,
+    "week": 8,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 385.83
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 411.58,
+    "week": 8,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 343.33
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 343.33,
+    "week": 8,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 411.58
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 364.08,
+    "week": 8,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 187.33
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 187.33,
+    "week": 8,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 364.08
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 316.0,
+    "week": 8,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 347.33
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 347.33,
+    "week": 8,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 316.0
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 384.92,
+    "week": 8,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 291.84
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 291.84,
+    "week": 8,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 384.92
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 319.0,
+    "week": 8,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 383.25
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 383.25,
+    "week": 8,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 319.0
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 348.92,
+    "week": 9,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 280.0
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 280.0,
+    "week": 9,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 348.92
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 291.42,
+    "week": 9,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 281.58
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 281.58,
+    "week": 9,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 291.42
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 312.17,
+    "week": 9,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 303.42
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 303.42,
+    "week": 9,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 312.17
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 273.09,
+    "week": 9,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 388.0
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 388.0,
+    "week": 9,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 273.09
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 382.17,
+    "week": 9,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 325.75
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 325.75,
+    "week": 9,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 382.17
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 209.92,
+    "week": 9,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 312.08
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 312.08,
+    "week": 9,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 209.92
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 392.5,
+    "week": 10,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 356.5
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 356.5,
+    "week": 10,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 392.5
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 348.92,
+    "week": 10,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 280.5
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 280.5,
+    "week": 10,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 348.92
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 378.84,
+    "week": 10,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 268.83
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 268.83,
+    "week": 10,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 378.84
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 252.83,
+    "week": 10,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 234.83
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 234.83,
+    "week": 10,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 252.83
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 329.08,
+    "week": 10,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 292.08
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 292.08,
+    "week": 10,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 329.08
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 350.67,
+    "week": 10,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 367.67
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 367.67,
+    "week": 10,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 350.67
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 361.5,
+    "week": 11,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 285.75
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 285.75,
+    "week": 11,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 361.5
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 331.92,
+    "week": 11,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 371.83
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 371.83,
+    "week": 11,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 331.92
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 281.17,
+    "week": 11,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 326.75
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 326.75,
+    "week": 11,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 281.17
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 311.5,
+    "week": 11,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 234.67
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 234.67,
+    "week": 11,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 311.5
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 376.42,
+    "week": 11,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 209.92
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 209.92,
+    "week": 11,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 376.42
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 424.33,
+    "week": 11,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 309.75
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 309.75,
+    "week": 11,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 424.33
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 360.17,
+    "week": 12,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 324.75
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 324.75,
+    "week": 12,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 360.17
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 349.42,
+    "week": 12,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 369.5
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 369.5,
+    "week": 12,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 349.42
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 353.08,
+    "week": 12,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 392.83
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 392.83,
+    "week": 12,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 353.08
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 296.0,
+    "week": 12,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 348.83
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 348.83,
+    "week": 12,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 296.0
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 279.33,
+    "week": 12,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 355.92
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 355.92,
+    "week": 12,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 279.33
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 269.92,
+    "week": 12,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 337.58
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 337.58,
+    "week": 12,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 269.92
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 316.17,
+    "week": 13,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 263.67
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 263.67,
+    "week": 13,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 316.17
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 317.5,
+    "week": 13,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 374.0
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 374.0,
+    "week": 13,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 317.5
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 314.58,
+    "week": 13,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 333.08
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 333.08,
+    "week": 13,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 314.58
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 250.42,
+    "week": 13,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 396.08
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 396.08,
+    "week": 13,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 250.42
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 294.58,
+    "week": 13,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 271.83
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 271.83,
+    "week": 13,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 294.58
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 180.83,
+    "week": 13,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 320.08
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 320.08,
+    "week": 13,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 180.83
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 423.67,
+    "week": 14,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 329.08
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 329.08,
+    "week": 14,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 423.67
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 250.83,
+    "week": 14,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 253.33
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 253.33,
+    "week": 14,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 250.83
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 316.58,
+    "week": 14,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 236.58
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 236.58,
+    "week": 14,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 316.58
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 256.83,
+    "week": 14,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 408.0
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 408.0,
+    "week": 14,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 256.83
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 368.58,
+    "week": 14,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 348.08
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 348.08,
+    "week": 14,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 368.58
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 230.5,
+    "week": 14,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 298.25
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 298.25,
+    "week": 14,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 230.5
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 599.92,
+    "week": 15,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 464.25
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 464.25,
+    "week": 15,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 599.92
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 529.0,
+    "week": 15,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 422.42
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 422.42,
+    "week": 15,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 529.0
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 379.67,
+    "week": 15,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 458.0
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 458.0,
+    "week": 15,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 379.67
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 424.83,
+    "week": 15,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 506.5
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 506.5,
+    "week": 15,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 424.83
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 433.92,
+    "week": 15,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 454.33
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 454.33,
+    "week": 15,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 433.92
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 449.33,
+    "week": 15,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 550.92
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 550.92,
+    "week": 15,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 449.33
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 354.0,
+    "week": 16,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 290.83
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 290.83,
+    "week": 16,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 354.0
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 271.83,
+    "week": 16,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 349.42
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 349.42,
+    "week": 16,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 271.83
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 236.08,
+    "week": 16,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 292.75
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 292.75,
+    "week": 16,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 236.08
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 278.92,
+    "week": 16,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 376.33
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 376.33,
+    "week": 16,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 278.92
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 372.25,
+    "week": 16,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 316.25
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 316.25,
+    "week": 16,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 372.25
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 319.75,
+    "week": 16,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 204.92
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 204.92,
+    "week": 16,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 319.75
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 331.42,
+    "week": 17,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 384.42
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 384.42,
+    "week": 17,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 331.42
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 297.92,
+    "week": 17,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 336.0
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 336.0,
+    "week": 17,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 297.92
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 250.75,
+    "week": 17,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 228.5
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 228.5,
+    "week": 17,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 250.75
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 317.83,
+    "week": 17,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 342.17
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 342.17,
+    "week": 17,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 317.83
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 348.75,
+    "week": 17,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 279.92
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 279.92,
+    "week": 17,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 348.75
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 207.25,
+    "week": 17,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 252.83
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 252.83,
+    "week": 17,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 207.25
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 403.75,
+    "week": 18,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 231.42
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 231.42,
+    "week": 18,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 403.75
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 378.5,
+    "week": 18,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 315.0
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 315.0,
+    "week": 18,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 378.5
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 398.0,
+    "week": 18,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 363.59
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 363.59,
+    "week": 18,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 398.0
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 355.58,
+    "week": 18,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 393.0
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 393.0,
+    "week": 18,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 355.58
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 199.92,
+    "week": 18,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 113.67
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 113.67,
+    "week": 18,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 199.92
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 390.83,
+    "week": 18,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 346.25
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 346.25,
+    "week": 18,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 390.83
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 328.08,
+    "week": 19,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 243.92
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 243.92,
+    "week": 19,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 328.08
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 417.33,
+    "week": 19,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 253.0
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 253.0,
+    "week": 19,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 417.33
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 367.83,
+    "week": 19,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 262.5
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 262.5,
+    "week": 19,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 367.83
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 216.75,
+    "week": 19,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 291.25
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 291.25,
+    "week": 19,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 216.75
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 372.67,
+    "week": 19,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 331.92
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 331.92,
+    "week": 19,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 372.67
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 253.08,
+    "week": 19,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 379.25
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 379.25,
+    "week": 19,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 253.08
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 350.17,
+    "week": 20,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 332.33
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 332.33,
+    "week": 20,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 350.17
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 203.83,
+    "week": 20,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 95.0
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 95.0,
+    "week": 20,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 203.83
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 411.5,
+    "week": 20,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 153.08
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 153.08,
+    "week": 20,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 411.5
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 386.5,
+    "week": 20,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 343.58
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 343.58,
+    "week": 20,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 386.5
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 316.83,
+    "week": 21,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 397.33
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 397.33,
+    "week": 21,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 316.83
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 341.5,
+    "week": 21,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 275.67
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 275.67,
+    "week": 21,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 341.5
+  },
+  {
+    "team_key": "412.l.4348.t.3",
+    "team_score": 363.08,
+    "week": 21,
+    "opponent_key": "412.l.4348.t.11",
+    "opponent_score": 332.5
+  },
+  {
+    "team_key": "412.l.4348.t.11",
+    "team_score": 332.5,
+    "week": 21,
+    "opponent_key": "412.l.4348.t.3",
+    "opponent_score": 363.08
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 327.25,
+    "week": 21,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 341.5
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 341.5,
+    "week": 21,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 327.25
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 233.08,
+    "week": 21,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 159.5
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 159.5,
+    "week": 21,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 233.08
+  },
+  {
+    "team_key": "412.l.4348.t.7",
+    "team_score": 149.58,
+    "week": 21,
+    "opponent_key": "412.l.4348.t.9",
+    "opponent_score": 240.5
+  },
+  {
+    "team_key": "412.l.4348.t.9",
+    "team_score": 240.5,
+    "week": 21,
+    "opponent_key": "412.l.4348.t.7",
+    "opponent_score": 149.58
+  },
+  {
+    "team_key": "412.l.4348.t.1",
+    "team_score": 395.25,
+    "week": 22,
+    "opponent_key": "412.l.4348.t.6",
+    "opponent_score": 336.75
+  },
+  {
+    "team_key": "412.l.4348.t.6",
+    "team_score": 336.75,
+    "week": 22,
+    "opponent_key": "412.l.4348.t.1",
+    "opponent_score": 395.25
+  },
+  {
+    "team_key": "412.l.4348.t.2",
+    "team_score": 417.17,
+    "week": 22,
+    "opponent_key": "412.l.4348.t.10",
+    "opponent_score": 390.67
+  },
+  {
+    "team_key": "412.l.4348.t.10",
+    "team_score": 390.67,
+    "week": 22,
+    "opponent_key": "412.l.4348.t.2",
+    "opponent_score": 417.17
+  },
+  {
+    "team_key": "412.l.4348.t.4",
+    "team_score": 255.92,
+    "week": 22,
+    "opponent_key": "412.l.4348.t.12",
+    "opponent_score": 214.92
+  },
+  {
+    "team_key": "412.l.4348.t.12",
+    "team_score": 214.92,
+    "week": 22,
+    "opponent_key": "412.l.4348.t.4",
+    "opponent_score": 255.92
+  },
+  {
+    "team_key": "412.l.4348.t.5",
+    "team_score": 279.17,
+    "week": 22,
+    "opponent_key": "412.l.4348.t.8",
+    "opponent_score": 320.25
+  },
+  {
+    "team_key": "412.l.4348.t.8",
+    "team_score": 320.25,
+    "week": 22,
+    "opponent_key": "412.l.4348.t.5",
+    "opponent_score": 279.17
+  }
+]

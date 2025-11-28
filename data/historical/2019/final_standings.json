@@ -1,0 +1,122 @@
+[
+  {
+    "rank": 2,
+    "team_key": "388.l.52573.t.7",
+    "team_name": "Team Beer",
+    "manager": "Rich",
+    "wins": 13,
+    "losses": 4,
+    "ties": 0,
+    "win_pct": 0.765,
+    "points_for": 5905.76,
+    "points_against": 5435.33
+  },
+  {
+    "rank": 1,
+    "team_key": "388.l.52573.t.8",
+    "team_name": "Go Team",
+    "manager": "Ryan",
+    "wins": 12,
+    "losses": 5,
+    "ties": 0,
+    "win_pct": 0.706,
+    "points_for": 6245.36,
+    "points_against": 5425.33
+  },
+  {
+    "rank": 6,
+    "team_key": "388.l.52573.t.3",
+    "team_name": "Bye Week",
+    "manager": "Coleman",
+    "wins": 10,
+    "losses": 7,
+    "ties": 0,
+    "win_pct": 0.588,
+    "points_for": 5856.41,
+    "points_against": 5603.25
+  },
+  {
+    "rank": 4,
+    "team_key": "388.l.52573.t.1",
+    "team_name": "Judgement Day",
+    "manager": "Josh",
+    "wins": 10,
+    "losses": 7,
+    "ties": 0,
+    "win_pct": 0.588,
+    "points_for": 5623.26,
+    "points_against": 5434.5
+  },
+  {
+    "rank": 5,
+    "team_key": "388.l.52573.t.2",
+    "team_name": "Arizona Diamondsacks",
+    "manager": "Josh",
+    "wins": 9,
+    "losses": 8,
+    "ties": 0,
+    "win_pct": 0.529,
+    "points_for": 5013.18,
+    "points_against": 5172.85
+  },
+  {
+    "rank": 3,
+    "team_key": "388.l.52573.t.4",
+    "team_name": "Bryce is NOT Nice",
+    "manager": "Tyler",
+    "wins": 8,
+    "losses": 9,
+    "ties": 0,
+    "win_pct": 0.471,
+    "points_for": 5588.43,
+    "points_against": 5414.01
+  },
+  {
+    "rank": 7,
+    "team_key": "388.l.52573.t.6",
+    "team_name": "Oh I Don\u2019t Think So",
+    "manager": "Red",
+    "wins": 7,
+    "losses": 10,
+    "ties": 0,
+    "win_pct": 0.412,
+    "points_for": 5626.0,
+    "points_against": 5482.6
+  },
+  {
+    "rank": 8,
+    "team_key": "388.l.52573.t.9",
+    "team_name": "The Dali Lama",
+    "manager": "JOHN",
+    "wins": 6,
+    "losses": 11,
+    "ties": 0,
+    "win_pct": 0.353,
+    "points_for": 4944.33,
+    "points_against": 5493.26
+  },
+  {
+    "rank": 9,
+    "team_key": "388.l.52573.t.5",
+    "team_name": "iSuckAgain",
+    "manager": "Riley",
+    "wins": 6,
+    "losses": 11,
+    "ties": 0,
+    "win_pct": 0.353,
+    "points_for": 4775.51,
+    "points_against": 5164.76
+  },
+  {
+    "rank": 10,
+    "team_key": "388.l.52573.t.10",
+    "team_name": "Rick & Morton",
+    "manager": "dylan",
+    "wins": 4,
+    "losses": 13,
+    "ties": 0,
+    "win_pct": 0.235,
+    "points_for": 4826.32,
+    "points_against": 5778.67
+  }
+]

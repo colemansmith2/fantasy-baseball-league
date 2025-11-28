@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Baseball League</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3c72;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            header {
+                padding: 1.5rem 1rem;
+            }
+            
+            .section {
+                padding: 1rem;
+            }
+        }
+
+        .tagline {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav button {
+            background: #2a5298;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            margin: 0.25rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            nav button {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+                margin: 0.2rem;
+            }
+        }
+
+        nav button:hover {
+            background: #1e3c72;
+        }
+
+        nav button.active {
+            background: #ff6b6b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            display: none;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #ff6b6b;
+            padding-bottom: 0.5rem;
+        }
+
+        .standings-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .team-logo {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+            border-radius: 50%;
+            background: white;
+            padding: 0.15rem;
+        }
+
+        .manager-cell {
+            display: flex;
+            align-items: center;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .standings-table {
+                font-size: 0.75rem;
+                min-width: 600px;
+            }
+            
+            .standings-table th,
+            .standings-table td {
+                padding: 0.5rem 0.3rem;
+                white-space: nowrap;
+            }
+            
+            /* Freeze Rank column */
+            .standings-table th:first-child,
+            .standings-table td:first-child {
+                position: sticky;
+                left: 0;
+                background: #2a5298;
+                color: white;
+                z-index: 2;
+            }
+            
+            .standings-table td:first-child {
+                background: white;
+                color: #333;
+                font-weight: bold;
+            }
+            
+            .standings-table tr:hover td:first-child {
+                background: #f5f5f5;
+            }
+            
+            /* Freeze Manager column */
+            .standings-table th:nth-child(2),
+            .standings-table td:nth-child(2) {
+                position: sticky;
+                left: 3rem;
+                background: #2a5298;
+                color: white;
+                z-index: 2;
+            }
+            
+            .standings-table td:nth-child(2) {
+                background: white;
+                color: #333;
+                font-weight: bold;
+            }
+            
+            .standings-table tr:hover td:nth-child(2) {
+                background: #f5f5f5;
+            }
+        }
+
+        .standings-table th {
+            background: #2a5298;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .standings-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .standings-table tr:hover {
+            background: #f5f5f5;
+        }
+
+        .season-selector {
+            margin-bottom: 1.5rem;
+        }
+
+        .season-selector label {
+            font-weight: bold;
+            margin-right: 1rem;
+            color: #1e3c72;
+        }
+
+        .season-selector select {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 2px solid #2a5298;
+            border-radius: 5px;
+        }
+
+        .manager-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .manager-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        .manager-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .manager-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .manager-card.inactive {
+            background: linear-gradient(135deg, #757575 0%, #616161 100%);
+            opacity: 0.8;
+        }
+
+        .manager-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .manager-card .manager-logo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+            padding: 0.25rem;
+        }
+
+        .manager-card .stat {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .manager-card .stat strong {
+            display: inline-block;
+            width: 140px;
+        }
+
+        .manager-card .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+        }
+        
+        .manager-card .awards-row {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+        
+        .manager-card .award-badge {
+            position: relative;
+            font-size: 1.6rem;
+            line-height: 1;
+            display: inline-block;
+        }
+        
+        .manager-card .award-count {
+            position: absolute;
+            bottom: -2px;
+            right: -4px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 0.55rem;
+            padding: 0.1rem 0.2rem;
+            border-radius: 2px;
+            font-weight: bold;
+            line-height: 1;
+            min-width: 14px;
+            text-align: center;
+        }
+
+        /* Manager Detail Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 0;
+            border-radius: 15px;
+            max-width: 900px;
+            width: 90%;
+            max-height: 85vh;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 10;
+            padding: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #2a5298;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .modal-body-scroll {
+            overflow-y: auto;
+            padding: 2rem;
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 95%;
+                max-height: 90vh;
+            }
+            
+            .modal-header {
+                padding: 1.5rem;
+                padding-bottom: 1rem;
+            }
+            
+            .modal-body-scroll {
+                padding: 1.5rem;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            right: 1.5rem;
+            top: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s;
+            z-index: 11;
+        }
+
+        .modal-close:hover {
+            color: #000;
+        }
+
+        .modal-header {
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 10;
+            padding: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #2a5298;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .modal-header h2 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+            border: none;
+            padding: 0;
+        }
+
+        .modal-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .modal-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+            
+            .stat-box {
+                padding: 0.75rem;
+            }
+            
+            .stat-box .value {
+                font-size: 1.4rem;
+            }
+            
+            .stat-box .label {
+                font-size: 0.8rem;
+            }
+        }
+
+        .stat-box {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-box .value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2a5298;
+        }
+
+        .stat-box .label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .timeline {
+            margin: 2rem 0;
+        }
+
+        .timeline h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            padding: 1rem;
+            border-left: 3px solid #2a5298;
+            margin-bottom: 1rem;
+            background: #f8f9fa;
+            border-radius: 0 8px 8px 0;
+            align-items: center;
+        }
+
+        .timeline-item .year {
+            font-weight: bold;
+            color: #2a5298;
+            min-width: 60px;
+            font-size: 1.1rem;
+        }
+
+        .timeline-item .details {
+            flex: 1;
+            margin-left: 1rem;
+        }
+
+        .timeline-item .timeline-logo {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: white;
+            padding: 0.25rem;
+            margin-left: 1rem;
+        }
+
+        .timeline-item .rank {
+            display: inline-block;
+            background: #2a5298;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            margin-right: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .timeline-item .rank.champion {
+            background: #ffd700;
+            color: #000;
+        }
+
+        .timeline-item .rank.runner-up {
+            background: #c0c0c0;
+            color: #000;
+        }
+
+        .matchup-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            overflow-x: auto;
+            display: block;
+        }
+
+        .matchup-table thead,
+        .matchup-table tbody,
+        .matchup-table tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        @media (max-width: 768px) {
+            .matchup-table {
+                font-size: 0.8rem;
+            }
+            
+            .matchup-table th,
+            .matchup-table td {
+                padding: 0.5rem 0.25rem;
+            }
+        }
+
+        .matchup-table th {
+            background: #2a5298;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+        }
+
+        .matchup-table th:hover {
+            background: #1e3c72;
+        }
+
+        .matchup-table th.sortable::after {
+            content: ' ⇅';
+            opacity: 0.5;
+            font-size: 0.8rem;
+        }
+
+        .matchup-table th.sorted-asc::after {
+            content: ' ▲';
+            opacity: 1;
+        }
+
+        .matchup-table th.sorted-desc::after {
+            content: ' ▼';
+            opacity: 1;
+        }
+
+        .matchup-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .matchup-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .award-section {
+            margin-bottom: 3rem;
+        }
+
+        .award-section h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .award-icon {
+            font-size: 1.8rem;
+        }
+
+        .award-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+
+        .award-table th {
+            background: #2a5298;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .award-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .award-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .award-value {
+            font-weight: bold;
+            color: #2a5298;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .award-table {
+                font-size: 0.85rem;
+            }
+            
+            .award-table th,
+            .award-table td {
+                padding: 0.5rem 0.3rem;
+            }
+        }
+
+        .error {
+            background: #fee;
+            border: 1px solid #fcc;
+            padding: 1rem;
+            border-radius: 5px;
+            color: #c33;
+            margin: 1rem 0;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>⚾ Yahoo Fantasy Baseball League</h1>
+        <p class="tagline">12-Team Points League | Est. 2017</p>
+    </header>
+
+    <nav>
+        <button onclick="showSection('standings')" class="nav-btn active">Historical Standings</button>
+        <button onclick="showSection('awards')" class="nav-btn">Awards</button>
+        <button onclick="showSection('scoring')" class="nav-btn">Player Scoring</button>
+        <button onclick="showSection('managers')" class="nav-btn">Manager Profiles</button>
+    </nav>
+
+    <div class="container">
+        <!-- Historical Standings Section -->
+        <div id="standings" class="section active">
+            <h2>Historical Standings</h2>
+            
+            <div class="season-selector">
+                <label for="standings-season">Select Season:</label>
+                <select id="standings-season" onchange="loadStandingsBySeason()">
+                    <!-- Will be populated dynamically -->
+                </select>
+            </div>
+
+            <div id="standings-loading" class="loading">Loading standings...</div>
+            <div id="standings-error" class="error" style="display: none;"></div>
+
+            <div class="table-wrapper">
+                <table class="standings-table" id="standings-table" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Manager</th>
+                            <th>Team Name</th>
+                            <th>Wins</th>
+                            <th>Losses</th>
+                            <th>Win %</th>
+                            <th>Total Points</th>
+                        </tr>
+                    </thead>
+                    <tbody id="standings-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Awards Section -->
+        <div id="awards" class="section">
+            <h2>🏆 League Awards</h2>
+            
+            <div id="awards-loading" class="loading">Loading awards...</div>
+            <div id="awards-error" class="error" style="display: none;"></div>
+            
+            <div id="awards-content" style="display: none;">
+                <div class="award-section">
+                    <h3><span class="award-icon">👑</span> Regular Season Champion (Most Wins)</h3>
+                    <table class="award-table">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Manager</th>
+                                <th>Team Name</th>
+                                <th>Wins</th>
+                            </tr>
+                        </thead>
+                        <tbody id="regular-season-winners">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="award-section">
+                    <h3><span class="award-icon">⚡</span> Scoring Champion (Most Points)</h3>
+                    <table class="award-table">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Manager</th>
+                                <th>Team Name</th>
+                                <th>Points</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scoring-champions">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="award-section">
+                    <h3><span class="award-icon">🗑️</span> Garbage Award (Worst Record)</h3>
+                    <table class="award-table">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Manager</th>
+                                <th>Team Name</th>
+                                <th>Record</th>
+                            </tr>
+                        </thead>
+                        <tbody id="garbage-awards">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="award-section">
+                    <h3><span class="award-icon">🤡</span> Clown Award (Least Points)</h3>
+                    <table class="award-table">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Manager</th>
+                                <th>Team Name</th>
+                                <th>Points</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clown-awards">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Player Scoring Section -->
+        <div id="scoring" class="section">
+            <h2>Player Scoring</h2>
+            
+            <div class="season-selector">
+                <label for="scoring-season">Select Season:</label>
+                <select id="scoring-season" onchange="loadPlayerScoring()">
+                    <!-- Will be populated dynamically -->
+                </select>
+            </div>
+
+            <div class="loading">Player scoring data coming soon...</div>
+        </div>
+
+        <!-- Manager Profiles Section -->
+        <div id="managers" class="section">
+            <h2>Manager Profiles</h2>
+            
+            <div id="managers-loading" class="loading">Loading manager profiles...</div>
+            <div id="managers-error" class="error" style="display: none;"></div>
+            
+            <div class="manager-grid" id="manager-grid">
+            </div>
+        </div>
+    </div>
+
+    <!-- Manager Detail Modal -->
+    <div id="manager-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeManagerModal()">&times;</span>
+            <div id="modal-header-section">
+                <!-- Header loaded dynamically -->
+            </div>
+            <div class="modal-body-scroll" id="modal-body">
+                <!-- Body content loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Yahoo Fantasy Baseball League | Powered by Python & Yahoo Fantasy API</p>
+    </footer>
+
+    <script>
+        // ===== GLOBAL STATE =====
+        let availableSeasons = [];
+        let allManagersData = [];
+        let managerHistoryData = [];
+        
+        // Cache for team data to avoid redundant fetches
+        const teamDataCache = {};
+        
+        // Helper function to get team data with caching
+        async function getTeamData(year) {
+            const cacheKey = year === 2025 ? 'current' : year;
+            
+            if (teamDataCache[cacheKey]) {
+                return teamDataCache[cacheKey];
+            }
+            
+            try {
+                let teamsResponse;
+                if (year === 2025) {
+                    teamsResponse = await fetch('data/current_season/teams.json');
+                } else {
+                    teamsResponse = await fetch(`data/historical/${year}/teams.json`);
+                }
+                
+                if (teamsResponse.ok) {
+                    const teams = await teamsResponse.json();
+                    teamDataCache[cacheKey] = teams;
+                    return teams;
+                }
+            } catch (e) {
+                console.log(`Could not load team data for ${year}`);
+            }
+            
+            return null;
+        }
+
+        // ===== MANAGER NAME NORMALIZATION =====
+        const MANAGER_TEAM_2023 = {
+            "Draft Pool": "Logan C",
+            "Peanut Butter & Elly": "Logan S"
+        };
+        
+        // Logan team keys for 2023 disambiguation
+        const LOGAN_TEAM_KEYS_2023 = {
+            "422.l.6780.t.4": "Logan C",   // Draft Pool
+            "422.l.6780.t.12": "Logan S"   // Peanut Butter & Elly
+        };
+
+        function normalizeManagerName(managerName, year = null, teamName = null, teamKey = null) {
+            // Convert to title case
+            let normalized = managerName.trim()
+                .toLowerCase()
+                .split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+            
+            // Handle Logan disambiguation
+            if (normalized === "Logan") {
+                if (year === 2023 && teamName && MANAGER_TEAM_2023[teamName]) {
+                    return MANAGER_TEAM_2023[teamName];
+                }
+                if (year && year >= 2020 && year <= 2022) {
+                    return "Logan C";
+                } else if (year && year >= 2024) {
+                    return "Logan S";
+                }
+            }
+            
+            // Handle Josh disambiguation (2019-2022)
+            if (normalized === "Josh") {
+                if (year && year >= 2019 && year <= 2022) {
+                    if (teamKey && teamKey.endsWith('t.1')) {
+                        return "Josh B";
+                    } else {
+                        return "Josh S";
+                    }
+                } else if (year && year >= 2023) {
+                    // After 2022, only Josh B remains
+                    if (teamKey && teamKey.endsWith('t.1')) {
+                        return "Josh B";
+                    }
+                }
+            }
+            
+            return normalized;
+        }
+
+        function normalizeStandingsData(standings, year) {
+            return standings.map(team => ({
+                ...team,
+                manager: normalizeManagerName(team.manager, year, team.team_name, team.team_key)
+            }));
+        }
+
+        function normalizeAndMergeManagerData(managersData, historyData) {
+            const managerMap = {};
+            
+            console.log("Processing managers:", managersData.length);
+            
+            // Process each manager's data
+            managersData.forEach(manager => {
+                // Determine normalized name based on season history
+                let normalizedName = manager.manager_name.trim()
+                    .toLowerCase()
+                    .split(' ')
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ');
+                
+                // Handle Logan based on team keys in 2023 or years active
+                if (normalizedName === "Logan") {
+                    console.log("Found Logan:", manager.season_history);
+                    
+                    // Check if they have 2023 season
+                    const season2023 = manager.season_history.find(s => s.year === 2023);
+                    
+                    if (season2023) {
+                        console.log("Logan has 2023, team:", season2023.team_name);
+                        // Use team name to distinguish
+                        if (season2023.team_name.includes("Draft Pool")) {
+                            normalizedName = "Logan C";
+                            console.log("-> Logan C (Draft Pool)");
+                        } else if (season2023.team_name.includes("Peanut Butter") || season2023.team_name.includes("Elly")) {
+                            normalizedName = "Logan S";
+                            console.log("-> Logan S (Peanut Butter & Elly)");
+                        } else {
+                            console.log("-> Unknown team in 2023:", season2023.team_name);
+                        }
+                    } else {
+                        // No 2023 season - use years to determine
+                        const years = manager.season_history.map(s => s.year);
+                        const maxYear = Math.max(...years);
+                        const minYear = Math.min(...years);
+                        
+                        console.log("Logan years:", years, "min:", minYear, "max:", maxYear);
+                        
+                        if (maxYear <= 2022) {
+                            // Only played 2020-2022 = Logan C
+                            normalizedName = "Logan C";
+                            console.log("-> Logan C (only 2020-2022)");
+                        } else if (minYear >= 2024) {
+                            // Only played 2024+ = Logan S
+                            normalizedName = "Logan S";
+                            console.log("-> Logan S (only 2024+)");
+                        } else {
+                            console.log("-> Logan with unclear years");
+                        }
+                    }
+                }
+                
+                // Normalize season history
+                const normalizedSeasonHistory = manager.season_history.map(season => ({
+                    ...season
+                }));
+                
+                // DON'T merge different Logans - only merge case variations
+                const shouldMerge = managerMap[normalizedName] && 
+                                   !(normalizedName === "Logan C" || normalizedName === "Logan S");
+                
+                if (shouldMerge) {
+                    console.log("Merging into existing manager:", normalizedName);
+                    // Merge stats
+                    managerMap[normalizedName].total_wins += manager.total_wins;
+                    managerMap[normalizedName].total_losses += manager.total_losses;
+                    managerMap[normalizedName].total_ties += manager.total_ties;
+                    managerMap[normalizedName].total_points_for += manager.total_points_for;
+                    managerMap[normalizedName].championships += manager.championships;
+                    managerMap[normalizedName].runner_ups += manager.runner_ups;
+                    managerMap[normalizedName].playoff_appearances += manager.playoff_appearances;
+                    managerMap[normalizedName].seasons_played += manager.seasons_played;
+                    
+                    // Merge season history
+                    managerMap[normalizedName].season_history = [
+                        ...managerMap[normalizedName].season_history,
+                        ...normalizedSeasonHistory
+                    ];
+                    
+                    // Update first season
+                    managerMap[normalizedName].first_season = Math.min(
+                        managerMap[normalizedName].first_season,
+                        manager.first_season
+                    );
+                } else {
+                    console.log("Creating new manager entry:", normalizedName);
+                    // New manager entry
+                    managerMap[normalizedName] = {
+                        ...manager,
+                        manager_name: normalizedName,
+                        season_history: normalizedSeasonHistory
+                    };
+                }
+            });
+            
+            console.log("Final managers:", Object.keys(managerMap));
+            
+            // Recalculate derived stats for merged managers
+            Object.values(managerMap).forEach(manager => {
+                const totalGames = manager.total_wins + manager.total_losses;
+                manager.win_pct = totalGames > 0 ? manager.total_wins / totalGames : 0;
+                manager.avg_finish = manager.season_history.length > 0
+                    ? manager.season_history.reduce((sum, s) => sum + s.rank, 0) / manager.season_history.length
+                    : 0;
+                
+                // Sort season history by year
+                manager.season_history.sort((a, b) => a.year - b.year);
+            });
+            
+            return Object.values(managerMap);
+        }
+
+        // Split Logan's stats for 2023 based on team_key
+        async function splitLogan2023Stats() {
+            try {
+                // Load 2023 standings and scores
+                const standingsResponse = await fetch('data/historical/2023/final_standings.json');
+                const scoresResponse = await fetch('data/historical/2023/all_scores.json');
+                
+                if (!standingsResponse.ok || !scoresResponse.ok) {
+                    console.log("Could not load 2023 data for Logan split");
+                    return null;
+                }
+                
+                const standings = await standingsResponse.json();
+                const scores = await scoresResponse.json();
+                
+                // Find Logan's teams by team_key
+                const loganCTeam = standings.find(t => t.team_key === "422.l.6780.t.4");
+                const loganSTeam = standings.find(t => t.team_key === "422.l.6780.t.12");
+                
+                if (!loganCTeam && !loganSTeam) {
+                    console.log("Could not find Logan team keys in 2023 standings");
+                    return null;
+                }
+                
+                // Calculate stats for each Logan based on team_key
+                const loganStats = {
+                    "Logan C": loganCTeam ? {
+                        team_key: loganCTeam.team_key,
+                        team_name: loganCTeam.team_name,
+                        rank: loganCTeam.rank,
+                        wins: loganCTeam.wins,
+                        losses: loganCTeam.losses,
+                        ties: loganCTeam.ties,
+                        points_for: loganCTeam.points_for
+                    } : null,
+                    "Logan S": loganSTeam ? {
+                        team_key: loganSTeam.team_key,
+                        team_name: loganSTeam.team_name,
+                        rank: loganSTeam.rank,
+                        wins: loganSTeam.wins,
+                        losses: loganSTeam.losses,
+                        ties: loganSTeam.ties,
+                        points_for: loganSTeam.points_for
+                    } : null
+                };
+                
+                console.log("Split Logan 2023 stats:", loganStats);
+                return loganStats;
+                
+            } catch (error) {
+                console.error("Error splitting Logan stats:", error);
+                return null;
+            }
+        }
+
+        // Apply Logan split to manager data
+        async function applyLogan2023Split(managersData) {
+            const logan2023Stats = await splitLogan2023Stats();
+            
+            if (!logan2023Stats) {
+                console.log("No Logan split needed or data unavailable");
+                return managersData;
+            }
+            
+            // Update each Logan's 2023 season data
+            managersData.forEach(manager => {
+                if ((manager.manager_name === "Logan C" || manager.manager_name === "Logan S") && logan2023Stats[manager.manager_name]) {
+                    const season2023Index = manager.season_history.findIndex(s => s.year === 2023);
+                    
+                    if (season2023Index >= 0) {
+                        // Update with correct stats
+                        const stats = logan2023Stats[manager.manager_name];
+                        manager.season_history[season2023Index] = {
+                            year: 2023,
+                            team_name: stats.team_name,
+                            rank: stats.rank,
+                            wins: stats.wins,
+                            losses: stats.losses,
+                            points_for: stats.points_for
+                        };
+                        
+                        // Recalculate totals
+                        manager.total_wins = manager.season_history.reduce((sum, s) => sum + s.wins, 0);
+                        manager.total_losses = manager.season_history.reduce((sum, s) => sum + s.losses, 0);
+                        manager.total_points_for = manager.season_history.reduce((sum, s) => sum + s.points_for, 0);
+                        manager.win_pct = manager.total_wins / (manager.total_wins + manager.total_losses);
+                        manager.avg_finish = manager.season_history.reduce((sum, s) => sum + s.rank, 0) / manager.season_history.length;
+                        
+                        console.log(`Updated ${manager.manager_name} with 2023 stats`);
+                    }
+                }
+            });
+            
+            return managersData;
+        }
+
+        // ===== INITIALIZE SEASON SELECTORS =====
+        async function initializeSeasonSelectors() {
+            const standingsSelect = document.getElementById('standings-season');
+            standingsSelect.innerHTML = '<option value="">Loading seasons...</option>';
+            
+            // Try to detect available seasons by checking for data files
+            const possibleSeasons = [2019, 2020, 2021, 2022, 2023, 2024, 2025];
+            const availableSeasons = [];
+            
+            // Check current season
+            try {
+                const response = await fetch('data/current_season/standings.json');
+                if (response.ok) {
+                    availableSeasons.push({ year: 2025, isCurrent: true });
+                }
+            } catch (e) {}
+            
+            // Check historical seasons
+            for (const year of possibleSeasons.filter(y => y < 2025)) {
+                try {
+                    const response = await fetch(`data/historical/${year}/final_standings.json`);
+                    if (response.ok) {
+                        availableSeasons.push({ year: year, isCurrent: false });
+                    }
+                } catch (e) {}
+            }
+            
+            // Sort by year descending
+            availableSeasons.sort((a, b) => b.year - a.year);
+            
+            // Populate dropdown
+            standingsSelect.innerHTML = '';
+            availableSeasons.forEach(season => {
+                const option = document.createElement('option');
+                option.value = season.year;
+                option.textContent = season.isCurrent ? `${season.year} (Current)` : season.year;
+                standingsSelect.appendChild(option);
+            });
+            
+            // Populate scoring dropdown the same way
+            const scoringSelect = document.getElementById('scoring-season');
+            scoringSelect.innerHTML = standingsSelect.innerHTML;
+            
+            return availableSeasons;
+        }
+
+        // ===== LOAD STANDINGS BY SEASON =====
+        async function loadStandingsBySeason() {
+            const season = document.getElementById('standings-season').value;
+            const loadingEl = document.getElementById('standings-loading');
+            const errorEl = document.getElementById('standings-error');
+            const tableEl = document.getElementById('standings-table');
+            
+            if (!season) {
+                return; // No season selected yet
+            }
+            
+            try {
+                loadingEl.style.display = 'block';
+                errorEl.style.display = 'none';
+                tableEl.style.display = 'none';
+                
+                let response;
+                const seasonNum = parseInt(season);
+                
+                // Check if this is current season (2025) or historical
+                const currentSeasonCheck = await fetch('data/current_season/standings.json');
+                let isCurrentSeason = false;
+                
+                if (currentSeasonCheck.ok) {
+                    // If current season data exists, it's 2025
+                    isCurrentSeason = (seasonNum === 2025);
+                }
+                
+                // Load from appropriate location
+                if (isCurrentSeason) {
+                    response = await fetch('data/current_season/standings.json');
+                } else {
+                    response = await fetch(`data/historical/${season}/final_standings.json`);
+                }
+                
+                if (!response.ok) {
+                    throw new Error(`Data not found for ${season}`);
+                }
+                
+                let standings = await response.json();
+                
+                // Load team logos
+                let teamsResponse;
+                if (isCurrentSeason) {
+                    teamsResponse = await fetch('data/current_season/teams.json');
+                } else {
+                    teamsResponse = await fetch(`data/historical/${season}/teams.json`);
+                }
+                
+                let teamLogos = {};
+                if (teamsResponse.ok) {
+                    const teams = await teamsResponse.json();
+                    teams.forEach(team => {
+                        teamLogos[team.team_key] = team.team_logo;
+                    });
+                }
+                
+                // Normalize manager names
+                standings = normalizeStandingsData(standings, seasonNum);
+                
+                // Sort by rank to ensure proper ordering
+                standings.sort((a, b) => a.rank - b.rank);
+                
+                // Populate the table
+                const tbody = document.getElementById('standings-body');
+                tbody.innerHTML = '';
+                
+                standings.forEach(team => {
+                    const row = document.createElement('tr');
+                    const logo = teamLogos[team.team_key] ? `<img src="${teamLogos[team.team_key]}" class="team-logo" alt="Team Logo">` : '';
+                    
+                    // Add medals for top 3
+                    let medal = '';
+                    if (team.rank === 1) medal = '<span class="medal">🥇</span>';
+                    else if (team.rank === 2) medal = '<span class="medal">🥈</span>';
+                    else if (team.rank === 3) medal = '<span class="medal">🥉</span>';
+                    
+                    row.innerHTML = `
+                        <td>${medal}${team.rank}</td>
+                        <td>${team.manager}</td>
+                        <td><div class="manager-cell">${logo}${team.team_name}</div></td>
+                        <td>${team.wins}</td>
+                        <td>${team.losses}</td>
+                        <td>${team.win_pct.toFixed(3)}</td>
+                        <td>${Math.round(team.points_for).toLocaleString()}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+                
+                loadingEl.style.display = 'none';
+                tableEl.style.display = 'table';
+                
+            } catch (error) {
+                console.error('Error loading standings:', error);
+                loadingEl.style.display = 'none';
+                errorEl.textContent = `Error loading ${season} standings: ${error.message}`;
+                errorEl.style.display = 'block';
+            }
+        }
+
+        // ===== CALCULATE MANAGER AWARDS =====
+        async function calculateManagerAwards() {
+            const seasons = [2019, 2020, 2021, 2022, 2023, 2024, 2025];
+            const seasonData = {};
+            
+            // Load all seasons data
+            for (const year of seasons) {
+                try {
+                    let standingsResponse;
+                    
+                    if (year === 2025) {
+                        standingsResponse = await fetch('data/current_season/standings.json');
+                    } else {
+                        standingsResponse = await fetch(`data/historical/${year}/final_standings.json`);
+                    }
+                    
+                    if (standingsResponse.ok) {
+                        const standings = await standingsResponse.json();
+                        const normalizedStandings = normalizeStandingsData(standings, year);
+                        seasonData[year] = normalizedStandings;
+                    }
+                } catch (e) {
+                    console.error(`Error loading ${year}:`, e);
+                }
+            }
+            
+            // Calculate awards by manager
+            const managerAwards = {};
+            
+            for (const [year, standings] of Object.entries(seasonData)) {
+                // Find winners for each award category
+                const mostWins = standings.reduce((max, team) => 
+                    team.wins > max.wins ? team : max
+                );
+                const mostPoints = standings.reduce((max, team) => 
+                    team.points_for > max.points_for ? team : max
+                );
+                const fewestWins = standings.reduce((min, team) => 
+                    team.wins < min.wins ? team : min
+                );
+                const leastPoints = standings.reduce((min, team) => 
+                    team.points_for < min.points_for ? team : min
+                );
+                const champion = standings.find(team => team.rank === 1);
+                
+                // Track awards
+                if (champion) {
+                    if (!managerAwards[champion.manager]) managerAwards[champion.manager] = {};
+                    managerAwards[champion.manager].championships = (managerAwards[champion.manager].championships || 0) + 1;
+                }
+                
+                if (!managerAwards[mostWins.manager]) managerAwards[mostWins.manager] = {};
+                managerAwards[mostWins.manager].regularSeason = (managerAwards[mostWins.manager].regularSeason || 0) + 1;
+                
+                if (!managerAwards[mostPoints.manager]) managerAwards[mostPoints.manager] = {};
+                managerAwards[mostPoints.manager].scoringChamp = (managerAwards[mostPoints.manager].scoringChamp || 0) + 1;
+                
+                if (!managerAwards[fewestWins.manager]) managerAwards[fewestWins.manager] = {};
+                managerAwards[fewestWins.manager].garbage = (managerAwards[fewestWins.manager].garbage || 0) + 1;
+                
+                if (!managerAwards[leastPoints.manager]) managerAwards[leastPoints.manager] = {};
+                managerAwards[leastPoints.manager].clown = (managerAwards[leastPoints.manager].clown || 0) + 1;
+            }
+            
+            return managerAwards;
+        }
+
+        // ===== LOAD MANAGER PROFILES =====
+        async function loadManagerProfiles() {
+            const loadingEl = document.getElementById('managers-loading');
+            const errorEl = document.getElementById('managers-error');
+            const gridEl = document.getElementById('manager-grid');
+            
+            try {
+                loadingEl.style.display = 'block';
+                errorEl.style.display = 'none';
+                gridEl.innerHTML = '';
+                
+                // Load manager stats
+                const response = await fetch('data/managers/all_time_stats.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const rawManagersData = await response.json();
+                
+                // Load manager history for detailed view
+                const historyResponse = await fetch('data/managers/manager_history.json');
+                if (historyResponse.ok) {
+                    managerHistoryData = await historyResponse.json();
+                }
+                
+                // Normalize and merge manager data
+                allManagersData = normalizeAndMergeManagerData(rawManagersData, managerHistoryData);
+                
+                // Determine all unique seasons we need to load
+                const allSeasons = new Set();
+                allManagersData.forEach(manager => {
+                    manager.season_history.forEach(season => {
+                        allSeasons.add(season.year);
+                    });
+                });
+                
+                // Pre-load team data for all seasons in parallel
+                await Promise.all(Array.from(allSeasons).map(year => getTeamData(year)));
+                
+                // Calculate awards for all managers
+                const managerAwards = await calculateManagerAwards();
+                
+                // Now build manager logos using cached data
+                const managerLogos = {};
+                for (const manager of allManagersData) {
+                    const recentSeason = Math.max(...manager.season_history.map(s => s.year));
+                    const recentSeasonData = manager.season_history.find(s => s.year === recentSeason);
+                    
+                    const teams = await getTeamData(recentSeason);
+                    if (teams) {
+                        const managerTeam = teams.find(t => t.team_name === recentSeasonData.team_name);
+                        if (managerTeam) {
+                            managerLogos[manager.manager_name] = managerTeam.team_logo;
+                        }
+                    }
+                }
+                
+                // Determine which managers are currently active
+                const currentStandingsResponse = await fetch('data/current_season/standings.json');
+                let currentManagers = [];
+                if (currentStandingsResponse.ok) {
+                    const currentStandings = await currentStandingsResponse.json();
+                    const normalizedStandings = normalizeStandingsData(currentStandings, 2025);
+                    currentManagers = normalizedStandings.map(team => team.manager);
+                }
+                
+                // Sort by win percentage (best first)
+                allManagersData.sort((a, b) => b.win_pct - a.win_pct);
+                
+                allManagersData.forEach(manager => {
+                    const isActive = currentManagers.includes(manager.manager_name);
+                    const card = document.createElement('div');
+                    card.className = isActive ? 'manager-card' : 'manager-card inactive';
+                    card.onclick = () => showManagerDetail(manager.manager_name);
+                    
+                    // Get last season played
+                    const lastSeason = Math.max(...manager.season_history.map(s => s.year));
+                    
+                    // Get logo if available
+                    const logo = managerLogos[manager.manager_name] ? `<img src="${managerLogos[manager.manager_name]}" class="manager-logo" alt="${manager.manager_name}">` : '';
+                    
+                    // Build awards display
+                    const awards = managerAwards[manager.manager_name] || {};
+                    let awardsHTML = '';
+                    
+                    const awardsList = [];
+                    if (awards.championships) awardsList.push({ emoji: '🏆', count: awards.championships });
+                    if (awards.regularSeason) awardsList.push({ emoji: '👑', count: awards.regularSeason });
+                    if (awards.scoringChamp) awardsList.push({ emoji: '⚡', count: awards.scoringChamp });
+                    if (awards.garbage) awardsList.push({ emoji: '🗑️', count: awards.garbage });
+                    if (awards.clown) awardsList.push({ emoji: '🤡', count: awards.clown });
+                    
+                    if (awardsList.length > 0) {
+                        awardsHTML = '<div class="awards-row">';
+                        awardsList.forEach(award => {
+                            awardsHTML += `<div class="award-badge">${award.emoji}`;
+                            if (award.count > 1) {
+                                awardsHTML += `<span class="award-count">x${award.count}</span>`;
+                            }
+                            awardsHTML += '</div>';
+                        });
+                        awardsHTML += '</div>';
+                    }
+                    
+                    card.innerHTML = `
+                        <h3>${logo}${manager.manager_name}</h3>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                            ${!isActive ? '<div class="badge">Inactive</div>' : '<div class="badge">Active</div>'}
+                            ${awardsHTML}
+                        </div>
+                        <div class="stat"><strong>Year Joined:</strong> ${manager.first_season}</div>
+                        <div class="stat"><strong>Years in League:</strong> ${manager.seasons_played}</div>
+                        ${!isActive ? `<div class="stat"><strong>Last Season:</strong> ${lastSeason}</div>` : ''}
+                        <div class="stat"><strong>All-Time Record:</strong> ${manager.total_wins}-${manager.total_losses}-${manager.total_ties} (${(manager.win_pct * 100).toFixed(1)}%)</div>
+                        <div class="stat"><strong>Championships:</strong> ${manager.championships}</div>
+                        <div class="stat"><strong>Runner-ups:</strong> ${manager.runner_ups}</div>
+                        <div class="stat"><strong>Playoff Apps:</strong> ${manager.playoff_appearances}</div>
+                        <div class="stat"><strong>Avg Finish:</strong> ${manager.avg_finish.toFixed(1)}</div>
+                    `;
+                    gridEl.appendChild(card);
+                });
+                
+                loadingEl.style.display = 'none';
+                
+            } catch (error) {
+                console.error('Error loading manager profiles:', error);
+                loadingEl.style.display = 'none';
+                errorEl.textContent = `Error loading manager profiles: ${error.message}`;
+                errorEl.style.display = 'block';
+            }
+        }
+
+        // ===== SHOW MANAGER DETAIL MODAL =====
+        async function showManagerDetail(managerName) {
+            const manager = allManagersData.find(m => m.manager_name === managerName);
+            if (!manager) return;
+            
+            const modal = document.getElementById('manager-modal');
+            const modalBody = document.getElementById('modal-body');
+            
+            // Load team logos for each season using cached data
+            const seasonLogos = {};
+            for (const season of manager.season_history) {
+                const teams = await getTeamData(season.year);
+                if (teams) {
+                    const managerTeam = teams.find(t => t.team_name === season.team_name);
+                    if (managerTeam) {
+                        seasonLogos[season.year] = managerTeam.team_logo;
+                    }
+                }
+            }
+            
+            // Build season timeline
+            const seasonHistory = manager.season_history.sort((a, b) => b.year - a.year);
+            let timelineHTML = seasonHistory.map(season => {
+                let rankClass = '';
+                let rankText = `#${season.rank}`;
+                
+                if (season.rank === 1) {
+                    rankClass = 'champion';
+                    rankText = '🏆 Champion';
+                } else if (season.rank === 2) {
+                    rankClass = 'runner-up';
+                    rankText = '🥈 Runner-up';
+                }
+                
+                const logo = seasonLogos[season.year] ? `<img src="${seasonLogos[season.year]}" class="timeline-logo" alt="${season.team_name}">` : '';
+                
+                return `
+                    <div class="timeline-item">
+                        <div class="year">${season.year}</div>
+                        <div class="details">
+                            <span class="rank ${rankClass}">${rankText}</span>
+                            <span>${season.wins}-${season.losses} | ${season.points_for.toLocaleString()} pts</span>
+                            <div style="margin-top: 0.25rem; color: #666; font-size: 0.9rem;">
+                                Team: ${season.team_name}
+                            </div>
+                        </div>
+                        ${logo}
+                    </div>
+                `;
+            }).join('');
+            
+            // Calculate head-to-head records
+            const h2hRecords = await calculateHeadToHeadRecords(managerName);
+            let h2hHTML = '';
+            
+            if (h2hRecords.length > 0) {
+                h2hHTML = `
+                    <div class="timeline">
+                        <h3>Head-to-Head Records</h3>
+                        <table class="matchup-table" id="h2h-table">
+                            <thead>
+                                <tr>
+                                    <th class="sortable" onclick="sortH2HTable(0, 'string')">Opponent</th>
+                                    <th class="sortable" onclick="sortH2HTable(1, 'record')">Record</th>
+                                    <th class="sortable" onclick="sortH2HTable(2, 'number')">Win %</th>
+                                    <th class="sortable" onclick="sortH2HTable(3, 'number')">Avg Points For</th>
+                                    <th class="sortable" onclick="sortH2HTable(4, 'number')">Avg Points Against</th>
+                                </tr>
+                            </thead>
+                            <tbody id="h2h-body">
+                                ${h2hRecords.map(record => `
+                                    <tr>
+                                        <td>${record.opponent}</td>
+                                        <td>${record.wins}-${record.losses}</td>
+                                        <td>${(record.win_pct * 100).toFixed(1)}%</td>
+                                        <td>${record.avg_points_for.toFixed(1)}</td>
+                                        <td>${record.avg_points_against.toFixed(1)}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            }
+            
+            modalBody.innerHTML = `
+                <div class="modal-stats">
+                    <div class="stat-box">
+                        <div class="value">${manager.total_wins}-${manager.total_losses}-${manager.total_ties}</div>
+                        <div class="label">All-Time Record</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="value">${(manager.win_pct * 100).toFixed(1)}%</div>
+                        <div class="label">Win Percentage</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="value">${manager.championships}</div>
+                        <div class="label">Championships</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="value">${manager.avg_finish.toFixed(1)}</div>
+                        <div class="label">Avg Finish</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="value">${manager.playoff_appearances}</div>
+                        <div class="label">Playoff Apps</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="value">${manager.total_points_for.toLocaleString()}</div>
+                        <div class="label">Career Points</div>
+                    </div>
+                </div>
+                
+                <div class="timeline">
+                    <h3>Season-by-Season Timeline</h3>
+                    ${timelineHTML}
+                </div>
+                
+                ${h2hHTML}
+            `;
+            
+            // Set the header separately
+            const modalHeaderSection = document.getElementById('modal-header-section');
+            modalHeaderSection.innerHTML = `
+                <div class="modal-header">
+                    <h2>${manager.manager_name}</h2>
+                    <p style="color: #666;">Joined ${manager.first_season} | ${manager.seasons_played} seasons</p>
+                </div>
+            `;
+            
+            // Store h2h data for sorting
+            window.currentH2HData = h2hRecords;
+            window.currentSortColumn = null;
+            window.currentSortDirection = 'desc';
+            
+            modal.classList.add('active');
+        }
+
+        // ===== SORT HEAD-TO-HEAD TABLE =====
+        function sortH2HTable(columnIndex, dataType) {
+            const tbody = document.getElementById('h2h-body');
+            const headers = document.querySelectorAll('#h2h-table th');
+            
+            if (!window.currentH2HData || window.currentH2HData.length === 0) return;
+            
+            // Toggle sort direction if clicking same column
+            if (window.currentSortColumn === columnIndex) {
+                window.currentSortDirection = window.currentSortDirection === 'asc' ? 'desc' : 'asc';
+            } else {
+                window.currentSortColumn = columnIndex;
+                window.currentSortDirection = 'desc'; // Default to descending
+            }
+            
+            // Update header classes
+            headers.forEach((header, index) => {
+                header.classList.remove('sorted-asc', 'sorted-desc');
+                if (index === columnIndex) {
+                    header.classList.add(window.currentSortDirection === 'asc' ? 'sorted-asc' : 'sorted-desc');
+                }
+            });
+            
+            // Sort the data
+            const sortedData = [...window.currentH2HData].sort((a, b) => {
+                let valueA, valueB;
+                
+                switch (columnIndex) {
+                    case 0: // Opponent
+                        valueA = a.opponent.toLowerCase();
+                        valueB = b.opponent.toLowerCase();
+                        break;
+                    case 1: // Record (by total wins)
+                        valueA = a.wins;
+                        valueB = b.wins;
+                        break;
+                    case 2: // Win %
+                        valueA = a.win_pct;
+                        valueB = b.win_pct;
+                        break;
+                    case 3: // Avg Points For
+                        valueA = a.avg_points_for;
+                        valueB = b.avg_points_for;
+                        break;
+                    case 4: // Avg Points Against
+                        valueA = a.avg_points_against;
+                        valueB = b.avg_points_against;
+                        break;
+                }
+                
+                if (window.currentSortDirection === 'asc') {
+                    return valueA > valueB ? 1 : valueA < valueB ? -1 : 0;
+                } else {
+                    return valueA < valueB ? 1 : valueA > valueB ? -1 : 0;
+                }
+            });
+            
+            // Update table
+            tbody.innerHTML = sortedData.map(record => `
+                <tr>
+                    <td>${record.opponent}</td>
+                    <td>${record.wins}-${record.losses}</td>
+                    <td>${(record.win_pct * 100).toFixed(1)}%</td>
+                    <td>${record.avg_points_for.toFixed(1)}</td>
+                    <td>${record.avg_points_against.toFixed(1)}</td>
+                </tr>
+            `).join('');
+        }
+
+        // ===== CALCULATE HEAD-TO-HEAD RECORDS =====
+        async function calculateHeadToHeadRecords(managerName) {
+            try {
+                // Get all available seasons and load their scores
+                const h2hMap = {};
+                
+                const manager = allManagersData.find(m => m.manager_name === managerName);
+                if (!manager) return [];
+                
+                for (const season of manager.season_history.map(h => h.year)) {
+                    try {
+                        let scoresResponse;
+                        if (season === 2025) {
+                            scoresResponse = await fetch('data/current_season/all_scores.json');
+                        } else {
+                            scoresResponse = await fetch(`data/historical/${season}/all_scores.json`);
+                        }
+                        
+                        if (!scoresResponse.ok) continue;
+                        
+                        const scores = await scoresResponse.json();
+                        let standings = season === 2025 
+                            ? await (await fetch('data/current_season/standings.json')).json()
+                            : await (await fetch(`data/historical/${season}/final_standings.json`)).json();
+                        
+                        // Normalize standings
+                        standings = normalizeStandingsData(standings, season);
+                        
+                        // Create team_key to manager mapping
+                        const teamToManager = {};
+                        standings.forEach(team => {
+                            teamToManager[team.team_key] = team.manager;
+                        });
+                        
+                        // Find manager's team key
+                        const managerTeam = standings.find(team => team.manager === managerName);
+                        if (!managerTeam) continue;
+                        
+                        // Process matchups
+                        scores.forEach(matchup => {
+                            if (matchup.team_key === managerTeam.team_key) {
+                                const opponent = teamToManager[matchup.opponent_key];
+                                if (!opponent) return;
+                                
+                                if (!h2hMap[opponent]) {
+                                    h2hMap[opponent] = {
+                                        opponent: opponent,
+                                        wins: 0,
+                                        losses: 0,
+                                        total_points_for: 0,
+                                        total_points_against: 0,
+                                        games: 0
+                                    };
+                                }
+                                
+                                h2hMap[opponent].games++;
+                                h2hMap[opponent].total_points_for += matchup.team_score;
+                                h2hMap[opponent].total_points_against += matchup.opponent_score;
+                                
+                                if (matchup.team_score > matchup.opponent_score) {
+                                    h2hMap[opponent].wins++;
+                                } else if (matchup.team_score < matchup.opponent_score) {
+                                    h2hMap[opponent].losses++;
+                                }
+                            }
+                        });
+                    } catch (e) {
+                        console.log(`Could not load scores for ${season}`);
+                    }
+                }
+                
+                // Convert to array and calculate averages
+                const h2hRecords = Object.values(h2hMap).map(record => ({
+                    ...record,
+                    win_pct: record.wins / (record.wins + record.losses),
+                    avg_points_for: record.total_points_for / record.games,
+                    avg_points_against: record.total_points_against / record.games
+                }));
+                
+                // Sort by win percentage
+                h2hRecords.sort((a, b) => b.win_pct - a.win_pct);
+                
+                return h2hRecords;
+            } catch (error) {
+                console.error('Error calculating head-to-head:', error);
+                return [];
+            }
+        }
+
+        // ===== CLOSE MANAGER MODAL =====
+        function closeManagerModal() {
+            const modal = document.getElementById('manager-modal');
+            modal.classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('manager-modal');
+            if (event.target === modal) {
+                closeManagerModal();
+            }
+        }
+
+        // ===== NAVIGATION =====
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            // Load section-specific data
+            if (sectionId === 'awards') {
+                loadAwards();
+            }
+        }
+
+        // ===== PLACEHOLDER FUNCTIONS =====
+        function loadPlayerScoring() {
+            const season = document.getElementById('scoring-season').value;
+            console.log('Loading player scoring for season:', season);
+            // TODO: Implement player scoring
+        }
+
+        // ===== LOAD AWARDS =====
+        async function loadAwards() {
+            console.log("Loading awards...");
+            const loadingEl = document.getElementById('awards-loading');
+            const errorEl = document.getElementById('awards-error');
+            const contentEl = document.getElementById('awards-content');
+            
+            try {
+                loadingEl.style.display = 'block';
+                errorEl.style.display = 'none';
+                contentEl.style.display = 'none';
+                
+                // Load all seasons data
+                const seasons = [2019, 2020, 2021, 2022, 2023, 2024, 2025];
+                const seasonData = {};
+                
+                console.log("Fetching data for seasons:", seasons);
+                
+                for (const year of seasons) {
+                    try {
+                        let standingsResponse, teamsResponse;
+                        
+                        if (year === 2025) {
+                            standingsResponse = await fetch('data/current_season/standings.json');
+                            teamsResponse = await fetch('data/current_season/teams.json');
+                        } else {
+                            standingsResponse = await fetch(`data/historical/${year}/final_standings.json`);
+                            teamsResponse = await fetch(`data/historical/${year}/teams.json`);
+                        }
+                        
+                        console.log(`${year}: standings=${standingsResponse.ok}, teams=${teamsResponse.ok}`);
+                        
+                        if (standingsResponse.ok && teamsResponse.ok) {
+                            const standings = await standingsResponse.json();
+                            const teams = await teamsResponse.json();
+                            
+                            // Normalize standings
+                            const normalizedStandings = normalizeStandingsData(standings, year);
+                            
+                            // Create team logo map
+                            const logoMap = {};
+                            teams.forEach(team => {
+                                logoMap[team.team_key] = team.team_logo;
+                            });
+                            
+                            seasonData[year] = {
+                                standings: normalizedStandings,
+                                logos: logoMap
+                            };
+                        }
+                    } catch (e) {
+                        console.error(`Error loading ${year}:`, e);
+                    }
+                }
+                
+                console.log("Loaded season data for:", Object.keys(seasonData));
+                
+                // Calculate awards
+                const regularSeasonWinners = [];
+                const scoringChampions = [];
+                const garbageAwards = [];
+                const clownAwards = [];
+                
+                for (const [year, data] of Object.entries(seasonData)) {
+                    const standings = data.standings;
+                    const logos = data.logos;
+                    
+                    // Regular Season Champion (most wins)
+                    const mostWins = standings.reduce((max, team) => 
+                        team.wins > max.wins ? team : max
+                    );
+                    regularSeasonWinners.push({
+                        year,
+                        manager: mostWins.manager,
+                        team_name: mostWins.team_name,
+                        logo: logos[mostWins.team_key],
+                        value: mostWins.wins
+                    });
+                    
+                    // Scoring Champion (most points)
+                    const mostPoints = standings.reduce((max, team) => 
+                        team.points_for > max.points_for ? team : max
+                    );
+                    scoringChampions.push({
+                        year,
+                        manager: mostPoints.manager,
+                        team_name: mostPoints.team_name,
+                        logo: logos[mostPoints.team_key],
+                        value: Math.round(mostPoints.points_for)
+                    });
+                    
+                    // Garbage Award (worst record - fewest wins)
+                    const fewestWins = standings.reduce((min, team) => 
+                        team.wins < min.wins ? team : min
+                    );
+                    garbageAwards.push({
+                        year,
+                        manager: fewestWins.manager,
+                        team_name: fewestWins.team_name,
+                        logo: logos[fewestWins.team_key],
+                        wins: fewestWins.wins,
+                        losses: fewestWins.losses
+                    });
+                    
+                    // Clown Award (least points)
+                    const leastPoints = standings.reduce((min, team) => 
+                        team.points_for < min.points_for ? team : min
+                    );
+                    clownAwards.push({
+                        year,
+                        manager: leastPoints.manager,
+                        team_name: leastPoints.team_name,
+                        logo: logos[leastPoints.team_key],
+                        value: Math.round(leastPoints.points_for)
+                    });
+                }
+                
+                console.log("Calculated awards:", {
+                    regularSeasonWinners: regularSeasonWinners.length,
+                    scoringChampions: scoringChampions.length,
+                    garbageAwards: garbageAwards.length,
+                    clownAwards: clownAwards.length
+                });
+                
+                // Sort all by year (most recent first)
+                [regularSeasonWinners, scoringChampions, garbageAwards, clownAwards].forEach(arr => {
+                    arr.sort((a, b) => b.year - a.year);
+                });
+                
+                // Populate tables
+                populateAwardTable('regular-season-winners', regularSeasonWinners, (award) => `
+                    <td>${award.year}</td>
+                    <td><div class="manager-cell">${award.logo ? `<img src="${award.logo}" class="team-logo">` : ''}${award.manager}</div></td>
+                    <td>${award.team_name}</td>
+                    <td><span class="award-value">${award.value}</span></td>
+                `);
+                
+                populateAwardTable('scoring-champions', scoringChampions, (award) => `
+                    <td>${award.year}</td>
+                    <td><div class="manager-cell">${award.logo ? `<img src="${award.logo}" class="team-logo">` : ''}${award.manager}</div></td>
+                    <td>${award.team_name}</td>
+                    <td><span class="award-value">${award.value.toLocaleString()}</span></td>
+                `);
+                
+                populateAwardTable('garbage-awards', garbageAwards, (award) => `
+                    <td>${award.year}</td>
+                    <td><div class="manager-cell">${award.logo ? `<img src="${award.logo}" class="team-logo">` : ''}${award.manager}</div></td>
+                    <td>${award.team_name}</td>
+                    <td><span class="award-value">${award.wins}-${award.losses}</span></td>
+                `);
+                
+                populateAwardTable('clown-awards', clownAwards, (award) => `
+                    <td>${award.year}</td>
+                    <td><div class="manager-cell">${award.logo ? `<img src="${award.logo}" class="team-logo">` : ''}${award.manager}</div></td>
+                    <td>${award.team_name}</td>
+                    <td><span class="award-value">${award.value.toLocaleString()}</span></td>
+                `);
+                
+                console.log("Awards populated successfully");
+                loadingEl.style.display = 'none';
+                contentEl.style.display = 'block';
+                
+            } catch (error) {
+                console.error('Error loading awards:', error);
+                loadingEl.style.display = 'none';
+                errorEl.textContent = `Error loading awards: ${error.message}`;
+                errorEl.style.display = 'block';
+            }
+        }
+
+        function populateAwardTable(tableId, awards, rowTemplate) {
+            const tbody = document.getElementById(tableId);
+            tbody.innerHTML = '';
+            
+            awards.forEach(award => {
+                const row = document.createElement('tr');
+                row.innerHTML = rowTemplate(award);
+                tbody.appendChild(row);
+            });
+        }
+
+        // ===== INITIALIZE ON PAGE LOAD =====
+        window.addEventListener('DOMContentLoaded', async () => {
+            // Initialize season selectors (detect available seasons)
+            await initializeSeasonSelectors();
+            
+            // Load current season standings by default
+            loadStandingsBySeason();
+            
+            // Load manager profiles
+            loadManagerProfiles();
+        });
+    </script>
+</body>
+</html>
