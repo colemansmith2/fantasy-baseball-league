@@ -1509,18 +1509,16 @@
                 };
             });
             
-            // Process each matchup
-            scoresData.forEach(matchup => {
-                const week = matchup.week;
+            // Process each score entry - data format is:
+            // { team_key, team_score, week, opponent_key, opponent_score }
+            scoresData.forEach(entry => {
+                const week = entry.week;
+                const teamKey = entry.team_key;
+                const score = entry.team_score;
                 
-                // Process team 1
-                if (teamScores[matchup.team1_key]) {
-                    teamScores[matchup.team1_key].weeks[week] = matchup.team1_points;
-                }
-                
-                // Process team 2
-                if (teamScores[matchup.team2_key]) {
-                    teamScores[matchup.team2_key].weeks[week] = matchup.team2_points;
+                // Only process if we have this team in standings
+                if (teamScores[teamKey]) {
+                    teamScores[teamKey].weeks[week] = score;
                 }
             });
             
