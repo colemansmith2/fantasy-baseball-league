@@ -865,7 +865,7 @@
             <!-- Season Points Chart -->
             <div id="season-chart-container" style="display: none; margin-top: 2rem;">
                 <h3 style="color: #1e3c72; margin-bottom: 1rem;">Summary</h3>
-                <div id="season-chart" style="position: relative; width: 100%; height: 450px; background: #fafafa; border-radius: 8px; overflow: visible;"></div>
+                <div id="season-chart" style="position: relative; width: 100%; min-height: 500px; background: #fafafa; border-radius: 8px; overflow: visible;"></div>
             </div>
         </div>
 
@@ -1477,11 +1477,11 @@
                 const scoresData = await scoresResponse.json();
                 console.log('Loaded scores data:', scoresData.length, 'entries');
                 
-                // Process scores into cumulative points per team per week
-                const teamWeeklyData = processScoresForChart(scoresData, standings, teamLogos, teamData);
-                console.log('Processed team data:', teamWeeklyData.length, 'teams');
+                // Process scores into weekly rankings per team
+                const chartData = processScoresForChart(scoresData, standings, teamLogos, teamData);
+                console.log('Processed chart data:', chartData.teams.length, 'teams');
                 
-                if (teamWeeklyData.length === 0) {
+                if (chartData.teams.length === 0) {
                     console.log('No team data to display');
                     chartContainer.style.display = 'none';
                     return;
@@ -1492,7 +1492,7 @@
                 
                 // Use requestAnimationFrame to ensure DOM is updated before rendering
                 requestAnimationFrame(() => {
-                    renderSeasonChart(chartEl, teamWeeklyData);
+                    renderSeasonChart(chartEl, chartData);
                 });
                 
             } catch (error) {
@@ -1502,142 +1502,169 @@
         }
 
         function processScoresForChart(scoresData, standings, teamLogos, teamData) {
-            // Group scores by team and week - build directly from scores data
-            const teamScores = {};
+            // Group scores by week first
+            const weeklyScores = {};
+            const teamInfo = {};
             
-            // First pass: collect all team data from scores
+            // Collect all scores by week and team info
             scoresData.forEach(entry => {
                 const teamKey = entry.team_key;
                 const week = entry.week;
                 const score = entry.team_score;
                 
-                if (!teamScores[teamKey]) {
-                    // Find matching team info from standings or teamData
+                // Store team info
+                if (!teamInfo[teamKey]) {
                     const standingTeam = standings.find(t => t.team_key === teamKey);
-                    const teamInfo = teamData.find(t => t.team_key === teamKey);
+                    const teamDataEntry = teamData.find(t => t.team_key === teamKey);
                     
-                    teamScores[teamKey] = {
+                    teamInfo[teamKey] = {
                         team_key: teamKey,
-                        team_name: standingTeam?.team_name || teamInfo?.team_name || 'Unknown Team',
-                        manager: standingTeam?.manager || teamInfo?.manager || 'Unknown',
-                        logo: teamLogos[teamKey] || teamInfo?.team_logo || '',
-                        weeks: {}
+                        team_name: standingTeam?.team_name || teamDataEntry?.team_name || 'Unknown Team',
+                        manager: standingTeam?.manager || teamDataEntry?.manager || 'Unknown',
+                        logo: teamLogos[teamKey] || teamDataEntry?.team_logo || ''
                     };
                 }
                 
-                teamScores[teamKey].weeks[week] = score;
+                // Store weekly score
+                if (!weeklyScores[week]) {
+                    weeklyScores[week] = [];
+                }
+                weeklyScores[week].push({
+                    team_key: teamKey,
+                    score: score
+                });
             });
             
-            console.log('Teams found in scores:', Object.keys(teamScores).length);
+            // Calculate rankings for each week
+            const weeks = Object.keys(weeklyScores).map(Number).sort((a, b) => a - b);
+            const teamRankings = {}; // team_key -> array of {week, rank, score}
             
-            // Convert to cumulative points array
-            const result = [];
-            
-            Object.values(teamScores).forEach(team => {
-                const weeks = Object.keys(team.weeks).map(Number).sort((a, b) => a - b);
+            weeks.forEach(week => {
+                // Sort teams by score descending for this week
+                const weekScores = weeklyScores[week].sort((a, b) => b.score - a.score);
                 
-                if (weeks.length === 0) return;
-                
-                let cumulative = 0;
-                const cumulativeData = weeks.map(week => {
-                    cumulative += team.weeks[week] || 0;
-                    return { week, points: cumulative };
+                // Assign ranks
+                weekScores.forEach((entry, index) => {
+                    const rank = index + 1;
+                    
+                    if (!teamRankings[entry.team_key]) {
+                        teamRankings[entry.team_key] = [];
+                    }
+                    
+                    teamRankings[entry.team_key].push({
+                        week: week,
+                        rank: rank,
+                        score: entry.score
+                    });
                 });
+            });
+            
+            // Build result array
+            const result = [];
+            const numTeams = Object.keys(teamInfo).length;
+            
+            Object.keys(teamRankings).forEach(teamKey => {
+                const info = teamInfo[teamKey];
+                const rankings = teamRankings[teamKey].sort((a, b) => a.week - b.week);
+                
+                // Calculate average rank for sorting (best average rank first)
+                const avgRank = rankings.reduce((sum, r) => sum + r.rank, 0) / rankings.length;
                 
                 result.push({
-                    team_key: team.team_key,
-                    team_name: team.team_name,
-                    manager: team.manager,
-                    logo: team.logo,
-                    data: cumulativeData,
-                    finalPoints: cumulative
+                    team_key: teamKey,
+                    team_name: info.team_name,
+                    manager: info.manager,
+                    logo: info.logo,
+                    data: rankings,
+                    avgRank: avgRank
                 });
             });
             
-            // Sort by final points descending for consistent coloring
-            result.sort((a, b) => b.finalPoints - a.finalPoints);
+            // Sort by average rank (best first)
+            result.sort((a, b) => a.avgRank - b.avgRank);
             
-            console.log('Teams with data:', result.length);
+            console.log('Teams with ranking data:', result.length);
+            console.log('Weeks:', weeks.length);
             
-            return result;
+            return { teams: result, numTeams: numTeams, weeks: weeks };
         }
 
-        function renderSeasonChart(container, teamData) {
+        function renderSeasonChart(container, chartData) {
             // Clear previous chart
             container.innerHTML = '';
             
-            // Chart dimensions - use fallback width if container not yet sized
-            const containerWidth = container.clientWidth || container.offsetWidth || 800;
-            const margin = { top: 20, right: 100, bottom: 50, left: 80 };
-            const width = Math.max(400, containerWidth - margin.left - margin.right);
-            const height = 400 - margin.top - margin.bottom;
+            const { teams, numTeams, weeks } = chartData;
             
-            // Find data bounds
-            const allWeeks = teamData.flatMap(t => t.data.map(d => d.week));
-            const allPoints = teamData.flatMap(t => t.data.map(d => d.points));
-            const minWeek = Math.min(...allWeeks);
-            const maxWeek = Math.max(...allWeeks);
-            const maxPoints = Math.max(...allPoints);
+            // Chart dimensions
+            const containerWidth = container.clientWidth || container.offsetWidth || 900;
+            const margin = { top: 30, right: 30, bottom: 50, left: 50 };
+            const width = Math.max(600, containerWidth - margin.left - margin.right);
+            const height = Math.max(400, numTeams * 40 + 60);
             
-            // Prevent division by zero
+            const minWeek = Math.min(...weeks);
+            const maxWeek = Math.max(...weeks);
             const weekRange = maxWeek - minWeek || 1;
-            const pointsRange = maxPoints || 1;
             
-            // Scale functions - fixed to go left to right
+            // Scale functions
             const xScale = (week) => margin.left + ((week - minWeek) / weekRange) * width;
-            const yScale = (points) => margin.top + height - (points / pointsRange) * height;
+            const yScale = (rank) => margin.top + ((rank - 1) / (numTeams - 1)) * (height - margin.top - margin.bottom);
             
             // Generate colors for teams
-            const colors = generateTeamColors(teamData.length);
+            const colors = generateTeamColors(teams.length);
+            const teamColorMap = {};
+            teams.forEach((team, index) => {
+                teamColorMap[team.team_key] = colors[index];
+            });
             
             // Create SVG
             const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
             svg.setAttribute('width', width + margin.left + margin.right);
-            svg.setAttribute('height', height + margin.top + margin.bottom);
+            svg.setAttribute('height', height);
             svg.setAttribute('class', 'chart-svg');
             svg.style.display = 'block';
             svg.style.maxWidth = '100%';
             
-            // Draw grid lines
-            const numGridLines = 5;
-            for (let i = 0; i <= numGridLines; i++) {
-                const y = margin.top + (i / numGridLines) * height;
+            // Draw horizontal grid lines for each rank
+            for (let rank = 1; rank <= numTeams; rank++) {
+                const y = yScale(rank);
                 const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
                 line.setAttribute('x1', margin.left);
                 line.setAttribute('y1', y);
                 line.setAttribute('x2', margin.left + width);
                 line.setAttribute('y2', y);
                 line.setAttribute('class', 'chart-grid-line');
+                line.setAttribute('stroke-dasharray', '3,3');
                 svg.appendChild(line);
                 
-                // Y-axis label
+                // Y-axis rank label
                 const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 label.setAttribute('x', margin.left - 10);
                 label.setAttribute('y', y + 4);
                 label.setAttribute('text-anchor', 'end');
                 label.setAttribute('class', 'chart-axis-label');
-                label.textContent = Math.round(pointsRange * (1 - i / numGridLines)).toLocaleString();
+                label.textContent = rank;
                 svg.appendChild(label);
             }
             
             // Draw X-axis labels
-            const numWeeks = maxWeek - minWeek + 1;
-            const weekStep = Math.max(1, Math.ceil(numWeeks / 10));
-            for (let week = minWeek; week <= maxWeek; week += weekStep) {
+            const numWeeksTotal = weeks.length;
+            const weekStep = Math.max(1, Math.ceil(numWeeksTotal / 12));
+            for (let i = 0; i < weeks.length; i += weekStep) {
+                const week = weeks[i];
                 const x = xScale(week);
                 const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 label.setAttribute('x', x);
-                label.setAttribute('y', margin.top + height + 25);
+                label.setAttribute('y', height - 10);
                 label.setAttribute('text-anchor', 'middle');
                 label.setAttribute('class', 'chart-axis-label');
-                label.textContent = `Wk ${week}`;
+                label.textContent = `${week}`;
                 svg.appendChild(label);
             }
             
             // X-axis title
             const xTitle = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             xTitle.setAttribute('x', margin.left + width / 2);
-            xTitle.setAttribute('y', margin.top + height + 45);
+            xTitle.setAttribute('y', height - 0);
             xTitle.setAttribute('text-anchor', 'middle');
             xTitle.setAttribute('class', 'chart-axis-label');
             xTitle.setAttribute('font-weight', 'bold');
@@ -1647,23 +1674,23 @@
             // Y-axis title
             const yTitle = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             yTitle.setAttribute('transform', `rotate(-90)`);
-            yTitle.setAttribute('x', -(margin.top + height / 2));
-            yTitle.setAttribute('y', 20);
+            yTitle.setAttribute('x', -(margin.top + (height - margin.top - margin.bottom) / 2));
+            yTitle.setAttribute('y', 15);
             yTitle.setAttribute('text-anchor', 'middle');
             yTitle.setAttribute('class', 'chart-axis-label');
             yTitle.setAttribute('font-weight', 'bold');
-            yTitle.textContent = 'Cumulative Points';
+            yTitle.textContent = 'Weekly Rank';
             svg.appendChild(yTitle);
             
-            // Draw lines for each team
-            teamData.forEach((team, index) => {
+            // Draw lines for each team (draw lines first, then logos on top)
+            teams.forEach((team, index) => {
                 const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
                 
                 // Build path
                 let d = '';
                 team.data.forEach((point, i) => {
                     const x = xScale(point.week);
-                    const y = yScale(point.points);
+                    const y = yScale(point.rank);
                     d += i === 0 ? `M ${x} ${y}` : ` L ${x} ${y}`;
                 });
                 
@@ -1674,43 +1701,46 @@
                 svg.appendChild(path);
             });
             
-            // Add team logo markers at the end of each line
-            teamData.forEach((team, index) => {
-                const lastPoint = team.data[team.data.length - 1];
-                const x = xScale(lastPoint.week);
-                const y = yScale(lastPoint.points);
-                
-                // Create group for logo marker
-                const logoGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-                logoGroup.setAttribute('class', 'team-logo-marker');
-                logoGroup.setAttribute('data-team-key', team.team_key);
-                logoGroup.setAttribute('transform', `translate(${x}, ${y})`);
-                
-                // Circle background
-                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-                circle.setAttribute('r', 16);
-                circle.setAttribute('fill', 'white');
-                circle.setAttribute('stroke', colors[index]);
-                circle.setAttribute('stroke-width', 2);
-                logoGroup.appendChild(circle);
-                
-                // Team logo image
-                if (team.logo) {
-                    const image = document.createElementNS('http://www.w3.org/2000/svg', 'image');
-                    image.setAttribute('href', team.logo);
-                    image.setAttribute('x', -12);
-                    image.setAttribute('y', -12);
-                    image.setAttribute('width', 24);
-                    image.setAttribute('height', 24);
-                    image.setAttribute('style', 'clip-path: circle(12px at center)');
-                    logoGroup.appendChild(image);
-                }
-                
-                // Add hover events
-                logoGroup.addEventListener('mouseenter', () => handleTeamHover(team.team_key, team.team_name, team.finalPoints, colors[index]));
-                logoGroup.addEventListener('mouseleave', () => handleTeamHoverEnd());
-                
-                svg.appendChild(logoGroup);
+            // Add team logo markers at EVERY week for each team
+            teams.forEach((team, teamIndex) => {
+                team.data.forEach((point) => {
+                    const x = xScale(point.week);
+                    const y = yScale(point.rank);
+                    
+                    // Create group for logo marker
+                    const logoGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                    logoGroup.setAttribute('class', 'team-logo-marker');
+                    logoGroup.setAttribute('data-team-key', team.team_key);
+                    logoGroup.setAttribute('data-week', point.week);
+                    logoGroup.setAttribute('data-score', point.score);
+                    logoGroup.setAttribute('transform', `translate(${x}, ${y})`);
+                    
+                    // Circle background
+                    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                    circle.setAttribute('r', 14);
+                    circle.setAttribute('fill', 'white');
+                    circle.setAttribute('stroke', colors[teamIndex]);
+                    circle.setAttribute('stroke-width', 2);
+                    logoGroup.appendChild(circle);
+                    
+                    // Team logo image
+                    if (team.logo) {
+                        const image = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+                        image.setAttribute('href', team.logo);
+                        image.setAttribute('x', -10);
+                        image.setAttribute('y', -10);
+                        image.setAttribute('width', 20);
+                        image.setAttribute('height', 20);
+                        image.setAttribute('style', 'clip-path: circle(10px at center)');
+                        logoGroup.appendChild(image);
+                    }
+                    
+                    // Add hover events
+                    logoGroup.addEventListener('mouseenter', (e) => handleTeamHover(team.team_key, team.team_name, point.score, point.week, point.rank, e.currentTarget));
+                    logoGroup.addEventListener('mouseleave', () => handleTeamHoverEnd());
+                    
+                    svg.appendChild(logoGroup);
+                });
             });
             
             container.appendChild(svg);
@@ -1738,8 +1768,8 @@
             return colors;
         }
 
-        function handleTeamHover(teamKey, teamName, finalPoints, color) {
-            // Fade all lines and markers except the hovered one
+        function handleTeamHover(teamKey, teamName, score, week, rank, markerElement) {
+            // Fade all lines and markers except the hovered team
             document.querySelectorAll('.chart-line').forEach(line => {
                 if (line.getAttribute('data-team-key') === teamKey) {
                     line.classList.add('highlighted');
@@ -1760,15 +1790,14 @@
                 }
             });
             
-            // Show tooltip
+            // Show tooltip with week's score
             const tooltip = document.getElementById('chart-tooltip');
-            const marker = document.querySelector(`.team-logo-marker[data-team-key="${teamKey}"]`);
             
-            if (tooltip && marker) {
+            if (tooltip && markerElement) {
                 const containerRect = document.getElementById('season-chart').getBoundingClientRect();
-                const markerRect = marker.getBoundingClientRect();
+                const markerRect = markerElement.getBoundingClientRect();
                 
-                tooltip.innerHTML = `<strong>${teamName}</strong><br>${Math.round(finalPoints).toLocaleString()} pts`;
+                tooltip.innerHTML = `<strong>${teamName}</strong><br>Week ${week}: ${score.toLocaleString()} pts<br>Rank: #${rank}`;
                 tooltip.style.display = 'block';
                 tooltip.style.left = (markerRect.left - containerRect.left + markerRect.width / 2) + 'px';
                 tooltip.style.top = (markerRect.top - containerRect.top - 5) + 'px';
