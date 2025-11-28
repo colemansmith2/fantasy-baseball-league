@@ -803,6 +803,26 @@
             stroke: #e0e0e0;
             stroke-width: 1;
         }
+        
+        .chart-toggle-btn {
+            background: #e0e0e0;
+            color: #333;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        .chart-toggle-btn:hover {
+            background: #ccc;
+        }
+        
+        .chart-toggle-btn.active {
+            background: #2a5298;
+            color: white;
+        }
 
         footer {
             background: rgba(255, 255, 255, 0.9);
@@ -864,7 +884,14 @@
             
             <!-- Season Points Chart -->
             <div id="season-chart-container" style="display: none; margin-top: 2rem;">
-                <h3 style="color: #1e3c72; margin-bottom: 1rem;">Summary</h3>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                    <h3 style="color: #1e3c72; margin: 0;">Summary</h3>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <label style="font-weight: bold; color: #1e3c72;">Scoring Type:</label>
+                        <button id="btn-weekly" class="chart-toggle-btn active" onclick="setChartType('weekly')">Weekly</button>
+                        <button id="btn-total" class="chart-toggle-btn" onclick="setChartType('total')">Total</button>
+                    </div>
+                </div>
                 <div id="season-chart" style="position: relative; width: 100%; min-height: 500px; background: #fafafa; border-radius: 8px; overflow: visible;"></div>
             </div>
         </div>
@@ -1001,6 +1028,10 @@
         let availableSeasons = [];
         let allManagersData = [];
         let managerHistoryData = [];
+        
+        // Chart state
+        let currentChartData = null;
+        let currentChartType = 'weekly'; // 'weekly' or 'total'
         
         // Cache for team data to avoid redundant fetches
         const teamDataCache = {};
@@ -1477,28 +1508,47 @@
                 const scoresData = await scoresResponse.json();
                 console.log('Loaded scores data:', scoresData.length, 'entries');
                 
-                // Process scores into weekly rankings per team
-                const chartData = processScoresForChart(scoresData, standings, teamLogos, teamData);
-                console.log('Processed chart data:', chartData.teams.length, 'teams');
+                // Process scores into both weekly and cumulative rankings
+                currentChartData = processScoresForChart(scoresData, standings, teamLogos, teamData);
+                console.log('Processed chart data:', currentChartData.teams.length, 'teams');
                 
-                if (chartData.teams.length === 0) {
+                if (currentChartData.teams.length === 0) {
                     console.log('No team data to display');
                     chartContainer.style.display = 'none';
                     return;
                 }
+                
+                // Reset to weekly view
+                currentChartType = 'weekly';
+                document.getElementById('btn-weekly').classList.add('active');
+                document.getElementById('btn-total').classList.remove('active');
                 
                 // Show container first so it has dimensions
                 chartContainer.style.display = 'block';
                 
                 // Use requestAnimationFrame to ensure DOM is updated before rendering
                 requestAnimationFrame(() => {
-                    renderSeasonChart(chartEl, chartData);
+                    renderSeasonChart(chartEl, currentChartData, currentChartType);
                 });
                 
             } catch (error) {
                 console.error('Error loading season chart:', error);
                 chartContainer.style.display = 'none';
             }
+        }
+
+        function setChartType(type) {
+            if (type === currentChartType || !currentChartData) return;
+            
+            currentChartType = type;
+            
+            // Update button states
+            document.getElementById('btn-weekly').classList.toggle('active', type === 'weekly');
+            document.getElementById('btn-total').classList.toggle('active', type === 'total');
+            
+            // Re-render chart
+            const chartEl = document.getElementById('season-chart');
+            renderSeasonChart(chartEl, currentChartData, currentChartType);
         }
 
         function processScoresForChart(scoresData, standings, teamLogos, teamData) {
@@ -1535,23 +1585,19 @@
                 });
             });
             
-            // Calculate rankings for each week
             const weeks = Object.keys(weeklyScores).map(Number).sort((a, b) => a - b);
-            const teamRankings = {}; // team_key -> array of {week, rank, score}
+            const numTeams = Object.keys(teamInfo).length;
             
+            // Calculate WEEKLY rankings
+            const teamWeeklyRankings = {};
             weeks.forEach(week => {
-                // Sort teams by score descending for this week
-                const weekScores = weeklyScores[week].sort((a, b) => b.score - a.score);
-                
-                // Assign ranks
+                const weekScores = [...weeklyScores[week]].sort((a, b) => b.score - a.score);
                 weekScores.forEach((entry, index) => {
                     const rank = index + 1;
-                    
-                    if (!teamRankings[entry.team_key]) {
-                        teamRankings[entry.team_key] = [];
+                    if (!teamWeeklyRankings[entry.team_key]) {
+                        teamWeeklyRankings[entry.team_key] = [];
                     }
-                    
-                    teamRankings[entry.team_key].push({
+                    teamWeeklyRankings[entry.team_key].push({
                         week: week,
                         rank: rank,
                         score: entry.score
@@ -1559,45 +1605,102 @@
                 });
             });
             
-            // Build result array
-            const result = [];
-            const numTeams = Object.keys(teamInfo).length;
+            // Calculate CUMULATIVE rankings
+            const teamCumulativeScores = {}; // team_key -> running total
+            const teamCumulativeRankings = {};
             
-            Object.keys(teamRankings).forEach(teamKey => {
+            weeks.forEach(week => {
+                // Update cumulative scores
+                weeklyScores[week].forEach(entry => {
+                    if (!teamCumulativeScores[entry.team_key]) {
+                        teamCumulativeScores[entry.team_key] = 0;
+                    }
+                    teamCumulativeScores[entry.team_key] += entry.score;
+                });
+                
+                // Sort teams by cumulative score descending
+                const cumulativeRanking = Object.entries(teamCumulativeScores)
+                    .map(([teamKey, total]) => ({ team_key: teamKey, cumulative: total }))
+                    .sort((a, b) => b.cumulative - a.cumulative);
+                
+                // Assign cumulative ranks
+                cumulativeRanking.forEach((entry, index) => {
+                    const rank = index + 1;
+                    if (!teamCumulativeRankings[entry.team_key]) {
+                        teamCumulativeRankings[entry.team_key] = [];
+                    }
+                    teamCumulativeRankings[entry.team_key].push({
+                        week: week,
+                        rank: rank,
+                        cumulative: entry.cumulative
+                    });
+                });
+            });
+            
+            // Build result arrays for both types
+            const weeklyTeams = [];
+            const cumulativeTeams = [];
+            
+            Object.keys(teamInfo).forEach(teamKey => {
                 const info = teamInfo[teamKey];
-                const rankings = teamRankings[teamKey].sort((a, b) => a.week - b.week);
                 
-                // Calculate average rank for sorting (best average rank first)
-                const avgRank = rankings.reduce((sum, r) => sum + r.rank, 0) / rankings.length;
+                // Weekly data
+                const weeklyData = (teamWeeklyRankings[teamKey] || []).sort((a, b) => a.week - b.week);
+                const avgWeeklyRank = weeklyData.length > 0 
+                    ? weeklyData.reduce((sum, r) => sum + r.rank, 0) / weeklyData.length 
+                    : numTeams;
                 
-                result.push({
+                weeklyTeams.push({
                     team_key: teamKey,
                     team_name: info.team_name,
                     manager: info.manager,
                     logo: info.logo,
-                    data: rankings,
-                    avgRank: avgRank
+                    data: weeklyData,
+                    avgRank: avgWeeklyRank
+                });
+                
+                // Cumulative data
+                const cumulativeData = (teamCumulativeRankings[teamKey] || []).sort((a, b) => a.week - b.week);
+                const finalRank = cumulativeData.length > 0 
+                    ? cumulativeData[cumulativeData.length - 1].rank 
+                    : numTeams;
+                
+                cumulativeTeams.push({
+                    team_key: teamKey,
+                    team_name: info.team_name,
+                    manager: info.manager,
+                    logo: info.logo,
+                    data: cumulativeData,
+                    finalRank: finalRank
                 });
             });
             
-            // Sort by average rank (best first)
-            result.sort((a, b) => a.avgRank - b.avgRank);
+            // Sort weekly by average rank, cumulative by final rank
+            weeklyTeams.sort((a, b) => a.avgRank - b.avgRank);
+            cumulativeTeams.sort((a, b) => a.finalRank - b.finalRank);
             
-            console.log('Teams with ranking data:', result.length);
+            console.log('Teams with ranking data:', weeklyTeams.length);
             console.log('Weeks:', weeks.length);
             
-            return { teams: result, numTeams: numTeams, weeks: weeks };
+            return { 
+                weeklyTeams: weeklyTeams, 
+                cumulativeTeams: cumulativeTeams,
+                numTeams: numTeams, 
+                weeks: weeks 
+            };
         }
 
-        function renderSeasonChart(container, chartData) {
+        function renderSeasonChart(container, chartData, chartType) {
             // Clear previous chart
             container.innerHTML = '';
             
-            const { teams, numTeams, weeks } = chartData;
+            const { weeklyTeams, cumulativeTeams, numTeams, weeks } = chartData;
+            const teams = chartType === 'weekly' ? weeklyTeams : cumulativeTeams;
+            const isWeekly = chartType === 'weekly';
             
-            // Chart dimensions
+            // Chart dimensions - increased left margin to prevent logo clipping
             const containerWidth = container.clientWidth || container.offsetWidth || 900;
-            const margin = { top: 30, right: 30, bottom: 50, left: 50 };
+            const margin = { top: 30, right: 30, bottom: 50, left: 70 };
             const width = Math.max(600, containerWidth - margin.left - margin.right);
             const height = Math.max(400, numTeams * 40 + 60);
             
@@ -1638,7 +1741,7 @@
                 
                 // Y-axis rank label
                 const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-                label.setAttribute('x', margin.left - 10);
+                label.setAttribute('x', margin.left - 25);
                 label.setAttribute('y', y + 4);
                 label.setAttribute('text-anchor', 'end');
                 label.setAttribute('class', 'chart-axis-label');
@@ -1679,7 +1782,7 @@
             yTitle.setAttribute('text-anchor', 'middle');
             yTitle.setAttribute('class', 'chart-axis-label');
             yTitle.setAttribute('font-weight', 'bold');
-            yTitle.textContent = 'Weekly Rank';
+            yTitle.textContent = isWeekly ? 'Weekly Rank' : 'Cumulative Rank';
             svg.appendChild(yTitle);
             
             // Draw lines for each team (draw lines first, then logos on top)
@@ -1712,7 +1815,9 @@
                     logoGroup.setAttribute('class', 'team-logo-marker');
                     logoGroup.setAttribute('data-team-key', team.team_key);
                     logoGroup.setAttribute('data-week', point.week);
-                    logoGroup.setAttribute('data-score', point.score);
+                    // Store either weekly score or cumulative total
+                    logoGroup.setAttribute('data-score', isWeekly ? point.score : point.cumulative);
+                    logoGroup.setAttribute('data-is-weekly', isWeekly);
                     logoGroup.setAttribute('transform', `translate(${x}, ${y})`);
                     
                     // Circle background
@@ -1736,7 +1841,8 @@
                     }
                     
                     // Add hover events
-                    logoGroup.addEventListener('mouseenter', (e) => handleTeamHover(team.team_key, team.team_name, point.score, point.week, point.rank, e.currentTarget));
+                    const scoreValue = isWeekly ? point.score : point.cumulative;
+                    logoGroup.addEventListener('mouseenter', (e) => handleTeamHover(team.team_key, team.team_name, scoreValue, point.week, point.rank, isWeekly, e.currentTarget));
                     logoGroup.addEventListener('mouseleave', () => handleTeamHoverEnd());
                     
                     svg.appendChild(logoGroup);
@@ -1768,7 +1874,7 @@
             return colors;
         }
 
-        function handleTeamHover(teamKey, teamName, score, week, rank, markerElement) {
+        function handleTeamHover(teamKey, teamName, score, week, rank, isWeekly, markerElement) {
             // Fade all lines and markers except the hovered team
             document.querySelectorAll('.chart-line').forEach(line => {
                 if (line.getAttribute('data-team-key') === teamKey) {
@@ -1790,14 +1896,15 @@
                 }
             });
             
-            // Show tooltip with week's score
+            // Show tooltip with appropriate label
             const tooltip = document.getElementById('chart-tooltip');
             
             if (tooltip && markerElement) {
                 const containerRect = document.getElementById('season-chart').getBoundingClientRect();
                 const markerRect = markerElement.getBoundingClientRect();
                 
-                tooltip.innerHTML = `<strong>${teamName}</strong><br>Week ${week}: ${score.toLocaleString()} pts<br>Rank: #${rank}`;
+                const scoreLabel = isWeekly ? `Week ${week}: ${score.toLocaleString()} pts` : `Total: ${score.toLocaleString()} pts`;
+                tooltip.innerHTML = `<strong>${teamName}</strong><br>${scoreLabel}<br>Rank: #${rank}`;
                 tooltip.style.display = 'block';
                 tooltip.style.left = (markerRect.left - containerRect.left + markerRect.width / 2) + 'px';
                 tooltip.style.top = (markerRect.top - containerRect.top - 5) + 'px';
