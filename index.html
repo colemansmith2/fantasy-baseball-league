@@ -640,27 +640,39 @@
             background: #f8f9fa;
         }
 
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .award-section {
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
         }
 
         .award-section h3 {
             color: #1e3c72;
             margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
         .award-icon {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
         }
         
         .award-table-wrapper {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
         .award-table {
@@ -699,7 +711,7 @@
         @media (max-width: 768px) {
             .award-table {
                 font-size: 0.75rem;
-                min-width: 500px;
+                min-width: 400px;
             }
             
             .award-table th,
@@ -708,11 +720,11 @@
             }
             
             .award-section h3 {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             
             .award-icon {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
             }
         }
 
@@ -792,6 +804,7 @@
             <div id="awards-error" class="error" style="display: none;"></div>
             
             <div id="awards-content" style="display: none;">
+                <div class="awards-grid">
                 <div class="award-section">
                     <h3><span class="award-icon">👑</span> Regular Season Champion (Most Wins)</h3>
                     <div class="award-table-wrapper">
@@ -811,7 +824,7 @@
                 </div>
 
                 <div class="award-section">
-                    <h3><span class="award-icon">⚡</span> Scoring Champion (Most Points)</h3>
+                    <h3><span class="award-icon">🏅</span> Scoring Champion (Most Points)</h3>
                     <div class="award-table-wrapper">
                         <table class="award-table">
                             <thead>
@@ -862,6 +875,7 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -1513,9 +1527,9 @@
                     let awardsHTML = '';
                     
                     const awardsList = [];
-                    if (awards.championships) awardsList.push({ emoji: '🏆', count: awards.championships });
+                    if (awards.championships) awardsList.push({ emoji: '💍', count: awards.championships });
                     if (awards.regularSeason) awardsList.push({ emoji: '👑', count: awards.regularSeason });
-                    if (awards.scoringChamp) awardsList.push({ emoji: '⚡', count: awards.scoringChamp });
+                    if (awards.scoringChamp) awardsList.push({ emoji: '🏅', count: awards.scoringChamp });
                     if (awards.garbage) awardsList.push({ emoji: '🗑️', count: awards.garbage });
                     if (awards.clown) awardsList.push({ emoji: '🤡', count: awards.clown });
                     
