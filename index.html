@@ -16,28 +16,26 @@
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: #333;
             min-height: 100vh;
-            padding-top: 115px; /* header (60px) + nav (~55px) */
+            padding-top: 120px; /* header (70px) + nav (~50px) */
         }
 
         header {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 0.5rem 1rem;
+            background: #4a5d23; /* Olive/brown color to match banner edges */
+            padding: 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 200;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            height: 60px;
         }
         
         .header-banner {
-            height: 50px;
-            width: auto;
+            width: 100%;
+            height: auto;
             display: block;
+            max-height: 70px;
+            object-fit: cover;
         }
         
         .league-logo {
@@ -57,14 +55,8 @@
         }
 
         @media (max-width: 768px) {
-            header {
-                height: 50px;
-                padding: 0.25rem 0.5rem;
-                gap: 0.5rem;
-            }
-            
             .header-banner {
-                height: 40px;
+                max-height: 50px;
             }
             
             .league-logo {
@@ -92,7 +84,7 @@
             padding: 0.5rem;
             text-align: center;
             position: fixed;
-            top: 60px;
+            top: 70px;
             left: 0;
             right: 0;
             z-index: 100;
@@ -101,7 +93,7 @@
         
         @media (max-width: 768px) {
             body {
-                padding-top: 100px;
+                padding-top: 95px;
             }
             
             nav {
@@ -896,8 +888,10 @@
 </head>
 <body>
     <header>
-        <img src="league_logo.png" alt="League Logo" class="league-logo">
-        <img src="header.png" alt="Fantasy Baseball Civil War - Established 2017 - 12 Team Points League" class="header-banner">
+        <picture>
+            <source srcset="header_long.png" media="(min-width: 1200px)">
+            <img src="header_short.png" alt="Fantasy Baseball Civil War - Established 2017 - 12 Team Points League" class="header-banner">
+        </picture>
     </header>
 
     <nav>
