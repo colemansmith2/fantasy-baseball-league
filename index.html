@@ -86,67 +86,62 @@
             
             /* Show mobile header */
             header.mobile-header {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+                display: block;
                 position: fixed;
                 top: 0;
                 left: 0;
                 right: 0;
                 z-index: 200;
-                background: linear-gradient(135deg, #722F37 0%, #8B0000 100%);
-                padding: 0.5rem 0.75rem;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-                height: 50px;
-                box-sizing: border-box;
             }
             
-            .mobile-logo-link {
-                text-decoration: none;
-            }
-            
-            .mobile-logo {
-                font-family: 'Georgia', serif;
-                font-weight: bold;
-                font-size: 1.3rem;
-                color: #d4af37;
-                text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-                letter-spacing: 1px;
-                border: 2px solid #d4af37;
-                padding: 0.2rem 0.5rem;
-                border-radius: 4px;
-            }
-            
-            .mobile-nav-buttons {
-                display: flex;
-                gap: 0.5rem;
-            }
-            
-            .mobile-nav-btn {
-                width: 36px;
-                height: 36px;
-                border-radius: 50%;
-                border: 2px solid rgba(212, 175, 55, 0.5);
-                background: rgba(255, 255, 255, 0.1);
-                color: #f5f5dc;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 6px;
-                transition: all 0.2s ease;
-            }
-            
-            .mobile-nav-btn svg {
+            .mobile-header-container {
+                position: relative;
                 width: 100%;
-                height: 100%;
             }
             
-            .mobile-nav-btn:hover,
-            .mobile-nav-btn.active {
-                background: rgba(212, 175, 55, 0.3);
-                border-color: #d4af37;
-                color: #d4af37;
+            .mobile-header-banner {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            
+            /* Clickable zones positioned over the banner */
+            .mobile-zone {
+                position: absolute;
+                top: 0;
+                height: 100%;
+                z-index: 10;
+            }
+            
+            .mobile-zone:active {
+                background: rgba(255, 255, 255, 0.15);
+            }
+            
+            /* Zone positions based on banner layout */
+            .zone-logo {
+                left: 0;
+                width: 28%;
+            }
+            
+            .zone-seasons {
+                left: 28%;
+                width: 12%;
+            }
+            
+            .zone-awards {
+                left: 40%;
+                width: 12%;
+            }
+            
+            .zone-scoring {
+                left: 52%;
+                width: 12%;
+            }
+            
+            .zone-managers {
+                left: 64%;
+                width: 12%;
             }
             
             /* Hide desktop nav on mobile */
@@ -155,7 +150,7 @@
             }
             
             body {
-                padding-top: 60px;
+                padding-top: 55px;
             }
             
             .header-league-link {
@@ -1056,36 +1051,15 @@
     </header>
     
     <header class="mobile-header">
-        <a href="https://baseball.fantasysports.yahoo.com/league/fantasybaseballcivilwar/2025" target="_blank" class="mobile-logo-link">
-            <div class="mobile-logo">FBCW</div>
-        </a>
-        <div class="mobile-nav-buttons">
-            <button class="mobile-nav-btn active" onclick="showSection('standings')" title="Seasons">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <rect x="3" y="3" width="7" height="7" rx="1"/>
-                    <rect x="14" y="3" width="7" height="7" rx="1"/>
-                    <rect x="3" y="14" width="7" height="7" rx="1"/>
-                    <rect x="14" y="14" width="7" height="7" rx="1"/>
-                </svg>
-            </button>
-            <button class="mobile-nav-btn" onclick="showSection('awards')" title="Awards">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2L15 8.5L22 9.5L17 14.5L18 21.5L12 18L6 21.5L7 14.5L2 9.5L9 8.5L12 2Z"/>
-                </svg>
-            </button>
-            <button class="mobile-nav-btn" onclick="showSection('player-scoring')" title="Player Scoring">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <circle cx="12" cy="8" r="5"/>
-                    <path d="M4 20C4 16.5 7.5 14 12 14C16.5 14 20 16.5 20 20V22H4V20Z"/>
-                </svg>
-            </button>
-            <button class="mobile-nav-btn" onclick="showSection('managers')" title="Manager Profiles">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <circle cx="9" cy="7" r="4"/>
-                    <circle cx="17" cy="7" r="4"/>
-                    <path d="M2 18C2 15 5 13 9 13C10 13 11 13.2 12 13.5C13 13.2 14 13 15 13C19 13 22 15 22 18V20H2V18Z"/>
-                </svg>
-            </button>
+        <div class="mobile-header-container">
+            <img src="mobile_header.png" alt="Fantasy Baseball Civil War" class="mobile-header-banner">
+            <!-- Clickable zones over the banner -->
+            <a href="https://baseball.fantasysports.yahoo.com/league/fantasybaseballcivilwar/2025" target="_blank" class="mobile-zone zone-logo" title="Go to Yahoo Fantasy League"></a>
+            <a href="#" class="mobile-zone zone-seasons" onclick="showSection('standings'); return false;" title="Seasons"></a>
+            <a href="#" class="mobile-zone zone-awards" onclick="showSection('awards'); return false;" title="Awards"></a>
+            <a href="#" class="mobile-zone zone-scoring" onclick="showSection('player-scoring'); return false;" title="Player Scoring"></a>
+            <a href="#" class="mobile-zone zone-managers" onclick="showSection('managers'); return false;" title="Manager Profiles"></a>
+            <!-- Icons 5 and 6 are placeholders - no links -->
         </div>
     </header>
 
