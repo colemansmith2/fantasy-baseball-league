@@ -1992,19 +1992,22 @@
                 return;
             }
             
+            // Base64 encoded placeholder silhouette (simple gray circle + body shape)
+            const placeholderImg = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwZTBlMCIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMzUiIHI9IjIwIiBmaWxsPSIjYmRiZGJkIi8+PGVsbGlwc2UgY3g9IjUwIiBjeT0iODUiIHJ4PSIzMCIgcnk9IjIwIiBmaWxsPSIjYmRiZGJkIi8+PC9zdmc+';
+            
             tbody.innerHTML = filteredPlayersData.map((player, index) => {
                 const stats = player.stats || {};
                 const isBatter = player.position_type === 'B';
                 
-                // Default headshot
-                const headshot = player.headshot_url || 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="35" r="25" fill="%23ccc"/><ellipse cx="50" cy="85" rx="35" ry="25" fill="%23ccc"/></svg>';
+                // Use headshot if available and not empty, otherwise use placeholder
+                const headshot = (player.headshot_url && player.headshot_url.trim()) ? player.headshot_url : placeholderImg;
                 
                 return `
                     <tr>
                         <td>${index + 1}</td>
                         <td>
                             <div class="player-name-cell" onclick="showPlayerDetail('${player.name.replace(/'/g, "\\'")}')">
-                                <img src="${headshot}" alt="" class="player-headshot" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2235%22 r=%2225%22 fill=%22%23ccc%22/><ellipse cx=%2250%22 cy=%2285%22 rx=%2235%22 ry=%2225%22 fill=%22%23ccc%22/></svg>'">
+                                <img src="${headshot}" alt="" class="player-headshot" onerror="this.src='${placeholderImg}'">
                                 <div>
                                     <div class="player-name">${player.name}</div>
                                     <div class="player-mlb-team">${player.mlb_team || ''}</div>
@@ -2060,11 +2063,12 @@
                 }
             }
             
-            // Render header
-            const headshot = player.headshot_url || 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="35" r="25" fill="%23fff"/><ellipse cx="50" cy="85" rx="35" ry="25" fill="%23fff"/></svg>';
+            // Render header - use base64 placeholder for modal (white version for dark header)
+            const modalPlaceholder = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZiIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMzUiIHI9IjIwIiBmaWxsPSIjZGRkIi8+PGVsbGlwc2UgY3g9IjUwIiBjeT0iODUiIHJ4PSIzMCIgcnk9IjIwIiBmaWxsPSIjZGRkIi8+PC9zdmc+';
+            const headshot = (player.headshot_url && player.headshot_url.trim()) ? player.headshot_url : modalPlaceholder;
             
             headerEl.innerHTML = `
-                <img src="${headshot}" alt="${player.name}" class="player-modal-headshot" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2235%22 r=%2225%22 fill=%22%23fff%22/><ellipse cx=%2250%22 cy=%2285%22 rx=%2235%22 ry=%2225%22 fill=%22%23fff%22/></svg>'">
+                <img src="${headshot}" alt="${player.name}" class="player-modal-headshot" onerror="this.src='${modalPlaceholder}'">
                 <div class="player-modal-info">
                     <h2>${player.name}</h2>
                     <div class="player-details">
