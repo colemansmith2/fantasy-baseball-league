@@ -878,6 +878,419 @@
             color: #2a5298;
         }
 
+        /* ===== PLAYER SCORING STYLES ===== */
+        .player-controls {
+            margin-bottom: 1.5rem;
+        }
+        
+        .player-control-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            align-items: flex-end;
+        }
+        
+        .player-control-row .season-selector,
+        .player-control-row .position-filter,
+        .player-control-row .manager-filter {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .player-control-row label {
+            font-weight: bold;
+            color: #1e3c72;
+            font-size: 0.85rem;
+        }
+        
+        .player-control-row select {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            min-width: 150px;
+        }
+        
+        .player-search {
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .player-search input {
+            width: 100%;
+            padding: 0.6rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .player-search input:focus {
+            outline: none;
+            border-color: #2a5298;
+            box-shadow: 0 0 0 2px rgba(42, 82, 152, 0.1);
+        }
+        
+        .player-summary {
+            margin-bottom: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .player-table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .player-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        
+        .player-table th {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 0.75rem 0.5rem;
+            text-align: left;
+            white-space: nowrap;
+            position: sticky;
+            top: 0;
+        }
+        
+        .player-table th.sortable {
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .player-table th.sortable:hover {
+            background: linear-gradient(135deg, #2a5298, #3a6cc8);
+        }
+        
+        .player-table th.sort-asc::after {
+            content: ' ▲';
+            font-size: 0.7rem;
+        }
+        
+        .player-table th.sort-desc::after {
+            content: ' ▼';
+            font-size: 0.7rem;
+        }
+        
+        .player-table td {
+            padding: 0.6rem 0.5rem;
+            border-bottom: 1px solid #eee;
+            vertical-align: middle;
+        }
+        
+        .player-table tr:hover {
+            background: #f0f4f8;
+        }
+        
+        .player-table .stat-col {
+            text-align: center;
+        }
+        
+        .player-name-cell {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .player-name-cell:hover .player-name {
+            color: #2a5298;
+            text-decoration: underline;
+        }
+        
+        .player-headshot {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #f0f0f0;
+        }
+        
+        .player-name {
+            font-weight: 500;
+        }
+        
+        .player-mlb-team {
+            font-size: 0.75rem;
+            color: #888;
+        }
+        
+        .player-team-cell {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        
+        .player-team-logo {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+        }
+        
+        .player-fantasy-team {
+            font-size: 0.8rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 120px;
+        }
+        
+        .player-position {
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .player-points {
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        /* Hide batter/pitcher stats based on filter */
+        .show-batters .pitcher-stat,
+        .show-pitchers .batter-stat {
+            display: none;
+        }
+        
+        /* Player Modal Styles */
+        .player-modal-content {
+            max-width: 800px;
+        }
+        
+        #player-modal-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .player-modal-headshot {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: white;
+            border: 3px solid white;
+        }
+        
+        .player-modal-info h2 {
+            margin: 0 0 0.25rem 0;
+            font-size: 1.5rem;
+        }
+        
+        .player-modal-info .player-details {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .player-modal-points {
+            margin-left: auto;
+            text-align: right;
+        }
+        
+        .player-modal-points .points-value {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .player-modal-points .points-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        .player-modal-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .player-modal-section h3 {
+            color: #1e3c72;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .player-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 0.75rem;
+        }
+        
+        .player-stat-box {
+            background: #f8f9fa;
+            padding: 0.75rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .player-stat-box .stat-value {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        .player-stat-box .stat-label {
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+        }
+        
+        .player-history-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        
+        .player-history-table th {
+            background: #f0f4f8;
+            padding: 0.6rem;
+            text-align: left;
+            font-weight: 600;
+            color: #1e3c72;
+        }
+        
+        .player-history-table td {
+            padding: 0.6rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .player-history-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        /* Mobile styles for Player Scoring */
+        @media (max-width: 768px) {
+            .player-control-row {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .player-control-row .season-selector,
+            .player-control-row .position-filter,
+            .player-control-row .manager-filter {
+                width: 100%;
+            }
+            
+            .player-control-row select {
+                width: 100%;
+                min-width: unset;
+            }
+            
+            .player-search {
+                max-width: 100%;
+            }
+            
+            .player-table-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .player-table {
+                font-size: 0.7rem;
+                min-width: 600px;
+            }
+            
+            .player-table th,
+            .player-table td {
+                padding: 0.4rem 0.3rem;
+            }
+            
+            .player-headshot {
+                width: 24px;
+                height: 24px;
+            }
+            
+            .player-team-logo {
+                width: 18px;
+                height: 18px;
+            }
+            
+            .player-name-cell {
+                gap: 0.3rem;
+            }
+            
+            .player-mlb-team {
+                font-size: 0.65rem;
+            }
+            
+            .player-fantasy-team {
+                max-width: 60px;
+                font-size: 0.7rem;
+            }
+            
+            /* Player Modal Mobile */
+            .player-modal-content {
+                width: 95%;
+                max-height: 90vh;
+            }
+            
+            #player-modal-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+                gap: 0.75rem;
+            }
+            
+            .player-modal-headshot {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .player-modal-info h2 {
+                font-size: 1.2rem;
+            }
+            
+            .player-modal-info .player-details {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            
+            .player-modal-points {
+                margin-left: 0;
+                text-align: center;
+            }
+            
+            .player-modal-points .points-value {
+                font-size: 1.5rem;
+            }
+            
+            .player-stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0.5rem;
+            }
+            
+            .player-stat-box {
+                padding: 0.5rem;
+            }
+            
+            .player-stat-box .stat-value {
+                font-size: 1rem;
+            }
+            
+            .player-stat-box .stat-label {
+                font-size: 0.65rem;
+            }
+            
+            .player-history-table {
+                font-size: 0.8rem;
+            }
+            
+            .player-history-table th,
+            .player-history-table td {
+                padding: 0.4rem;
+            }
+        }
+
         .loading {
             text-align: center;
             padding: 2rem;
@@ -1219,14 +1632,98 @@
         <div id="scoring" class="section">
             <h2>Player Scoring</h2>
             
-            <div class="season-selector">
-                <label for="scoring-season">Select Season:</label>
-                <select id="scoring-season" onchange="loadPlayerScoring()">
-                    <!-- Will be populated dynamically -->
-                </select>
+            <div class="player-controls">
+                <div class="player-control-row">
+                    <div class="season-selector">
+                        <label for="scoring-season">Season:</label>
+                        <select id="scoring-season" onchange="loadPlayerScoring()">
+                            <!-- Will be populated dynamically -->
+                        </select>
+                    </div>
+                    
+                    <div class="position-filter">
+                        <label for="position-filter">Position:</label>
+                        <select id="position-filter" onchange="filterPlayers()">
+                            <option value="all">All Players</option>
+                            <option value="B">All Batters</option>
+                            <option value="P">All Pitchers</option>
+                            <optgroup label="Batting Positions">
+                                <option value="C">C - Catcher</option>
+                                <option value="1B">1B - First Base</option>
+                                <option value="2B">2B - Second Base</option>
+                                <option value="3B">3B - Third Base</option>
+                                <option value="SS">SS - Shortstop</option>
+                                <option value="OF">OF - Outfield</option>
+                                <option value="Util">Util - Utility</option>
+                            </optgroup>
+                            <optgroup label="Pitching Positions">
+                                <option value="SP">SP - Starting Pitcher</option>
+                                <option value="RP">RP - Relief Pitcher</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    
+                    <div class="manager-filter">
+                        <label for="manager-filter">Manager:</label>
+                        <select id="manager-filter" onchange="filterPlayers()">
+                            <option value="all">All Managers</option>
+                            <!-- Will be populated dynamically -->
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="player-search">
+                    <input type="text" id="player-search" placeholder="Search players..." oninput="filterPlayers()">
+                </div>
             </div>
 
-            <div class="loading">Player scoring data coming soon...</div>
+            <div id="player-loading" class="loading">Loading player data...</div>
+            <div id="player-error" class="error" style="display: none;"></div>
+            
+            <div id="player-stats-container" style="display: none;">
+                <div class="player-summary">
+                    <span id="player-count">0 players</span>
+                </div>
+                
+                <div class="table-wrapper player-table-wrapper">
+                    <table class="player-table" id="player-table">
+                        <thead>
+                            <tr>
+                                <th class="sortable" onclick="sortPlayerTable('rank')">#</th>
+                                <th class="sortable" onclick="sortPlayerTable('name')">Player</th>
+                                <th>Team</th>
+                                <th class="sortable" onclick="sortPlayerTable('position')">Pos</th>
+                                <th class="sortable stat-col" onclick="sortPlayerTable('fantasy_points')">Pts</th>
+                                <th class="sortable stat-col batter-stat" onclick="sortPlayerTable('HR')">HR</th>
+                                <th class="sortable stat-col batter-stat" onclick="sortPlayerTable('RBI')">RBI</th>
+                                <th class="sortable stat-col batter-stat" onclick="sortPlayerTable('R')">R</th>
+                                <th class="sortable stat-col batter-stat" onclick="sortPlayerTable('SB')">SB</th>
+                                <th class="sortable stat-col batter-stat" onclick="sortPlayerTable('AVG')">AVG</th>
+                                <th class="sortable stat-col pitcher-stat" onclick="sortPlayerTable('W')">W</th>
+                                <th class="sortable stat-col pitcher-stat" onclick="sortPlayerTable('SO')">K</th>
+                                <th class="sortable stat-col pitcher-stat" onclick="sortPlayerTable('ERA')">ERA</th>
+                                <th class="sortable stat-col pitcher-stat" onclick="sortPlayerTable('WHIP')">WHIP</th>
+                                <th class="sortable stat-col pitcher-stat" onclick="sortPlayerTable('SV')">SV</th>
+                            </tr>
+                        </thead>
+                        <tbody id="player-table-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Player Detail Modal -->
+        <div id="player-modal" class="modal">
+            <div class="modal-content player-modal-content">
+                <span class="modal-close" onclick="closePlayerModal()">&times;</span>
+                <div id="player-modal-header">
+                    <!-- Header loaded dynamically -->
+                </div>
+                <div class="modal-body-scroll" id="player-modal-body">
+                    <!-- Body content loaded dynamically -->
+                </div>
+            </div>
         </div>
 
         <!-- Manager Profiles Section -->
@@ -1265,6 +1762,12 @@
         let managerHistoryData = [];
         let managerAwardsData = {}; // Store manager awards globally
         
+        // Player scoring state
+        let allPlayersData = [];
+        let filteredPlayersData = [];
+        let playerHistoryData = {};
+        let currentPlayerSort = { column: 'fantasy_points', direction: 'desc' };
+        
         // Chart state
         let currentChartData = null;
         let currentChartType = 'weekly'; // 'weekly' or 'total'
@@ -1299,6 +1802,385 @@
             
             return null;
         }
+
+        // ===== PLAYER SCORING FUNCTIONS =====
+        
+        async function loadPlayerScoring() {
+            const seasonSelect = document.getElementById('scoring-season');
+            const selectedYear = parseInt(seasonSelect.value);
+            
+            const loadingEl = document.getElementById('player-loading');
+            const errorEl = document.getElementById('player-error');
+            const containerEl = document.getElementById('player-stats-container');
+            
+            loadingEl.style.display = 'block';
+            errorEl.style.display = 'none';
+            containerEl.style.display = 'none';
+            
+            try {
+                // Determine the path based on year
+                let playerStatsPath;
+                if (selectedYear === 2025) {
+                    playerStatsPath = 'data/current_season/player_stats.json';
+                } else {
+                    playerStatsPath = `data/historical/${selectedYear}/player_stats.json`;
+                }
+                
+                const response = await fetch(playerStatsPath);
+                if (!response.ok) {
+                    throw new Error(`No player data available for ${selectedYear}`);
+                }
+                
+                allPlayersData = await response.json();
+                
+                // Populate manager filter
+                populateManagerFilter();
+                
+                // Apply filters and render
+                filterPlayers();
+                
+                loadingEl.style.display = 'none';
+                containerEl.style.display = 'block';
+                
+            } catch (error) {
+                console.error('Error loading player data:', error);
+                loadingEl.style.display = 'none';
+                errorEl.textContent = `Error: ${error.message}`;
+                errorEl.style.display = 'block';
+            }
+        }
+        
+        function populateManagerFilter() {
+            const managerFilter = document.getElementById('manager-filter');
+            const managers = [...new Set(allPlayersData.map(p => p.manager))].sort();
+            
+            // Keep the "All Managers" option and add the rest
+            managerFilter.innerHTML = '<option value="all">All Managers</option>';
+            managers.forEach(manager => {
+                const option = document.createElement('option');
+                option.value = manager;
+                option.textContent = manager;
+                managerFilter.appendChild(option);
+            });
+        }
+        
+        function filterPlayers() {
+            const positionFilter = document.getElementById('position-filter').value;
+            const managerFilter = document.getElementById('manager-filter').value;
+            const searchQuery = document.getElementById('player-search').value.toLowerCase().trim();
+            
+            filteredPlayersData = allPlayersData.filter(player => {
+                // Position filter
+                if (positionFilter !== 'all') {
+                    if (positionFilter === 'B' || positionFilter === 'P') {
+                        if (player.position_type !== positionFilter) return false;
+                    } else {
+                        // Specific position
+                        if (!player.eligible_positions.includes(positionFilter)) return false;
+                    }
+                }
+                
+                // Manager filter
+                if (managerFilter !== 'all' && player.manager !== managerFilter) {
+                    return false;
+                }
+                
+                // Search filter
+                if (searchQuery) {
+                    const nameMatch = player.name.toLowerCase().includes(searchQuery);
+                    const teamMatch = player.team_name.toLowerCase().includes(searchQuery);
+                    const mlbMatch = (player.mlb_team || '').toLowerCase().includes(searchQuery);
+                    if (!nameMatch && !teamMatch && !mlbMatch) return false;
+                }
+                
+                return true;
+            });
+            
+            // Apply current sort
+            sortPlayersArray();
+            
+            // Update table classes for showing/hiding columns
+            updateTableColumns(positionFilter);
+            
+            // Render the table
+            renderPlayerTable();
+        }
+        
+        function updateTableColumns(positionFilter) {
+            const table = document.getElementById('player-table');
+            table.classList.remove('show-batters', 'show-pitchers');
+            
+            if (positionFilter === 'P' || positionFilter === 'SP' || positionFilter === 'RP') {
+                table.classList.add('show-pitchers');
+            } else if (positionFilter === 'B' || ['C', '1B', '2B', '3B', 'SS', 'OF', 'Util'].includes(positionFilter)) {
+                table.classList.add('show-batters');
+            }
+        }
+        
+        function sortPlayerTable(column) {
+            // Toggle direction if same column
+            if (currentPlayerSort.column === column) {
+                currentPlayerSort.direction = currentPlayerSort.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentPlayerSort.column = column;
+                // Default to descending for stats, ascending for name
+                currentPlayerSort.direction = (column === 'name' || column === 'position') ? 'asc' : 'desc';
+            }
+            
+            sortPlayersArray();
+            renderPlayerTable();
+            updateSortIndicators();
+        }
+        
+        function sortPlayersArray() {
+            const { column, direction } = currentPlayerSort;
+            
+            filteredPlayersData.sort((a, b) => {
+                let aVal, bVal;
+                
+                if (column === 'rank') {
+                    // Rank is determined by fantasy points
+                    aVal = a.fantasy_points || 0;
+                    bVal = b.fantasy_points || 0;
+                } else if (column === 'name') {
+                    aVal = a.name.toLowerCase();
+                    bVal = b.name.toLowerCase();
+                } else if (column === 'position') {
+                    aVal = a.primary_position || '';
+                    bVal = b.primary_position || '';
+                } else if (column === 'fantasy_points') {
+                    aVal = a.fantasy_points || 0;
+                    bVal = b.fantasy_points || 0;
+                } else {
+                    // Stat column
+                    aVal = (a.stats && a.stats[column]) || 0;
+                    bVal = (b.stats && b.stats[column]) || 0;
+                }
+                
+                if (typeof aVal === 'string') {
+                    return direction === 'asc' ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+                }
+                
+                return direction === 'asc' ? aVal - bVal : bVal - aVal;
+            });
+        }
+        
+        function updateSortIndicators() {
+            // Remove all sort indicators
+            document.querySelectorAll('.player-table th').forEach(th => {
+                th.classList.remove('sort-asc', 'sort-desc');
+            });
+            
+            // Add indicator to current sort column
+            const headers = document.querySelectorAll('.player-table th');
+            headers.forEach(th => {
+                const onclick = th.getAttribute('onclick');
+                if (onclick && onclick.includes(`'${currentPlayerSort.column}'`)) {
+                    th.classList.add(currentPlayerSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
+                }
+            });
+        }
+        
+        function renderPlayerTable() {
+            const tbody = document.getElementById('player-table-body');
+            const countEl = document.getElementById('player-count');
+            
+            countEl.textContent = `${filteredPlayersData.length} player${filteredPlayersData.length !== 1 ? 's' : ''}`;
+            
+            if (filteredPlayersData.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="15" style="text-align: center; padding: 2rem; color: #666;">No players found matching your criteria</td></tr>';
+                return;
+            }
+            
+            tbody.innerHTML = filteredPlayersData.map((player, index) => {
+                const stats = player.stats || {};
+                const isBatter = player.position_type === 'B';
+                
+                // Default headshot
+                const headshot = player.headshot_url || 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="35" r="25" fill="%23ccc"/><ellipse cx="50" cy="85" rx="35" ry="25" fill="%23ccc"/></svg>';
+                
+                return `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>
+                            <div class="player-name-cell" onclick="showPlayerDetail('${player.name.replace(/'/g, "\\'")}')">
+                                <img src="${headshot}" alt="" class="player-headshot" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2235%22 r=%2225%22 fill=%22%23ccc%22/><ellipse cx=%2250%22 cy=%2285%22 rx=%2235%22 ry=%2225%22 fill=%22%23ccc%22/></svg>'">
+                                <div>
+                                    <div class="player-name">${player.name}</div>
+                                    <div class="player-mlb-team">${player.mlb_team || ''}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="player-team-cell">
+                                <img src="${player.team_logo}" alt="" class="player-team-logo" onerror="this.style.display='none'">
+                                <span class="player-fantasy-team" title="${player.team_name}">${player.manager}</span>
+                            </div>
+                        </td>
+                        <td class="player-position">${player.primary_position || '-'}</td>
+                        <td class="player-points">${(player.fantasy_points || 0).toFixed(1)}</td>
+                        <td class="stat-col batter-stat">${isBatter ? (stats.HR || 0) : '-'}</td>
+                        <td class="stat-col batter-stat">${isBatter ? (stats.RBI || 0) : '-'}</td>
+                        <td class="stat-col batter-stat">${isBatter ? (stats.R || 0) : '-'}</td>
+                        <td class="stat-col batter-stat">${isBatter ? (stats.SB || 0) : '-'}</td>
+                        <td class="stat-col batter-stat">${isBatter ? (stats.AVG ? stats.AVG.toFixed(3) : '-') : '-'}</td>
+                        <td class="stat-col pitcher-stat">${!isBatter ? (stats.W || 0) : '-'}</td>
+                        <td class="stat-col pitcher-stat">${!isBatter ? (stats.SO || 0) : '-'}</td>
+                        <td class="stat-col pitcher-stat">${!isBatter ? (stats.ERA ? stats.ERA.toFixed(2) : '-') : '-'}</td>
+                        <td class="stat-col pitcher-stat">${!isBatter ? (stats.WHIP ? stats.WHIP.toFixed(2) : '-') : '-'}</td>
+                        <td class="stat-col pitcher-stat">${!isBatter ? (stats.SV || 0) : '-'}</td>
+                    </tr>
+                `;
+            }).join('');
+            
+            updateSortIndicators();
+        }
+        
+        async function showPlayerDetail(playerName) {
+            const modal = document.getElementById('player-modal');
+            const headerEl = document.getElementById('player-modal-header');
+            const bodyEl = document.getElementById('player-modal-body');
+            
+            // Find player in current data
+            const player = allPlayersData.find(p => p.name === playerName);
+            if (!player) return;
+            
+            const seasonSelect = document.getElementById('scoring-season');
+            const selectedYear = parseInt(seasonSelect.value);
+            
+            // Load player history if not cached
+            if (Object.keys(playerHistoryData).length === 0) {
+                try {
+                    const historyResponse = await fetch('data/players/player_history.json');
+                    if (historyResponse.ok) {
+                        playerHistoryData = await historyResponse.json();
+                    }
+                } catch (e) {
+                    console.log('Could not load player history');
+                }
+            }
+            
+            // Render header
+            const headshot = player.headshot_url || 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="35" r="25" fill="%23fff"/><ellipse cx="50" cy="85" rx="35" ry="25" fill="%23fff"/></svg>';
+            
+            headerEl.innerHTML = `
+                <img src="${headshot}" alt="${player.name}" class="player-modal-headshot" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2235%22 r=%2225%22 fill=%22%23fff%22/><ellipse cx=%2250%22 cy=%2285%22 rx=%2235%22 ry=%2225%22 fill=%22%23fff%22/></svg>'">
+                <div class="player-modal-info">
+                    <h2>${player.name}</h2>
+                    <div class="player-details">
+                        <span>${player.mlb_team || 'FA'}</span>
+                        <span>${player.eligible_positions ? player.eligible_positions.join(', ') : player.primary_position}</span>
+                        <span>Owner: ${player.manager}</span>
+                    </div>
+                </div>
+                <div class="player-modal-points">
+                    <div class="points-value">${(player.fantasy_points || 0).toFixed(1)}</div>
+                    <div class="points-label">${selectedYear} Fantasy Pts</div>
+                </div>
+            `;
+            
+            // Render body
+            let bodyHTML = '';
+            
+            // Current season stats
+            const stats = player.stats || {};
+            const isBatter = player.position_type === 'B';
+            
+            bodyHTML += `<div class="player-modal-section">
+                <h3>${selectedYear} Season Stats</h3>
+                <div class="player-stats-grid">`;
+            
+            if (isBatter) {
+                bodyHTML += `
+                    <div class="player-stat-box"><div class="stat-value">${stats.G || 0}</div><div class="stat-label">Games</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.AB || 0}</div><div class="stat-label">At Bats</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.H || 0}</div><div class="stat-label">Hits</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.HR || 0}</div><div class="stat-label">HR</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.RBI || 0}</div><div class="stat-label">RBI</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.R || 0}</div><div class="stat-label">Runs</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.SB || 0}</div><div class="stat-label">SB</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.BB || 0}</div><div class="stat-label">Walks</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats['2B'] || 0}</div><div class="stat-label">2B</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats['3B'] || 0}</div><div class="stat-label">3B</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.AVG ? stats.AVG.toFixed(3) : '.000'}</div><div class="stat-label">AVG</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.OBP ? stats.OBP.toFixed(3) : '.000'}</div><div class="stat-label">OBP</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.SLG ? stats.SLG.toFixed(3) : '.000'}</div><div class="stat-label">SLG</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.OPS ? stats.OPS.toFixed(3) : '.000'}</div><div class="stat-label">OPS</div></div>
+                `;
+            } else {
+                bodyHTML += `
+                    <div class="player-stat-box"><div class="stat-value">${stats.G || 0}</div><div class="stat-label">Games</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.GS || 0}</div><div class="stat-label">Starts</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.W || 0}</div><div class="stat-label">Wins</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.L || 0}</div><div class="stat-label">Losses</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.SV || 0}</div><div class="stat-label">Saves</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.HLD || 0}</div><div class="stat-label">Holds</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.IP || 0}</div><div class="stat-label">IP</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.SO || 0}</div><div class="stat-label">K</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.BB || 0}</div><div class="stat-label">BB</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.H || 0}</div><div class="stat-label">Hits</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.ER || 0}</div><div class="stat-label">ER</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.ERA ? stats.ERA.toFixed(2) : '0.00'}</div><div class="stat-label">ERA</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.WHIP ? stats.WHIP.toFixed(2) : '0.00'}</div><div class="stat-label">WHIP</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats['K/9'] ? stats['K/9'].toFixed(2) : '0.00'}</div><div class="stat-label">K/9</div></div>
+                `;
+            }
+            
+            bodyHTML += '</div></div>';
+            
+            // Career history
+            const normalizedName = playerName.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+            const playerHistory = playerHistoryData[normalizedName];
+            
+            if (playerHistory && playerHistory.seasons && playerHistory.seasons.length > 0) {
+                bodyHTML += `<div class="player-modal-section">
+                    <h3>League History</h3>
+                    <table class="player-history-table">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Team</th>
+                                <th>Manager</th>
+                                <th>Fantasy Pts</th>
+                            </tr>
+                        </thead>
+                        <tbody>`;
+                
+                // Sort by year descending
+                const sortedSeasons = [...playerHistory.seasons].sort((a, b) => b.year - a.year);
+                
+                sortedSeasons.forEach(season => {
+                    bodyHTML += `
+                        <tr>
+                            <td>${season.year}</td>
+                            <td>${season.team_name}</td>
+                            <td>${season.manager}</td>
+                            <td><strong>${(season.fantasy_points || 0).toFixed(1)}</strong></td>
+                        </tr>
+                    `;
+                });
+                
+                bodyHTML += `</tbody></table>
+                    <div style="margin-top: 0.75rem; color: #666; font-size: 0.9rem;">
+                        Career Total: <strong>${(playerHistory.career_fantasy_points || 0).toFixed(1)}</strong> fantasy points
+                    </div>
+                </div>`;
+            }
+            
+            bodyEl.innerHTML = bodyHTML;
+            modal.style.display = 'flex';
+        }
+        
+        function closePlayerModal() {
+            document.getElementById('player-modal').style.display = 'none';
+        }
+        
+        // Close player modal on outside click
+        document.getElementById('player-modal')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePlayerModal();
+            }
+        });
 
         // ===== MANAGER NAME NORMALIZATION =====
         const MANAGER_TEAM_2023 = {
@@ -2773,7 +3655,7 @@
             const sectionToIndex = {
                 'standings': 0,
                 'awards': 1,
-                'player-scoring': 2,
+                'scoring': 2,
                 'managers': 3
             };
             const index = sectionToIndex[sectionId];
@@ -2785,14 +3667,12 @@
             // Load section-specific data
             if (sectionId === 'awards') {
                 loadAwards();
+            } else if (sectionId === 'scoring') {
+                // Load player scoring if not already loaded
+                if (allPlayersData.length === 0) {
+                    loadPlayerScoring();
+                }
             }
-        }
-
-        // ===== PLACEHOLDER FUNCTIONS =====
-        function loadPlayerScoring() {
-            const season = document.getElementById('scoring-season').value;
-            console.log('Loading player scoring for season:', season);
-            // TODO: Implement player scoring
         }
 
         // ===== LOAD AWARDS =====
