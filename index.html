@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,398 +16,529 @@
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: #333;
             min-height: 100vh;
-            padding-top: 120px;
-            /* header (70px) + nav (~50px) */
+            padding-top: 120px; /* header (70px) + nav (~50px) */
         }
 
         header.desktop-header {
-            background: #4a5d23;
-            /* Olive/brown color to match banner edges */
+            background: #4a5d23; /* Olive/brown color to match banner edges */
             padding: 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 200;
         }
-
+        
         /* Mobile header - hidden on desktop */
         header.mobile-header {
             display: none;
         }
-
+        
         .header-container {
             position: relative;
             display: block;
         }
-
+        
         .header-banner {
             width: 100%;
-            height: 70px;
-            /* Adjust height for banner visibility */
-            background-image: url('images/banner.png');
-            /* Placeholder image for banner */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            height: auto;
+            display: block;
+            max-height: 70px;
+            object-fit: cover;
+        }
+        
+        .header-league-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 12%; /* Full width of FBCW red box area */
+            height: 100%;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .header-league-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .league-logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+        
+        .header-content {
+            flex: 1;
+        }
+
+        h1 {
+            color: #1e3c72;
+            font-size: 2.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        @media (max-width: 768px) {
+            /* Hide desktop header on mobile */
+            header.desktop-header {
+                display: none;
+            }
+            
+            /* Show mobile header */
+            header.mobile-header {
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 200;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            }
+            
+            .mobile-header-container {
+                position: relative;
+                width: 100%;
+            }
+            
+            .mobile-header-banner {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            
+            /* Clickable zones positioned over the banner */
+            .mobile-zone {
+                position: absolute;
+                top: 0;
+                height: 100%;
+                z-index: 10;
+            }
+            
+            .mobile-zone:active {
+                background: rgba(255, 255, 255, 0.15);
+            }
+            
+            /* Zone positions based on banner layout - adjusted right */
+            .zone-logo {
+                left: 0;
+                width: 36%;
+            }
+            
+            .zone-seasons {
+                left: 36%;
+                width: 11%;
+            }
+            
+            .zone-awards {
+                left: 47%;
+                width: 11%;
+            }
+            
+            .zone-scoring {
+                left: 58%;
+                width: 11%;
+            }
+            
+            .zone-managers {
+                left: 69%;
+                width: 11%;
+            }
+            
+            /* Hide desktop nav on mobile */
+            nav {
+                display: none;
+            }
+            
+            body {
+                padding-top: 55px;
+            }
+            
+            .header-league-link {
+                width: 18%; /* Larger tap target on mobile */
+            }
+            
+            .league-logo {
+                width: 40px;
+                height: 40px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .section {
+                padding: 1rem;
+            }
+        }
+
+        .tagline {
+            color: #666;
+            font-style: italic;
+            font-size: 0.95rem;
         }
 
         nav {
-            background-color: #f7f7f7;
-            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0.5rem;
+            text-align: center;
             position: fixed;
             top: 70px;
             left: 0;
             right: 0;
             z-index: 100;
-            display: flex;
-            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding-top: 95px;
+            }
+            
+            nav {
+                top: 50px;
+                padding: 0.4rem;
+            }
         }
 
-        .nav-container {
+        nav button {
+            background: #2a5298;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            margin: 0.25rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            nav button {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+                margin: 0.2rem;
+            }
+        }
+
+        nav button:hover {
+            background: #1e3c72;
+        }
+
+        nav button.active {
+            background: #ff6b6b;
+        }
+
+        .container {
             max-width: 1200px;
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-        }
-
-        nav a {
-            padding: 15px 20px;
-            text-decoration: none;
-            color: #1e3c72;
-            font-weight: 600;
-            transition: background-color 0.3s, color 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-bottom: 3px solid transparent;
-        }
-
-        nav a:hover,
-        nav a.active {
-            background-color: #e0e0e0;
-            color: #2a5298;
-            border-bottom: 3px solid #f39c12;
-            /* Accent color */
-        }
-
-        /* General content container */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
 
         .section {
             display: none;
-            padding: 20px 0;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            overflow-x: hidden;
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .container {
+                padding: 0 0.5rem;
+                margin: 0.5rem auto;
+            }
         }
 
         .section.active {
             display: block;
+            animation: fadeIn 0.5s;
         }
 
-        h1 {
-            color: #1e3c72;
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 2.5em;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         h2 {
             color: #1e3c72;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 5px;
-            margin-top: 20px;
-            margin-bottom: 15px;
-            font-size: 1.8em;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #ff6b6b;
+            padding-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 1.2rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            h3 {
+                font-size: 1rem;
+            }
+            
+            label {
+                font-size: 0.85rem;
+            }
+            
+            select {
+                font-size: 0.85rem;
+                padding: 0.4rem;
+            }
         }
 
-        /* --- Standings Table Styling --- */
-        .table-wrapper {
-            overflow-x: auto;
-            margin-bottom: 20px;
-        }
-
-        .standings-table,
-        .player-table,
-        .transaction-table,
-        .manager-table {
+        .standings-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.95em;
-        }
-
-        .standings-table th,
-        .standings-table td,
-        .player-table th,
-        .player-table td,
-        .transaction-table th,
-        .transaction-table td,
-        .manager-table th,
-        .manager-table td {
-            padding: 10px 15px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-
-        .standings-table th,
-        .player-table th,
-        .transaction-table th,
-        .manager-table th {
-            background-color: #f0f0f0;
-            color: #444;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            position: sticky;
-            top: 0;
-            z-index: 5;
-        }
-
-        .standings-table th.sortable,
-        .player-table th.sortable {
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .standings-table th.sortable:hover,
-        .player-table th.sortable:hover {
-            background-color: #e5e5e5;
-        }
-
-        .standings-table tbody tr:hover,
-        .player-table tbody tr:hover,
-        .transaction-table tbody tr:hover {
-            background-color: #f9f9f9;
-        }
-
-        .logo-cell {
-            width: 40px;
-            padding-right: 5px !important;
+            margin-top: 1rem;
+            font-size: 0.95rem;
         }
 
         .team-logo {
             width: 30px;
             height: 30px;
-            border-radius: 50%;
+            object-fit: contain;
             vertical-align: middle;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-right: 0.5rem;
+            border-radius: 50%;
+            background: white;
+            padding: 0.15rem;
         }
 
-        .team-name-cell {
-            font-weight: 600;
-            color: #1e3c72;
-        }
-
-        /* Standings-specific styling */
-        .rank-cell {
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .stat-col {
-            text-align: right;
-            font-family: monospace;
-            font-size: 1em;
-        }
-
-        .manager-name {
-            font-size: 0.9em;
-            color: #666;
-            display: block;
-            margin-top: 2px;
-        }
-
-        /* Season Selector */
-        .season-selector {
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border-radius: 8px;
-            display: inline-flex;
-            gap: 10px;
+        .manager-cell {
+            display: flex;
             align-items: center;
-            font-weight: 600;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .table-wrapper {
+                overflow-x: visible;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .standings-table {
+                font-size: 0.65rem;
+                width: 100%;
+                table-layout: fixed;
+            }
+            
+            .standings-table th,
+            .standings-table td {
+                padding: 0.3rem 0.2rem;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+            
+            /* Column widths for mobile */
+            .standings-table th:nth-child(1),
+            .standings-table td:nth-child(1) { width: 8%; } /* Rank */
+            
+            .standings-table th:nth-child(2),
+            .standings-table td:nth-child(2) { width: 18%; } /* Manager */
+            
+            .standings-table th:nth-child(3),
+            .standings-table td:nth-child(3) { width: 28%; } /* Team Name */
+            
+            .standings-table th:nth-child(4),
+            .standings-table td:nth-child(4) { width: 10%; } /* Wins */
+            
+            .standings-table th:nth-child(5),
+            .standings-table td:nth-child(5) { width: 10%; } /* Losses */
+            
+            .standings-table th:nth-child(6),
+            .standings-table td:nth-child(6) { width: 12%; } /* Win % */
+            
+            .standings-table th:nth-child(7),
+            .standings-table td:nth-child(7) { width: 14%; } /* Total Points */
+            
+            .standings-table .team-logo {
+                width: 16px;
+                height: 16px;
+                margin-right: 2px;
+            }
+        }
+
+        .standings-table th {
+            background: #2a5298;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .standings-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .standings-table tr:hover {
+            background: #f5f5f5;
+        }
+
+        .season-selector {
+            margin-bottom: 1.5rem;
+        }
+
+        .season-selector label {
+            font-weight: bold;
+            margin-right: 1rem;
             color: #1e3c72;
         }
 
         .season-selector select {
-            padding: 8px 10px;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 2px solid #2a5298;
             border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 1em;
-            cursor: pointer;
         }
 
-        /* Awards Section */
-        .awards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .award-card {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            border-left: 5px solid #f39c12;
-        }
-
-        .award-card h3 {
-            color: #1e3c72;
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-
-        .award-details p {
-            margin: 5px 0;
-            color: #555;
-            font-size: 0.95em;
-        }
-
-        .award-details strong {
-            color: #333;
-        }
-
-        .award-value {
-            font-weight: bold;
-            color: #e67e22;
-        }
-
-        /* Manager Profiles */
         .manager-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .manager-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
         }
 
         .manager-card {
-            background-color: #f7f7f7;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
             border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+            cursor: pointer;
         }
 
         .manager-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .manager-card img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #f39c12;
-            margin-bottom: 10px;
+        .manager-card.inactive {
+            background: linear-gradient(135deg, #757575 0%, #616161 100%);
+            opacity: 0.8;
         }
 
         .manager-card h3 {
-            color: #1e3c72;
-            margin-bottom: 5px;
-            font-size: 1.5em;
-        }
-
-        .manager-card p {
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .manager-card .team-link {
-            display: inline-block;
-            background-color: #1e3c72;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s;
-        }
-
-        .manager-card .team-link:hover {
-            background-color: #2a5298;
-        }
-
-        /* Player Scoring Controls */
-        .player-controls {
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #eaf0f6;
-            border-radius: 8px;
-            border: 1px solid #dcdcdc;
-        }
-
-        .player-control-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .player-controls label {
-            font-weight: 600;
-            color: #1e3c72;
-            margin-right: 5px;
-        }
-
-        .player-controls select,
-        .player-controls input[type="text"] {
-            padding: 8px 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 1em;
-        }
-
-        .player-search input {
-            min-width: 200px;
-        }
-
-        .player-summary {
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: #555;
-        }
-
-        .player-name-cell {
-            cursor: pointer;
-            color: #2a5298;
-            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 0.75rem;
         }
 
-        .player-name-cell:hover {
-            text-decoration: underline;
-        }
-
-        .player-photo-small {
-            width: 30px;
-            height: 30px;
+        .manager-card .manager-logo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            background: white;
             border-radius: 50%;
-            object-fit: cover;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            flex-shrink: 0;
+            padding: 0.25rem;
         }
 
-        .player-points {
+        .manager-card .stat {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .manager-card .stat strong {
+            display: inline-block;
+            width: 140px;
+        }
+
+        .manager-card .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+        }
+        
+        .manager-card .awards-row {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+        
+        .manager-card .award-badge {
+            position: relative;
+            font-size: 1.6rem;
+            line-height: 1;
+            display: inline-block;
+        }
+        
+        .manager-card .award-count {
+            position: absolute;
+            bottom: -2px;
+            right: -4px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 0.55rem;
+            padding: 0.1rem 0.2rem;
+            border-radius: 2px;
             font-weight: bold;
-            color: #e67e22;
+            line-height: 1;
+            min-width: 14px;
+            text-align: center;
+        }
+        
+        /* Global award badge styles (for modal and other uses) */
+        .awards-row {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+        
+        .award-badge {
+            position: relative;
+            font-size: 1.6rem;
+            line-height: 1;
+            display: inline-block;
+        }
+        
+        .award-image {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            vertical-align: middle;
+        }
+        
+        .award-count {
+            position: absolute;
+            bottom: -2px;
+            right: -4px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 0.55rem;
+            padding: 0.1rem 0.2rem;
+            border-radius: 2px;
+            font-weight: bold;
+            line-height: 1;
+            min-width: 14px;
+            text-align: center;
         }
 
-        /* --- Modal Styling (Player Details) --- */
+        /* Manager Detail Modal */
         .modal {
             display: none;
             position: fixed;
@@ -417,24 +547,61 @@
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0,0,0,0.7);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            border: 1px solid #888;
-            width: 80%;
+            background: white;
+            padding: 0;
+            border-radius: 15px;
             max-width: 900px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-height: 85vh;
+            overflow: hidden;
             position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
         }
 
-        .player-modal-content {
-            margin-top: 2%;
-            /* Move slightly higher */
+        .modal-header {
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 10;
+            padding: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #2a5298;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .modal-body-scroll {
+            overflow-y: auto;
+            padding: 2rem;
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 95%;
+                max-height: 90vh;
+            }
+            
+            .modal-header {
+                padding: 1.5rem;
+                padding-bottom: 1rem;
+            }
+            
+            .modal-body-scroll {
+                padding: 1.5rem;
+            }
         }
 
         .modal-close {
@@ -449,9 +616,452 @@
         }
 
         .modal-close:hover {
-            color: #333;
+            color: #000;
         }
 
+        .modal-header {
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 10;
+            padding: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #2a5298;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .modal-header h2 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+            border: none;
+            padding: 0;
+        }
+
+        .modal-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .modal-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+            
+            .stat-box {
+                padding: 0.75rem;
+            }
+            
+            .stat-box .value {
+                font-size: 1.4rem;
+            }
+            
+            .stat-box .label {
+                font-size: 0.8rem;
+            }
+        }
+
+        .stat-box {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-box .value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2a5298;
+        }
+
+        .stat-box .label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .timeline {
+            margin: 2rem 0;
+        }
+
+        .timeline h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            padding: 1rem;
+            border-left: 3px solid #2a5298;
+            margin-bottom: 1rem;
+            background: #f8f9fa;
+            border-radius: 0 8px 8px 0;
+            align-items: center;
+        }
+
+        .timeline-item .year {
+            font-weight: bold;
+            color: #2a5298;
+            min-width: 60px;
+            font-size: 1.1rem;
+        }
+
+        .timeline-item .details {
+            flex: 1;
+            margin-left: 1rem;
+        }
+
+        .timeline-item .timeline-logo {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: white;
+            padding: 0.25rem;
+            margin-left: 1rem;
+        }
+
+        .timeline-item .rank {
+            display: inline-block;
+            background: #2a5298;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            margin-right: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .timeline-item .rank.champion {
+            background: #ffd700;
+            color: #000;
+        }
+
+        .timeline-item .rank.runner-up {
+            background: #c0c0c0;
+            color: #000;
+        }
+
+        .matchup-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            overflow-x: auto;
+            display: block;
+        }
+
+        .matchup-table thead,
+        .matchup-table tbody,
+        .matchup-table tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        @media (max-width: 768px) {
+            .matchup-table {
+                font-size: 0.8rem;
+            }
+            
+            .matchup-table th,
+            .matchup-table td {
+                padding: 0.5rem 0.25rem;
+            }
+        }
+
+        .matchup-table th {
+            background: #2a5298;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+        }
+
+        .matchup-table th:hover {
+            background: #1e3c72;
+        }
+
+        .matchup-table th.sortable::after {
+            content: ' ⇅';
+            opacity: 0.5;
+            font-size: 0.8rem;
+        }
+
+        .matchup-table th.sorted-asc::after {
+            content: ' ▲';
+            opacity: 1;
+        }
+
+        .matchup-table th.sorted-desc::after {
+            content: ' ▼';
+            opacity: 1;
+        }
+
+        .matchup-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .matchup-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .award-section {
+            margin-bottom: 1rem;
+        }
+
+        .award-section h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .award-icon {
+            font-size: 1.5rem;
+        }
+        
+        .award-header-image {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            vertical-align: middle;
+        }
+        
+        .award-table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 1rem;
+        }
+
+        .award-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .award-table th {
+            background: #2a5298;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .award-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .award-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .award-value {
+            font-weight: bold;
+            color: #2a5298;
+        }
+
+        /* ===== PLAYER SCORING STYLES ===== */
+        .player-controls {
+            margin-bottom: 1.5rem;
+        }
+        
+        .player-control-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            align-items: flex-end;
+        }
+        
+        .player-control-row .season-selector,
+        .player-control-row .position-filter,
+        .player-control-row .manager-filter {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .player-control-row label {
+            font-weight: bold;
+            color: #1e3c72;
+            font-size: 0.85rem;
+        }
+        
+        .player-control-row select {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            min-width: 150px;
+        }
+        
+        .player-search {
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .player-search input {
+            width: 100%;
+            padding: 0.6rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .player-search input:focus {
+            outline: none;
+            border-color: #2a5298;
+            box-shadow: 0 0 0 2px rgba(42, 82, 152, 0.1);
+        }
+        
+        .player-summary {
+            margin-bottom: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .player-table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .player-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        
+        .player-table th {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 0.75rem 0.5rem;
+            text-align: left;
+            white-space: nowrap;
+            position: sticky;
+            top: 0;
+        }
+        
+        .player-table th.sortable {
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .player-table th.sortable:hover {
+            background: linear-gradient(135deg, #2a5298, #3a6cc8);
+        }
+        
+        .player-table th.sort-asc::after {
+            content: ' ▲';
+            font-size: 0.7rem;
+        }
+        
+        .player-table th.sort-desc::after {
+            content: ' ▼';
+            font-size: 0.7rem;
+        }
+        
+        .player-table td {
+            padding: 0.6rem 0.5rem;
+            border-bottom: 1px solid #eee;
+            vertical-align: middle;
+        }
+        
+        .player-table tr:hover {
+            background: #f0f4f8;
+        }
+        
+        .player-table .stat-col {
+            text-align: center;
+        }
+        
+        .player-name-cell {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .player-name-cell:hover .player-name {
+            color: #2a5298;
+            text-decoration: underline;
+        }
+        
+        .player-headshot {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #f0f0f0;
+        }
+        
+        .player-name {
+            font-weight: 500;
+        }
+        
+        .player-mlb-team {
+            font-size: 0.75rem;
+            color: #888;
+        }
+        
+        .player-team-cell {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        
+        .player-team-logo {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+        }
+        
+        .player-fantasy-team {
+            font-size: 0.8rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 120px;
+        }
+        
+        .player-position {
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .player-points {
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        /* Hide batter/pitcher stats based on filter */
+        .show-batters .pitcher-stat,
+        .show-pitchers .batter-stat {
+            display: none;
+        }
+        
+        /* Player Modal Styles */
+        .player-modal-content {
+            max-width: 800px;
+        }
+        
         #player-modal-header {
             display: flex;
             align-items: center;
@@ -461,310 +1071,620 @@
             color: white;
             border-radius: 8px 8px 0 0;
         }
-
+        
         .player-modal-headshot {
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            border: 3px solid white;
             object-fit: cover;
-            flex-shrink: 0;
+            background: white;
+            border: 3px solid white;
         }
-
-        .player-modal-info {
-            flex-grow: 1;
-        }
-
-        /* FIX 1: Ensure Player Name is White in Modal Header */
-        #player-modal-header .player-modal-info h2 {
-            color: white;
+        
+        .player-modal-info h2 {
             margin: 0 0 0.25rem 0;
             font-size: 1.5rem;
         }
-
+        
         .player-modal-info .player-details {
-            font-size: 0.9em;
-            opacity: 0.8;
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
         }
-
+        
         .player-modal-points {
-            text-align: right;
             margin-left: auto;
-            /* Push to the right */
-            flex-shrink: 0;
+            text-align: right;
         }
-
+        
         .player-modal-points .points-value {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: bold;
-            color: #f39c12;
-            /* Accent color for points */
-            line-height: 1;
         }
-
+        
         .player-modal-points .points-label {
-            font-size: 0.8em;
+            font-size: 0.8rem;
             opacity: 0.8;
         }
-
-        /* FIX 2: Correctly position and style the Close Button for the Player Modal */
-        .player-modal-close-btn {
-            background: none;
-            border: none;
-            color: white;
-            /* Makes the 'X' visible on the dark background */
-            font-size: 2.5rem;
-            cursor: pointer;
-            padding: 0;
-            margin-left: 1.5rem;
-            /* Separates the X from the points display */
-            transition: opacity 0.3s;
-            line-height: 1;
-            flex-shrink: 0;
-            /* Prevents the button from shrinking */
+        
+        .player-modal-section {
+            margin-bottom: 1.5rem;
         }
-
-        .player-modal-close-btn:hover {
-            opacity: 0.8;
+        
+        .player-modal-section h3 {
+            color: #1e3c72;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eee;
         }
-
-        .modal-body-scroll {
-            padding: 20px;
-            max-height: 70vh;
-            overflow-y: auto;
+        
+        .player-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 0.75rem;
         }
-
-        /* Responsive Styles */
-        @media (max-width: 900px) {
-            .nav-container {
-                justify-content: flex-start;
-                overflow-x: auto;
-            }
-
-            .nav-container a {
-                flex-shrink: 0;
-            }
-
-            main {
-                margin: 0 10px;
-                padding: 15px;
-            }
-
-            .manager-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            }
-
+        
+        .player-stat-box {
+            background: #f8f9fa;
+            padding: 0.75rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .player-stat-box .stat-value {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        .player-stat-box .stat-label {
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+        }
+        
+        .player-history-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        
+        .player-history-table th {
+            background: #f0f4f8;
+            padding: 0.6rem;
+            text-align: left;
+            font-weight: 600;
+            color: #1e3c72;
+        }
+        
+        .player-history-table td {
+            padding: 0.6rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .player-history-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        /* Mobile styles for Player Scoring */
+        @media (max-width: 768px) {
             .player-control-row {
                 flex-direction: column;
-                align-items: flex-start;
+                gap: 0.75rem;
             }
-
-            .player-controls select,
-            .player-controls input[type="text"] {
+            
+            .player-control-row .season-selector,
+            .player-control-row .position-filter,
+            .player-control-row .manager-filter {
                 width: 100%;
             }
-        }
-
-        @media (max-width: 600px) {
-            header.desktop-header {
-                display: none;
+            
+            .player-control-row select {
+                width: 100%;
+                min-width: unset;
             }
-
-            header.mobile-header {
-                display: block;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                background-color: #4a5d23;
-                z-index: 200;
-                padding: 10px;
-                color: white;
+            
+            .player-search {
+                max-width: 100%;
+            }
+            
+            .player-table-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .player-table {
+                font-size: 0.7rem;
+                min-width: 600px;
+            }
+            
+            .player-table th,
+            .player-table td {
+                padding: 0.4rem 0.3rem;
+            }
+            
+            .player-headshot {
+                width: 24px;
+                height: 24px;
+            }
+            
+            .player-team-logo {
+                width: 18px;
+                height: 18px;
+            }
+            
+            .player-name-cell {
+                gap: 0.3rem;
+            }
+            
+            .player-mlb-team {
+                font-size: 0.65rem;
+            }
+            
+            .player-fantasy-team {
+                max-width: 60px;
+                font-size: 0.7rem;
+            }
+            
+            /* Player Modal Mobile */
+            .player-modal-content {
+                width: 95%;
+                max-height: 90vh;
+            }
+            
+            #player-modal-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+                gap: 0.75rem;
+            }
+            
+            .player-modal-headshot {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .player-modal-info h2 {
+                font-size: 1.2rem;
+            }
+            
+            .player-modal-info .player-details {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            
+            .player-modal-points {
+                margin-left: 0;
                 text-align: center;
             }
-
-            body {
-                padding-top: 100px;
+            
+            .player-modal-points .points-value {
+                font-size: 1.5rem;
             }
-
-            nav {
-                top: 50px;
+            
+            .player-stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0.5rem;
             }
-
-            .header-banner {
-                height: 40px;
-                background-size: contain;
-                background-repeat: repeat-x;
+            
+            .player-stat-box {
+                padding: 0.5rem;
             }
-
-            h1 {
-                font-size: 2em;
+            
+            .player-stat-box .stat-value {
+                font-size: 1rem;
             }
-
-            .modal-content {
-                width: 95%;
-                margin: 5% auto;
+            
+            .player-stat-box .stat-label {
+                font-size: 0.65rem;
             }
-
-            #player-modal-header {
-                flex-wrap: wrap;
-                gap: 1rem;
+            
+            .player-history-table {
+                font-size: 0.8rem;
             }
-
-            .player-modal-points {
-                width: 100%;
-                text-align: left;
-                order: 3;
-                /* Move points below info block */
-                margin-left: 0;
+            
+            .player-history-table th,
+            .player-history-table td {
+                padding: 0.4rem;
             }
-
-            .player-modal-close-btn {
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                margin-left: 0;
-                font-size: 2rem;
-            }
-        }
-
-        /* Loading/Error Styles */
-        .loading,
-        .error {
-            text-align: center;
-            padding: 20px;
-            font-size: 1.2em;
         }
 
         .loading {
-            color: #2a5298;
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .award-table {
+                font-size: 0.6rem;
+                width: 100%;
+                table-layout: fixed;
+            }
+            
+            .award-table th,
+            .award-table td {
+                padding: 0.3rem 0.2rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            
+            /* Award table column widths */
+            .award-table th:nth-child(1),
+            .award-table td:nth-child(1) { width: 15%; } /* Year */
+            
+            .award-table th:nth-child(2),
+            .award-table td:nth-child(2) { width: 25%; } /* Manager */
+            
+            .award-table th:nth-child(3),
+            .award-table td:nth-child(3) { width: 40%; } /* Team Name */
+            
+            .award-table th:nth-child(4),
+            .award-table td:nth-child(4) { width: 20%; } /* Points/Wins */
+            
+            .award-section h3 {
+                font-size: 1rem;
+            }
+            
+            .award-icon {
+                font-size: 1rem;
+            }
+            
+            .awards-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .award-table-wrapper {
+                overflow-x: visible;
+            }
         }
 
         .error {
-            color: #c0392b;
-            border: 1px solid #c0392b;
-            background-color: #fbe6e4;
+            background: #fee;
+            border: 1px solid #fcc;
+            padding: 1rem;
             border-radius: 5px;
+            color: #c33;
+            margin: 1rem 0;
+        }
+
+        /* Season Chart Styles */
+        .chart-svg {
+            overflow: visible;
+        }
+        
+        .chart-line {
+            fill: none;
+            stroke-width: 2.5;
+            transition: opacity 0.3s ease, stroke-width 0.3s ease;
+        }
+        
+        .chart-line.faded {
+            opacity: 0.15;
+        }
+        
+        .chart-line.highlighted {
+            stroke-width: 4;
+        }
+        
+        .team-logo-marker {
+            cursor: pointer;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        .team-logo-marker.faded {
+            opacity: 0.2;
+        }
+        
+        .team-logo-marker.highlighted {
+            transform-origin: center;
+        }
+        
+        .chart-tooltip {
+            position: absolute;
+            background: rgba(30, 60, 114, 0.95);
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            pointer-events: none;
+            z-index: 100;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transform: translate(-50%, -100%);
+            margin-top: -10px;
+        }
+        
+        .chart-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: rgba(30, 60, 114, 0.95);
+        }
+        
+        .chart-axis-label {
+            font-size: 0.75rem;
+            fill: #666;
+        }
+        
+        .chart-grid-line {
+            stroke: #e0e0e0;
+            stroke-width: 1;
+        }
+        
+        .chart-toggle-btn {
+            background: #e0e0e0;
+            color: #333;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        .chart-toggle-btn:hover {
+            background: #ccc;
+        }
+        
+        .chart-toggle-btn.active {
+            background: #2a5298;
+            color: white;
+        }
+        
+        /* Mobile optimizations for chart */
+        @media (max-width: 768px) {
+            #season-chart-container > div:first-child {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            #season-chart {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .chart-toggle-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            color: #666;
         }
     </style>
 </head>
-
 <body>
-
     <header class="desktop-header">
         <div class="header-container">
-            <div class="header-banner"></div>
+            <picture>
+                <source srcset="header_long.png" media="(min-width: 1200px)">
+                <img src="header_short.png" alt="Fantasy Baseball Civil War - Established 2017 - 12 Team Points League" class="header-banner">
+            </picture>
+            <a href="https://baseball.fantasysports.yahoo.com/league/fantasybaseballcivilwar/2025" target="_blank" class="header-league-link" title="Go to Yahoo Fantasy League"></a>
         </div>
     </header>
-
+    
     <header class="mobile-header">
-        <h1>Fantasy Baseball Civil War</h1>
+        <div class="mobile-header-container">
+            <img src="mobile_header.png" alt="Fantasy Baseball Civil War" class="mobile-header-banner">
+            <!-- Clickable zones over the banner -->
+            <a href="https://baseball.fantasysports.yahoo.com/league/fantasybaseballcivilwar/2025" target="_blank" class="mobile-zone zone-logo" title="Go to Yahoo Fantasy League"></a>
+            <a href="#" class="mobile-zone zone-seasons" onclick="showSection('standings'); return false;" title="Seasons"></a>
+            <a href="#" class="mobile-zone zone-awards" onclick="showSection('awards'); return false;" title="Awards"></a>
+            <a href="#" class="mobile-zone zone-scoring" onclick="showSection('player-scoring'); return false;" title="Player Scoring"></a>
+            <a href="#" class="mobile-zone zone-managers" onclick="showSection('managers'); return false;" title="Manager Profiles"></a>
+            <!-- Icons 5 and 6 are placeholders - no links -->
+        </div>
     </header>
 
     <nav>
-        <div class="nav-container">
-            <a href="#standings" class="tab-link active" data-tab="standings">Standings</a>
-            <a href="#scoring" class="tab-link" data-tab="scoring">Player Scoring</a>
-            <a href="#transactions" class="tab-link" data-tab="transactions">Transactions</a>
-            <a href="#managers" class="tab-link" data-tab="managers">Managers</a>
-            <a href="#awards" class="tab-link" data-tab="awards">Awards</a>
-        </div>
+        <button onclick="showSection('standings')" class="nav-btn active">Seasons</button>
+        <button onclick="showSection('awards')" class="nav-btn">Awards</button>
+        <button onclick="showSection('scoring')" class="nav-btn">Player Scoring</button>
+        <button onclick="showSection('managers')" class="nav-btn">Manager Profiles</button>
     </nav>
 
-    <main>
+    <div class="container">
+        <!-- Seasons Section -->
         <div id="standings" class="section active">
-            <h2>🏆 League Standings</h2>
-            <p id="last-updated-standings">Last Updated: Loading...</p>
+            <h2>Seasons</h2>
+            
             <div class="season-selector">
-                <label for="standings-season">Season:</label>
+                <label for="standings-season">Select Season:</label>
                 <select id="standings-season" onchange="loadStandingsBySeason()">
+                    <!-- Will be populated dynamically -->
                 </select>
             </div>
 
             <div id="standings-loading" class="loading">Loading standings...</div>
             <div id="standings-error" class="error" style="display: none;"></div>
 
-            <div id="standings-content" style="display: none;">
-                <div class="table-wrapper">
-                    <table class="standings-table" id="standings-table">
-                        <thead>
-                            <tr>
-                                <th class="rank-cell">#</th>
-                                <th class="sortable" onclick="sortStandingsTable('team_name')">Team</th>
-                                <th class="sortable stat-col" onclick="sortStandingsTable('W')">W</th>
-                                <th class="sortable stat-col" onclick="sortStandingsTable('L')">L</th>
-                                <th class="sortable stat-col" onclick="sortStandingsTable('T')">T</th>
-                                <th class="sortable stat-col" onclick="sortStandingsTable('PCT')">PCT</th>
-                                <th class="sortable stat-col" onclick="sortStandingsTable('R')">R</th>
-                                <th class="sortable stat-col" onclick="sortStandingsTable('HR')">HR</th>
-                                <th class="sortable stat-col" onclick="sortStandingsTable('RBI')">RBI</th>
-                                <th class="sortable stat-col" onclick="sortStandingsTable('SB')">SB</th>
-                                <th class="sortable stat-col" onclick="sortStandingsTable('WINS')">WINS</th>
-                                <th class="sortable stat-col" onclick="sortStandingsTable('K')">K</th>
-                                <th class="sortable stat-col" onclick="sortStandingsTable('SAVES')">SAVES</th>
-                                <th class="sortable stat-col" onclick="sortStandingsTable('ERA')">ERA</th>
-                                <th class="sortable stat-col" onclick="sortStandingsTable('WHIP')">WHIP</th>
-                            </tr>
-                        </thead>
-                        <tbody id="standings-table-body">
-                        </tbody>
-                    </table>
+            <div class="table-wrapper">
+                <table class="standings-table" id="standings-table" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Manager</th>
+                            <th>Team Name</th>
+                            <th>Wins</th>
+                            <th>Losses</th>
+                            <th>Win %</th>
+                            <th>Total Points</th>
+                        </tr>
+                    </thead>
+                    <tbody id="standings-body">
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Season Points Chart -->
+            <div id="season-chart-container" style="display: none; margin-top: 2rem;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                    <h3 style="color: #1e3c72; margin: 0;">Summary</h3>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <label style="font-weight: bold; color: #1e3c72;">Scoring Type:</label>
+                        <button id="btn-weekly" class="chart-toggle-btn active" onclick="setChartType('weekly')">Weekly</button>
+                        <button id="btn-total" class="chart-toggle-btn" onclick="setChartType('total')">Total</button>
+                    </div>
+                </div>
+                <div id="season-chart" style="position: relative; width: 100%; min-height: 500px; background: #fafafa; border-radius: 8px; overflow: visible;"></div>
+            </div>
+        </div>
+
+        <!-- Awards Section -->
+        <div id="awards" class="section">
+            <h2>🏆 League Awards</h2>
+            
+            <div id="awards-loading" class="loading">Loading awards...</div>
+            <div id="awards-error" class="error" style="display: none;"></div>
+            
+            <div id="awards-content" style="display: none;">
+                <div class="awards-grid">
+                <div class="award-section">
+                    <h3><span class="award-icon">👑</span> Regular Season Champion (Most Wins)</h3>
+                    <div class="award-table-wrapper">
+                        <table class="award-table">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Manager</th>
+                                    <th>Team Name</th>
+                                    <th>Wins</th>
+                                </tr>
+                            </thead>
+                            <tbody id="regular-season-winners">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="award-section">
+                    <h3><span class="award-icon">🏅</span> Scoring Champion (Most Points)</h3>
+                    <div class="award-table-wrapper">
+                        <table class="award-table">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Manager</th>
+                                    <th>Team Name</th>
+                                    <th>Points</th>
+                                </tr>
+                            </thead>
+                            <tbody id="scoring-champions">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="award-section">
+                    <h3><span class="award-icon">🗑️</span> Garbage Award (Worst Record)</h3>
+                    <div class="award-table-wrapper">
+                        <table class="award-table">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Manager</th>
+                                    <th>Team Name</th>
+                                    <th>Record</th>
+                                </tr>
+                            </thead>
+                            <tbody id="garbage-awards">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="award-section">
+                    <h3><span class="award-icon"><img src="clown_award.png" alt="Clown Award" class="award-header-image"></span> Clown Award (Least Points)</h3>
+                    <div class="award-table-wrapper">
+                        <table class="award-table">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Manager</th>
+                                    <th>Team Name</th>
+                                    <th>Points</th>
+                                </tr>
+                            </thead>
+                            <tbody id="clown-awards">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
 
+        <!-- Player Scoring Section -->
         <div id="scoring" class="section">
-            <h2>⚾ Player Scoring Report</h2>
-
+            <h2>Player Scoring</h2>
+            
             <div class="player-controls">
                 <div class="player-control-row">
                     <div class="season-selector">
                         <label for="scoring-season">Season:</label>
                         <select id="scoring-season" onchange="loadPlayerScoring()">
+                            <!-- Will be populated dynamically -->
                         </select>
                     </div>
-
+                    
                     <div class="position-filter">
                         <label for="position-filter">Position:</label>
                         <select id="position-filter" onchange="filterPlayers()">
                             <option value="all">All Players</option>
-                            <option value="B">Batters</option>
-                            <option value="P">Pitchers</option>
-                            <option value="C">Catcher</option>
-                            <option value="1B">1B</option>
-                            <option value="2B">2B</option>
-                            <option value="3B">3B</option>
-                            <option value="SS">SS</option>
-                            <option value="OF">OF</option>
-                            <option value="DH">DH</option>
-                            <option value="SP">SP</option>
-                            <option value="RP">RP</option>
+                            <option value="B">All Batters</option>
+                            <option value="P">All Pitchers</option>
+                            <optgroup label="Batting Positions">
+                                <option value="C">C - Catcher</option>
+                                <option value="1B">1B - First Base</option>
+                                <option value="2B">2B - Second Base</option>
+                                <option value="3B">3B - Third Base</option>
+                                <option value="SS">SS - Shortstop</option>
+                                <option value="OF">OF - Outfield</option>
+                                <option value="Util">Util - Utility</option>
+                            </optgroup>
+                            <optgroup label="Pitching Positions">
+                                <option value="SP">SP - Starting Pitcher</option>
+                                <option value="RP">RP - Relief Pitcher</option>
+                            </optgroup>
                         </select>
                     </div>
-
+                    
                     <div class="manager-filter">
                         <label for="manager-filter">Manager:</label>
                         <select id="manager-filter" onchange="filterPlayers()">
                             <option value="all">All Managers</option>
+                            <!-- Will be populated dynamically -->
                         </select>
                     </div>
-
-                    <div class="player-search">
-                        <label for="player-search">Search Player:</label>
-                        <input type="text" id="player-search" onkeyup="filterPlayers()" placeholder="Search by name...">
-                    </div>
+                </div>
+                
+                <div class="player-search">
+                    <input type="text" id="player-search" placeholder="Search players..." oninput="filterPlayers()">
                 </div>
             </div>
 
             <div id="player-loading" class="loading">Loading player data...</div>
             <div id="player-error" class="error" style="display: none;"></div>
-
+            
             <div id="player-stats-container" style="display: none;">
-                <p id="last-updated-scoring">Last Updated: Loading...</p>
                 <div class="player-summary">
                     <span id="player-count">0 players</span>
                 </div>
-
+                
                 <div class="table-wrapper player-table-wrapper">
                     <table class="player-table" id="player-table">
                         <thead>
@@ -772,7 +1692,7 @@
                                 <th class="sortable" onclick="sortPlayerTable('rank')">#</th>
                                 <th class="sortable" onclick="sortPlayerTable('name')">Player</th>
                                 <th>Team</th>
-                                <th class="sortable" onclick="sortPlayerTable('positions')">Pos</th>
+                                <th class="sortable" onclick="sortPlayerTable('position')">Pos</th>
                                 <th class="sortable stat-col" onclick="sortPlayerTable('fantasy_points')">Pts</th>
                                 <th class="sortable stat-col batter-stat" onclick="sortPlayerTable('HR')">HR</th>
                                 <th class="sortable stat-col batter-stat" onclick="sortPlayerTable('RBI')">RBI</th>
@@ -793,412 +1713,320 @@
             </div>
         </div>
 
-        <div id="transactions" class="section">
-            <h2>📰 Latest Transactions</h2>
-            <div class="season-selector">
-                <label for="transactions-season">Season:</label>
-                <select id="transactions-season" onchange="loadTransactions()">
-                </select>
-            </div>
-
-            <div id="transactions-loading" class="loading">Loading transactions...</div>
-            <div id="transactions-error" class="error" style="display: none;"></div>
-
-            <div id="transactions-content" style="display: none;">
-                <div class="table-wrapper">
-                    <table class="transaction-table" id="transactions-table">
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Type</th>
-                                <th>Details</th>
-                                <th>Manager</th>
-                            </tr>
-                        </thead>
-                        <tbody id="transactions-table-body">
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div id="managers" class="section">
-            <h2>👨‍💼 Manager Profiles</h2>
-            <div class="manager-grid" id="manager-profiles-grid">
-            </div>
-            <div id="managers-error" class="error" style="display: none;"></div>
-        </div>
-
-        <div id="awards" class="section">
-            <h2>🏅 Historical Awards</h2>
-            <div class="season-selector">
-                <label for="awards-season">Season:</label>
-                <select id="awards-season" onchange="loadAwards()">
-                </select>
-            </div>
-
-            <div id="awards-loading" class="loading">Loading awards...</div>
-            <div id="awards-error" class="error" style="display: none;"></div>
-
-            <div id="awards-content" style="display: none;">
-
-                <h3>League Leaders</h3>
-                <div class="table-wrapper">
-                    <table class="manager-table">
-                        <thead>
-                            <tr>
-                                <th>Rank</th>
-                                <th>Category</th>
-                                <th>Team</th>
-                                <th>Value</th>
-                            </tr>
-                        </thead>
-                        <tbody id="league-leaders-table">
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Season MVP</h3>
-                <div class="awards-grid" id="mvp-grid">
-                </div>
-
-                <h3>Other Season Highlights</h3>
-                <div class="awards-grid" id="highlight-grid">
-                </div>
-
-            </div>
-        </div>
-
+        <!-- Player Detail Modal -->
         <div id="player-modal" class="modal">
             <div class="modal-content player-modal-content">
-                <div id="player-modal-header"></div>
-                <div class="modal-body-scroll" id="player-modal-body"></div>
+                <span class="modal-close" onclick="closePlayerModal()">&times;</span>
+                <div id="player-modal-header">
+                    <!-- Header loaded dynamically -->
+                </div>
+                <div class="modal-body-scroll" id="player-modal-body">
+                    <!-- Body content loaded dynamically -->
+                </div>
             </div>
         </div>
 
-    </main>
+        <!-- Manager Profiles Section -->
+        <div id="managers" class="section">
+            <h2>Manager Profiles</h2>
+            
+            <div id="managers-loading" class="loading">Loading manager profiles...</div>
+            <div id="managers-error" class="error" style="display: none;"></div>
+            
+            <div class="manager-grid" id="manager-grid">
+            </div>
+        </div>
+    </div>
+
+    <!-- Manager Detail Modal -->
+    <div id="manager-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeManagerModal()">&times;</span>
+            <div id="modal-header-section">
+                <!-- Header loaded dynamically -->
+            </div>
+            <div class="modal-body-scroll" id="modal-body">
+                <!-- Body content loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Yahoo Fantasy Baseball League | Powered by Python & Yahoo Fantasy API</p>
+    </footer>
 
     <script>
-        // =============================================================================
-        // GLOBAL STATE & UTILITIES
-        // =============================================================================
-        const CURRENT_SEASON = 2025;
-        const HISTORICAL_SEASONS = [2019, 2020, 2021, 2022, 2023, 2024];
-        const DATA_DIR = 'data';
-
+        // ===== GLOBAL STATE =====
+        let availableSeasons = [];
+        let allManagersData = [];
+        let managerHistoryData = [];
+        let managerAwardsData = {}; // Store manager awards globally
+        
+        // Player scoring state
         let allPlayersData = [];
         let filteredPlayersData = [];
-        let currentSortColumn = 'fantasy_points';
-        let currentSortDirection = 'desc';
-
-        // Helper to switch between sections
-        function showSection(tabName) {
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(tabName).classList.add('active');
-
-            document.querySelectorAll('.tab-link').forEach(link => {
-                link.classList.remove('active');
-            });
-            document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
-
-            // Trigger data load if necessary
-            if (tabName === 'scoring' && allPlayersData.length === 0) {
-                loadPlayerScoring();
-            } else if (tabName === 'transactions' && document.getElementById('transactions-table-body').innerHTML === '') {
-                loadTransactions();
-            } else if (tabName === 'awards' && document.getElementById('league-leaders-table').innerHTML === '') {
-                loadAwards();
+        let playerHistoryData = {};
+        let currentPlayerSort = { column: 'fantasy_points', direction: 'desc' };
+        
+        // Chart state
+        let currentChartData = null;
+        let currentChartType = 'weekly'; // 'weekly' or 'total'
+        
+        // Cache for team data to avoid redundant fetches
+        const teamDataCache = {};
+        
+        // Helper function to get team data with caching
+        async function getTeamData(year) {
+            const cacheKey = year === 2025 ? 'current' : year;
+            
+            if (teamDataCache[cacheKey]) {
+                return teamDataCache[cacheKey];
             }
-        }
-
-        // Setup for navigation links
-        document.querySelectorAll('.tab-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const tabName = e.target.getAttribute('data-tab');
-                showSection(tabName);
-            });
-        });
-
-        // Initialize selectors with available seasons
-        async function initializeSeasonSelectors() {
-            const seasonList = [CURRENT_SEASON, ...HISTORICAL_SEASONS].sort((a, b) => b - a);
-            const selectorIds = ['standings-season', 'scoring-season', 'transactions-season', 'awards-season'];
-
-            for (const id of selectorIds) {
-                const selector = document.getElementById(id);
-                if (selector) {
-                    selector.innerHTML = '';
-                    seasonList.forEach(year => {
-                        const option = document.createElement('option');
-                        option.value = year;
-                        option.textContent = year;
-                        if (year === CURRENT_SEASON) {
-                            option.selected = true;
-                        }
-                        selector.appendChild(option);
-                    });
-                }
-            }
-        }
-
-        // Helper to format date
-        function formatLastUpdated(timestamp) {
-            if (!timestamp) return 'N/A';
-            const date = new Date(timestamp);
-            return date.toLocaleString();
-        }
-
-        // =============================================================================
-        // STANDINGS LOGIC
-        // =============================================================================
-
-        let allStandings = [];
-
-        async function loadStandingsBySeason() {
-            const selectedYear = document.getElementById('standings-season').value;
-            const loadingEl = document.getElementById('standings-loading');
-            const contentEl = document.getElementById('standings-content');
-            const errorEl = document.getElementById('standings-error');
-            const lastUpdatedEl = document.getElementById('last-updated-standings');
-
-            loadingEl.style.display = 'block';
-            contentEl.style.display = 'none';
-            errorEl.style.display = 'none';
-            lastUpdatedEl.textContent = 'Last Updated: Loading...';
-
-            let standingsPath = `${DATA_DIR}/standings_${selectedYear}.json`;
-
+            
             try {
-                const response = await fetch(standingsPath);
-                if (!response.ok) {
-                    throw new Error(`Failed to load data from ${standingsPath}. Status: ${response.status}`);
+                let teamsResponse;
+                if (year === 2025) {
+                    teamsResponse = await fetch('data/current_season/teams.json');
+                } else {
+                    teamsResponse = await fetch(`data/historical/${year}/teams.json`);
                 }
-                const data = await response.json();
-                allStandings = data.teams || [];
-                lastUpdatedEl.textContent = `Last Updated: ${formatLastUpdated(data.updated_at)}`;
-
-                renderStandingsTable();
-
-                loadingEl.style.display = 'none';
-                contentEl.style.display = 'block';
-
-            } catch (error) {
-                console.error('Error loading standings:', error);
-                loadingEl.style.display = 'none';
-                errorEl.textContent = `Error loading standings: ${error.message}`;
-                errorEl.style.display = 'block';
+                
+                if (teamsResponse.ok) {
+                    const teams = await teamsResponse.json();
+                    teamDataCache[cacheKey] = teams;
+                    return teams;
+                }
+            } catch (e) {
+                console.log(`Could not load team data for ${year}`);
             }
+            
+            return null;
         }
 
-        function renderStandingsTable() {
-            const tbody = document.getElementById('standings-table-body');
-            tbody.innerHTML = '';
-
-            allStandings.forEach((team, index) => {
-                const row = tbody.insertRow();
-
-                row.insertCell().textContent = index + 1; // Rank
-
-                const teamCell = row.insertCell();
-                teamCell.classList.add('team-name-cell');
-                teamCell.innerHTML = `
-                    <img src="${team.logo_url}" alt="${team.team_name} logo" class="team-logo">
-                    ${team.team_name}
-                    <span class="manager-name">${team.manager}</span>
-                `;
-
-                row.insertCell().textContent = team.W || 0;
-                row.insertCell().textContent = team.L || 0;
-                row.insertCell().textContent = team.T || 0;
-                row.insertCell().textContent = team.PCT ? team.PCT.toFixed(3) : '0.000';
-
-                // Stat columns
-                row.insertCell().textContent = team.stats.R || 0;
-                row.insertCell().textContent = team.stats.HR || 0;
-                row.insertCell().textContent = team.stats.RBI || 0;
-                row.insertCell().textContent = team.stats.SB || 0;
-                row.insertCell().textContent = team.stats.WINS || 0;
-                row.insertCell().textContent = team.stats.K || 0;
-                row.insertCell().textContent = team.stats.SAVES || 0;
-                row.insertCell().textContent = team.stats.ERA ? team.stats.ERA.toFixed(2) : '0.00';
-                row.insertCell().textContent = team.stats.WHIP ? team.stats.WHIP.toFixed(2) : '0.00';
-            });
-        }
-
-        function sortStandingsTable(column) {
-            // No current implementation for sorting standings, but this is the hook
-            console.log(`Sorting standings by ${column}`);
-        }
-
-        // =============================================================================
-        // PLAYER SCORING LOGIC
-        // =============================================================================
-
+        // ===== PLAYER SCORING FUNCTIONS =====
+        
         async function loadPlayerScoring() {
-            const selectedYear = document.getElementById('scoring-season').value;
+            const seasonSelect = document.getElementById('scoring-season');
+            const selectedYear = parseInt(seasonSelect.value);
+            
             const loadingEl = document.getElementById('player-loading');
-            const contentEl = document.getElementById('player-stats-container');
             const errorEl = document.getElementById('player-error');
-            const lastUpdatedEl = document.getElementById('last-updated-scoring');
-
+            const containerEl = document.getElementById('player-stats-container');
+            
             loadingEl.style.display = 'block';
-            contentEl.style.display = 'none';
             errorEl.style.display = 'none';
-            lastUpdatedEl.textContent = 'Last Updated: Loading...';
-
-            let playerStatsPath;
-            if (parseInt(selectedYear) === CURRENT_SEASON) {
-                playerStatsPath = `${DATA_DIR}/current_season/player_stats.json`;
-            } else {
-                playerStatsPath = `${DATA_DIR}/historical/${selectedYear}/player_stats.json`;
-            }
-
+            containerEl.style.display = 'none';
+            
             try {
+                // Determine the path based on year
+                let playerStatsPath;
+                if (selectedYear === 2025) {
+                    playerStatsPath = 'data/current_season/player_stats.json';
+                } else {
+                    playerStatsPath = `data/historical/${selectedYear}/player_stats.json`;
+                }
+                
                 const response = await fetch(playerStatsPath);
                 if (!response.ok) {
-                    throw new Error(`Failed to load player data from ${playerStatsPath}. Status: ${response.status}`);
+                    throw new Error(`No player data available for ${selectedYear}`);
                 }
-                const data = await response.json();
-                allPlayersData = data.players || [];
-                lastUpdatedEl.textContent = `Last Updated: ${formatLastUpdated(data.updated_at)}`;
-
-                // Add manager names to filter list if not already there
-                populateManagerFilter(allPlayersData.map(p => p.team_name).filter((v, i, a) => a.indexOf(v) === i));
-
-                filterPlayers(); // Initial filter and render
-
+                
+                allPlayersData = await response.json();
+                
+                // Populate manager filter
+                populateManagerFilter();
+                
+                // Apply filters and render
+                filterPlayers();
+                
                 loadingEl.style.display = 'none';
-                contentEl.style.display = 'block';
-
+                containerEl.style.display = 'block';
+                
             } catch (error) {
-                console.error('Error loading player scoring data:', error);
+                console.error('Error loading player data:', error);
                 loadingEl.style.display = 'none';
-                errorEl.textContent = `Error loading player data: ${error.message}`;
+                errorEl.textContent = `Error: ${error.message}`;
                 errorEl.style.display = 'block';
             }
         }
-
-        function populateManagerFilter(managerNames) {
+        
+        function populateManagerFilter() {
             const managerFilter = document.getElementById('manager-filter');
-            // Save current value
-            const currentValue = managerFilter.value;
-
-            // Clear all options except 'All Managers'
+            const managers = [...new Set(allPlayersData.map(p => p.manager))].sort();
+            
+            // Keep the "All Managers" option and add the rest
             managerFilter.innerHTML = '<option value="all">All Managers</option>';
-
-            managerNames.sort().forEach(name => {
+            managers.forEach(manager => {
                 const option = document.createElement('option');
-                option.value = name;
-                option.textContent = name;
+                option.value = manager;
+                option.textContent = manager;
                 managerFilter.appendChild(option);
             });
-
-            // Restore previous value if it still exists
-            if (managerNames.includes(currentValue) || currentValue === 'all') {
-                managerFilter.value = currentValue;
-            }
         }
-
+        
         function filterPlayers() {
             const positionFilter = document.getElementById('position-filter').value;
             const managerFilter = document.getElementById('manager-filter').value;
-            const searchInput = document.getElementById('player-search').value.toLowerCase();
-
+            const searchQuery = document.getElementById('player-search').value.toLowerCase().trim();
+            
             filteredPlayersData = allPlayersData.filter(player => {
-                const positionMatch = positionFilter === 'all' ||
-                    (positionFilter === 'B' && player.position_type === 'B') ||
-                    (positionFilter === 'P' && player.position_type === 'P') ||
-                    player.positions.includes(positionFilter);
-
-                const managerMatch = managerFilter === 'all' || player.team_name === managerFilter;
-
-                const searchMatch = searchInput === '' || player.name.toLowerCase().includes(searchInput);
-
-                return positionMatch && managerMatch && searchMatch;
+                // Position filter
+                if (positionFilter !== 'all') {
+                    if (positionFilter === 'B' || positionFilter === 'P') {
+                        if (player.position_type !== positionFilter) return false;
+                    } else {
+                        // Specific position
+                        if (!player.eligible_positions.includes(positionFilter)) return false;
+                    }
+                }
+                
+                // Manager filter
+                if (managerFilter !== 'all' && player.manager !== managerFilter) {
+                    return false;
+                }
+                
+                // Search filter
+                if (searchQuery) {
+                    const nameMatch = player.name.toLowerCase().includes(searchQuery);
+                    const teamMatch = player.team_name.toLowerCase().includes(searchQuery);
+                    const mlbMatch = (player.mlb_team || '').toLowerCase().includes(searchQuery);
+                    if (!nameMatch && !teamMatch && !mlbMatch) return false;
+                }
+                
+                return true;
             });
-
-            sortPlayerTable(currentSortColumn, currentSortDirection, false); // Sort and render
-            document.getElementById('player-count').textContent = `${filteredPlayersData.length} players shown`;
+            
+            // Apply current sort
+            sortPlayersArray();
+            
+            // Update table classes for showing/hiding columns
+            updateTableColumns(positionFilter);
+            
+            // Render the table
+            renderPlayerTable();
         }
-
-        function sortPlayerTable(column, direction = null, toggle = true) {
-            if (toggle) {
-                if (column === currentSortColumn) {
-                    currentSortDirection = currentSortDirection === 'asc' ? 'desc' : 'asc';
-                } else {
-                    currentSortColumn = column;
-                    currentSortDirection = direction || (column === 'name' ? 'asc' : 'desc');
-                }
-            } else {
-                currentSortColumn = column;
-                currentSortDirection = direction;
+        
+        function updateTableColumns(positionFilter) {
+            const table = document.getElementById('player-table');
+            table.classList.remove('show-batters', 'show-pitchers');
+            
+            if (positionFilter === 'P' || positionFilter === 'SP' || positionFilter === 'RP') {
+                table.classList.add('show-pitchers');
+            } else if (positionFilter === 'B' || ['C', '1B', '2B', '3B', 'SS', 'OF', 'Util'].includes(positionFilter)) {
+                table.classList.add('show-batters');
             }
-
-            // Update table headers for visual cue
-            document.querySelectorAll('#player-table th').forEach(th => {
-                th.classList.remove('sort-asc', 'sort-desc');
-                if (th.getAttribute('onclick')?.includes(`'${currentSortColumn}'`)) {
-                    th.classList.add(`sort-${currentSortDirection}`);
-                }
-            });
-
-            // Sorting logic
+        }
+        
+        function sortPlayerTable(column) {
+            // Toggle direction if same column
+            if (currentPlayerSort.column === column) {
+                currentPlayerSort.direction = currentPlayerSort.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentPlayerSort.column = column;
+                // Default to descending for stats, ascending for name
+                currentPlayerSort.direction = (column === 'name' || column === 'position') ? 'asc' : 'desc';
+            }
+            
+            sortPlayersArray();
+            renderPlayerTable();
+            updateSortIndicators();
+        }
+        
+        function sortPlayersArray() {
+            const { column, direction } = currentPlayerSort;
+            
             filteredPlayersData.sort((a, b) => {
                 let aVal, bVal;
-
-                // Special cases for top-level keys
-                if (column === 'name' || column === 'team_name' || column === 'positions' || column === 'rank') {
-                    aVal = a[column] || '';
-                    bVal = b[column] || '';
+                
+                if (column === 'rank') {
+                    // Rank is determined by fantasy points
+                    aVal = a.fantasy_points || 0;
+                    bVal = b.fantasy_points || 0;
+                } else if (column === 'name') {
+                    aVal = a.name.toLowerCase();
+                    bVal = b.name.toLowerCase();
+                } else if (column === 'position') {
+                    aVal = a.primary_position || '';
+                    bVal = b.primary_position || '';
                 } else if (column === 'fantasy_points') {
                     aVal = a.fantasy_points || 0;
                     bVal = b.fantasy_points || 0;
-                } else { // Stat column (e.g., HR, ERA, W)
+                } else {
+                    // Stat column
                     aVal = (a.stats && a.stats[column]) || 0;
                     bVal = (b.stats && b.stats[column]) || 0;
                 }
-
-                // Handle text vs. numeric sorting
-                if (typeof aVal === 'string' || typeof bVal === 'string') {
-                    return currentSortDirection === 'asc' ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
-                } else {
-                    return currentSortDirection === 'asc' ? aVal - bVal : bVal - aVal;
+                
+                if (typeof aVal === 'string') {
+                    return direction === 'asc' ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+                }
+                
+                return direction === 'asc' ? aVal - bVal : bVal - aVal;
+            });
+        }
+        
+        function updateSortIndicators() {
+            // Remove all sort indicators
+            document.querySelectorAll('.player-table th').forEach(th => {
+                th.classList.remove('sort-asc', 'sort-desc');
+            });
+            
+            // Add indicator to current sort column
+            const headers = document.querySelectorAll('.player-table th');
+            headers.forEach(th => {
+                const onclick = th.getAttribute('onclick');
+                if (onclick && onclick.includes(`'${currentPlayerSort.column}'`)) {
+                    th.classList.add(currentPlayerSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
                 }
             });
-
-            renderPlayerTable();
         }
-
-
+        
         function renderPlayerTable() {
             const tbody = document.getElementById('player-table-body');
-            tbody.innerHTML = '';
-
+            const countEl = document.getElementById('player-count');
+            
+            countEl.textContent = `${filteredPlayersData.length} player${filteredPlayersData.length !== 1 ? 's' : ''}`;
+            
+            if (filteredPlayersData.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="15" style="text-align: center; padding: 2rem; color: #666;">No players found matching your criteria</td></tr>';
+                return;
+            }
+            
+            // Base64 encoded placeholder silhouette (simple gray circle + body shape)
+            const placeholderImg = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwZTBlMCIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMzUiIHI9IjIwIiBmaWxsPSIjYmRiZGJkIi8+PGVsbGlwc2UgY3g9IjUwIiBjeT0iODUiIHJ4PSIzMCIgcnk9IjIwIiBmaWxsPSIjYmRiZGJkIi8+PC9zdmc+';
+            
             tbody.innerHTML = filteredPlayersData.map((player, index) => {
                 const stats = player.stats || {};
                 const isBatter = player.position_type === 'B';
-
+                
+                // Use headshot if available and not empty, otherwise use placeholder
+                const headshot = (player.headshot_url && player.headshot_url.trim()) ? player.headshot_url : placeholderImg;
+                
                 return `
                     <tr>
                         <td>${index + 1}</td>
-                        <td class="player-name-cell" onclick="showPlayerDetail('${player.name}')">
-                            <img src="${player.headshot_base64_small}" alt="${player.name}" class="player-photo-small">
-                            ${player.name}
+                        <td>
+                            <div class="player-name-cell" onclick="showPlayerDetail('${player.name.replace(/'/g, "\\'")}')">
+                                <img src="${headshot}" alt="" class="player-headshot" onerror="this.src='${placeholderImg}'">
+                                <div>
+                                    <div class="player-name">${player.name}</div>
+                                    <div class="player-mlb-team">${player.mlb_team || ''}</div>
+                                </div>
+                            </div>
                         </td>
-                        <td>${player.team_name}</td>
-                        <td>${player.positions}</td>
-                        
+                        <td>
+                            <div class="player-team-cell">
+                                <img src="${player.team_logo}" alt="" class="player-team-logo" onerror="this.style.display='none'">
+                                <span class="player-fantasy-team" title="${player.team_name}">${player.manager}</span>
+                            </div>
+                        </td>
+                        <td class="player-position">${player.primary_position || '-'}</td>
                         <td class="player-points">${(player.fantasy_points || 0).toFixed(1)}</td>
-                        
                         <td class="stat-col batter-stat">${isBatter ? (stats.HR || 0) : '-'}</td>
                         <td class="stat-col batter-stat">${isBatter ? (stats.RBI || 0) : '-'}</td>
                         <td class="stat-col batter-stat">${isBatter ? (stats.R || 0) : '-'}</td>
                         <td class="stat-col batter-stat">${isBatter ? (stats.SB || 0) : '-'}</td>
                         <td class="stat-col batter-stat">${isBatter ? (stats.AVG ? stats.AVG.toFixed(3) : '-') : '-'}</td>
-                        
                         <td class="stat-col pitcher-stat">${!isBatter ? (stats.W || 0) : '-'}</td>
                         <td class="stat-col pitcher-stat">${!isBatter ? (stats.SO || 0) : '-'}</td>
                         <td class="stat-col pitcher-stat">${!isBatter ? (stats.ERA ? stats.ERA.toFixed(2) : '-') : '-'}</td>
@@ -1207,253 +2035,1812 @@
                     </tr>
                 `;
             }).join('');
+            
+            updateSortIndicators();
         }
-
-        // =============================================================================
-        // PLAYER MODAL LOGIC (Details)
-        // =============================================================================
-
-        function showPlayerDetail(playerName) {
-            const player = allPlayersData.find(p => p.name === playerName);
-            if (!player) return;
-
+        
+        async function showPlayerDetail(playerName) {
             const modal = document.getElementById('player-modal');
             const headerEl = document.getElementById('player-modal-header');
             const bodyEl = document.getElementById('player-modal-body');
-
-            // --- HEADER RENDERING (FIXED FOR COLOR/OVERLAP) ---
+            
+            // Find player in current data
+            const player = allPlayersData.find(p => p.name === playerName);
+            if (!player) return;
+            
+            const seasonSelect = document.getElementById('scoring-season');
+            const selectedYear = parseInt(seasonSelect.value);
+            
+            // Load player history if not cached
+            if (Object.keys(playerHistoryData).length === 0) {
+                try {
+                    const historyResponse = await fetch('data/players/player_history.json');
+                    if (historyResponse.ok) {
+                        playerHistoryData = await historyResponse.json();
+                    }
+                } catch (e) {
+                    console.log('Could not load player history');
+                }
+            }
+            
+            // Render header - use base64 placeholder for modal (white version for dark header)
+            const modalPlaceholder = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZiIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMzUiIHI9IjIwIiBmaWxsPSIjZGRkIi8+PGVsbGlwc2UgY3g9IjUwIiBjeT0iODUiIHJ4PSIzMCIgcnk9IjIwIiBmaWxsPSIjZGRkIi8+PC9zdmc+';
+            const headshot = (player.headshot_url && player.headshot_url.trim()) ? player.headshot_url : modalPlaceholder;
+            
             headerEl.innerHTML = `
-                <img src="${player.headshot_base64_white}" alt="${player.name}" class="player-modal-headshot">
+                <img src="${headshot}" alt="${player.name}" class="player-modal-headshot" onerror="this.src='${modalPlaceholder}'">
                 <div class="player-modal-info">
                     <h2>${player.name}</h2>
                     <div class="player-details">
-                        <span>${player.mlb_team}</span>
-                        <span>|</span>
-                        <span>${player.positions} (${player.position_type === 'B' ? 'Batter' : 'Pitcher'})</span>
-                        <span>|</span>
-                        <span>${player.team_name}</span>
+                        <span>${player.mlb_team || 'FA'}</span>
+                        <span>${player.eligible_positions ? player.eligible_positions.join(', ') : player.primary_position}</span>
+                        <span>Owner: ${player.manager}</span>
                     </div>
                 </div>
                 <div class="player-modal-points">
                     <div class="points-value">${(player.fantasy_points || 0).toFixed(1)}</div>
-                    <div class="points-label">Total Pts</div>
+                    <div class="points-label">${selectedYear} Fantasy Pts</div>
                 </div>
-                <button class="player-modal-close-btn" onclick="closePlayerDetail()">&times;</button>
             `;
-            // --- END HEADER RENDERING ---
-
-            // --- BODY RENDERING ---
+            
+            // Render body
+            let bodyHTML = '';
+            
+            // Current season stats
             const stats = player.stats || {};
             const isBatter = player.position_type === 'B';
-
-            let statsHtml = '<h3>Fantasy Stats Breakdown</h3>';
-
+            
+            bodyHTML += `<div class="player-modal-section">
+                <h3>${selectedYear} Season Stats</h3>
+                <div class="player-stats-grid">`;
+            
             if (isBatter) {
-                statsHtml += `
-                    <div class="stats-grid">
-                        <p><strong>HR:</strong> ${stats.HR || 0}</p>
-                        <p><strong>RBI:</strong> ${stats.RBI || 0}</p>
-                        <p><strong>R:</strong> ${stats.R || 0}</p>
-                        <p><strong>SB:</strong> ${stats.SB || 0}</p>
-                        <p><strong>AVG:</strong> ${(stats.AVG || 0).toFixed(3)}</p>
-                        <p><strong>H:</strong> ${stats.H || 0}</p>
-                        <p><strong>BB:</strong> ${stats.BB || 0}</p>
-                        <p><strong>SO:</strong> ${stats.SO || 0}</p>
-                        <p><strong>OPS:</strong> ${(stats.OPS || 0).toFixed(3)}</p>
-                    </div>
+                bodyHTML += `
+                    <div class="player-stat-box"><div class="stat-value">${stats.G || 0}</div><div class="stat-label">Games</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.AB || 0}</div><div class="stat-label">At Bats</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.H || 0}</div><div class="stat-label">Hits</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.HR || 0}</div><div class="stat-label">HR</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.RBI || 0}</div><div class="stat-label">RBI</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.R || 0}</div><div class="stat-label">Runs</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.SB || 0}</div><div class="stat-label">SB</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.BB || 0}</div><div class="stat-label">Walks</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats['2B'] || 0}</div><div class="stat-label">2B</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats['3B'] || 0}</div><div class="stat-label">3B</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.AVG ? stats.AVG.toFixed(3) : '.000'}</div><div class="stat-label">AVG</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.OBP ? stats.OBP.toFixed(3) : '.000'}</div><div class="stat-label">OBP</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.SLG ? stats.SLG.toFixed(3) : '.000'}</div><div class="stat-label">SLG</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.OPS ? stats.OPS.toFixed(3) : '.000'}</div><div class="stat-label">OPS</div></div>
                 `;
             } else {
-                statsHtml += `
-                    <div class="stats-grid">
-                        <p><strong>W:</strong> ${stats.W || 0}</p>
-                        <p><strong>SO:</strong> ${stats.SO || 0}</p>
-                        <p><strong>SV:</strong> ${stats.SV || 0}</p>
-                        <p><strong>HLD:</strong> ${stats.HLD || 0}</p>
-                        <p><strong>ERA:</strong> ${(stats.ERA || 0).toFixed(2)}</p>
-                        <p><strong>WHIP:</strong> ${(stats.WHIP || 0).toFixed(2)}</p>
-                        <p><strong>IP:</strong> ${(stats.IP || 0).toFixed(1)}</p>
-                        <p><strong>ER:</strong> ${stats.ER || 0}</p>
-                        <p><strong>QS:</strong> ${stats.QS || 0}</p>
-                    </div>
+                bodyHTML += `
+                    <div class="player-stat-box"><div class="stat-value">${stats.G || 0}</div><div class="stat-label">Games</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.GS || 0}</div><div class="stat-label">Starts</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.W || 0}</div><div class="stat-label">Wins</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.L || 0}</div><div class="stat-label">Losses</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.SV || 0}</div><div class="stat-label">Saves</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.HLD || 0}</div><div class="stat-label">Holds</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.IP || 0}</div><div class="stat-label">IP</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.SO || 0}</div><div class="stat-label">K</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.BB || 0}</div><div class="stat-label">BB</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.H || 0}</div><div class="stat-label">Hits</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.ER || 0}</div><div class="stat-label">ER</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.ERA ? stats.ERA.toFixed(2) : '0.00'}</div><div class="stat-label">ERA</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.WHIP ? stats.WHIP.toFixed(2) : '0.00'}</div><div class="stat-label">WHIP</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats['K/9'] ? stats['K/9'].toFixed(2) : '0.00'}</div><div class="stat-label">K/9</div></div>
                 `;
             }
-
-            bodyEl.innerHTML = statsHtml;
-            // --- END BODY RENDERING ---
-
-            modal.style.display = 'block';
+            
+            bodyHTML += '</div></div>';
+            
+            // Career history
+            const normalizedName = playerName.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+            const playerHistory = playerHistoryData[normalizedName];
+            
+            if (playerHistory && playerHistory.seasons && playerHistory.seasons.length > 0) {
+                bodyHTML += `<div class="player-modal-section">
+                    <h3>League History</h3>
+                    <table class="player-history-table">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Team</th>
+                                <th>Manager</th>
+                                <th>Fantasy Pts</th>
+                            </tr>
+                        </thead>
+                        <tbody>`;
+                
+                // Sort by year descending
+                const sortedSeasons = [...playerHistory.seasons].sort((a, b) => b.year - a.year);
+                
+                sortedSeasons.forEach(season => {
+                    bodyHTML += `
+                        <tr>
+                            <td>${season.year}</td>
+                            <td>${season.team_name}</td>
+                            <td>${season.manager}</td>
+                            <td><strong>${(season.fantasy_points || 0).toFixed(1)}</strong></td>
+                        </tr>
+                    `;
+                });
+                
+                bodyHTML += `</tbody></table>
+                    <div style="margin-top: 0.75rem; color: #666; font-size: 0.9rem;">
+                        Career Total: <strong>${(playerHistory.career_fantasy_points || 0).toFixed(1)}</strong> fantasy points
+                    </div>
+                </div>`;
+            }
+            
+            bodyEl.innerHTML = bodyHTML;
+            modal.style.display = 'flex';
         }
-
-        function closePlayerDetail() {
+        
+        function closePlayerModal() {
             document.getElementById('player-modal').style.display = 'none';
         }
+        
+        // Close player modal on outside click
+        document.getElementById('player-modal')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePlayerModal();
+            }
+        });
 
-        // Close modal when user clicks outside of it
-        window.onclick = function (event) {
-            const modal = document.getElementById('player-modal');
-            if (event.target === modal) {
-                closePlayerDetail();
+        // ===== MANAGER NAME NORMALIZATION =====
+        const MANAGER_TEAM_2023 = {
+            "Draft Pool": "Logan C",
+            "Peanut Butter & Elly": "Logan S"
+        };
+        
+        // Logan team keys for 2023 disambiguation
+        const LOGAN_TEAM_KEYS_2023 = {
+            "422.l.6780.t.4": "Logan C",   // Draft Pool
+            "422.l.6780.t.12": "Logan S"   // Peanut Butter & Elly
+        };
+
+        function normalizeManagerName(managerName, year = null, teamName = null, teamKey = null) {
+            // Convert to title case
+            let normalized = managerName.trim()
+                .toLowerCase()
+                .split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+            
+            // Handle Logan disambiguation
+            if (normalized === "Logan") {
+                if (year === 2023 && teamName && MANAGER_TEAM_2023[teamName]) {
+                    return MANAGER_TEAM_2023[teamName];
+                }
+                if (year && year >= 2020 && year <= 2022) {
+                    return "Logan C";
+                } else if (year && year >= 2024) {
+                    return "Logan S";
+                }
+            }
+            
+            // Handle Josh disambiguation (2019-2022)
+            if (normalized === "Josh") {
+                if (year && year >= 2019 && year <= 2022) {
+                    if (teamKey && teamKey.endsWith('t.1')) {
+                        return "Josh B";
+                    } else {
+                        return "Josh S";
+                    }
+                } else if (year && year >= 2023) {
+                    // After 2022, only Josh B remains
+                    if (teamKey && teamKey.endsWith('t.1')) {
+                        return "Josh B";
+                    }
+                }
+            }
+            
+            return normalized;
+        }
+
+        function normalizeStandingsData(standings, year) {
+            return standings.map(team => ({
+                ...team,
+                manager: normalizeManagerName(team.manager, year, team.team_name, team.team_key)
+            }));
+        }
+
+        function normalizeAndMergeManagerData(managersData, historyData) {
+            const managerMap = {};
+            
+            console.log("Processing managers:", managersData.length);
+            
+            // Process each manager's data
+            managersData.forEach(manager => {
+                // Determine normalized name based on season history
+                let normalizedName = manager.manager_name.trim()
+                    .toLowerCase()
+                    .split(' ')
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ');
+                
+                // Handle Logan based on team keys in 2023 or years active
+                if (normalizedName === "Logan") {
+                    console.log("Found Logan:", manager.season_history);
+                    
+                    // Check if they have 2023 season
+                    const season2023 = manager.season_history.find(s => s.year === 2023);
+                    
+                    if (season2023) {
+                        console.log("Logan has 2023, team:", season2023.team_name);
+                        // Use team name to distinguish
+                        if (season2023.team_name.includes("Draft Pool")) {
+                            normalizedName = "Logan C";
+                            console.log("-> Logan C (Draft Pool)");
+                        } else if (season2023.team_name.includes("Peanut Butter") || season2023.team_name.includes("Elly")) {
+                            normalizedName = "Logan S";
+                            console.log("-> Logan S (Peanut Butter & Elly)");
+                        } else {
+                            console.log("-> Unknown team in 2023:", season2023.team_name);
+                        }
+                    } else {
+                        // No 2023 season - use years to determine
+                        const years = manager.season_history.map(s => s.year);
+                        const maxYear = Math.max(...years);
+                        const minYear = Math.min(...years);
+                        
+                        console.log("Logan years:", years, "min:", minYear, "max:", maxYear);
+                        
+                        if (maxYear <= 2022) {
+                            // Only played 2020-2022 = Logan C
+                            normalizedName = "Logan C";
+                            console.log("-> Logan C (only 2020-2022)");
+                        } else if (minYear >= 2024) {
+                            // Only played 2024+ = Logan S
+                            normalizedName = "Logan S";
+                            console.log("-> Logan S (only 2024+)");
+                        } else {
+                            console.log("-> Logan with unclear years");
+                        }
+                    }
+                }
+                
+                // Normalize season history
+                const normalizedSeasonHistory = manager.season_history.map(season => ({
+                    ...season
+                }));
+                
+                // DON'T merge different Logans - only merge case variations
+                const shouldMerge = managerMap[normalizedName] && 
+                                   !(normalizedName === "Logan C" || normalizedName === "Logan S");
+                
+                if (shouldMerge) {
+                    console.log("Merging into existing manager:", normalizedName);
+                    // Merge stats
+                    managerMap[normalizedName].total_wins += manager.total_wins;
+                    managerMap[normalizedName].total_losses += manager.total_losses;
+                    managerMap[normalizedName].total_ties += manager.total_ties;
+                    managerMap[normalizedName].total_points_for += manager.total_points_for;
+                    managerMap[normalizedName].championships += manager.championships;
+                    managerMap[normalizedName].runner_ups += manager.runner_ups;
+                    managerMap[normalizedName].playoff_appearances += manager.playoff_appearances;
+                    managerMap[normalizedName].seasons_played += manager.seasons_played;
+                    
+                    // Merge season history
+                    managerMap[normalizedName].season_history = [
+                        ...managerMap[normalizedName].season_history,
+                        ...normalizedSeasonHistory
+                    ];
+                    
+                    // Update first season
+                    managerMap[normalizedName].first_season = Math.min(
+                        managerMap[normalizedName].first_season,
+                        manager.first_season
+                    );
+                } else {
+                    console.log("Creating new manager entry:", normalizedName);
+                    // New manager entry
+                    managerMap[normalizedName] = {
+                        ...manager,
+                        manager_name: normalizedName,
+                        season_history: normalizedSeasonHistory
+                    };
+                }
+            });
+            
+            console.log("Final managers:", Object.keys(managerMap));
+            
+            // Recalculate derived stats for merged managers
+            Object.values(managerMap).forEach(manager => {
+                const totalGames = manager.total_wins + manager.total_losses;
+                manager.win_pct = totalGames > 0 ? manager.total_wins / totalGames : 0;
+                manager.avg_finish = manager.season_history.length > 0
+                    ? manager.season_history.reduce((sum, s) => sum + s.rank, 0) / manager.season_history.length
+                    : 0;
+                
+                // Sort season history by year
+                manager.season_history.sort((a, b) => a.year - b.year);
+            });
+            
+            return Object.values(managerMap);
+        }
+
+        // Split Logan's stats for 2023 based on team_key
+        async function splitLogan2023Stats() {
+            try {
+                // Load 2023 standings and scores
+                const standingsResponse = await fetch('data/historical/2023/final_standings.json');
+                const scoresResponse = await fetch('data/historical/2023/all_scores.json');
+                
+                if (!standingsResponse.ok || !scoresResponse.ok) {
+                    console.log("Could not load 2023 data for Logan split");
+                    return null;
+                }
+                
+                const standings = await standingsResponse.json();
+                const scores = await scoresResponse.json();
+                
+                // Find Logan's teams by team_key
+                const loganCTeam = standings.find(t => t.team_key === "422.l.6780.t.4");
+                const loganSTeam = standings.find(t => t.team_key === "422.l.6780.t.12");
+                
+                if (!loganCTeam && !loganSTeam) {
+                    console.log("Could not find Logan team keys in 2023 standings");
+                    return null;
+                }
+                
+                // Calculate stats for each Logan based on team_key
+                const loganStats = {
+                    "Logan C": loganCTeam ? {
+                        team_key: loganCTeam.team_key,
+                        team_name: loganCTeam.team_name,
+                        rank: loganCTeam.rank,
+                        wins: loganCTeam.wins,
+                        losses: loganCTeam.losses,
+                        ties: loganCTeam.ties,
+                        points_for: loganCTeam.points_for
+                    } : null,
+                    "Logan S": loganSTeam ? {
+                        team_key: loganSTeam.team_key,
+                        team_name: loganSTeam.team_name,
+                        rank: loganSTeam.rank,
+                        wins: loganSTeam.wins,
+                        losses: loganSTeam.losses,
+                        ties: loganSTeam.ties,
+                        points_for: loganSTeam.points_for
+                    } : null
+                };
+                
+                console.log("Split Logan 2023 stats:", loganStats);
+                return loganStats;
+                
+            } catch (error) {
+                console.error("Error splitting Logan stats:", error);
+                return null;
             }
         }
 
-        // =============================================================================
-        // TRANSACTIONS LOGIC
-        // =============================================================================
-
-        async function loadTransactions() {
-            const selectedYear = document.getElementById('transactions-season').value;
-            const loadingEl = document.getElementById('transactions-loading');
-            const contentEl = document.getElementById('transactions-content');
-            const errorEl = document.getElementById('transactions-error');
-
-            loadingEl.style.display = 'block';
-            contentEl.style.display = 'none';
-            errorEl.style.display = 'none';
-
-            let transactionsPath;
-            if (parseInt(selectedYear) === CURRENT_SEASON) {
-                transactionsPath = `${DATA_DIR}/current_season/transactions.json`;
-            } else {
-                transactionsPath = `${DATA_DIR}/historical/${selectedYear}/transactions.json`;
+        // Apply Logan split to manager data
+        async function applyLogan2023Split(managersData) {
+            const logan2023Stats = await splitLogan2023Stats();
+            
+            if (!logan2023Stats) {
+                console.log("No Logan split needed or data unavailable");
+                return managersData;
             }
-
-            try {
-                const response = await fetch(transactionsPath);
-                if (!response.ok) {
-                    throw new Error(`Failed to load data from ${transactionsPath}. Status: ${response.status}`);
+            
+            // Update each Logan's 2023 season data
+            managersData.forEach(manager => {
+                if ((manager.manager_name === "Logan C" || manager.manager_name === "Logan S") && logan2023Stats[manager.manager_name]) {
+                    const season2023Index = manager.season_history.findIndex(s => s.year === 2023);
+                    
+                    if (season2023Index >= 0) {
+                        // Update with correct stats
+                        const stats = logan2023Stats[manager.manager_name];
+                        manager.season_history[season2023Index] = {
+                            year: 2023,
+                            team_name: stats.team_name,
+                            rank: stats.rank,
+                            wins: stats.wins,
+                            losses: stats.losses,
+                            points_for: stats.points_for
+                        };
+                        
+                        // Recalculate totals
+                        manager.total_wins = manager.season_history.reduce((sum, s) => sum + s.wins, 0);
+                        manager.total_losses = manager.season_history.reduce((sum, s) => sum + s.losses, 0);
+                        manager.total_points_for = manager.season_history.reduce((sum, s) => sum + s.points_for, 0);
+                        manager.win_pct = manager.total_wins / (manager.total_wins + manager.total_losses);
+                        manager.avg_finish = manager.season_history.reduce((sum, s) => sum + s.rank, 0) / manager.season_history.length;
+                        
+                        console.log(`Updated ${manager.manager_name} with 2023 stats`);
+                    }
                 }
-                const data = await response.json();
-                const transactions = data.transactions || [];
+            });
+            
+            return managersData;
+        }
 
-                renderTransactionsTable(transactions);
+        // ===== INITIALIZE SEASON SELECTORS =====
+        async function initializeSeasonSelectors() {
+            const standingsSelect = document.getElementById('standings-season');
+            standingsSelect.innerHTML = '<option value="">Loading seasons...</option>';
+            
+            // Try to detect available seasons by checking for data files
+            const possibleSeasons = [2019, 2020, 2021, 2022, 2023, 2024, 2025];
+            const availableSeasons = [];
+            
+            // Check current season
+            try {
+                const response = await fetch('data/current_season/standings.json');
+                if (response.ok) {
+                    availableSeasons.push({ year: 2025, isCurrent: true });
+                }
+            } catch (e) {}
+            
+            // Check historical seasons
+            for (const year of possibleSeasons.filter(y => y < 2025)) {
+                try {
+                    const response = await fetch(`data/historical/${year}/final_standings.json`);
+                    if (response.ok) {
+                        availableSeasons.push({ year: year, isCurrent: false });
+                    }
+                } catch (e) {}
+            }
+            
+            // Sort by year descending
+            availableSeasons.sort((a, b) => b.year - a.year);
+            
+            // Populate dropdown
+            standingsSelect.innerHTML = '';
+            availableSeasons.forEach(season => {
+                const option = document.createElement('option');
+                option.value = season.year;
+                option.textContent = season.isCurrent ? `${season.year} (Current)` : season.year;
+                standingsSelect.appendChild(option);
+            });
+            
+            // Populate scoring dropdown the same way
+            const scoringSelect = document.getElementById('scoring-season');
+            scoringSelect.innerHTML = standingsSelect.innerHTML;
+            
+            return availableSeasons;
+        }
 
+        // ===== LOAD STANDINGS BY SEASON =====
+        async function loadStandingsBySeason() {
+            const season = document.getElementById('standings-season').value;
+            const loadingEl = document.getElementById('standings-loading');
+            const errorEl = document.getElementById('standings-error');
+            const tableEl = document.getElementById('standings-table');
+            const chartContainer = document.getElementById('season-chart-container');
+            
+            if (!season) {
+                return; // No season selected yet
+            }
+            
+            try {
+                loadingEl.style.display = 'block';
+                errorEl.style.display = 'none';
+                tableEl.style.display = 'none';
+                chartContainer.style.display = 'none';
+                
+                let response;
+                const seasonNum = parseInt(season);
+                
+                // Check if this is current season (2025) or historical
+                const currentSeasonCheck = await fetch('data/current_season/standings.json');
+                let isCurrentSeason = false;
+                
+                if (currentSeasonCheck.ok) {
+                    // If current season data exists, it's 2025
+                    isCurrentSeason = (seasonNum === 2025);
+                }
+                
+                // Load from appropriate location
+                if (isCurrentSeason) {
+                    response = await fetch('data/current_season/standings.json');
+                } else {
+                    response = await fetch(`data/historical/${season}/final_standings.json`);
+                }
+                
+                if (!response.ok) {
+                    throw new Error(`Data not found for ${season}`);
+                }
+                
+                let standings = await response.json();
+                
+                // Load team logos
+                let teamsResponse;
+                if (isCurrentSeason) {
+                    teamsResponse = await fetch('data/current_season/teams.json');
+                } else {
+                    teamsResponse = await fetch(`data/historical/${season}/teams.json`);
+                }
+                
+                let teamLogos = {};
+                let teamData = [];
+                if (teamsResponse.ok) {
+                    teamData = await teamsResponse.json();
+                    teamData.forEach(team => {
+                        teamLogos[team.team_key] = team.team_logo;
+                    });
+                }
+                
+                // Normalize manager names
+                standings = normalizeStandingsData(standings, seasonNum);
+                
+                // Sort by rank to ensure proper ordering
+                standings.sort((a, b) => a.rank - b.rank);
+                
+                // Populate the table
+                const tbody = document.getElementById('standings-body');
+                tbody.innerHTML = '';
+                
+                standings.forEach(team => {
+                    const row = document.createElement('tr');
+                    const logo = teamLogos[team.team_key] ? `<img src="${teamLogos[team.team_key]}" class="team-logo" alt="Team Logo">` : '';
+                    
+                    // Add medals for top 3
+                    let medal = '';
+                    if (team.rank === 1) medal = '<span class="medal">🥇</span>';
+                    else if (team.rank === 2) medal = '<span class="medal">🥈</span>';
+                    else if (team.rank === 3) medal = '<span class="medal">🥉</span>';
+                    
+                    row.innerHTML = `
+                        <td>${medal}${team.rank}</td>
+                        <td>${team.manager}</td>
+                        <td><div class="manager-cell">${logo}${team.team_name}</div></td>
+                        <td>${team.wins}</td>
+                        <td>${team.losses}</td>
+                        <td>${team.win_pct.toFixed(3)}</td>
+                        <td>${Math.round(team.points_for).toLocaleString()}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+                
                 loadingEl.style.display = 'none';
-                contentEl.style.display = 'block';
-
+                tableEl.style.display = 'table';
+                
+                // Load and render the season chart
+                await loadSeasonChart(seasonNum, isCurrentSeason, standings, teamLogos, teamData);
+                
             } catch (error) {
-                console.error('Error loading transactions:', error);
+                console.error('Error loading standings:', error);
                 loadingEl.style.display = 'none';
-                errorEl.textContent = `Error loading transactions: ${error.message}`;
+                errorEl.textContent = `Error loading ${season} standings: ${error.message}`;
                 errorEl.style.display = 'block';
             }
         }
 
-        function renderTransactionsTable(transactions) {
-            const tbody = document.getElementById('transactions-table-body');
-            tbody.innerHTML = '';
-
-            transactions.forEach(tx => {
-                const row = tbody.insertRow();
-                row.insertCell().textContent = tx.date;
-                row.insertCell().textContent = tx.type;
-                row.insertCell().textContent = tx.details;
-                row.insertCell().textContent = tx.manager_name;
-            });
-        }
-
-        // =============================================================================
-        // MANAGER PROFILES LOGIC
-        // =============================================================================
-
-        async function loadManagerProfiles() {
-            const loadingEl = document.getElementById('managers-error'); // Using error element for simple loading message
-            loadingEl.textContent = 'Loading manager data...';
-            loadingEl.style.display = 'block';
-
-            const managersPath = `${DATA_DIR}/current_season/managers.json`;
-
+        // ===== SEASON CHART FUNCTIONS =====
+        async function loadSeasonChart(seasonNum, isCurrentSeason, standings, teamLogos, teamData) {
+            const chartContainer = document.getElementById('season-chart-container');
+            const chartEl = document.getElementById('season-chart');
+            
             try {
-                const response = await fetch(managersPath);
-                if (!response.ok) {
-                    throw new Error(`Failed to load manager data from ${managersPath}. Status: ${response.status}`);
+                // Load weekly scores data
+                let scoresResponse;
+                if (isCurrentSeason) {
+                    scoresResponse = await fetch('data/current_season/all_scores.json');
+                } else {
+                    scoresResponse = await fetch(`data/historical/${seasonNum}/all_scores.json`);
                 }
-                const data = await response.json();
-                const managers = data.managers || [];
-
-                renderManagerCards(managers);
-
-                loadingEl.style.display = 'none';
-
+                
+                if (!scoresResponse.ok) {
+                    console.log('No scores data available for chart');
+                    chartContainer.style.display = 'none';
+                    return;
+                }
+                
+                const scoresData = await scoresResponse.json();
+                console.log('Loaded scores data:', scoresData.length, 'entries');
+                
+                // Process scores into both weekly and cumulative rankings
+                currentChartData = processScoresForChart(scoresData, standings, teamLogos, teamData);
+                console.log('Processed chart data:', currentChartData.weeklyTeams.length, 'teams');
+                
+                if (currentChartData.weeklyTeams.length === 0) {
+                    console.log('No team data to display');
+                    chartContainer.style.display = 'none';
+                    return;
+                }
+                
+                // Reset to total view (default)
+                currentChartType = 'total';
+                document.getElementById('btn-weekly').classList.remove('active');
+                document.getElementById('btn-total').classList.add('active');
+                
+                // Show container first so it has dimensions
+                chartContainer.style.display = 'block';
+                
+                // Use requestAnimationFrame to ensure DOM is updated before rendering
+                requestAnimationFrame(() => {
+                    renderSeasonChart(chartEl, currentChartData, currentChartType);
+                });
+                
             } catch (error) {
-                console.error('Error loading manager profiles:', error);
-                loadingEl.textContent = `Error loading manager profiles: ${error.message}`;
-                loadingEl.style.display = 'block';
+                console.error('Error loading season chart:', error);
+                chartContainer.style.display = 'none';
             }
         }
 
-        function renderManagerCards(managers) {
-            const grid = document.getElementById('manager-profiles-grid');
-            grid.innerHTML = managers.map(manager => `
-                <div class="manager-card">
-                    <img src="${manager.logo_url}" alt="${manager.team_name} logo">
-                    <h3>${manager.manager_name}</h3>
-                    <p>${manager.team_name}</p>
-                    <a href="${manager.team_url}" target="_blank" class="team-link">View Team Page</a>
+        function setChartType(type) {
+            if (type === currentChartType || !currentChartData) return;
+            
+            currentChartType = type;
+            
+            // Update button states
+            document.getElementById('btn-weekly').classList.toggle('active', type === 'weekly');
+            document.getElementById('btn-total').classList.toggle('active', type === 'total');
+            
+            // Re-render chart
+            const chartEl = document.getElementById('season-chart');
+            renderSeasonChart(chartEl, currentChartData, currentChartType);
+        }
+
+        function processScoresForChart(scoresData, standings, teamLogos, teamData) {
+            // Group scores by week first
+            const weeklyScores = {};
+            const teamInfo = {};
+            
+            // Collect all scores by week and team info
+            scoresData.forEach(entry => {
+                const teamKey = entry.team_key;
+                const week = entry.week;
+                const score = entry.team_score;
+                
+                // Store team info
+                if (!teamInfo[teamKey]) {
+                    const standingTeam = standings.find(t => t.team_key === teamKey);
+                    const teamDataEntry = teamData.find(t => t.team_key === teamKey);
+                    
+                    teamInfo[teamKey] = {
+                        team_key: teamKey,
+                        team_name: standingTeam?.team_name || teamDataEntry?.team_name || 'Unknown Team',
+                        manager: standingTeam?.manager || teamDataEntry?.manager || 'Unknown',
+                        logo: teamLogos[teamKey] || teamDataEntry?.team_logo || ''
+                    };
+                }
+                
+                // Store weekly score
+                if (!weeklyScores[week]) {
+                    weeklyScores[week] = [];
+                }
+                weeklyScores[week].push({
+                    team_key: teamKey,
+                    score: score
+                });
+            });
+            
+            const weeks = Object.keys(weeklyScores).map(Number).sort((a, b) => a - b);
+            const numTeams = Object.keys(teamInfo).length;
+            
+            // Calculate WEEKLY rankings
+            const teamWeeklyRankings = {};
+            weeks.forEach(week => {
+                const weekScores = [...weeklyScores[week]].sort((a, b) => b.score - a.score);
+                weekScores.forEach((entry, index) => {
+                    const rank = index + 1;
+                    if (!teamWeeklyRankings[entry.team_key]) {
+                        teamWeeklyRankings[entry.team_key] = [];
+                    }
+                    teamWeeklyRankings[entry.team_key].push({
+                        week: week,
+                        rank: rank,
+                        score: entry.score
+                    });
+                });
+            });
+            
+            // Calculate CUMULATIVE rankings
+            const teamCumulativeScores = {}; // team_key -> running total
+            const teamCumulativeRankings = {};
+            
+            weeks.forEach(week => {
+                // Update cumulative scores
+                weeklyScores[week].forEach(entry => {
+                    if (!teamCumulativeScores[entry.team_key]) {
+                        teamCumulativeScores[entry.team_key] = 0;
+                    }
+                    teamCumulativeScores[entry.team_key] += entry.score;
+                });
+                
+                // Sort teams by cumulative score descending
+                const cumulativeRanking = Object.entries(teamCumulativeScores)
+                    .map(([teamKey, total]) => ({ team_key: teamKey, cumulative: total }))
+                    .sort((a, b) => b.cumulative - a.cumulative);
+                
+                // Assign cumulative ranks
+                cumulativeRanking.forEach((entry, index) => {
+                    const rank = index + 1;
+                    if (!teamCumulativeRankings[entry.team_key]) {
+                        teamCumulativeRankings[entry.team_key] = [];
+                    }
+                    teamCumulativeRankings[entry.team_key].push({
+                        week: week,
+                        rank: rank,
+                        cumulative: entry.cumulative
+                    });
+                });
+            });
+            
+            // Build result arrays for both types
+            const weeklyTeams = [];
+            const cumulativeTeams = [];
+            
+            Object.keys(teamInfo).forEach(teamKey => {
+                const info = teamInfo[teamKey];
+                
+                // Weekly data
+                const weeklyData = (teamWeeklyRankings[teamKey] || []).sort((a, b) => a.week - b.week);
+                const avgWeeklyRank = weeklyData.length > 0 
+                    ? weeklyData.reduce((sum, r) => sum + r.rank, 0) / weeklyData.length 
+                    : numTeams;
+                
+                weeklyTeams.push({
+                    team_key: teamKey,
+                    team_name: info.team_name,
+                    manager: info.manager,
+                    logo: info.logo,
+                    data: weeklyData,
+                    avgRank: avgWeeklyRank
+                });
+                
+                // Cumulative data
+                const cumulativeData = (teamCumulativeRankings[teamKey] || []).sort((a, b) => a.week - b.week);
+                const finalRank = cumulativeData.length > 0 
+                    ? cumulativeData[cumulativeData.length - 1].rank 
+                    : numTeams;
+                
+                cumulativeTeams.push({
+                    team_key: teamKey,
+                    team_name: info.team_name,
+                    manager: info.manager,
+                    logo: info.logo,
+                    data: cumulativeData,
+                    finalRank: finalRank
+                });
+            });
+            
+            // Sort weekly by average rank, cumulative by final rank
+            weeklyTeams.sort((a, b) => a.avgRank - b.avgRank);
+            cumulativeTeams.sort((a, b) => a.finalRank - b.finalRank);
+            
+            console.log('Teams with ranking data:', weeklyTeams.length);
+            console.log('Weeks:', weeks.length);
+            
+            return { 
+                weeklyTeams: weeklyTeams, 
+                cumulativeTeams: cumulativeTeams,
+                numTeams: numTeams, 
+                weeks: weeks 
+            };
+        }
+
+        function renderSeasonChart(container, chartData, chartType) {
+            // Clear previous chart
+            container.innerHTML = '';
+            
+            const { weeklyTeams, cumulativeTeams, numTeams, weeks } = chartData;
+            const teams = chartType === 'weekly' ? weeklyTeams : cumulativeTeams;
+            const isWeekly = chartType === 'weekly';
+            
+            // Detect mobile
+            const isMobile = window.innerWidth <= 768;
+            
+            // Chart dimensions - adjusted for mobile
+            const containerWidth = container.clientWidth || container.offsetWidth || 900;
+            const logoRadius = isMobile ? 10 : 14;
+            const logoImageSize = isMobile ? 14 : 20;
+            const rowHeight = isMobile ? 28 : 40;
+            
+            // On mobile, ensure minimum width for scrolling
+            const minChartWidth = isMobile ? Math.max(weeks.length * 25, 600) : 600;
+            
+            const margin = { top: 30, right: 30, bottom: 50, left: isMobile ? 40 : 70 };
+            const width = Math.max(minChartWidth, containerWidth - margin.left - margin.right);
+            const height = Math.max(400, numTeams * rowHeight + 60);
+            
+            const minWeek = Math.min(...weeks);
+            const maxWeek = Math.max(...weeks);
+            const weekRange = maxWeek - minWeek || 1;
+            
+            // Scale functions
+            const xScale = (week) => margin.left + ((week - minWeek) / weekRange) * width;
+            const yScale = (rank) => margin.top + ((rank - 1) / (numTeams - 1)) * (height - margin.top - margin.bottom);
+            
+            // Generate colors for teams
+            const colors = generateTeamColors(teams.length);
+            const teamColorMap = {};
+            teams.forEach((team, index) => {
+                teamColorMap[team.team_key] = colors[index];
+            });
+            
+            // Create SVG
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('width', width + margin.left + margin.right);
+            svg.setAttribute('height', height);
+            svg.setAttribute('class', 'chart-svg');
+            svg.style.display = 'block';
+            // Don't limit width on mobile to allow scrolling
+            if (!isMobile) {
+                svg.style.maxWidth = '100%';
+            }
+            
+            // Draw horizontal grid lines for each rank
+            for (let rank = 1; rank <= numTeams; rank++) {
+                const y = yScale(rank);
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', margin.left);
+                line.setAttribute('y1', y);
+                line.setAttribute('x2', margin.left + width);
+                line.setAttribute('y2', y);
+                line.setAttribute('class', 'chart-grid-line');
+                line.setAttribute('stroke-dasharray', '3,3');
+                svg.appendChild(line);
+                
+                // Y-axis rank label
+                const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                label.setAttribute('x', margin.left - (isMobile ? 15 : 25));
+                label.setAttribute('y', y + 4);
+                label.setAttribute('text-anchor', 'end');
+                label.setAttribute('class', 'chart-axis-label');
+                label.setAttribute('font-size', isMobile ? '10px' : '12px');
+                label.textContent = rank;
+                svg.appendChild(label);
+            }
+            
+            // Draw X-axis labels - show fewer on mobile
+            const numWeeksTotal = weeks.length;
+            const weekStep = Math.max(1, Math.ceil(numWeeksTotal / (isMobile ? 8 : 12)));
+            for (let i = 0; i < weeks.length; i += weekStep) {
+                const week = weeks[i];
+                const x = xScale(week);
+                const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                label.setAttribute('x', x);
+                label.setAttribute('y', height - 10);
+                label.setAttribute('text-anchor', 'middle');
+                label.setAttribute('class', 'chart-axis-label');
+                label.setAttribute('font-size', isMobile ? '10px' : '12px');
+                label.textContent = `${week}`;
+                svg.appendChild(label);
+            }
+            
+            // X-axis title
+            const xTitle = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            xTitle.setAttribute('x', margin.left + width / 2);
+            xTitle.setAttribute('y', height - 0);
+            xTitle.setAttribute('text-anchor', 'middle');
+            xTitle.setAttribute('class', 'chart-axis-label');
+            xTitle.setAttribute('font-weight', 'bold');
+            xTitle.setAttribute('font-size', isMobile ? '11px' : '12px');
+            xTitle.textContent = 'Week';
+            svg.appendChild(xTitle);
+            
+            // Y-axis title
+            const yTitle = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            yTitle.setAttribute('transform', `rotate(-90)`);
+            yTitle.setAttribute('x', -(margin.top + (height - margin.top - margin.bottom) / 2));
+            yTitle.setAttribute('y', isMobile ? 12 : 15);
+            yTitle.setAttribute('text-anchor', 'middle');
+            yTitle.setAttribute('class', 'chart-axis-label');
+            yTitle.setAttribute('font-weight', 'bold');
+            yTitle.setAttribute('font-size', isMobile ? '11px' : '12px');
+            yTitle.textContent = isWeekly ? 'Weekly Rank' : 'Cumulative Rank';
+            svg.appendChild(yTitle);
+            
+            // Draw lines for each team (draw lines first, then logos on top)
+            teams.forEach((team, index) => {
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                
+                // Build path
+                let d = '';
+                team.data.forEach((point, i) => {
+                    const x = xScale(point.week);
+                    const y = yScale(point.rank);
+                    d += i === 0 ? `M ${x} ${y}` : ` L ${x} ${y}`;
+                });
+                
+                path.setAttribute('d', d);
+                path.setAttribute('class', 'chart-line');
+                path.setAttribute('stroke', colors[index]);
+                path.setAttribute('stroke-width', isMobile ? '2' : '2.5');
+                path.setAttribute('data-team-key', team.team_key);
+                svg.appendChild(path);
+            });
+            
+            // Add team logo markers at EVERY week for each team
+            teams.forEach((team, teamIndex) => {
+                team.data.forEach((point) => {
+                    const x = xScale(point.week);
+                    const y = yScale(point.rank);
+                    
+                    // Create group for logo marker
+                    const logoGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                    logoGroup.setAttribute('class', 'team-logo-marker');
+                    logoGroup.setAttribute('data-team-key', team.team_key);
+                    logoGroup.setAttribute('data-week', point.week);
+                    // Store either weekly score or cumulative total
+                    logoGroup.setAttribute('data-score', isWeekly ? point.score : point.cumulative);
+                    logoGroup.setAttribute('data-is-weekly', isWeekly);
+                    logoGroup.setAttribute('transform', `translate(${x}, ${y})`);
+                    
+                    // Circle background
+                    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                    circle.setAttribute('r', logoRadius);
+                    circle.setAttribute('fill', 'white');
+                    circle.setAttribute('stroke', colors[teamIndex]);
+                    circle.setAttribute('stroke-width', isMobile ? '1.5' : '2');
+                    logoGroup.appendChild(circle);
+                    
+                    // Team logo image
+                    if (team.logo) {
+                        const imageOffset = logoImageSize / 2;
+                        const image = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+                        image.setAttribute('href', team.logo);
+                        image.setAttribute('x', -imageOffset);
+                        image.setAttribute('y', -imageOffset);
+                        image.setAttribute('width', logoImageSize);
+                        image.setAttribute('height', logoImageSize);
+                        image.setAttribute('style', `clip-path: circle(${imageOffset}px at center)`);
+                        logoGroup.appendChild(image);
+                    }
+                    
+                    // Add hover/touch events
+                    const scoreValue = isWeekly ? point.score : point.cumulative;
+                    const handleInteraction = (e) => {
+                        e.preventDefault();
+                        handleTeamHover(team.team_key, team.team_name, scoreValue, point.week, point.rank, isWeekly, e.currentTarget);
+                    };
+                    
+                    logoGroup.addEventListener('mouseenter', handleInteraction);
+                    logoGroup.addEventListener('touchstart', handleInteraction, { passive: false });
+                    logoGroup.addEventListener('mouseleave', () => handleTeamHoverEnd());
+                    logoGroup.addEventListener('touchend', () => setTimeout(handleTeamHoverEnd, 1500));
+                    
+                    svg.appendChild(logoGroup);
+                });
+            });
+            
+            container.appendChild(svg);
+            
+            // Create tooltip element
+            const tooltip = document.createElement('div');
+            tooltip.className = 'chart-tooltip';
+            tooltip.style.display = 'none';
+            tooltip.id = 'chart-tooltip';
+            container.appendChild(tooltip);
+            
+            // Add scroll hint for mobile
+            if (isMobile && weeks.length > 10) {
+                const scrollHint = document.createElement('div');
+                scrollHint.style.cssText = 'text-align: center; color: #666; font-size: 0.8rem; margin-top: 0.5rem;';
+                scrollHint.textContent = '← Scroll to see all weeks →';
+                container.appendChild(scrollHint);
+            }
+        }
+
+        function generateTeamColors(count) {
+            const baseColors = [
+                '#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231',
+                '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe',
+                '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000',
+                '#aaffc3'
+            ];
+            
+            const colors = [];
+            for (let i = 0; i < count; i++) {
+                colors.push(baseColors[i % baseColors.length]);
+            }
+            return colors;
+        }
+
+        function handleTeamHover(teamKey, teamName, score, week, rank, isWeekly, markerElement) {
+            // Fade all lines and markers except the hovered team
+            document.querySelectorAll('.chart-line').forEach(line => {
+                if (line.getAttribute('data-team-key') === teamKey) {
+                    line.classList.add('highlighted');
+                    line.classList.remove('faded');
+                } else {
+                    line.classList.add('faded');
+                    line.classList.remove('highlighted');
+                }
+            });
+            
+            document.querySelectorAll('.team-logo-marker').forEach(marker => {
+                if (marker.getAttribute('data-team-key') === teamKey) {
+                    marker.classList.add('highlighted');
+                    marker.classList.remove('faded');
+                } else {
+                    marker.classList.add('faded');
+                    marker.classList.remove('highlighted');
+                }
+            });
+            
+            // Show tooltip with appropriate label
+            const tooltip = document.getElementById('chart-tooltip');
+            
+            if (tooltip && markerElement) {
+                const containerRect = document.getElementById('season-chart').getBoundingClientRect();
+                const markerRect = markerElement.getBoundingClientRect();
+                
+                const scoreLabel = isWeekly ? `Week ${week}: ${score.toLocaleString()} pts` : `Total: ${score.toLocaleString()} pts`;
+                tooltip.innerHTML = `<strong>${teamName}</strong><br>${scoreLabel}<br>Rank: #${rank}`;
+                tooltip.style.display = 'block';
+                tooltip.style.left = (markerRect.left - containerRect.left + markerRect.width / 2) + 'px';
+                tooltip.style.top = (markerRect.top - containerRect.top - 5) + 'px';
+            }
+        }
+
+        function handleTeamHoverEnd() {
+            // Remove all faded/highlighted classes
+            document.querySelectorAll('.chart-line').forEach(line => {
+                line.classList.remove('faded', 'highlighted');
+            });
+            
+            document.querySelectorAll('.team-logo-marker').forEach(marker => {
+                marker.classList.remove('faded', 'highlighted');
+            });
+            
+            // Hide tooltip
+            const tooltip = document.getElementById('chart-tooltip');
+            if (tooltip) {
+                tooltip.style.display = 'none';
+            }
+        }
+
+        // ===== CALCULATE MANAGER AWARDS =====
+        async function calculateManagerAwards() {
+            const seasons = [2019, 2020, 2021, 2022, 2023, 2024, 2025];
+            const seasonData = {};
+            
+            // Load all seasons data
+            for (const year of seasons) {
+                try {
+                    let standingsResponse;
+                    
+                    if (year === 2025) {
+                        standingsResponse = await fetch('data/current_season/standings.json');
+                    } else {
+                        standingsResponse = await fetch(`data/historical/${year}/final_standings.json`);
+                    }
+                    
+                    if (standingsResponse.ok) {
+                        const standings = await standingsResponse.json();
+                        const normalizedStandings = normalizeStandingsData(standings, year);
+                        seasonData[year] = normalizedStandings;
+                    }
+                } catch (e) {
+                    console.error(`Error loading ${year}:`, e);
+                }
+            }
+            
+            // Calculate awards by manager
+            const managerAwards = {};
+            
+            for (const [year, standings] of Object.entries(seasonData)) {
+                // Find winners for each award category
+                const mostWins = standings.reduce((max, team) => 
+                    team.wins > max.wins ? team : max
+                );
+                const mostPoints = standings.reduce((max, team) => 
+                    team.points_for > max.points_for ? team : max
+                );
+                const fewestWins = standings.reduce((min, team) => 
+                    team.wins < min.wins ? team : min
+                );
+                const leastPoints = standings.reduce((min, team) => 
+                    team.points_for < min.points_for ? team : min
+                );
+                const champion = standings.find(team => team.rank === 1);
+                
+                // Track awards
+                if (champion) {
+                    if (!managerAwards[champion.manager]) managerAwards[champion.manager] = {};
+                    managerAwards[champion.manager].championships = (managerAwards[champion.manager].championships || 0) + 1;
+                }
+                
+                if (!managerAwards[mostWins.manager]) managerAwards[mostWins.manager] = {};
+                managerAwards[mostWins.manager].regularSeason = (managerAwards[mostWins.manager].regularSeason || 0) + 1;
+                
+                if (!managerAwards[mostPoints.manager]) managerAwards[mostPoints.manager] = {};
+                managerAwards[mostPoints.manager].scoringChamp = (managerAwards[mostPoints.manager].scoringChamp || 0) + 1;
+                
+                if (!managerAwards[fewestWins.manager]) managerAwards[fewestWins.manager] = {};
+                managerAwards[fewestWins.manager].garbage = (managerAwards[fewestWins.manager].garbage || 0) + 1;
+                
+                if (!managerAwards[leastPoints.manager]) managerAwards[leastPoints.manager] = {};
+                managerAwards[leastPoints.manager].clown = (managerAwards[leastPoints.manager].clown || 0) + 1;
+            }
+            
+            return managerAwards;
+        }
+
+        // ===== LOAD MANAGER PROFILES =====
+        async function loadManagerProfiles() {
+            const loadingEl = document.getElementById('managers-loading');
+            const errorEl = document.getElementById('managers-error');
+            const gridEl = document.getElementById('manager-grid');
+            
+            try {
+                loadingEl.style.display = 'block';
+                errorEl.style.display = 'none';
+                gridEl.innerHTML = '';
+                
+                // Load manager stats
+                const response = await fetch('data/managers/all_time_stats.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const rawManagersData = await response.json();
+                
+                // Load manager history for detailed view
+                const historyResponse = await fetch('data/managers/manager_history.json');
+                if (historyResponse.ok) {
+                    managerHistoryData = await historyResponse.json();
+                }
+                
+                // Normalize and merge manager data
+                allManagersData = normalizeAndMergeManagerData(rawManagersData, managerHistoryData);
+                
+                // Determine all unique seasons we need to load
+                const allSeasons = new Set();
+                allManagersData.forEach(manager => {
+                    manager.season_history.forEach(season => {
+                        allSeasons.add(season.year);
+                    });
+                });
+                
+                // Pre-load team data for all seasons in parallel
+                await Promise.all(Array.from(allSeasons).map(year => getTeamData(year)));
+                
+                // Calculate awards for all managers
+                const managerAwards = await calculateManagerAwards();
+                managerAwardsData = managerAwards; // Store globally for modal access
+                
+                // Now build manager logos using cached data
+                const managerLogos = {};
+                for (const manager of allManagersData) {
+                    const recentSeason = Math.max(...manager.season_history.map(s => s.year));
+                    const recentSeasonData = manager.season_history.find(s => s.year === recentSeason);
+                    
+                    const teams = await getTeamData(recentSeason);
+                    if (teams) {
+                        const managerTeam = teams.find(t => t.team_name === recentSeasonData.team_name);
+                        if (managerTeam) {
+                            managerLogos[manager.manager_name] = managerTeam.team_logo;
+                        }
+                    }
+                }
+                
+                // Determine which managers are currently active
+                const currentStandingsResponse = await fetch('data/current_season/standings.json');
+                let currentManagers = [];
+                if (currentStandingsResponse.ok) {
+                    const currentStandings = await currentStandingsResponse.json();
+                    const normalizedStandings = normalizeStandingsData(currentStandings, 2025);
+                    currentManagers = normalizedStandings.map(team => team.manager);
+                }
+                
+                // Sort by win percentage (best first)
+                allManagersData.sort((a, b) => b.win_pct - a.win_pct);
+                
+                allManagersData.forEach(manager => {
+                    const isActive = currentManagers.includes(manager.manager_name);
+                    const card = document.createElement('div');
+                    card.className = isActive ? 'manager-card' : 'manager-card inactive';
+                    card.onclick = () => showManagerDetail(manager.manager_name);
+                    
+                    // Get last season played
+                    const lastSeason = Math.max(...manager.season_history.map(s => s.year));
+                    
+                    // Get logo if available
+                    const logo = managerLogos[manager.manager_name] ? `<img src="${managerLogos[manager.manager_name]}" class="manager-logo" alt="${manager.manager_name}">` : '';
+                    
+                    // Build awards display
+                    const awards = managerAwards[manager.manager_name] || {};
+                    let awardsHTML = '';
+                    
+                    const awardsList = [];
+                    if (awards.championships) awardsList.push({ type: 'image', src: 'champion_ring.png', count: awards.championships, alt: 'Championship' });
+                    if (awards.regularSeason) awardsList.push({ type: 'emoji', emoji: '👑', count: awards.regularSeason });
+                    if (awards.scoringChamp) awardsList.push({ type: 'emoji', emoji: '🏅', count: awards.scoringChamp });
+                    if (awards.garbage) awardsList.push({ type: 'emoji', emoji: '🗑️', count: awards.garbage });
+                    if (awards.clown) awardsList.push({ type: 'image', src: 'clown_award.png', count: awards.clown, alt: 'Clown Award' });
+                    
+                    if (awardsList.length > 0) {
+                        awardsHTML = '<div class="awards-row">';
+                        awardsList.forEach(award => {
+                            awardsHTML += '<div class="award-badge">';
+                            if (award.type === 'image') {
+                                awardsHTML += `<img src="${award.src}" alt="${award.alt}" class="award-image">`;
+                            } else {
+                                awardsHTML += award.emoji;
+                            }
+                            if (award.count > 1) {
+                                awardsHTML += `<span class="award-count">x${award.count}</span>`;
+                            }
+                            awardsHTML += '</div>';
+                        });
+                        awardsHTML += '</div>';
+                    }
+                    
+                    card.innerHTML = `
+                        <h3>${logo}${manager.manager_name}</h3>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                            ${!isActive ? '<div class="badge">Inactive</div>' : '<div class="badge">Active</div>'}
+                            ${awardsHTML}
+                        </div>
+                        <div class="stat"><strong>Year Joined:</strong> ${manager.first_season}</div>
+                        <div class="stat"><strong>Years in League:</strong> ${manager.seasons_played}</div>
+                        ${!isActive ? `<div class="stat"><strong>Last Season:</strong> ${lastSeason}</div>` : ''}
+                        <div class="stat"><strong>All-Time Record:</strong> ${manager.total_wins}-${manager.total_losses}-${manager.total_ties} (${(manager.win_pct * 100).toFixed(1)}%)</div>
+                        <div class="stat"><strong>Championships:</strong> ${manager.championships}</div>
+                        <div class="stat"><strong>Runner-ups:</strong> ${manager.runner_ups}</div>
+                        <div class="stat"><strong>Playoff Apps:</strong> ${manager.playoff_appearances}</div>
+                        <div class="stat"><strong>Avg Finish:</strong> ${manager.avg_finish.toFixed(1)}</div>
+                    `;
+                    gridEl.appendChild(card);
+                });
+                
+                loadingEl.style.display = 'none';
+                
+            } catch (error) {
+                console.error('Error loading manager profiles:', error);
+                loadingEl.style.display = 'none';
+                errorEl.textContent = `Error loading manager profiles: ${error.message}`;
+                errorEl.style.display = 'block';
+            }
+        }
+
+        // ===== SHOW MANAGER DETAIL MODAL =====
+        async function showManagerDetail(managerName) {
+            const manager = allManagersData.find(m => m.manager_name === managerName);
+            if (!manager) return;
+            
+            const modal = document.getElementById('manager-modal');
+            const modalBody = document.getElementById('modal-body');
+            
+            // Load team logos for each season using cached data
+            const seasonLogos = {};
+            for (const season of manager.season_history) {
+                const teams = await getTeamData(season.year);
+                if (teams) {
+                    const managerTeam = teams.find(t => t.team_name === season.team_name);
+                    if (managerTeam) {
+                        seasonLogos[season.year] = managerTeam.team_logo;
+                    }
+                }
+            }
+            
+            // Build season timeline
+            const seasonHistory = manager.season_history.sort((a, b) => b.year - a.year);
+            let timelineHTML = seasonHistory.map(season => {
+                let rankClass = '';
+                let rankText = `#${season.rank}`;
+                
+                if (season.rank === 1) {
+                    rankClass = 'champion';
+                    rankText = '🏆 Champion';
+                } else if (season.rank === 2) {
+                    rankClass = 'runner-up';
+                    rankText = '🥈 Runner-up';
+                }
+                
+                const logo = seasonLogos[season.year] ? `<img src="${seasonLogos[season.year]}" class="timeline-logo" alt="${season.team_name}">` : '';
+                
+                return `
+                    <div class="timeline-item">
+                        <div class="year">${season.year}</div>
+                        <div class="details">
+                            <span class="rank ${rankClass}">${rankText}</span>
+                            <span>${season.wins}-${season.losses} | ${season.points_for.toLocaleString()} pts</span>
+                            <div style="margin-top: 0.25rem; color: #666; font-size: 0.9rem;">
+                                Team: ${season.team_name}
+                            </div>
+                        </div>
+                        ${logo}
+                    </div>
+                `;
+            }).join('');
+            
+            // Calculate head-to-head records
+            const h2hRecords = await calculateHeadToHeadRecords(managerName);
+            let h2hHTML = '';
+            
+            if (h2hRecords.length > 0) {
+                h2hHTML = `
+                    <div class="timeline">
+                        <h3>Head-to-Head Records</h3>
+                        <table class="matchup-table" id="h2h-table">
+                            <thead>
+                                <tr>
+                                    <th class="sortable" onclick="sortH2HTable(0, 'string')">Opponent</th>
+                                    <th class="sortable" onclick="sortH2HTable(1, 'record')">Record</th>
+                                    <th class="sortable" onclick="sortH2HTable(2, 'number')">Win %</th>
+                                    <th class="sortable" onclick="sortH2HTable(3, 'number')">Avg Points For</th>
+                                    <th class="sortable" onclick="sortH2HTable(4, 'number')">Avg Points Against</th>
+                                </tr>
+                            </thead>
+                            <tbody id="h2h-body">
+                                ${h2hRecords.map(record => `
+                                    <tr>
+                                        <td>${record.opponent}</td>
+                                        <td>${record.wins}-${record.losses}</td>
+                                        <td>${(record.win_pct * 100).toFixed(1)}%</td>
+                                        <td>${record.avg_points_for.toFixed(1)}</td>
+                                        <td>${record.avg_points_against.toFixed(1)}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            }
+            
+            modalBody.innerHTML = `
+                <div class="modal-stats">
+                    <div class="stat-box">
+                        <div class="value">${manager.total_wins}-${manager.total_losses}-${manager.total_ties}</div>
+                        <div class="label">All-Time Record</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="value">${(manager.win_pct * 100).toFixed(1)}%</div>
+                        <div class="label">Win Percentage</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="value">${manager.championships}</div>
+                        <div class="label">Championships</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="value">${manager.avg_finish.toFixed(1)}</div>
+                        <div class="label">Avg Finish</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="value">${manager.playoff_appearances}</div>
+                        <div class="label">Playoff Apps</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="value">${manager.total_points_for.toLocaleString()}</div>
+                        <div class="label">Career Points</div>
+                    </div>
                 </div>
+                
+                <div class="timeline">
+                    <h3>Season-by-Season Timeline</h3>
+                    ${timelineHTML}
+                </div>
+                
+                ${h2hHTML}
+            `;
+            
+            // Set the header separately with awards emojis
+            const modalHeaderSection = document.getElementById('modal-header-section');
+            
+            // Build awards display for modal header (same format as cards)
+            const awards = managerAwardsData[manager.manager_name] || {};
+            let modalAwardsHTML = '';
+            
+            const awardsList = [];
+            if (awards.championships) awardsList.push({ type: 'image', src: 'champion_ring.png', count: awards.championships, alt: 'Championship' });
+            if (awards.regularSeason) awardsList.push({ type: 'emoji', emoji: '👑', count: awards.regularSeason });
+            if (awards.scoringChamp) awardsList.push({ type: 'emoji', emoji: '🏅', count: awards.scoringChamp });
+            if (awards.garbage) awardsList.push({ type: 'emoji', emoji: '🗑️', count: awards.garbage });
+            if (awards.clown) awardsList.push({ type: 'image', src: 'clown_award.png', count: awards.clown, alt: 'Clown Award' });
+            
+            if (awardsList.length > 0) {
+                modalAwardsHTML = '<div class="awards-row">';
+                awardsList.forEach(award => {
+                    modalAwardsHTML += '<div class="award-badge">';
+                    if (award.type === 'image') {
+                        modalAwardsHTML += `<img src="${award.src}" alt="${award.alt}" class="award-image">`;
+                    } else {
+                        modalAwardsHTML += award.emoji;
+                    }
+                    if (award.count > 1) {
+                        modalAwardsHTML += `<span class="award-count">x${award.count}</span>`;
+                    }
+                    modalAwardsHTML += '</div>';
+                });
+                modalAwardsHTML += '</div>';
+            }
+            
+            modalHeaderSection.innerHTML = `
+                <div class="modal-header">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                        <h2 style="margin: 0;">${manager.manager_name}</h2>
+                        ${modalAwardsHTML}
+                    </div>
+                    <p style="color: #666; margin-top: 0.5rem;">Joined ${manager.first_season} | ${manager.seasons_played} seasons</p>
+                </div>
+            `;
+            
+            // Store h2h data for sorting
+            window.currentH2HData = h2hRecords;
+            window.currentSortColumn = null;
+            window.currentSortDirection = 'desc';
+            
+            modal.classList.add('active');
+        }
+
+        // ===== SORT HEAD-TO-HEAD TABLE =====
+        function sortH2HTable(columnIndex, dataType) {
+            const tbody = document.getElementById('h2h-body');
+            const headers = document.querySelectorAll('#h2h-table th');
+            
+            if (!window.currentH2HData || window.currentH2HData.length === 0) return;
+            
+            // Toggle sort direction if clicking same column
+            if (window.currentSortColumn === columnIndex) {
+                window.currentSortDirection = window.currentSortDirection === 'asc' ? 'desc' : 'asc';
+            } else {
+                window.currentSortColumn = columnIndex;
+                window.currentSortDirection = 'desc'; // Default to descending
+            }
+            
+            // Update header classes
+            headers.forEach((header, index) => {
+                header.classList.remove('sorted-asc', 'sorted-desc');
+                if (index === columnIndex) {
+                    header.classList.add(window.currentSortDirection === 'asc' ? 'sorted-asc' : 'sorted-desc');
+                }
+            });
+            
+            // Sort the data
+            const sortedData = [...window.currentH2HData].sort((a, b) => {
+                let valueA, valueB;
+                
+                switch (columnIndex) {
+                    case 0: // Opponent
+                        valueA = a.opponent.toLowerCase();
+                        valueB = b.opponent.toLowerCase();
+                        break;
+                    case 1: // Record (by total wins)
+                        valueA = a.wins;
+                        valueB = b.wins;
+                        break;
+                    case 2: // Win %
+                        valueA = a.win_pct;
+                        valueB = b.win_pct;
+                        break;
+                    case 3: // Avg Points For
+                        valueA = a.avg_points_for;
+                        valueB = b.avg_points_for;
+                        break;
+                    case 4: // Avg Points Against
+                        valueA = a.avg_points_against;
+                        valueB = b.avg_points_against;
+                        break;
+                }
+                
+                if (window.currentSortDirection === 'asc') {
+                    return valueA > valueB ? 1 : valueA < valueB ? -1 : 0;
+                } else {
+                    return valueA < valueB ? 1 : valueA > valueB ? -1 : 0;
+                }
+            });
+            
+            // Update table
+            tbody.innerHTML = sortedData.map(record => `
+                <tr>
+                    <td>${record.opponent}</td>
+                    <td>${record.wins}-${record.losses}</td>
+                    <td>${(record.win_pct * 100).toFixed(1)}%</td>
+                    <td>${record.avg_points_for.toFixed(1)}</td>
+                    <td>${record.avg_points_against.toFixed(1)}</td>
+                </tr>
             `).join('');
         }
 
-        // =============================================================================
-        // AWARDS LOGIC
-        // =============================================================================
-
-        async function loadAwards() {
-            const selectedYear = document.getElementById('awards-season').value;
-            const loadingEl = document.getElementById('awards-loading');
-            const contentEl = document.getElementById('awards-content');
-            const errorEl = document.getElementById('awards-error');
-
-            loadingEl.style.display = 'block';
-            contentEl.style.display = 'none';
-            errorEl.style.display = 'none';
-
-            let awardsPath = `${DATA_DIR}/historical/${selectedYear}/awards.json`;
-
-            if (parseInt(selectedYear) === CURRENT_SEASON) {
-                // Current season awards might not be generated yet, use a placeholder or check current season path
-                awardsPath = `${DATA_DIR}/current_season/awards.json`;
-            }
-
+        // ===== CALCULATE HEAD-TO-HEAD RECORDS =====
+        async function calculateHeadToHeadRecords(managerName) {
             try {
-                const response = await fetch(awardsPath);
-                if (!response.ok) {
-                    throw new Error(`Failed to load awards data from ${awardsPath}. Status: ${response.status}`);
+                // Get all available seasons and load their scores
+                const h2hMap = {};
+                
+                const manager = allManagersData.find(m => m.manager_name === managerName);
+                if (!manager) return [];
+                
+                for (const season of manager.season_history.map(h => h.year)) {
+                    try {
+                        let scoresResponse;
+                        if (season === 2025) {
+                            scoresResponse = await fetch('data/current_season/all_scores.json');
+                        } else {
+                            scoresResponse = await fetch(`data/historical/${season}/all_scores.json`);
+                        }
+                        
+                        if (!scoresResponse.ok) continue;
+                        
+                        const scores = await scoresResponse.json();
+                        let standings = season === 2025 
+                            ? await (await fetch('data/current_season/standings.json')).json()
+                            : await (await fetch(`data/historical/${season}/final_standings.json`)).json();
+                        
+                        // Normalize standings
+                        standings = normalizeStandingsData(standings, season);
+                        
+                        // Create team_key to manager mapping
+                        const teamToManager = {};
+                        standings.forEach(team => {
+                            teamToManager[team.team_key] = team.manager;
+                        });
+                        
+                        // Find manager's team key
+                        const managerTeam = standings.find(team => team.manager === managerName);
+                        if (!managerTeam) continue;
+                        
+                        // Process matchups
+                        scores.forEach(matchup => {
+                            if (matchup.team_key === managerTeam.team_key) {
+                                const opponent = teamToManager[matchup.opponent_key];
+                                if (!opponent) return;
+                                
+                                if (!h2hMap[opponent]) {
+                                    h2hMap[opponent] = {
+                                        opponent: opponent,
+                                        wins: 0,
+                                        losses: 0,
+                                        total_points_for: 0,
+                                        total_points_against: 0,
+                                        games: 0
+                                    };
+                                }
+                                
+                                h2hMap[opponent].games++;
+                                h2hMap[opponent].total_points_for += matchup.team_score;
+                                h2hMap[opponent].total_points_against += matchup.opponent_score;
+                                
+                                if (matchup.team_score > matchup.opponent_score) {
+                                    h2hMap[opponent].wins++;
+                                } else if (matchup.team_score < matchup.opponent_score) {
+                                    h2hMap[opponent].losses++;
+                                }
+                            }
+                        });
+                    } catch (e) {
+                        console.log(`Could not load scores for ${season}`);
+                    }
                 }
-                const data = await response.json();
+                
+                // Convert to array and calculate averages
+                const h2hRecords = Object.values(h2hMap).map(record => ({
+                    ...record,
+                    win_pct: record.wins / (record.wins + record.losses),
+                    avg_points_for: record.total_points_for / record.games,
+                    avg_points_against: record.total_points_against / record.games
+                }));
+                
+                // Sort by win percentage
+                h2hRecords.sort((a, b) => b.win_pct - a.win_pct);
+                
+                return h2hRecords;
+            } catch (error) {
+                console.error('Error calculating head-to-head:', error);
+                return [];
+            }
+        }
 
-                populateAwardTable('league-leaders-table', data.leaders || [], award => `
-                    <td class="rank-cell">${award.rank}</td>
-                    <td><strong>${award.stat_category}</strong></td>
+        // ===== CLOSE MANAGER MODAL =====
+        function closeManagerModal() {
+            const modal = document.getElementById('manager-modal');
+            modal.classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('manager-modal');
+            if (event.target === modal) {
+                closeManagerModal();
+            }
+        }
+
+        // ===== NAVIGATION =====
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all desktop nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Remove active class from all mobile nav buttons
+            document.querySelectorAll('.mobile-nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked button (both desktop and mobile)
+            if (event && event.target) {
+                event.target.closest('button')?.classList.add('active');
+            }
+            
+            // Also update the corresponding nav buttons by section ID
+            const sectionToIndex = {
+                'standings': 0,
+                'awards': 1,
+                'scoring': 2,
+                'managers': 3
+            };
+            const index = sectionToIndex[sectionId];
+            if (index !== undefined) {
+                document.querySelectorAll('.nav-btn')[index]?.classList.add('active');
+                document.querySelectorAll('.mobile-nav-btn')[index]?.classList.add('active');
+            }
+            
+            // Load section-specific data
+            if (sectionId === 'awards') {
+                loadAwards();
+            } else if (sectionId === 'scoring') {
+                // Load player scoring if not already loaded
+                if (allPlayersData.length === 0) {
+                    loadPlayerScoring();
+                }
+            }
+        }
+
+        // ===== LOAD AWARDS =====
+        async function loadAwards() {
+            console.log("Loading awards...");
+            const loadingEl = document.getElementById('awards-loading');
+            const errorEl = document.getElementById('awards-error');
+            const contentEl = document.getElementById('awards-content');
+            
+            try {
+                loadingEl.style.display = 'block';
+                errorEl.style.display = 'none';
+                contentEl.style.display = 'none';
+                
+                // Load all seasons data
+                const seasons = [2019, 2020, 2021, 2022, 2023, 2024, 2025];
+                const seasonData = {};
+                
+                console.log("Fetching data for seasons:", seasons);
+                
+                for (const year of seasons) {
+                    try {
+                        let standingsResponse, teamsResponse;
+                        
+                        if (year === 2025) {
+                            standingsResponse = await fetch('data/current_season/standings.json');
+                            teamsResponse = await fetch('data/current_season/teams.json');
+                        } else {
+                            standingsResponse = await fetch(`data/historical/${year}/final_standings.json`);
+                            teamsResponse = await fetch(`data/historical/${year}/teams.json`);
+                        }
+                        
+                        console.log(`${year}: standings=${standingsResponse.ok}, teams=${teamsResponse.ok}`);
+                        
+                        if (standingsResponse.ok && teamsResponse.ok) {
+                            const standings = await standingsResponse.json();
+                            const teams = await teamsResponse.json();
+                            
+                            // Normalize standings
+                            const normalizedStandings = normalizeStandingsData(standings, year);
+                            
+                            // Create team logo map
+                            const logoMap = {};
+                            teams.forEach(team => {
+                                logoMap[team.team_key] = team.team_logo;
+                            });
+                            
+                            seasonData[year] = {
+                                standings: normalizedStandings,
+                                logos: logoMap
+                            };
+                        }
+                    } catch (e) {
+                        console.error(`Error loading ${year}:`, e);
+                    }
+                }
+                
+                console.log("Loaded season data for:", Object.keys(seasonData));
+                
+                // Calculate awards
+                const regularSeasonWinners = [];
+                const scoringChampions = [];
+                const garbageAwards = [];
+                const clownAwards = [];
+                
+                for (const [year, data] of Object.entries(seasonData)) {
+                    const standings = data.standings;
+                    const logos = data.logos;
+                    
+                    // Regular Season Champion (most wins)
+                    const mostWins = standings.reduce((max, team) => 
+                        team.wins > max.wins ? team : max
+                    );
+                    regularSeasonWinners.push({
+                        year,
+                        manager: mostWins.manager,
+                        team_name: mostWins.team_name,
+                        logo: logos[mostWins.team_key],
+                        value: mostWins.wins
+                    });
+                    
+                    // Scoring Champion (most points)
+                    const mostPoints = standings.reduce((max, team) => 
+                        team.points_for > max.points_for ? team : max
+                    );
+                    scoringChampions.push({
+                        year,
+                        manager: mostPoints.manager,
+                        team_name: mostPoints.team_name,
+                        logo: logos[mostPoints.team_key],
+                        value: Math.round(mostPoints.points_for)
+                    });
+                    
+                    // Garbage Award (worst record - fewest wins)
+                    const fewestWins = standings.reduce((min, team) => 
+                        team.wins < min.wins ? team : min
+                    );
+                    garbageAwards.push({
+                        year,
+                        manager: fewestWins.manager,
+                        team_name: fewestWins.team_name,
+                        logo: logos[fewestWins.team_key],
+                        wins: fewestWins.wins,
+                        losses: fewestWins.losses
+                    });
+                    
+                    // Clown Award (least points)
+                    const leastPoints = standings.reduce((min, team) => 
+                        team.points_for < min.points_for ? team : min
+                    );
+                    clownAwards.push({
+                        year,
+                        manager: leastPoints.manager,
+                        team_name: leastPoints.team_name,
+                        logo: logos[leastPoints.team_key],
+                        value: Math.round(leastPoints.points_for)
+                    });
+                }
+                
+                console.log("Calculated awards:", {
+                    regularSeasonWinners: regularSeasonWinners.length,
+                    scoringChampions: scoringChampions.length,
+                    garbageAwards: garbageAwards.length,
+                    clownAwards: clownAwards.length
+                });
+                
+                // Sort all by year (most recent first)
+                [regularSeasonWinners, scoringChampions, garbageAwards, clownAwards].forEach(arr => {
+                    arr.sort((a, b) => b.year - a.year);
+                });
+                
+                // Populate tables
+                populateAwardTable('regular-season-winners', regularSeasonWinners, (award) => `
+                    <td>${award.year}</td>
+                    <td><div class="manager-cell">${award.logo ? `<img src="${award.logo}" class="team-logo">` : ''}${award.manager}</div></td>
+                    <td>${award.team_name}</td>
+                    <td><span class="award-value">${award.value}</span></td>
+                `);
+                
+                populateAwardTable('scoring-champions', scoringChampions, (award) => `
+                    <td>${award.year}</td>
+                    <td><div class="manager-cell">${award.logo ? `<img src="${award.logo}" class="team-logo">` : ''}${award.manager}</div></td>
                     <td>${award.team_name}</td>
                     <td><span class="award-value">${award.value.toLocaleString()}</span></td>
                 `);
-
-                // Assuming MVP and Highlight data uses a similar, simpler structure
-                // We'll just show the same data for all sections as a placeholder
-                populateAwardTable('mvp-grid', data.mvp_candidates || [], award => `
-                    <div class="award-card">
-                        <h3>${award.stat_category}</h3>
-                        <div class="award-details">
-                            <p><strong>Team:</strong> ${award.team_name}</p>
-                            <p><strong>Value:</strong> <span class="award-value">${award.value.toLocaleString()}</span></p>
-                        </div>
-                    </div>
+                
+                populateAwardTable('garbage-awards', garbageAwards, (award) => `
+                    <td>${award.year}</td>
+                    <td><div class="manager-cell">${award.logo ? `<img src="${award.logo}" class="team-logo">` : ''}${award.manager}</div></td>
+                    <td>${award.team_name}</td>
+                    <td><span class="award-value">${award.wins}-${award.losses}</span></td>
                 `);
-
-                populateAwardTable('highlight-grid', data.highlights || [], award => `
-                    <div class="award-card">
-                        <h3>${award.stat_category}</h3>
-                        <div class="award-details">
-                            <p><strong>Team:</strong> ${award.team_name}</p>
-                            <p><strong>Value:</strong> <span class="award-value">${award.value.toLocaleString()}</span></p>
-                        </div>
-                    </div>
+                
+                populateAwardTable('clown-awards', clownAwards, (award) => `
+                    <td>${award.year}</td>
+                    <td><div class="manager-cell">${award.logo ? `<img src="${award.logo}" class="team-logo">` : ''}${award.manager}</div></td>
+                    <td>${award.team_name}</td>
+                    <td><span class="award-value">${award.value.toLocaleString()}</span></td>
                 `);
-
+                
                 console.log("Awards populated successfully");
                 loadingEl.style.display = 'none';
                 contentEl.style.display = 'block';
-
+                
             } catch (error) {
                 console.error('Error loading awards:', error);
                 loadingEl.style.display = 'none';
@@ -1463,34 +3850,27 @@
         }
 
         function populateAwardTable(tableId, awards, rowTemplate) {
-            const container = document.getElementById(tableId);
-            container.innerHTML = '';
-
-            if (tableId.includes('grid')) {
-                // Render as grid items
-                container.innerHTML = awards.map(rowTemplate).join('');
-            } else {
-                // Render as table rows
-                awards.forEach(award => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = rowTemplate(award);
-                    container.appendChild(row);
-                });
-            }
+            const tbody = document.getElementById(tableId);
+            tbody.innerHTML = '';
+            
+            awards.forEach(award => {
+                const row = document.createElement('tr');
+                row.innerHTML = rowTemplate(award);
+                tbody.appendChild(row);
+            });
         }
 
         // ===== INITIALIZE ON PAGE LOAD =====
         window.addEventListener('DOMContentLoaded', async () => {
             // Initialize season selectors (detect available seasons)
             await initializeSeasonSelectors();
-
+            
             // Load current season standings by default
             loadStandingsBySeason();
-
+            
             // Load manager profiles
             loadManagerProfiles();
         });
     </script>
 </body>
-
 </html>
