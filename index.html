@@ -316,6 +316,20 @@
             align-items: center;
         }
 
+        .player-award-cell {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .player-award-headshot {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #e0e0e0;
+        }
+
         .table-wrapper {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
@@ -1625,6 +1639,42 @@
                                 </tr>
                             </thead>
                             <tbody id="clown-awards">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="award-section">
+                    <h3><span class="award-icon"><img src="attached_assets/trout_award_1764648146923.png" alt="Mike Trout Award" class="award-header-image"></span> Mike Trout Award (Highest Scoring Hitter)</h3>
+                    <div class="award-table-wrapper">
+                        <table class="award-table player-award-table">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Manager</th>
+                                    <th>Player</th>
+                                    <th>Points</th>
+                                </tr>
+                            </thead>
+                            <tbody id="trout-awards">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="award-section">
+                    <h3><span class="award-icon"><img src="attached_assets/degom_award_1764648146918.jpg" alt="Jacob deGrom Award" class="award-header-image"></span> Jacob deGrom Award (Highest Scoring Pitcher)</h3>
+                    <div class="award-table-wrapper">
+                        <table class="award-table player-award-table">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Manager</th>
+                                    <th>Player</th>
+                                    <th>Points</th>
+                                </tr>
+                            </thead>
+                            <tbody id="degrom-awards">
                             </tbody>
                         </table>
                     </div>
@@ -3105,21 +3155,24 @@
             const seasons = [2019, 2020, 2021, 2022, 2023, 2024, 2025];
             const seasonData = {};
             
-            // Load all seasons data
+            // Load all seasons data including player stats
             for (const year of seasons) {
                 try {
-                    let standingsResponse;
+                    let standingsResponse, playerStatsResponse;
                     
                     if (year === 2025) {
                         standingsResponse = await fetch('data/current_season/standings.json');
+                        playerStatsResponse = await fetch('data/current_season/player_stats.json');
                     } else {
                         standingsResponse = await fetch(`data/historical/${year}/final_standings.json`);
+                        playerStatsResponse = await fetch(`data/historical/${year}/player_stats.json`);
                     }
                     
                     if (standingsResponse.ok) {
                         const standings = await standingsResponse.json();
                         const normalizedStandings = normalizeStandingsData(standings, year);
-                        seasonData[year] = normalizedStandings;
+                        const playerStats = playerStatsResponse.ok ? await playerStatsResponse.json() : [];
+                        seasonData[year] = { standings: normalizedStandings, playerStats: playerStats };
                     }
                 } catch (e) {
                     console.error(`Error loading ${year}:`, e);
@@ -3129,7 +3182,10 @@
             // Calculate awards by manager
             const managerAwards = {};
             
-            for (const [year, standings] of Object.entries(seasonData)) {
+            for (const [year, data] of Object.entries(seasonData)) {
+                const standings = data.standings;
+                const playerStats = data.playerStats || [];
+                
                 // Find winners for each award category
                 const mostWins = standings.reduce((max, team) => 
                     team.wins > max.wins ? team : max
@@ -3162,6 +3218,26 @@
                 
                 if (!managerAwards[leastPoints.manager]) managerAwards[leastPoints.manager] = {};
                 managerAwards[leastPoints.manager].clown = (managerAwards[leastPoints.manager].clown || 0) + 1;
+                
+                // Mike Trout Award (highest scoring hitter)
+                const batters = playerStats.filter(p => p.position_type === 'B');
+                if (batters.length > 0) {
+                    const topHitter = batters.reduce((max, player) => 
+                        (player.fantasy_points || 0) > (max.fantasy_points || 0) ? player : max
+                    );
+                    if (!managerAwards[topHitter.manager]) managerAwards[topHitter.manager] = {};
+                    managerAwards[topHitter.manager].troutAward = (managerAwards[topHitter.manager].troutAward || 0) + 1;
+                }
+                
+                // Jacob deGrom Award (highest scoring pitcher)
+                const pitchers = playerStats.filter(p => p.position_type === 'P');
+                if (pitchers.length > 0) {
+                    const topPitcher = pitchers.reduce((max, player) => 
+                        (player.fantasy_points || 0) > (max.fantasy_points || 0) ? player : max
+                    );
+                    if (!managerAwards[topPitcher.manager]) managerAwards[topPitcher.manager] = {};
+                    managerAwards[topPitcher.manager].degromAward = (managerAwards[topPitcher.manager].degromAward || 0) + 1;
+                }
             }
             
             return managerAwards;
@@ -3256,6 +3332,8 @@
                     if (awards.championships) awardsList.push({ type: 'image', src: 'champion_ring.png', count: awards.championships, alt: 'Championship' });
                     if (awards.regularSeason) awardsList.push({ type: 'emoji', emoji: '👑', count: awards.regularSeason });
                     if (awards.scoringChamp) awardsList.push({ type: 'emoji', emoji: '🏅', count: awards.scoringChamp });
+                    if (awards.troutAward) awardsList.push({ type: 'image', src: 'attached_assets/trout_award_1764648146923.png', count: awards.troutAward, alt: 'Mike Trout Award' });
+                    if (awards.degromAward) awardsList.push({ type: 'image', src: 'attached_assets/degom_award_1764648146918.jpg', count: awards.degromAward, alt: 'Jacob deGrom Award' });
                     if (awards.garbage) awardsList.push({ type: 'emoji', emoji: '🗑️', count: awards.garbage });
                     if (awards.clown) awardsList.push({ type: 'image', src: 'clown_award.png', count: awards.clown, alt: 'Clown Award' });
                     
@@ -3436,6 +3514,8 @@
             if (awards.championships) awardsList.push({ type: 'image', src: 'champion_ring.png', count: awards.championships, alt: 'Championship' });
             if (awards.regularSeason) awardsList.push({ type: 'emoji', emoji: '👑', count: awards.regularSeason });
             if (awards.scoringChamp) awardsList.push({ type: 'emoji', emoji: '🏅', count: awards.scoringChamp });
+            if (awards.troutAward) awardsList.push({ type: 'image', src: 'attached_assets/trout_award_1764648146923.png', count: awards.troutAward, alt: 'Mike Trout Award' });
+            if (awards.degromAward) awardsList.push({ type: 'image', src: 'attached_assets/degom_award_1764648146918.jpg', count: awards.degromAward, alt: 'Jacob deGrom Award' });
             if (awards.garbage) awardsList.push({ type: 'emoji', emoji: '🗑️', count: awards.garbage });
             if (awards.clown) awardsList.push({ type: 'image', src: 'clown_award.png', count: awards.clown, alt: 'Clown Award' });
             
@@ -3715,21 +3795,24 @@
                 
                 for (const year of seasons) {
                     try {
-                        let standingsResponse, teamsResponse;
+                        let standingsResponse, teamsResponse, playerStatsResponse;
                         
                         if (year === 2025) {
                             standingsResponse = await fetch('data/current_season/standings.json');
                             teamsResponse = await fetch('data/current_season/teams.json');
+                            playerStatsResponse = await fetch('data/current_season/player_stats.json');
                         } else {
                             standingsResponse = await fetch(`data/historical/${year}/final_standings.json`);
                             teamsResponse = await fetch(`data/historical/${year}/teams.json`);
+                            playerStatsResponse = await fetch(`data/historical/${year}/player_stats.json`);
                         }
                         
-                        console.log(`${year}: standings=${standingsResponse.ok}, teams=${teamsResponse.ok}`);
+                        console.log(`${year}: standings=${standingsResponse.ok}, teams=${teamsResponse.ok}, playerStats=${playerStatsResponse.ok}`);
                         
                         if (standingsResponse.ok && teamsResponse.ok) {
                             const standings = await standingsResponse.json();
                             const teams = await teamsResponse.json();
+                            const playerStats = playerStatsResponse.ok ? await playerStatsResponse.json() : [];
                             
                             // Normalize standings
                             const normalizedStandings = normalizeStandingsData(standings, year);
@@ -3742,7 +3825,8 @@
                             
                             seasonData[year] = {
                                 standings: normalizedStandings,
-                                logos: logoMap
+                                logos: logoMap,
+                                playerStats: playerStats
                             };
                         }
                     } catch (e) {
@@ -3757,10 +3841,13 @@
                 const scoringChampions = [];
                 const garbageAwards = [];
                 const clownAwards = [];
+                const troutAwards = [];
+                const degromAwards = [];
                 
                 for (const [year, data] of Object.entries(seasonData)) {
                     const standings = data.standings;
                     const logos = data.logos;
+                    const playerStats = data.playerStats || [];
                     
                     // Regular Season Champion (most wins)
                     const mostWins = standings.reduce((max, team) => 
@@ -3810,17 +3897,51 @@
                         logo: logos[leastPoints.team_key],
                         value: Math.round(leastPoints.points_for)
                     });
+                    
+                    // Mike Trout Award (highest scoring hitter)
+                    const batters = playerStats.filter(p => p.position_type === 'B');
+                    if (batters.length > 0) {
+                        const topHitter = batters.reduce((max, player) => 
+                            (player.fantasy_points || 0) > (max.fantasy_points || 0) ? player : max
+                        );
+                        troutAwards.push({
+                            year,
+                            manager: topHitter.manager,
+                            team_logo: topHitter.team_logo,
+                            player_name: topHitter.name,
+                            player_headshot: topHitter.headshot_url,
+                            value: Math.round(topHitter.fantasy_points || 0)
+                        });
+                    }
+                    
+                    // Jacob deGrom Award (highest scoring pitcher)
+                    const pitchers = playerStats.filter(p => p.position_type === 'P');
+                    if (pitchers.length > 0) {
+                        const topPitcher = pitchers.reduce((max, player) => 
+                            (player.fantasy_points || 0) > (max.fantasy_points || 0) ? player : max
+                        );
+                        degromAwards.push({
+                            year,
+                            manager: topPitcher.manager,
+                            team_logo: topPitcher.team_logo,
+                            player_name: topPitcher.name,
+                            player_headshot: topPitcher.headshot_url,
+                            value: Math.round(topPitcher.fantasy_points || 0)
+                        });
+                    }
                 }
                 
                 console.log("Calculated awards:", {
                     regularSeasonWinners: regularSeasonWinners.length,
                     scoringChampions: scoringChampions.length,
                     garbageAwards: garbageAwards.length,
-                    clownAwards: clownAwards.length
+                    clownAwards: clownAwards.length,
+                    troutAwards: troutAwards.length,
+                    degromAwards: degromAwards.length
                 });
                 
                 // Sort all by year (most recent first)
-                [regularSeasonWinners, scoringChampions, garbageAwards, clownAwards].forEach(arr => {
+                [regularSeasonWinners, scoringChampions, garbageAwards, clownAwards, troutAwards, degromAwards].forEach(arr => {
                     arr.sort((a, b) => b.year - a.year);
                 });
                 
@@ -3850,6 +3971,23 @@
                     <td>${award.year}</td>
                     <td><div class="manager-cell">${award.logo ? `<img src="${award.logo}" class="team-logo">` : ''}${award.manager}</div></td>
                     <td>${award.team_name}</td>
+                    <td><span class="award-value">${award.value.toLocaleString()}</span></td>
+                `);
+                
+                // Base64 encoded placeholder for player headshots
+                const placeholderImg = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwZTBlMCIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMzUiIHI9IjIwIiBmaWxsPSIjYmRiZGJkIi8+PGVsbGlwc2UgY3g9IjUwIiBjeT0iODUiIHJ4PSIzMCIgcnk9IjIwIiBmaWxsPSIjYmRiZGJkIi8+PC9zdmc+';
+                
+                populateAwardTable('trout-awards', troutAwards, (award) => `
+                    <td>${award.year}</td>
+                    <td><div class="manager-cell">${award.team_logo ? `<img src="${award.team_logo}" class="team-logo">` : ''}${award.manager}</div></td>
+                    <td><div class="player-award-cell"><img src="${award.player_headshot || placeholderImg}" class="player-award-headshot" onerror="this.src='${placeholderImg}'">${award.player_name}</div></td>
+                    <td><span class="award-value">${award.value.toLocaleString()}</span></td>
+                `);
+                
+                populateAwardTable('degrom-awards', degromAwards, (award) => `
+                    <td>${award.year}</td>
+                    <td><div class="manager-cell">${award.team_logo ? `<img src="${award.team_logo}" class="team-logo">` : ''}${award.manager}</div></td>
+                    <td><div class="player-award-cell"><img src="${award.player_headshot || placeholderImg}" class="player-award-headshot" onerror="this.src='${placeholderImg}'">${award.player_name}</div></td>
                     <td><span class="award-value">${award.value.toLocaleString()}</span></td>
                 `);
                 
