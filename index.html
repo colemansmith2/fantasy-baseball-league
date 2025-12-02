@@ -1030,7 +1030,9 @@
         .player-team-logo {
             width: 24px;
             height: 24px;
-            border-radius: 4px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: white;
         }
         
         .player-fantasy-team {
@@ -1697,16 +1699,16 @@
                                 <th>Team</th>
                                 <th class="sortable" onclick="sortPlayerTable('position')">Pos</th>
                                 <th class="sortable stat-col" onclick="sortPlayerTable('fantasy_points')">Pts</th>
-                                <th class="sortable stat-col batter-stat" onclick="sortPlayerTable('HR')">HR</th>
-                                <th class="sortable stat-col batter-stat" onclick="sortPlayerTable('RBI')">RBI</th>
-                                <th class="sortable stat-col batter-stat" onclick="sortPlayerTable('R')">R</th>
-                                <th class="sortable stat-col batter-stat" onclick="sortPlayerTable('SB')">SB</th>
-                                <th class="sortable stat-col batter-stat" onclick="sortPlayerTable('AVG')">AVG</th>
-                                <th class="sortable stat-col pitcher-stat" onclick="sortPlayerTable('W')">W</th>
-                                <th class="sortable stat-col pitcher-stat" onclick="sortPlayerTable('SO')">K</th>
-                                <th class="sortable stat-col pitcher-stat" onclick="sortPlayerTable('ERA')">ERA</th>
-                                <th class="sortable stat-col pitcher-stat" onclick="sortPlayerTable('WHIP')">WHIP</th>
-                                <th class="sortable stat-col pitcher-stat" onclick="sortPlayerTable('SV')">SV</th>
+                                <th class="sortable stat-col" onclick="sortPlayerTable('G')">G</th>
+                                <th class="sortable stat-col" onclick="sortPlayerTable('PPG')">PPG</th>
+                                <th class="sortable stat-col" onclick="sortPlayerTable('IP')">IP</th>
+                                <th class="sortable stat-col" onclick="sortPlayerTable('ERA')">ERA</th>
+                                <th class="sortable stat-col" onclick="sortPlayerTable('W')">W</th>
+                                <th class="sortable stat-col" onclick="sortPlayerTable('SO')">K</th>
+                                <th class="sortable stat-col" onclick="sortPlayerTable('BB')">BB</th>
+                                <th class="sortable stat-col" onclick="sortPlayerTable('PA')">PA</th>
+                                <th class="sortable stat-col" onclick="sortPlayerTable('HR')">HR</th>
+                                <th class="sortable stat-col" onclick="sortPlayerTable('OPS')">OPS</th>
                             </tr>
                         </thead>
                         <tbody id="player-table-body">
@@ -1954,6 +1956,12 @@
                 } else if (column === 'fantasy_points') {
                     aVal = a.fantasy_points || 0;
                     bVal = b.fantasy_points || 0;
+                } else if (column === 'PPG') {
+                    // Points Per Game = fantasy_points / G
+                    const aGames = (a.stats && a.stats.G) || 0;
+                    const bGames = (b.stats && b.stats.G) || 0;
+                    aVal = aGames > 0 ? (a.fantasy_points || 0) / aGames : 0;
+                    bVal = bGames > 0 ? (b.fantasy_points || 0) / bGames : 0;
                 } else {
                     // Stat column
                     aVal = (a.stats && a.stats[column]) || 0;
@@ -2005,6 +2013,11 @@
                 // Use headshot if available and not empty, otherwise use placeholder
                 const headshot = (player.headshot_url && player.headshot_url.trim()) ? player.headshot_url : placeholderImg;
                 
+                // Calculate PPG (Points Per Game)
+                const games = stats.G || 0;
+                const fantasyPoints = player.fantasy_points || 0;
+                const ppg = games > 0 ? (fantasyPoints / games).toFixed(2) : '-';
+                
                 return `
                     <tr>
                         <td>${index + 1}</td>
@@ -2024,17 +2037,17 @@
                             </div>
                         </td>
                         <td class="player-position">${player.primary_position || '-'}</td>
-                        <td class="player-points">${(player.fantasy_points || 0).toFixed(1)}</td>
-                        <td class="stat-col batter-stat">${isBatter ? (stats.HR || 0) : '-'}</td>
-                        <td class="stat-col batter-stat">${isBatter ? (stats.RBI || 0) : '-'}</td>
-                        <td class="stat-col batter-stat">${isBatter ? (stats.R || 0) : '-'}</td>
-                        <td class="stat-col batter-stat">${isBatter ? (stats.SB || 0) : '-'}</td>
-                        <td class="stat-col batter-stat">${isBatter ? (stats.AVG ? stats.AVG.toFixed(3) : '-') : '-'}</td>
-                        <td class="stat-col pitcher-stat">${!isBatter ? (stats.W || 0) : '-'}</td>
-                        <td class="stat-col pitcher-stat">${!isBatter ? (stats.SO || 0) : '-'}</td>
-                        <td class="stat-col pitcher-stat">${!isBatter ? (stats.ERA ? stats.ERA.toFixed(2) : '-') : '-'}</td>
-                        <td class="stat-col pitcher-stat">${!isBatter ? (stats.WHIP ? stats.WHIP.toFixed(2) : '-') : '-'}</td>
-                        <td class="stat-col pitcher-stat">${!isBatter ? (stats.SV || 0) : '-'}</td>
+                        <td class="player-points">${fantasyPoints.toFixed(1)}</td>
+                        <td class="stat-col">${games || '-'}</td>
+                        <td class="stat-col">${ppg}</td>
+                        <td class="stat-col">${!isBatter ? (stats.IP || '-') : '-'}</td>
+                        <td class="stat-col">${!isBatter ? (stats.ERA ? stats.ERA.toFixed(2) : '-') : '-'}</td>
+                        <td class="stat-col">${!isBatter ? (stats.W || '-') : '-'}</td>
+                        <td class="stat-col">${!isBatter ? (stats.SO || '-') : '-'}</td>
+                        <td class="stat-col">${stats.BB || '-'}</td>
+                        <td class="stat-col">${isBatter ? (stats.PA || '-') : '-'}</td>
+                        <td class="stat-col">${isBatter ? (stats.HR || '-') : '-'}</td>
+                        <td class="stat-col">${isBatter ? (stats.OPS ? stats.OPS.toFixed(3) : '-') : '-'}</td>
                     </tr>
                 `;
             }).join('');
