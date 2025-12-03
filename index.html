@@ -2179,6 +2179,7 @@
                     <th class="sortable stat-col" onclick="sortPlayerTable('fantasy_points')">Pts</th>
                     <th class="sortable stat-col" onclick="sortPlayerTable('G')">G</th>
                     <th class="sortable stat-col" onclick="sortPlayerTable('PPG')">PPG</th>
+                    <th class="sortable stat-col" onclick="sortPlayerTable('AVG')">AVG</th>
                     <th class="sortable stat-col" onclick="sortPlayerTable('OPS')">OPS</th>
                     <th class="sortable stat-col" onclick="sortPlayerTable('AB')">AB</th>
                     <th class="sortable stat-col" onclick="sortPlayerTable('H')">H</th>
@@ -2197,9 +2198,10 @@
                     <th class="sortable stat-col" onclick="sortPlayerTable('ERA')">ERA</th>
                     <th class="sortable stat-col" onclick="sortPlayerTable('WHIP')">WHIP</th>
                     <th class="sortable stat-col" onclick="sortPlayerTable('SO')">K</th>
+                    <th class="sortable stat-col" onclick="sortPlayerTable('K%')">K%</th>
                     <th class="sortable stat-col" onclick="sortPlayerTable('BB')">BB</th>
+                    <th class="sortable stat-col" onclick="sortPlayerTable('BB%')">BB%</th>
                     <th class="sortable stat-col" onclick="sortPlayerTable('W')">W</th>
-                    <th class="sortable stat-col" onclick="sortPlayerTable('L')">L</th>
                     <th class="sortable stat-col" onclick="sortPlayerTable('SV')">SV</th>
                 `;
             } else {
@@ -2345,6 +2347,7 @@
                         <td class="player-points">${fantasyPoints.toFixed(1)}</td>
                         <td class="stat-col">${games || '-'}</td>
                         <td class="stat-col">${ppg}</td>
+                        <td class="stat-col">${stats.AVG ? stats.AVG.toFixed(3) : '-'}</td>
                         <td class="stat-col">${stats.OPS ? stats.OPS.toFixed(3) : '-'}</td>
                         <td class="stat-col">${stats.AB || '-'}</td>
                         <td class="stat-col">${stats.H || '-'}</td>
@@ -2362,9 +2365,10 @@
                         <td class="stat-col">${stats.ERA ? stats.ERA.toFixed(2) : '-'}</td>
                         <td class="stat-col">${stats.WHIP ? stats.WHIP.toFixed(2) : '-'}</td>
                         <td class="stat-col">${stats.SO || '-'}</td>
+                        <td class="stat-col">${stats['K%'] ? stats['K%'].toFixed(1) : '-'}</td>
                         <td class="stat-col">${stats.BB || '-'}</td>
+                        <td class="stat-col">${stats['BB%'] ? stats['BB%'].toFixed(1) : '-'}</td>
                         <td class="stat-col">${stats.W || '-'}</td>
-                        <td class="stat-col">${stats.L || '-'}</td>
                         <td class="stat-col">${stats.SV || '-'}</td>
                     `;
                 } else {
@@ -2472,6 +2476,7 @@
                     <div class="player-stat-box"><div class="stat-value">${stats.SV || 0}</div><div class="stat-label">Saves</div></div>
                     <div class="player-stat-box"><div class="stat-value">${stats.HLD || 0}</div><div class="stat-label">Holds</div></div>
                     <div class="player-stat-box"><div class="stat-value">${stats.IP || 0}</div><div class="stat-label">IP</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats.TBF || 0}</div><div class="stat-label">TBF</div></div>
                     <div class="player-stat-box"><div class="stat-value">${stats.SO || 0}</div><div class="stat-label">K</div></div>
                     <div class="player-stat-box"><div class="stat-value">${stats.BB || 0}</div><div class="stat-label">BB</div></div>
                     <div class="player-stat-box"><div class="stat-value">${stats.H || 0}</div><div class="stat-label">Hits</div></div>
@@ -2479,6 +2484,8 @@
                     <div class="player-stat-box"><div class="stat-value">${stats.ERA ? stats.ERA.toFixed(2) : '0.00'}</div><div class="stat-label">ERA</div></div>
                     <div class="player-stat-box"><div class="stat-value">${stats.WHIP ? stats.WHIP.toFixed(2) : '0.00'}</div><div class="stat-label">WHIP</div></div>
                     <div class="player-stat-box"><div class="stat-value">${stats['K/9'] ? stats['K/9'].toFixed(2) : '0.00'}</div><div class="stat-label">K/9</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats['K%'] ? stats['K%'].toFixed(1) + '%' : '0.0%'}</div><div class="stat-label">K%</div></div>
+                    <div class="player-stat-box"><div class="stat-value">${stats['BB%'] ? stats['BB%'].toFixed(1) + '%' : '0.0%'}</div><div class="stat-label">BB%</div></div>
                 `;
             }
 

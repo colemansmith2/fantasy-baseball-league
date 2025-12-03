@@ -27,14 +27,17 @@
       "HR": 7,
       "BB": 21,
       "SO": 122,
+      "TBF": 297,
       "ERA": 1.63,
       "WHIP": 0.87,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 14.2,
+      "BB/9": 2.45,
+      "K%": 41.1,
+      "BB%": 7.1
     },
     "fantasy_points": 228.9,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/669456/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Cleveland"
   },
   {
     "player_id": 8658,
@@ -66,7 +69,7 @@
       "SB": 2,
       "CS": 0,
       "HBP": 3,
-      "AVG": 0.0,
+      "AVG": 0.341,
       "OBP": 0.462,
       "SLG": 0.64,
       "OPS": 1.102,
@@ -74,7 +77,7 @@
     },
     "fantasy_points": 220.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/518692/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Atlanta"
   },
   {
     "player_id": 9385,
@@ -107,7 +110,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.338,
       "OBP": 0.431,
       "SLG": 0.636,
       "OPS": 1.067,
@@ -115,7 +118,47 @@
     },
     "fantasy_points": 209.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/542303/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Atlanta"
+  },
+  {
+    "player_id": 9507,
+    "name": "José Ramírez",
+    "position_type": "B",
+    "eligible_positions": [
+      "3B",
+      "Util"
+    ],
+    "primary_position": "3B",
+    "selected_position": "3B",
+    "status": "",
+    "team_key": "398.l.17906.t.12",
+    "team_name": "Believe the Hype",
+    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/d5f0a512e277beba859aec55a08280dce921cd5a65822401b5ca3a68d970d572.png",
+    "manager": "Logan",
+    "stats": {
+      "G": 58,
+      "AB": 219,
+      "PA": 254,
+      "H": 64,
+      "2B": 16,
+      "3B": 1,
+      "HR": 17,
+      "R": 45,
+      "RBI": 46,
+      "BB": 31,
+      "SO": 43,
+      "SB": 10,
+      "CS": 3,
+      "HBP": 3,
+      "AVG": 0.292,
+      "OBP": 0.386,
+      "SLG": 0.607,
+      "OPS": 0.993,
+      "1B": 30
+    },
+    "fantasy_points": 205.5,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/608070/headshot/67/current",
+    "mlb_team": "Cleveland"
   },
   {
     "player_id": 10056,
@@ -147,7 +190,7 @@
       "SB": 12,
       "CS": 4,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.335,
       "OBP": 0.394,
       "SLG": 0.588,
       "OPS": 0.982,
@@ -155,11 +198,11 @@
     },
     "fantasy_points": 202.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/607208/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Washington"
   },
   {
     "player_id": 9540,
-    "name": "Jos\u00e9 Abreu",
+    "name": "José Abreu",
     "position_type": "B",
     "eligible_positions": [
       "1B",
@@ -188,7 +231,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 3,
-      "AVG": 0.0,
+      "AVG": 0.317,
       "OBP": 0.37,
       "SLG": 0.617,
       "OPS": 0.987,
@@ -196,7 +239,7 @@
     },
     "fantasy_points": 196.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/547989/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Chicago"
   },
   {
     "player_id": 9111,
@@ -229,7 +272,7 @@
       "SB": 6,
       "CS": 3,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.304,
       "OBP": 0.37,
       "SLG": 0.58,
       "OPS": 0.95,
@@ -237,7 +280,7 @@
     },
     "fantasy_points": 193.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/592518/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "San Diego"
   },
   {
     "player_id": 9122,
@@ -268,14 +311,17 @@
       "HR": 9,
       "BB": 17,
       "SO": 100,
+      "TBF": 278,
       "ERA": 1.73,
       "WHIP": 0.8,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 12.3,
+      "BB/9": 2.1,
+      "K%": 36.0,
+      "BB%": 6.1
     },
     "fantasy_points": 189.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/545333/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Cincinnati"
   },
   {
     "player_id": 10639,
@@ -307,7 +353,7 @@
       "SB": 11,
       "CS": 3,
       "HBP": 5,
-      "AVG": 0.0,
+      "AVG": 0.277,
       "OBP": 0.366,
       "SLG": 0.571,
       "OPS": 0.937,
@@ -315,7 +361,7 @@
     },
     "fantasy_points": 188.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/665487/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "San Diego"
   },
   {
     "player_id": 9552,
@@ -347,7 +393,7 @@
       "SB": 10,
       "CS": 1,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.292,
       "OBP": 0.366,
       "SLG": 0.562,
       "OPS": 0.927,
@@ -355,7 +401,7 @@
     },
     "fantasy_points": 186.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/605141/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 9095,
@@ -385,14 +431,17 @@
       "HR": 5,
       "BB": 14,
       "SO": 93,
+      "TBF": 297,
       "ERA": 2.01,
       "WHIP": 0.96,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 11.0,
+      "BB/9": 1.66,
+      "K%": 31.3,
+      "BB%": 4.7
     },
     "fantasy_points": 184.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/506433/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Chicago"
   },
   {
     "player_id": 10626,
@@ -424,7 +473,7 @@
       "SB": 6,
       "CS": 2,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.351,
       "OBP": 0.49,
       "SLG": 0.695,
       "OPS": 1.185,
@@ -432,7 +481,7 @@
     },
     "fantasy_points": 181.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/665742/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Washington"
   },
   {
     "player_id": 8875,
@@ -464,7 +513,7 @@
       "SB": 8,
       "CS": 1,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.268,
       "OBP": 0.42,
       "SLG": 0.542,
       "OPS": 0.962,
@@ -472,7 +521,7 @@
     },
     "fantasy_points": 178.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/547180/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Philadelphia"
   },
   {
     "player_id": 9701,
@@ -502,14 +551,17 @@
       "HR": 7,
       "BB": 18,
       "SO": 104,
+      "TBF": 268,
       "ERA": 2.38,
       "WHIP": 0.96,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 13.8,
+      "BB/9": 2.38,
+      "K%": 38.8,
+      "BB%": 6.7
     },
     "fantasy_points": 177.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/594798/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 10703,
@@ -540,14 +592,17 @@
       "HR": 5,
       "BB": 20,
       "SO": 93,
+      "TBF": 267,
       "ERA": 2.09,
       "WHIP": 0.85,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 12.1,
+      "BB/9": 2.61,
+      "K%": 34.8,
+      "BB%": 7.5
     },
     "fantasy_points": 175.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/659275/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "San Diego"
   },
   {
     "player_id": 8861,
@@ -579,7 +634,7 @@
       "SB": 1,
       "CS": 1,
       "HBP": 3,
-      "AVG": 0.0,
+      "AVG": 0.281,
       "OBP": 0.39,
       "SLG": 0.603,
       "OPS": 0.993,
@@ -587,7 +642,7 @@
     },
     "fantasy_points": 174.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/545361/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 9121,
@@ -617,14 +672,17 @@
       "HR": 14,
       "BB": 17,
       "SO": 94,
+      "TBF": 288,
       "ERA": 2.84,
       "WHIP": 0.96,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 11.6,
+      "BB/9": 2.1,
+      "K%": 32.6,
+      "BB%": 5.9
     },
     "fantasy_points": 173.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/543037/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 10745,
@@ -657,7 +715,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 3,
-      "AVG": 0.0,
+      "AVG": 0.277,
       "OBP": 0.338,
       "SLG": 0.61,
       "OPS": 0.948,
@@ -665,7 +723,7 @@
     },
     "fantasy_points": 172.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/572228/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 9571,
@@ -697,7 +755,7 @@
       "SB": 15,
       "CS": 3,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.289,
       "OBP": 0.355,
       "SLG": 0.519,
       "OPS": 0.874,
@@ -705,7 +763,7 @@
     },
     "fantasy_points": 169.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/596115/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Colorado"
   },
   {
     "player_id": 10105,
@@ -737,14 +795,17 @@
       "HR": 9,
       "BB": 10,
       "SO": 80,
+      "TBF": 248,
       "ERA": 2.7,
       "WHIP": 0.75,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 10.8,
+      "BB/9": 1.36,
+      "K%": 32.3,
+      "BB%": 4.0
     },
     "fantasy_points": 166.9,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/628317/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Minnesota"
   },
   {
     "player_id": 9584,
@@ -776,7 +837,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.307,
       "OBP": 0.358,
       "SLG": 0.585,
       "OPS": 0.943,
@@ -784,7 +845,7 @@
     },
     "fantasy_points": 165.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/608369/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 8650,
@@ -815,14 +876,17 @@
       "HR": 13,
       "BB": 25,
       "SO": 89,
+      "TBF": 344,
       "ERA": 3.32,
       "WHIP": 1.06,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 9.5,
+      "BB/9": 2.68,
+      "K%": 25.9,
+      "BB%": 7.3
     },
     "fantasy_points": 165.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/458681/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Texas"
   },
   {
     "player_id": 10480,
@@ -855,7 +919,7 @@
       "SB": 8,
       "CS": 1,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.268,
       "OBP": 0.325,
       "SLG": 0.512,
       "OPS": 0.837,
@@ -863,7 +927,7 @@
     },
     "fantasy_points": 159.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/663656/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Houston"
   },
   {
     "player_id": 9640,
@@ -894,14 +958,17 @@
       "HR": 8,
       "BB": 28,
       "SO": 97,
+      "TBF": 288,
       "ERA": 3.48,
       "WHIP": 1.04,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 12.1,
+      "BB/9": 3.5,
+      "K%": 33.7,
+      "BB%": 9.7
     },
     "fantasy_points": 157.9,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/608337/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Chicago"
   },
   {
     "player_id": 10298,
@@ -935,7 +1002,7 @@
       "SB": 12,
       "CS": 1,
       "HBP": 4,
-      "AVG": 0.0,
+      "AVG": 0.282,
       "OBP": 0.325,
       "SLG": 0.44,
       "OPS": 0.764,
@@ -943,7 +1010,7 @@
     },
     "fantasy_points": 157.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/593160/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Kansas City"
   },
   {
     "player_id": 8949,
@@ -978,7 +1045,7 @@
       "SB": 3,
       "CS": 0,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.364,
       "OBP": 0.421,
       "SLG": 0.59,
       "OPS": 1.011,
@@ -986,7 +1053,7 @@
     },
     "fantasy_points": 155.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/518934/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 8984,
@@ -1019,7 +1086,7 @@
       "SB": 5,
       "CS": 0,
       "HBP": 7,
-      "AVG": 0.0,
+      "AVG": 0.241,
       "OBP": 0.355,
       "SLG": 0.433,
       "OPS": 0.788,
@@ -1027,7 +1094,7 @@
     },
     "fantasy_points": 153.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/572122/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Seattle"
   },
   {
     "player_id": 8859,
@@ -1061,7 +1128,7 @@
       "SB": 2,
       "CS": 1,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.288,
       "OBP": 0.353,
       "SLG": 0.606,
       "OPS": 0.959,
@@ -1069,7 +1136,7 @@
     },
     "fantasy_points": 153.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/571976/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "San Diego"
   },
   {
     "player_id": 9882,
@@ -1099,14 +1166,17 @@
       "HR": 9,
       "BB": 23,
       "SO": 96,
+      "TBF": 289,
       "ERA": 3.28,
       "WHIP": 1.08,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 12.1,
+      "BB/9": 2.91,
+      "K%": 33.2,
+      "BB%": 8.0
     },
     "fantasy_points": 151.9,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/605400/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Philadelphia"
   },
   {
     "player_id": 9282,
@@ -1139,7 +1209,7 @@
       "SB": 3,
       "CS": 1,
       "HBP": 4,
-      "AVG": 0.0,
+      "AVG": 0.284,
       "OBP": 0.339,
       "SLG": 0.488,
       "OPS": 0.827,
@@ -1147,7 +1217,7 @@
     },
     "fantasy_points": 151.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/544369/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Philadelphia"
   },
   {
     "player_id": 10730,
@@ -1177,14 +1247,17 @@
       "HR": 9,
       "BB": 18,
       "SO": 91,
+      "TBF": 293,
       "ERA": 3.05,
       "WHIP": 0.99,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 11.1,
+      "BB/9": 2.21,
+      "K%": 31.1,
+      "BB%": 6.1
     },
     "fantasy_points": 150.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/605540/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Milwaukee"
   },
   {
     "player_id": 9591,
@@ -1217,7 +1290,7 @@
       "SB": 3,
       "CS": 0,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.257,
       "OBP": 0.316,
       "SLG": 0.476,
       "OPS": 0.792,
@@ -1225,7 +1298,7 @@
     },
     "fantasy_points": 150.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/592696/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Minnesota"
   },
   {
     "player_id": 10119,
@@ -1258,7 +1331,7 @@
       "SB": 2,
       "CS": 1,
       "HBP": 3,
-      "AVG": 0.0,
+      "AVG": 0.297,
       "OBP": 0.4,
       "SLG": 0.568,
       "OPS": 0.968,
@@ -1266,7 +1339,7 @@
     },
     "fantasy_points": 149.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/573262/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "San Francisco"
   },
   {
     "player_id": 10504,
@@ -1300,7 +1373,7 @@
       "SB": 6,
       "CS": 0,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.239,
       "OBP": 0.333,
       "SLG": 0.455,
       "OPS": 0.789,
@@ -1308,7 +1381,7 @@
     },
     "fantasy_points": 148.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/641355/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 9106,
@@ -1340,7 +1413,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 5,
-      "AVG": 0.0,
+      "AVG": 0.286,
       "OBP": 0.418,
       "SLG": 0.497,
       "OPS": 0.915,
@@ -1348,7 +1421,7 @@
     },
     "fantasy_points": 147.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/543685/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 9319,
@@ -1380,7 +1453,7 @@
       "SB": 8,
       "CS": 0,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.3,
       "OBP": 0.364,
       "SLG": 0.502,
       "OPS": 0.867,
@@ -1388,7 +1461,7 @@
     },
     "fantasy_points": 146.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/593428/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Boston"
   },
   {
     "player_id": 11125,
@@ -1422,7 +1495,7 @@
       "SB": 3,
       "CS": 0,
       "HBP": 4,
-      "AVG": 0.0,
+      "AVG": 0.269,
       "OBP": 0.362,
       "SLG": 0.554,
       "OPS": 0.916,
@@ -1430,7 +1503,7 @@
     },
     "fantasy_points": 146.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/664040/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Tampa Bay"
   },
   {
     "player_id": 11116,
@@ -1461,14 +1534,17 @@
       "HR": 9,
       "BB": 25,
       "SO": 82,
+      "TBF": 291,
       "ERA": 2.75,
       "WHIP": 1.11,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 10.3,
+      "BB/9": 3.12,
+      "K%": 28.2,
+      "BB%": 8.6
     },
     "fantasy_points": 145.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/668678/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Arizona"
   },
   {
     "player_id": 11086,
@@ -1503,7 +1579,7 @@
       "SB": 6,
       "CS": 0,
       "HBP": 3,
-      "AVG": 0.0,
+      "AVG": 0.25,
       "OBP": 0.375,
       "SLG": 0.432,
       "OPS": 0.807,
@@ -1511,11 +1587,11 @@
     },
     "fantasy_points": 145.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/624415/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Toronto"
   },
   {
     "player_id": 10646,
-    "name": "Ronald Acu\u00f1a Jr.",
+    "name": "Ronald Acuña Jr.",
     "position_type": "B",
     "eligible_positions": [
       "OF",
@@ -1543,7 +1619,7 @@
       "SB": 8,
       "CS": 1,
       "HBP": 4,
-      "AVG": 0.0,
+      "AVG": 0.25,
       "OBP": 0.406,
       "SLG": 0.581,
       "OPS": 0.987,
@@ -1551,7 +1627,48 @@
     },
     "fantasy_points": 145.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/660670/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Atlanta"
+  },
+  {
+    "player_id": 10439,
+    "name": "Eloy Jiménez",
+    "position_type": "B",
+    "eligible_positions": [
+      "OF",
+      "Util",
+      "NA"
+    ],
+    "primary_position": "OF",
+    "selected_position": "OF",
+    "status": "NA",
+    "team_key": "398.l.17906.t.4",
+    "team_name": "Catchers are a Myth",
+    "team_logo": "https://s.yimg.com/cv/apiv2/default/mlb/mlb_4.png",
+    "manager": "Coleman",
+    "stats": {
+      "G": 55,
+      "AB": 213,
+      "PA": 226,
+      "H": 63,
+      "2B": 14,
+      "3B": 0,
+      "HR": 14,
+      "R": 26,
+      "RBI": 41,
+      "BB": 12,
+      "SO": 56,
+      "SB": 0,
+      "CS": 0,
+      "HBP": 0,
+      "AVG": 0.296,
+      "OBP": 0.332,
+      "SLG": 0.559,
+      "OPS": 0.891,
+      "1B": 35
+    },
+    "fantasy_points": 144.0,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/650391/headshot/67/current",
+    "mlb_team": "Chicago"
   },
   {
     "player_id": 9595,
@@ -1585,7 +1702,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 5,
-      "AVG": 0.0,
+      "AVG": 0.316,
       "OBP": 0.377,
       "SLG": 0.616,
       "OPS": 0.993,
@@ -1593,7 +1710,7 @@
     },
     "fantasy_points": 142.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/642086/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 10522,
@@ -1625,7 +1742,7 @@
       "SB": 10,
       "CS": 1,
       "HBP": 3,
-      "AVG": 0.0,
+      "AVG": 0.251,
       "OBP": 0.352,
       "SLG": 0.456,
       "OPS": 0.808,
@@ -1633,7 +1750,7 @@
     },
     "fantasy_points": 142.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/663757/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "San Diego"
   },
   {
     "player_id": 10234,
@@ -1665,7 +1782,7 @@
       "SB": 5,
       "CS": 0,
       "HBP": 4,
-      "AVG": 0.0,
+      "AVG": 0.274,
       "OBP": 0.345,
       "SLG": 0.464,
       "OPS": 0.809,
@@ -1673,7 +1790,7 @@
     },
     "fantasy_points": 141.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/621020/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Atlanta"
   },
   {
     "player_id": 8957,
@@ -1706,7 +1823,7 @@
       "SB": 2,
       "CS": 1,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.303,
       "OBP": 0.356,
       "SLG": 0.448,
       "OPS": 0.804,
@@ -1714,7 +1831,7 @@
     },
     "fantasy_points": 141.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/453568/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Colorado"
   },
   {
     "player_id": 9627,
@@ -1745,14 +1862,17 @@
       "HR": 8,
       "BB": 7,
       "SO": 64,
+      "TBF": 277,
       "ERA": 3.1,
       "WHIP": 0.95,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.3,
+      "BB/9": 0.91,
+      "K%": 23.1,
+      "BB%": 2.5
     },
     "fantasy_points": 140.4,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/594835/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Seattle"
   },
   {
     "player_id": 10616,
@@ -1785,7 +1905,7 @@
       "SB": 3,
       "CS": 0,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.308,
       "OBP": 0.348,
       "SLG": 0.534,
       "OPS": 0.882,
@@ -1793,7 +1913,7 @@
     },
     "fantasy_points": 140.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/666971/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Toronto"
   },
   {
     "player_id": 9616,
@@ -1823,14 +1943,17 @@
       "HR": 11,
       "BB": 22,
       "SO": 91,
+      "TBF": 238,
       "ERA": 4.08,
       "WHIP": 1.13,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 14.3,
+      "BB/9": 3.47,
+      "K%": 38.2,
+      "BB%": 9.2
     },
     "fantasy_points": 139.9,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/607192/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Tampa Bay"
   },
   {
     "player_id": 9758,
@@ -1861,14 +1984,17 @@
       "HR": 10,
       "BB": 8,
       "SO": 64,
+      "TBF": 315,
       "ERA": 2.88,
       "WHIP": 1.0,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 7.1,
+      "BB/9": 0.89,
+      "K%": 20.3,
+      "BB%": 2.5
     },
     "fantasy_points": 139.4,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/543294/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Chicago"
   },
   {
     "player_id": 7681,
@@ -1900,7 +2026,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 4,
-      "AVG": 0.0,
+      "AVG": 0.303,
       "OBP": 0.397,
       "SLG": 0.595,
       "OPS": 0.992,
@@ -1908,7 +2034,7 @@
     },
     "fantasy_points": 139.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/443558/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Minnesota"
   },
   {
     "player_id": 9339,
@@ -1940,7 +2066,7 @@
       "SB": 1,
       "CS": 2,
       "HBP": 5,
-      "AVG": 0.0,
+      "AVG": 0.265,
       "OBP": 0.359,
       "SLG": 0.54,
       "OPS": 0.899,
@@ -1948,7 +2074,7 @@
     },
     "fantasy_points": 139.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/543807/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Houston"
   },
   {
     "player_id": 9116,
@@ -1980,7 +2106,7 @@
       "SB": 6,
       "CS": 2,
       "HBP": 4,
-      "AVG": 0.0,
+      "AVG": 0.258,
       "OBP": 0.335,
       "SLG": 0.415,
       "OPS": 0.75,
@@ -1988,7 +2114,7 @@
     },
     "fantasy_points": 138.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/596019/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Cleveland"
   },
   {
     "player_id": 10621,
@@ -2021,7 +2147,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.262,
       "OBP": 0.329,
       "SLG": 0.462,
       "OPS": 0.791,
@@ -2029,7 +2155,47 @@
     },
     "fantasy_points": 138.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/665489/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Toronto"
+  },
+  {
+    "player_id": 10366,
+    "name": "Teoscar Hernández",
+    "position_type": "B",
+    "eligible_positions": [
+      "OF",
+      "Util"
+    ],
+    "primary_position": "OF",
+    "selected_position": "Util",
+    "status": "",
+    "team_key": "398.l.17906.t.2",
+    "team_name": "Arizona Diamondsacks",
+    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/58622800812_a5936d.jpg",
+    "manager": "Josh",
+    "stats": {
+      "G": 50,
+      "AB": 190,
+      "PA": 207,
+      "H": 55,
+      "2B": 7,
+      "3B": 0,
+      "HR": 16,
+      "R": 33,
+      "RBI": 34,
+      "BB": 14,
+      "SO": 63,
+      "SB": 6,
+      "CS": 1,
+      "HBP": 1,
+      "AVG": 0.289,
+      "OBP": 0.34,
+      "SLG": 0.579,
+      "OPS": 0.919,
+      "1B": 32
+    },
+    "fantasy_points": 137.5,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/606192/headshot/67/current",
+    "mlb_team": "Toronto"
   },
   {
     "player_id": 9157,
@@ -2062,7 +2228,7 @@
       "SB": 2,
       "CS": 2,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.276,
       "OBP": 0.314,
       "SLG": 0.566,
       "OPS": 0.881,
@@ -2070,7 +2236,7 @@
     },
     "fantasy_points": 136.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/572041/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 8180,
@@ -2101,14 +2267,17 @@
       "HR": 8,
       "BB": 8,
       "SO": 62,
+      "TBF": 221,
       "ERA": 2.16,
       "WHIP": 0.84,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 9.6,
+      "BB/9": 1.24,
+      "K%": 28.1,
+      "BB%": 3.6
     },
     "fantasy_points": 136.4,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/477132/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 9545,
@@ -2143,7 +2312,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.281,
       "OBP": 0.37,
       "SLG": 0.449,
       "OPS": 0.819,
@@ -2151,7 +2320,7 @@
     },
     "fantasy_points": 136.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/600303/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles,Oakland"
   },
   {
     "player_id": 9317,
@@ -2182,14 +2351,17 @@
       "HR": 6,
       "BB": 17,
       "SO": 72,
+      "TBF": 275,
       "ERA": 2.69,
       "WHIP": 1.15,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 9.7,
+      "BB/9": 2.28,
+      "K%": 26.2,
+      "BB%": 6.2
     },
     "fantasy_points": 134.8,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/547943/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Toronto"
   },
   {
     "player_id": 10235,
@@ -2221,7 +2393,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 3,
-      "AVG": 0.0,
+      "AVG": 0.263,
       "OBP": 0.31,
       "SLG": 0.483,
       "OPS": 0.793,
@@ -2229,7 +2401,7 @@
     },
     "fantasy_points": 134.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/646240/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Boston"
   },
   {
     "player_id": 9118,
@@ -2262,7 +2434,7 @@
       "SB": 10,
       "CS": 2,
       "HBP": 9,
-      "AVG": 0.0,
+      "AVG": 0.281,
       "OBP": 0.34,
       "SLG": 0.43,
       "OPS": 0.77,
@@ -2270,7 +2442,7 @@
     },
     "fantasy_points": 134.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/516782/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Arizona,Miami"
   },
   {
     "player_id": 7977,
@@ -2303,7 +2475,7 @@
       "SB": 4,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.253,
       "OBP": 0.324,
       "SLG": 0.433,
       "OPS": 0.757,
@@ -2311,7 +2483,7 @@
     },
     "fantasy_points": 134.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/457705/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Philadelphia"
   },
   {
     "player_id": 9875,
@@ -2344,7 +2516,7 @@
       "SB": 3,
       "CS": 3,
       "HBP": 7,
-      "AVG": 0.0,
+      "AVG": 0.322,
       "OBP": 0.412,
       "SLG": 0.515,
       "OPS": 0.927,
@@ -2352,7 +2524,7 @@
     },
     "fantasy_points": 133.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/624424/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 9125,
@@ -2383,14 +2555,17 @@
       "HR": 5,
       "BB": 17,
       "SO": 72,
+      "TBF": 267,
       "ERA": 3.29,
       "WHIP": 1.04,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 9.9,
+      "BB/9": 2.35,
+      "K%": 27.0,
+      "BB%": 6.4
     },
     "fantasy_points": 133.4,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/605164/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 11138,
@@ -2422,14 +2597,17 @@
       "HR": 5,
       "BB": 16,
       "SO": 76,
+      "TBF": 288,
       "ERA": 3.57,
       "WHIP": 1.12,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 9.7,
+      "BB/9": 2.05,
+      "K%": 26.4,
+      "BB%": 5.6
     },
     "fantasy_points": 132.7,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/664285/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Houston"
   },
   {
     "player_id": 10918,
@@ -2462,7 +2640,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 6,
-      "AVG": 0.0,
+      "AVG": 0.231,
       "OBP": 0.326,
       "SLG": 0.49,
       "OPS": 0.817,
@@ -2470,7 +2648,48 @@
     },
     "fantasy_points": 132.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/624413/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
+  },
+  {
+    "player_id": 9724,
+    "name": "Eugenio Suárez",
+    "position_type": "B",
+    "eligible_positions": [
+      "3B",
+      "Util",
+      "NA"
+    ],
+    "primary_position": "3B",
+    "selected_position": "Util",
+    "status": "NA",
+    "team_key": "398.l.17906.t.1",
+    "team_name": "Shrimp Fried Bryce",
+    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/c00af56635b1aee95efff66fb6509e992346527c717449678bd41099ba10c875.jpg",
+    "manager": "Josh",
+    "stats": {
+      "G": 57,
+      "AB": 198,
+      "PA": 231,
+      "H": 40,
+      "2B": 8,
+      "3B": 0,
+      "HR": 15,
+      "R": 29,
+      "RBI": 38,
+      "BB": 30,
+      "SO": 67,
+      "SB": 2,
+      "CS": 0,
+      "HBP": 2,
+      "AVG": 0.202,
+      "OBP": 0.312,
+      "SLG": 0.47,
+      "OPS": 0.781,
+      "1B": 17
+    },
+    "fantasy_points": 131.5,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/553993/headshot/67/current",
+    "mlb_team": "Cincinnati"
   },
   {
     "player_id": 10514,
@@ -2500,14 +2719,17 @@
       "HR": 5,
       "BB": 24,
       "SO": 89,
+      "TBF": 292,
       "ERA": 3.21,
       "WHIP": 1.23,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 11.4,
+      "BB/9": 3.09,
+      "K%": 30.5,
+      "BB%": 8.2
     },
     "fantasy_points": 131.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/622491/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Cincinnati"
   },
   {
     "player_id": 10070,
@@ -2538,14 +2760,17 @@
       "HR": 9,
       "BB": 19,
       "SO": 63,
+      "TBF": 276,
       "ERA": 2.71,
       "WHIP": 1.06,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.1,
+      "BB/9": 2.47,
+      "K%": 22.8,
+      "BB%": 6.9
     },
     "fantasy_points": 130.4,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/605200/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "San Diego"
   },
   {
     "player_id": 8185,
@@ -2577,14 +2802,17 @@
       "HR": 8,
       "BB": 27,
       "SO": 82,
+      "TBF": 280,
       "ERA": 2.91,
       "WHIP": 1.21,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 10.9,
+      "BB/9": 3.57,
+      "K%": 29.3,
+      "BB%": 9.6
     },
     "fantasy_points": 130.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/471911/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Cleveland"
   },
   {
     "player_id": 9689,
@@ -2617,7 +2845,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.273,
       "OBP": 0.312,
       "SLG": 0.481,
       "OPS": 0.793,
@@ -2625,7 +2853,7 @@
     },
     "fantasy_points": 129.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/545341/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Toronto"
   },
   {
     "player_id": 9846,
@@ -2657,7 +2885,7 @@
       "SB": 1,
       "CS": 1,
       "HBP": 3,
-      "AVG": 0.0,
+      "AVG": 0.271,
       "OBP": 0.333,
       "SLG": 0.459,
       "OPS": 0.792,
@@ -2665,7 +2893,48 @@
     },
     "fantasy_points": 129.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/572233/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Arizona"
+  },
+  {
+    "player_id": 9581,
+    "name": "Adalberto Mondesi",
+    "position_type": "B",
+    "eligible_positions": [
+      "SS",
+      "Util",
+      "NA"
+    ],
+    "primary_position": "SS",
+    "selected_position": "SS",
+    "status": "NA",
+    "team_key": "398.l.17906.t.5",
+    "team_name": "Cole World",
+    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/28589546139_d2cce4.jpg",
+    "manager": "Ryan",
+    "stats": {
+      "G": 59,
+      "AB": 219,
+      "PA": 233,
+      "H": 56,
+      "2B": 11,
+      "3B": 3,
+      "HR": 6,
+      "R": 33,
+      "RBI": 22,
+      "BB": 11,
+      "SO": 70,
+      "SB": 24,
+      "CS": 8,
+      "HBP": 1,
+      "AVG": 0.256,
+      "OBP": 0.294,
+      "SLG": 0.416,
+      "OPS": 0.71,
+      "1B": 36
+    },
+    "fantasy_points": 129.0,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/609275/headshot/67/current",
+    "mlb_team": "Kansas City"
   },
   {
     "player_id": 9898,
@@ -2699,7 +2968,7 @@
       "SB": 4,
       "CS": 0,
       "HBP": 10,
-      "AVG": 0.0,
+      "AVG": 0.246,
       "OBP": 0.387,
       "SLG": 0.408,
       "OPS": 0.795,
@@ -2707,7 +2976,7 @@
     },
     "fantasy_points": 129.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/592192/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Oakland"
   },
   {
     "player_id": 8193,
@@ -2738,14 +3007,17 @@
       "HR": 10,
       "BB": 23,
       "SO": 92,
+      "TBF": 295,
       "ERA": 3.74,
       "WHIP": 1.38,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 12.3,
+      "BB/9": 3.08,
+      "K%": 31.2,
+      "BB%": 7.8
     },
     "fantasy_points": 128.9,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/453286/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Washington"
   },
   {
     "player_id": 9605,
@@ -2777,7 +3049,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.195,
       "OBP": 0.31,
       "SLG": 0.424,
       "OPS": 0.734,
@@ -2785,7 +3057,7 @@
     },
     "fantasy_points": 128.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/621566/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Oakland"
   },
   {
     "player_id": 8619,
@@ -2818,7 +3090,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.199,
       "OBP": 0.349,
       "SLG": 0.35,
       "OPS": 0.699,
@@ -2826,7 +3098,7 @@
     },
     "fantasy_points": 127.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/467793/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Cleveland"
   },
   {
     "player_id": 8967,
@@ -2859,7 +3131,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.304,
       "OBP": 0.417,
       "SLG": 0.466,
       "OPS": 0.883,
@@ -2867,7 +3139,7 @@
     },
     "fantasy_points": 127.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/502671/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "St. Louis"
   },
   {
     "player_id": 10440,
@@ -2901,7 +3173,7 @@
       "SB": 1,
       "CS": 2,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.258,
       "OBP": 0.361,
       "SLG": 0.505,
       "OPS": 0.866,
@@ -2909,7 +3181,7 @@
     },
     "fantasy_points": 126.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/664023/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Chicago"
   },
   {
     "player_id": 10584,
@@ -2942,7 +3214,7 @@
       "SB": 5,
       "CS": 1,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.262,
       "OBP": 0.364,
       "SLG": 0.437,
       "OPS": 0.801,
@@ -2950,7 +3222,7 @@
     },
     "fantasy_points": 125.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/641786/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Seattle"
   },
   {
     "player_id": 9897,
@@ -2983,7 +3255,7 @@
       "SB": 5,
       "CS": 1,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.322,
       "OBP": 0.357,
       "SLG": 0.529,
       "OPS": 0.886,
@@ -2991,7 +3263,7 @@
     },
     "fantasy_points": 125.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/641313/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Chicago"
   },
   {
     "player_id": 11590,
@@ -3022,14 +3294,17 @@
       "HR": 8,
       "BB": 6,
       "SO": 57,
+      "TBF": 206,
       "ERA": 2.28,
       "WHIP": 0.8,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 9.3,
+      "BB/9": 0.98,
+      "K%": 27.7,
+      "BB%": 2.9
     },
     "fantasy_points": 124.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/668676/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Cleveland"
   },
   {
     "player_id": 8868,
@@ -3062,7 +3337,7 @@
       "SB": 3,
       "CS": 0,
       "HBP": 10,
-      "AVG": 0.0,
+      "AVG": 0.222,
       "OBP": 0.342,
       "SLG": 0.414,
       "OPS": 0.755,
@@ -3070,7 +3345,7 @@
     },
     "fantasy_points": 123.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/519203/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Chicago"
   },
   {
     "player_id": 9771,
@@ -3105,7 +3380,7 @@
       "SB": 3,
       "CS": 2,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.27,
       "OBP": 0.366,
       "SLG": 0.476,
       "OPS": 0.842,
@@ -3113,7 +3388,7 @@
     },
     "fantasy_points": 122.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/621035/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 9108,
@@ -3145,7 +3420,7 @@
       "SB": 0,
       "CS": 2,
       "HBP": 4,
-      "AVG": 0.0,
+      "AVG": 0.225,
       "OBP": 0.298,
       "SLG": 0.486,
       "OPS": 0.784,
@@ -3153,7 +3428,7 @@
     },
     "fantasy_points": 122.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/592206/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Cincinnati"
   },
   {
     "player_id": 9334,
@@ -3184,14 +3459,17 @@
       "HR": 8,
       "BB": 16,
       "SO": 79,
+      "TBF": 245,
       "ERA": 3.62,
       "WHIP": 1.11,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 11.9,
+      "BB/9": 2.43,
+      "K%": 32.2,
+      "BB%": 6.5
     },
     "fantasy_points": 122.4,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/592332/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "San Francisco"
   },
   {
     "player_id": 9320,
@@ -3223,7 +3501,7 @@
       "SB": 4,
       "CS": 2,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.205,
       "OBP": 0.356,
       "SLG": 0.43,
       "OPS": 0.786,
@@ -3231,7 +3509,7 @@
     },
     "fantasy_points": 122.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/592885/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Milwaukee"
   },
   {
     "player_id": 7946,
@@ -3264,7 +3542,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.226,
       "OBP": 0.354,
       "SLG": 0.446,
       "OPS": 0.8,
@@ -3272,7 +3550,47 @@
     },
     "fantasy_points": 120.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/458015/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Cincinnati"
+  },
+  {
+    "player_id": 7497,
+    "name": "Robinson Canó",
+    "position_type": "B",
+    "eligible_positions": [
+      "2B",
+      "Util"
+    ],
+    "primary_position": "2B",
+    "selected_position": "2B",
+    "status": "SUSP",
+    "team_key": "398.l.17906.t.7",
+    "team_name": "Finding Nimmo",
+    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/f3b91efc8b44a7f2b89c00dffb9d990310ea4cc1a53bf9a0e6c69c70bf9e1089.jpg",
+    "manager": "Red",
+    "stats": {
+      "G": 49,
+      "AB": 171,
+      "PA": 182,
+      "H": 54,
+      "2B": 9,
+      "3B": 0,
+      "HR": 10,
+      "R": 23,
+      "RBI": 30,
+      "BB": 9,
+      "SO": 24,
+      "SB": 0,
+      "CS": 0,
+      "HBP": 1,
+      "AVG": 0.316,
+      "OBP": 0.352,
+      "SLG": 0.544,
+      "OPS": 0.896,
+      "1B": 35
+    },
+    "fantasy_points": 120.0,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/429664/headshot/67/current",
+    "mlb_team": "New York"
   },
   {
     "player_id": 9378,
@@ -3305,7 +3623,7 @@
       "SB": 8,
       "CS": 1,
       "HBP": 5,
-      "AVG": 0.0,
+      "AVG": 0.241,
       "OBP": 0.344,
       "SLG": 0.482,
       "OPS": 0.826,
@@ -3313,7 +3631,7 @@
     },
     "fantasy_points": 120.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/543257/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Oakland"
   },
   {
     "player_id": 9620,
@@ -3343,14 +3661,17 @@
       "HR": 2,
       "BB": 19,
       "SO": 50,
+      "TBF": 224,
       "ERA": 2.25,
       "WHIP": 1.09,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.0,
+      "BB/9": 3.05,
+      "K%": 22.3,
+      "BB%": 8.5
     },
     "fantasy_points": 119.8,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/608331/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Atlanta"
   },
   {
     "player_id": 9876,
@@ -3382,7 +3703,7 @@
       "SB": 1,
       "CS": 2,
       "HBP": 6,
-      "AVG": 0.0,
+      "AVG": 0.28,
       "OBP": 0.404,
       "SLG": 0.484,
       "OPS": 0.888,
@@ -3390,7 +3711,7 @@
     },
     "fantasy_points": 119.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/607043/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 10765,
@@ -3422,7 +3743,7 @@
       "SB": 9,
       "CS": 2,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.233,
       "OBP": 0.302,
       "SLG": 0.436,
       "OPS": 0.738,
@@ -3430,7 +3751,7 @@
     },
     "fantasy_points": 118.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/673357/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Chicago"
   },
   {
     "player_id": 11016,
@@ -3463,7 +3784,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.275,
       "OBP": 0.344,
       "SLG": 0.45,
       "OPS": 0.795,
@@ -3471,7 +3792,7 @@
     },
     "fantasy_points": 118.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/614177/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Cleveland"
   },
   {
     "player_id": 10502,
@@ -3507,7 +3828,7 @@
       "SB": 2,
       "CS": 0,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.319,
       "OBP": 0.376,
       "SLG": 0.425,
       "OPS": 0.801,
@@ -3515,7 +3836,7 @@
     },
     "fantasy_points": 117.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/664058/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 10666,
@@ -3547,7 +3868,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.261,
       "OBP": 0.315,
       "SLG": 0.575,
       "OPS": 0.89,
@@ -3555,7 +3876,7 @@
     },
     "fantasy_points": 117.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/623993/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Baltimore"
   },
   {
     "player_id": 9606,
@@ -3589,7 +3910,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 4,
-      "AVG": 0.0,
+      "AVG": 0.192,
       "OBP": 0.331,
       "SLG": 0.389,
       "OPS": 0.72,
@@ -3597,7 +3918,7 @@
     },
     "fantasy_points": 117.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/571970/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 9799,
@@ -3628,14 +3949,58 @@
       "HR": 6,
       "BB": 17,
       "SO": 55,
+      "TBF": 261,
       "ERA": 2.29,
       "WHIP": 1.16,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 7.9,
+      "BB/9": 2.43,
+      "K%": 21.1,
+      "BB%": 6.5
     },
     "fantasy_points": 116.8,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/605135/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Oakland"
+  },
+  {
+    "player_id": 10402,
+    "name": "Germán Márquez",
+    "position_type": "P",
+    "eligible_positions": [
+      "SP",
+      "P",
+      "NA"
+    ],
+    "primary_position": "SP",
+    "selected_position": "SP",
+    "status": "NA",
+    "team_key": "398.l.17906.t.4",
+    "team_name": "Catchers are a Myth",
+    "team_logo": "https://s.yimg.com/cv/apiv2/default/mlb/mlb_4.png",
+    "manager": "Coleman",
+    "stats": {
+      "G": 13,
+      "GS": 13,
+      "W": 4,
+      "L": 6,
+      "SV": 0,
+      "HLD": 0,
+      "IP": 81.2,
+      "H": 78,
+      "ER": 34,
+      "HR": 6,
+      "BB": 25,
+      "SO": 73,
+      "TBF": 344,
+      "ERA": 3.75,
+      "WHIP": 1.26,
+      "K/9": 8.0,
+      "BB/9": 2.77,
+      "K%": 21.2,
+      "BB%": 7.3
+    },
+    "fantasy_points": 116.2,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/608566/headshot/67/current",
+    "mlb_team": "Colorado"
   },
   {
     "player_id": 9718,
@@ -3668,7 +4033,7 @@
       "SB": 4,
       "CS": 1,
       "HBP": 6,
-      "AVG": 0.0,
+      "AVG": 0.266,
       "OBP": 0.349,
       "SLG": 0.491,
       "OPS": 0.84,
@@ -3676,7 +4041,7 @@
     },
     "fantasy_points": 116.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/592663/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Philadelphia"
   },
   {
     "player_id": 9057,
@@ -3707,14 +4072,17 @@
       "HR": 1,
       "BB": 3,
       "SO": 37,
+      "TBF": 92,
       "ERA": 1.78,
       "WHIP": 0.67,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 13.1,
+      "BB/9": 1.08,
+      "K%": 40.2,
+      "BB%": 3.3
     },
     "fantasy_points": 116.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/521230/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Oakland"
   },
   {
     "player_id": 9112,
@@ -3747,7 +4115,7 @@
       "SB": 7,
       "CS": 1,
       "HBP": 4,
-      "AVG": 0.0,
+      "AVG": 0.278,
       "OBP": 0.343,
       "SLG": 0.428,
       "OPS": 0.771,
@@ -3755,7 +4123,7 @@
     },
     "fantasy_points": 116.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/595777/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "San Diego"
   },
   {
     "player_id": 9719,
@@ -3788,7 +4156,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.3,
       "OBP": 0.339,
       "SLG": 0.433,
       "OPS": 0.773,
@@ -3796,7 +4164,7 @@
     },
     "fantasy_points": 114.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/444482/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Arizona"
   },
   {
     "player_id": 9015,
@@ -3828,7 +4196,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.333,
       "OBP": 0.353,
       "SLG": 0.633,
       "OPS": 0.986,
@@ -3836,7 +4204,7 @@
     },
     "fantasy_points": 114.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/521692/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Kansas City"
   },
   {
     "player_id": 9124,
@@ -3866,14 +4234,17 @@
       "HR": 3,
       "BB": 16,
       "SO": 53,
+      "TBF": 288,
       "ERA": 2.92,
       "WHIP": 1.17,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 6.7,
+      "BB/9": 2.03,
+      "K%": 18.4,
+      "BB%": 5.6
     },
     "fantasy_points": 113.8,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/554430/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Philadelphia"
   },
   {
     "player_id": 10505,
@@ -3906,7 +4277,7 @@
       "SB": 4,
       "CS": 0,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.308,
       "OBP": 0.367,
       "SLG": 0.478,
       "OPS": 0.844,
@@ -3914,7 +4285,7 @@
     },
     "fantasy_points": 113.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/657077/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Boston"
   },
   {
     "player_id": 9459,
@@ -3944,14 +4315,17 @@
       "HR": 4,
       "BB": 26,
       "SO": 72,
+      "TBF": 235,
       "ERA": 3.7,
       "WHIP": 1.21,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 11.6,
+      "BB/9": 4.18,
+      "K%": 30.6,
+      "BB%": 11.1
     },
     "fantasy_points": 113.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/543243/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Cincinnati"
   },
   {
     "player_id": 7048,
@@ -3982,14 +4356,17 @@
       "HR": 9,
       "BB": 15,
       "SO": 54,
+      "TBF": 262,
       "ERA": 3.15,
       "WHIP": 1.05,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 7.4,
+      "BB/9": 2.07,
+      "K%": 20.6,
+      "BB%": 5.7
     },
     "fantasy_points": 113.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/425794/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "St. Louis"
   },
   {
     "player_id": 11118,
@@ -4023,7 +4400,7 @@
       "SB": 0,
       "CS": 1,
       "HBP": 3,
-      "AVG": 0.0,
+      "AVG": 0.311,
       "OBP": 0.383,
       "SLG": 0.454,
       "OPS": 0.836,
@@ -4031,7 +4408,7 @@
     },
     "fantasy_points": 113.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/643446/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 8857,
@@ -4064,7 +4441,7 @@
       "SB": 4,
       "CS": 0,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.287,
       "OBP": 0.333,
       "SLG": 0.517,
       "OPS": 0.851,
@@ -4072,7 +4449,7 @@
     },
     "fantasy_points": 113.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/543333/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "San Diego"
   },
   {
     "player_id": 7257,
@@ -4103,14 +4480,59 @@
       "HR": 6,
       "BB": 9,
       "SO": 67,
+      "TBF": 273,
       "ERA": 4.03,
       "WHIP": 1.13,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 9.0,
+      "BB/9": 1.21,
+      "K%": 24.5,
+      "BB%": 3.3
     },
     "fantasy_points": 112.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/425844/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Houston"
+  },
+  {
+    "player_id": 10137,
+    "name": "Renato Núñez",
+    "position_type": "B",
+    "eligible_positions": [
+      "1B",
+      "3B",
+      "Util",
+      "NA"
+    ],
+    "primary_position": "1B",
+    "selected_position": "3B",
+    "status": "NA",
+    "team_key": "398.l.17906.t.6",
+    "team_name": "GerritColeIsAYankee",
+    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/58462903262_ce07c3.jpg",
+    "manager": "Riley",
+    "stats": {
+      "G": 52,
+      "AB": 195,
+      "PA": 216,
+      "H": 50,
+      "2B": 10,
+      "3B": 0,
+      "HR": 12,
+      "R": 29,
+      "RBI": 31,
+      "BB": 17,
+      "SO": 64,
+      "SB": 0,
+      "CS": 0,
+      "HBP": 3,
+      "AVG": 0.256,
+      "OBP": 0.324,
+      "SLG": 0.492,
+      "OPS": 0.816,
+      "1B": 28
+    },
+    "fantasy_points": 112.0,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/600524/headshot/67/current",
+    "mlb_team": "Baltimore"
   },
   {
     "player_id": 10556,
@@ -4143,7 +4565,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 5,
-      "AVG": 0.0,
+      "AVG": 0.245,
       "OBP": 0.384,
       "SLG": 0.503,
       "OPS": 0.887,
@@ -4151,7 +4573,7 @@
     },
     "fantasy_points": 111.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/656555/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Philadelphia"
   },
   {
     "player_id": 9991,
@@ -4184,7 +4606,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.298,
       "OBP": 0.368,
       "SLG": 0.49,
       "OPS": 0.858,
@@ -4192,7 +4614,7 @@
     },
     "fantasy_points": 111.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/570482/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 9561,
@@ -4225,7 +4647,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 5,
-      "AVG": 0.0,
+      "AVG": 0.255,
       "OBP": 0.388,
       "SLG": 0.544,
       "OPS": 0.932,
@@ -4233,7 +4655,7 @@
     },
     "fantasy_points": 111.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/608385/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Cincinnati"
   },
   {
     "player_id": 9517,
@@ -4265,7 +4687,7 @@
       "SB": 4,
       "CS": 0,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.223,
       "OBP": 0.305,
       "SLG": 0.374,
       "OPS": 0.679,
@@ -4273,7 +4695,7 @@
     },
     "fantasy_points": 110.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/543760/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Oakland"
   },
   {
     "player_id": 11692,
@@ -4307,7 +4729,7 @@
       "SB": 3,
       "CS": 1,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.285,
       "OBP": 0.354,
       "SLG": 0.477,
       "OPS": 0.831,
@@ -4315,7 +4737,7 @@
     },
     "fantasy_points": 110.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/630105/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "San Diego"
   },
   {
     "player_id": 8575,
@@ -4348,7 +4770,7 @@
       "SB": 2,
       "CS": 0,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.3,
       "OBP": 0.364,
       "SLG": 0.476,
       "OPS": 0.84,
@@ -4356,7 +4778,7 @@
     },
     "fantasy_points": 110.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/488726/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Houston"
   },
   {
     "player_id": 9105,
@@ -4388,7 +4810,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.253,
       "OBP": 0.303,
       "SLG": 0.434,
       "OPS": 0.738,
@@ -4396,7 +4818,7 @@
     },
     "fantasy_points": 110.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/571448/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Colorado"
   },
   {
     "player_id": 9586,
@@ -4427,14 +4849,17 @@
       "HR": 9,
       "BB": 19,
       "SO": 70,
+      "TBF": 279,
       "ERA": 4.46,
       "WHIP": 1.23,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 9.5,
+      "BB/9": 2.58,
+      "K%": 25.1,
+      "BB%": 6.8
     },
     "fantasy_points": 108.9,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/571760/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 10095,
@@ -4467,7 +4892,7 @@
       "SB": 3,
       "CS": 0,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.228,
       "OBP": 0.321,
       "SLG": 0.439,
       "OPS": 0.76,
@@ -4475,7 +4900,7 @@
     },
     "fantasy_points": 108.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/596146/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Minnesota"
   },
   {
     "player_id": 9190,
@@ -4510,7 +4935,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.326,
       "OBP": 0.365,
       "SLG": 0.463,
       "OPS": 0.828,
@@ -4518,7 +4943,7 @@
     },
     "fantasy_points": 107.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/456781/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "San Francisco"
   },
   {
     "player_id": 11315,
@@ -4548,14 +4973,17 @@
       "HR": 11,
       "BB": 18,
       "SO": 54,
+      "TBF": 214,
       "ERA": 3.48,
       "WHIP": 0.99,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.9,
+      "BB/9": 2.99,
+      "K%": 25.2,
+      "BB%": 8.4
     },
     "fantasy_points": 107.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/664299/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Houston"
   },
   {
     "player_id": 8955,
@@ -4586,14 +5014,57 @@
       "HR": 0,
       "BB": 4,
       "SO": 29,
+      "TBF": 86,
       "ERA": 2.05,
       "WHIP": 0.77,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 11.9,
+      "BB/9": 1.64,
+      "K%": 33.7,
+      "BB%": 4.7
     },
     "fantasy_points": 105.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/543272/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Cleveland"
+  },
+  {
+    "player_id": 9872,
+    "name": "José Berríos",
+    "position_type": "P",
+    "eligible_positions": [
+      "SP",
+      "P"
+    ],
+    "primary_position": "SP",
+    "selected_position": "SP",
+    "status": "",
+    "team_key": "398.l.17906.t.6",
+    "team_name": "GerritColeIsAYankee",
+    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/58462903262_ce07c3.jpg",
+    "manager": "Riley",
+    "stats": {
+      "G": 12,
+      "GS": 12,
+      "W": 5,
+      "L": 4,
+      "SV": 0,
+      "HLD": 0,
+      "IP": 63.0,
+      "H": 57,
+      "ER": 28,
+      "HR": 8,
+      "BB": 26,
+      "SO": 68,
+      "TBF": 271,
+      "ERA": 4.0,
+      "WHIP": 1.32,
+      "K/9": 9.7,
+      "BB/9": 3.71,
+      "K%": 25.1,
+      "BB%": 9.6
+    },
+    "fantasy_points": 104.2,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/621244/headshot/67/current",
+    "mlb_team": "Minnesota"
   },
   {
     "player_id": 9975,
@@ -4627,7 +5098,7 @@
       "SB": 3,
       "CS": 0,
       "HBP": 3,
-      "AVG": 0.0,
+      "AVG": 0.283,
       "OBP": 0.306,
       "SLG": 0.393,
       "OPS": 0.698,
@@ -4635,7 +5106,7 @@
     },
     "fantasy_points": 104.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/593643/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Baltimore"
   },
   {
     "player_id": 10148,
@@ -4665,14 +5136,17 @@
       "HR": 10,
       "BB": 18,
       "SO": 63,
+      "TBF": 203,
       "ERA": 3.24,
       "WHIP": 1.2,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 11.3,
+      "BB/9": 3.24,
+      "K%": 31.0,
+      "BB%": 8.9
     },
     "fantasy_points": 104.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/605483/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Tampa Bay"
   },
   {
     "player_id": 9002,
@@ -4705,7 +5179,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.213,
       "OBP": 0.291,
       "SLG": 0.389,
       "OPS": 0.68,
@@ -4713,7 +5187,89 @@
     },
     "fantasy_points": 103.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/502110/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Boston"
+  },
+  {
+    "player_id": 9762,
+    "name": "Christian Vázquez",
+    "position_type": "B",
+    "eligible_positions": [
+      "C",
+      "1B",
+      "Util",
+      "NA"
+    ],
+    "primary_position": "C",
+    "selected_position": "C",
+    "status": "NA",
+    "team_key": "398.l.17906.t.12",
+    "team_name": "Believe the Hype",
+    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/d5f0a512e277beba859aec55a08280dce921cd5a65822401b5ca3a68d970d572.png",
+    "manager": "Logan",
+    "stats": {
+      "G": 47,
+      "AB": 173,
+      "PA": 189,
+      "H": 49,
+      "2B": 9,
+      "3B": 0,
+      "HR": 7,
+      "R": 22,
+      "RBI": 23,
+      "BB": 16,
+      "SO": 43,
+      "SB": 4,
+      "CS": 2,
+      "HBP": 0,
+      "AVG": 0.283,
+      "OBP": 0.344,
+      "SLG": 0.457,
+      "OPS": 0.801,
+      "1B": 33
+    },
+    "fantasy_points": 102.5,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/543877/headshot/67/current",
+    "mlb_team": "Boston"
+  },
+  {
+    "player_id": 11057,
+    "name": "Pablo López",
+    "position_type": "P",
+    "eligible_positions": [
+      "SP",
+      "P"
+    ],
+    "primary_position": "SP",
+    "selected_position": "SP",
+    "status": "",
+    "team_key": "398.l.17906.t.6",
+    "team_name": "GerritColeIsAYankee",
+    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/58462903262_ce07c3.jpg",
+    "manager": "Riley",
+    "stats": {
+      "G": 11,
+      "GS": 11,
+      "W": 6,
+      "L": 4,
+      "SV": 0,
+      "HLD": 0,
+      "IP": 57.1,
+      "H": 50,
+      "ER": 23,
+      "HR": 4,
+      "BB": 18,
+      "SO": 59,
+      "TBF": 240,
+      "ERA": 3.61,
+      "WHIP": 1.19,
+      "K/9": 9.3,
+      "BB/9": 2.84,
+      "K%": 24.6,
+      "BB%": 7.5
+    },
+    "fantasy_points": 102.2,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/641154/headshot/67/current",
+    "mlb_team": "Miami"
   },
   {
     "player_id": 10183,
@@ -4747,7 +5303,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.242,
       "OBP": 0.35,
       "SLG": 0.451,
       "OPS": 0.801,
@@ -4755,7 +5311,7 @@
     },
     "fantasy_points": 102.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/608324/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Houston"
   },
   {
     "player_id": 9564,
@@ -4788,7 +5344,7 @@
       "SB": 3,
       "CS": 0,
       "HBP": 3,
-      "AVG": 0.0,
+      "AVG": 0.267,
       "OBP": 0.394,
       "SLG": 0.511,
       "OPS": 0.905,
@@ -4796,7 +5352,7 @@
     },
     "fantasy_points": 102.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/640449/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 10344,
@@ -4830,7 +5386,7 @@
       "SB": 0,
       "CS": 1,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.232,
       "OBP": 0.274,
       "SLG": 0.384,
       "OPS": 0.658,
@@ -4838,7 +5394,7 @@
     },
     "fantasy_points": 100.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/493329/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Houston"
   },
   {
     "player_id": 10642,
@@ -4870,7 +5426,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.289,
       "OBP": 0.401,
       "SLG": 0.579,
       "OPS": 0.98,
@@ -4878,7 +5434,7 @@
     },
     "fantasy_points": 100.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/669257/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 8588,
@@ -4911,7 +5467,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 6,
-      "AVG": 0.0,
+      "AVG": 0.307,
       "OBP": 0.4,
       "SLG": 0.46,
       "OPS": 0.86,
@@ -4919,7 +5475,7 @@
     },
     "fantasy_points": 99.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/457759/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 11323,
@@ -4949,14 +5505,17 @@
       "HR": 8,
       "BB": 23,
       "SO": 61,
+      "TBF": 263,
       "ERA": 4.06,
       "WHIP": 1.17,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.5,
+      "BB/9": 3.23,
+      "K%": 23.2,
+      "BB%": 8.7
     },
     "fantasy_points": 98.9,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/663903/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Kansas City"
   },
   {
     "player_id": 10898,
@@ -4988,14 +5547,17 @@
       "HR": 9,
       "BB": 16,
       "SO": 44,
+      "TBF": 224,
       "ERA": 2.57,
       "WHIP": 1.09,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 7.1,
+      "BB/9": 2.57,
+      "K%": 19.6,
+      "BB%": 7.1
     },
     "fantasy_points": 98.8,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/669160/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 10912,
@@ -5028,7 +5590,7 @@
       "SB": 3,
       "CS": 2,
       "HBP": 11,
-      "AVG": 0.0,
+      "AVG": 0.212,
       "OBP": 0.297,
       "SLG": 0.41,
       "OPS": 0.707,
@@ -5036,7 +5598,7 @@
     },
     "fantasy_points": 98.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/669374/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Milwaukee"
   },
   {
     "player_id": 9893,
@@ -5068,7 +5630,7 @@
       "SB": 2,
       "CS": 1,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.259,
       "OBP": 0.332,
       "SLG": 0.481,
       "OPS": 0.813,
@@ -5076,7 +5638,7 @@
     },
     "fantasy_points": 98.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/642715/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Tampa Bay"
   },
   {
     "player_id": 10869,
@@ -5107,14 +5669,17 @@
       "HR": 11,
       "BB": 16,
       "SO": 69,
+      "TBF": 312,
       "ERA": 4.74,
       "WHIP": 1.32,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.4,
+      "BB/9": 1.95,
+      "K%": 22.1,
+      "BB%": 5.1
     },
     "fantasy_points": 96.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/650644/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Cleveland"
   },
   {
     "player_id": 11172,
@@ -5150,7 +5715,7 @@
       "SB": 12,
       "CS": 5,
       "HBP": 8,
-      "AVG": 0.0,
+      "AVG": 0.255,
       "OBP": 0.358,
       "SLG": 0.496,
       "OPS": 0.855,
@@ -5158,7 +5723,7 @@
     },
     "fantasy_points": 96.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/664238/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Seattle"
   },
   {
     "player_id": 10420,
@@ -5191,7 +5756,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.239,
       "OBP": 0.301,
       "SLG": 0.415,
       "OPS": 0.716,
@@ -5199,7 +5764,7 @@
     },
     "fantasy_points": 96.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/663586/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Atlanta"
   },
   {
     "player_id": 11331,
@@ -5231,14 +5796,17 @@
       "HR": 2,
       "BB": 7,
       "SO": 46,
+      "TBF": 176,
       "ERA": 2.31,
       "WHIP": 0.84,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.9,
+      "BB/9": 1.36,
+      "K%": 26.1,
+      "BB%": 4.0
     },
     "fantasy_points": 96.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/664062/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 9098,
@@ -5272,7 +5840,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.23,
       "OBP": 0.351,
       "SLG": 0.422,
       "OPS": 0.773,
@@ -5280,7 +5848,7 @@
     },
     "fantasy_points": 96.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/518735/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Chicago"
   },
   {
     "player_id": 10186,
@@ -5314,7 +5882,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 7,
-      "AVG": 0.0,
+      "AVG": 0.247,
       "OBP": 0.371,
       "SLG": 0.389,
       "OPS": 0.761,
@@ -5322,7 +5890,7 @@
     },
     "fantasy_points": 96.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/605204/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 10176,
@@ -5352,18 +5920,21 @@
       "HR": 9,
       "BB": 18,
       "SO": 41,
+      "TBF": 303,
       "ERA": 3.44,
       "WHIP": 1.21,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 5.0,
+      "BB/9": 2.22,
+      "K%": 13.5,
+      "BB%": 5.9
     },
     "fantasy_points": 95.9,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/622608/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Colorado"
   },
   {
     "player_id": 10627,
-    "name": "Jes\u00fas Luzardo",
+    "name": "Jesús Luzardo",
     "position_type": "P",
     "eligible_positions": [
       "SP",
@@ -5390,14 +5961,59 @@
       "HR": 9,
       "BB": 17,
       "SO": 59,
+      "TBF": 248,
       "ERA": 4.12,
       "WHIP": 1.27,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 9.0,
+      "BB/9": 2.59,
+      "K%": 23.8,
+      "BB%": 6.9
     },
     "fantasy_points": 95.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/666200/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Oakland"
+  },
+  {
+    "player_id": 9585,
+    "name": "Julio Urías",
+    "position_type": "P",
+    "eligible_positions": [
+      "SP",
+      "RP",
+      "P",
+      "NA"
+    ],
+    "primary_position": "SP",
+    "selected_position": "P",
+    "status": "NA",
+    "team_key": "398.l.17906.t.8",
+    "team_name": "All Hitting no Pitch",
+    "team_logo": "https://s.yimg.com/cv/apiv2/default/mlb/mlb_6_d.png",
+    "manager": "Dylan",
+    "stats": {
+      "G": 11,
+      "GS": 10,
+      "W": 3,
+      "L": 0,
+      "SV": 0,
+      "HLD": 0,
+      "IP": 55.0,
+      "H": 45,
+      "ER": 20,
+      "HR": 5,
+      "BB": 18,
+      "SO": 45,
+      "TBF": 224,
+      "ERA": 3.27,
+      "WHIP": 1.15,
+      "K/9": 7.4,
+      "BB/9": 2.95,
+      "K%": 20.1,
+      "BB%": 8.0
+    },
+    "fantasy_points": 95.2,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/628711/headshot/67/current",
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 9750,
@@ -5430,7 +6046,7 @@
       "SB": 4,
       "CS": 2,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.258,
       "OBP": 0.304,
       "SLG": 0.354,
       "OPS": 0.658,
@@ -5438,7 +6054,7 @@
     },
     "fantasy_points": 94.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/593871/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Minnesota"
   },
   {
     "player_id": 9573,
@@ -5470,7 +6086,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 3,
-      "AVG": 0.0,
+      "AVG": 0.265,
       "OBP": 0.327,
       "SLG": 0.385,
       "OPS": 0.712,
@@ -5478,7 +6094,7 @@
     },
     "fantasy_points": 94.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/621043/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Houston"
   },
   {
     "player_id": 8685,
@@ -5513,7 +6129,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 4,
-      "AVG": 0.0,
+      "AVG": 0.23,
       "OBP": 0.331,
       "SLG": 0.468,
       "OPS": 0.799,
@@ -5521,7 +6137,7 @@
     },
     "fantasy_points": 94.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/519058/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Cincinnati"
   },
   {
     "player_id": 10455,
@@ -5552,18 +6168,21 @@
       "HR": 6,
       "BB": 21,
       "SO": 60,
+      "TBF": 201,
       "ERA": 3.59,
       "WHIP": 1.15,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 11.3,
+      "BB/9": 4.0,
+      "K%": 29.9,
+      "BB%": 10.4
     },
     "fantasy_points": 93.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/641816/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Cincinnati"
   },
   {
     "player_id": 9900,
-    "name": "Yo\u00e1n Moncada",
+    "name": "Yoán Moncada",
     "position_type": "B",
     "eligible_positions": [
       "3B",
@@ -5592,7 +6211,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.225,
       "OBP": 0.32,
       "SLG": 0.385,
       "OPS": 0.705,
@@ -5600,7 +6219,7 @@
     },
     "fantasy_points": 93.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/660162/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Chicago"
   },
   {
     "player_id": 9575,
@@ -5630,14 +6249,17 @@
       "HR": 5,
       "BB": 20,
       "SO": 56,
+      "TBF": 227,
       "ERA": 3.93,
       "WHIP": 1.16,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 9.2,
+      "BB/9": 3.27,
+      "K%": 24.7,
+      "BB%": 8.8
     },
     "fantasy_points": 92.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/621121/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Houston"
   },
   {
     "player_id": 9630,
@@ -5670,7 +6292,7 @@
       "SB": 2,
       "CS": 0,
       "HBP": 4,
-      "AVG": 0.0,
+      "AVG": 0.181,
       "OBP": 0.301,
       "SLG": 0.378,
       "OPS": 0.679,
@@ -5678,7 +6300,48 @@
     },
     "fantasy_points": 92.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/608336/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Texas"
+  },
+  {
+    "player_id": 10214,
+    "name": "Edwin Díaz",
+    "position_type": "P",
+    "eligible_positions": [
+      "RP",
+      "P",
+      "NA"
+    ],
+    "primary_position": "RP",
+    "selected_position": "RP",
+    "status": "NA",
+    "team_key": "398.l.17906.t.7",
+    "team_name": "Finding Nimmo",
+    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/f3b91efc8b44a7f2b89c00dffb9d990310ea4cc1a53bf9a0e6c69c70bf9e1089.jpg",
+    "manager": "Red",
+    "stats": {
+      "G": 26,
+      "GS": 0,
+      "W": 2,
+      "L": 1,
+      "SV": 6,
+      "HLD": 0,
+      "IP": 25.2,
+      "H": 18,
+      "ER": 5,
+      "HR": 2,
+      "BB": 13,
+      "SO": 50,
+      "TBF": 109,
+      "ERA": 1.75,
+      "WHIP": 1.21,
+      "K/9": 17.5,
+      "BB/9": 4.64,
+      "K%": 45.9,
+      "BB%": 11.9
+    },
+    "fantasy_points": 92.2,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/621242/headshot/67/current",
+    "mlb_team": "New York"
   },
   {
     "player_id": 1000001,
@@ -5709,7 +6372,7 @@
       "SB": 7,
       "CS": 1,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.19,
       "OBP": 0.291,
       "SLG": 0.366,
       "OPS": 0.657,
@@ -5717,11 +6380,11 @@
     },
     "fantasy_points": 90.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/660271/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 11124,
-    "name": "Ram\u00f3n Laureano",
+    "name": "Ramón Laureano",
     "position_type": "B",
     "eligible_positions": [
       "OF",
@@ -5749,7 +6412,7 @@
       "SB": 2,
       "CS": 1,
       "HBP": 12,
-      "AVG": 0.0,
+      "AVG": 0.213,
       "OBP": 0.338,
       "SLG": 0.366,
       "OPS": 0.704,
@@ -5757,7 +6420,7 @@
     },
     "fantasy_points": 90.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/657656/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Oakland"
   },
   {
     "player_id": 10418,
@@ -5788,14 +6451,17 @@
       "HR": 2,
       "BB": 17,
       "SO": 35,
+      "TBF": 215,
       "ERA": 2.47,
       "WHIP": 1.02,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 5.8,
+      "BB/9": 2.82,
+      "K%": 16.3,
+      "BB%": 7.9
     },
     "fantasy_points": 89.9,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/641745/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Kansas City"
   },
   {
     "player_id": 10036,
@@ -5829,7 +6495,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 4,
-      "AVG": 0.0,
+      "AVG": 0.287,
       "OBP": 0.323,
       "SLG": 0.409,
       "OPS": 0.732,
@@ -5837,7 +6503,7 @@
     },
     "fantasy_points": 89.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/606466/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Arizona"
   },
   {
     "player_id": 9590,
@@ -5869,7 +6535,7 @@
       "SB": 2,
       "CS": 1,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.254,
       "OBP": 0.267,
       "SLG": 0.577,
       "OPS": 0.844,
@@ -5877,7 +6543,7 @@
     },
     "fantasy_points": 89.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/621439/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Minnesota"
   },
   {
     "player_id": 8758,
@@ -5908,14 +6574,17 @@
       "HR": 2,
       "BB": 9,
       "SO": 33,
+      "TBF": 102,
       "ERA": 3.33,
       "WHIP": 1.15,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 12.2,
+      "BB/9": 3.36,
+      "K%": 32.4,
+      "BB%": 8.8
     },
     "fantasy_points": 88.7,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/445276/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 9468,
@@ -5949,7 +6618,7 @@
       "SB": 16,
       "CS": 5,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.232,
       "OBP": 0.301,
       "SLG": 0.292,
       "OPS": 0.593,
@@ -5957,7 +6626,7 @@
     },
     "fantasy_points": 88.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/542340/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Miami,Toronto"
   },
   {
     "player_id": 9103,
@@ -5990,7 +6659,7 @@
       "SB": 5,
       "CS": 2,
       "HBP": 4,
-      "AVG": 0.0,
+      "AVG": 0.265,
       "OBP": 0.35,
       "SLG": 0.326,
       "OPS": 0.675,
@@ -5998,7 +6667,7 @@
     },
     "fantasy_points": 88.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/543939/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "St. Louis"
   },
   {
     "player_id": 11718,
@@ -6032,7 +6701,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.197,
       "OBP": 0.314,
       "SLG": 0.395,
       "OPS": 0.708,
@@ -6040,7 +6709,49 @@
     },
     "fantasy_points": 87.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/660294/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Tampa Bay"
+  },
+  {
+    "player_id": 9110,
+    "name": "Miguel Sanó",
+    "position_type": "B",
+    "eligible_positions": [
+      "1B",
+      "3B",
+      "Util",
+      "NA"
+    ],
+    "primary_position": "1B",
+    "selected_position": "Util",
+    "status": "NA",
+    "team_key": "398.l.17906.t.10",
+    "team_name": "The Dali Lama",
+    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/39207099440_1c720b.jpg",
+    "manager": "John",
+    "stats": {
+      "G": 53,
+      "AB": 186,
+      "PA": 205,
+      "H": 38,
+      "2B": 12,
+      "3B": 0,
+      "HR": 13,
+      "R": 31,
+      "RBI": 25,
+      "BB": 18,
+      "SO": 90,
+      "SB": 0,
+      "CS": 0,
+      "HBP": 1,
+      "AVG": 0.204,
+      "OBP": 0.278,
+      "SLG": 0.478,
+      "OPS": 0.757,
+      "1B": 13
+    },
+    "fantasy_points": 87.0,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/593934/headshot/67/current",
+    "mlb_team": "Minnesota"
   },
   {
     "player_id": 10575,
@@ -6071,14 +6782,17 @@
       "HR": 14,
       "BB": 12,
       "SO": 58,
+      "TBF": 245,
       "ERA": 4.73,
       "WHIP": 1.22,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.8,
+      "BB/9": 1.83,
+      "K%": 23.7,
+      "BB%": 4.9
     },
     "fantasy_points": 86.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/663978/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "San Diego"
   },
   {
     "player_id": 9883,
@@ -6111,7 +6825,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.226,
       "OBP": 0.305,
       "SLG": 0.364,
       "OPS": 0.669,
@@ -6119,7 +6833,7 @@
     },
     "fantasy_points": 85.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/605137/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Pittsburgh"
   },
   {
     "player_id": 10766,
@@ -6152,7 +6866,7 @@
       "SB": 4,
       "CS": 0,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.301,
       "OBP": 0.328,
       "SLG": 0.512,
       "OPS": 0.84,
@@ -6160,7 +6874,7 @@
     },
     "fantasy_points": 85.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/666182/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Toronto"
   },
   {
     "player_id": 9579,
@@ -6195,7 +6909,7 @@
       "SB": 4,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.228,
       "OBP": 0.344,
       "SLG": 0.392,
       "OPS": 0.736,
@@ -6203,7 +6917,7 @@
     },
     "fantasy_points": 85.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/641531/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Kansas City"
   },
   {
     "player_id": 9054,
@@ -6237,7 +6951,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.212,
       "OBP": 0.27,
       "SLG": 0.335,
       "OPS": 0.605,
@@ -6245,7 +6959,48 @@
     },
     "fantasy_points": 84.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/500871/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Arizona"
+  },
+  {
+    "player_id": 9413,
+    "name": "Alex Colomé",
+    "position_type": "P",
+    "eligible_positions": [
+      "RP",
+      "P",
+      "NA"
+    ],
+    "primary_position": "RP",
+    "selected_position": "BN",
+    "status": "NA",
+    "team_key": "398.l.17906.t.2",
+    "team_name": "Arizona Diamondsacks",
+    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/58622800812_a5936d.jpg",
+    "manager": "Josh",
+    "stats": {
+      "G": 21,
+      "GS": 0,
+      "W": 2,
+      "L": 0,
+      "SV": 12,
+      "HLD": 0,
+      "IP": 22.1,
+      "H": 13,
+      "ER": 2,
+      "HR": 0,
+      "BB": 8,
+      "SO": 16,
+      "TBF": 90,
+      "ERA": 0.81,
+      "WHIP": 0.94,
+      "K/9": 6.4,
+      "BB/9": 3.26,
+      "K%": 17.8,
+      "BB%": 8.9
+    },
+    "fantasy_points": 83.5,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/517008/headshot/67/current",
+    "mlb_team": "Chicago"
   },
   {
     "player_id": 10921,
@@ -6275,14 +7030,17 @@
       "HR": 5,
       "BB": 24,
       "SO": 40,
+      "TBF": 205,
       "ERA": 3.44,
       "WHIP": 1.21,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 7.2,
+      "BB/9": 4.39,
+      "K%": 19.5,
+      "BB%": 11.7
     },
     "fantasy_points": 83.4,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/656849/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 10542,
@@ -6313,14 +7071,17 @@
       "HR": 2,
       "BB": 20,
       "SO": 48,
+      "TBF": 232,
       "ERA": 3.58,
       "WHIP": 1.3,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 7.8,
+      "BB/9": 3.27,
+      "K%": 20.7,
+      "BB%": 8.6
     },
     "fantasy_points": 83.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/656954/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Seattle"
   },
   {
     "player_id": 10131,
@@ -6350,14 +7111,17 @@
       "HR": 3,
       "BB": 10,
       "SO": 31,
+      "TBF": 78,
       "ERA": 3.79,
       "WHIP": 0.95,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 14.7,
+      "BB/9": 4.74,
+      "K%": 39.7,
+      "BB%": 12.8
     },
     "fantasy_points": 83.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/623352/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Milwaukee"
   },
   {
     "player_id": 8996,
@@ -6389,7 +7153,7 @@
       "SB": 2,
       "CS": 3,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.219,
       "OBP": 0.286,
       "SLG": 0.344,
       "OPS": 0.629,
@@ -6397,7 +7161,7 @@
     },
     "fantasy_points": 82.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/514888/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Houston"
   },
   {
     "player_id": 10205,
@@ -6429,7 +7193,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.232,
       "OBP": 0.276,
       "SLG": 0.535,
       "OPS": 0.812,
@@ -6437,7 +7201,7 @@
     },
     "fantasy_points": 82.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/656305/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Oakland"
   },
   {
     "player_id": 10175,
@@ -6471,7 +7235,7 @@
       "SB": 0,
       "CS": 1,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.215,
       "OBP": 0.295,
       "SLG": 0.419,
       "OPS": 0.714,
@@ -6479,7 +7243,7 @@
     },
     "fantasy_points": 82.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/641857/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Colorado"
   },
   {
     "player_id": 10894,
@@ -6510,14 +7274,17 @@
       "HR": 8,
       "BB": 23,
       "SO": 56,
+      "TBF": 238,
       "ERA": 3.99,
       "WHIP": 1.37,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.9,
+      "BB/9": 3.69,
+      "K%": 23.5,
+      "BB%": 9.7
     },
     "fantasy_points": 81.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/656288/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 8061,
@@ -6548,14 +7315,17 @@
       "HR": 8,
       "BB": 15,
       "SO": 42,
+      "TBF": 196,
       "ERA": 3.47,
       "WHIP": 1.05,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 7.7,
+      "BB/9": 2.75,
+      "K%": 21.4,
+      "BB%": 7.7
     },
     "fantasy_points": 81.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/457918/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 10077,
@@ -6588,7 +7358,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.25,
       "OBP": 0.322,
       "SLG": 0.388,
       "OPS": 0.71,
@@ -6596,7 +7366,7 @@
     },
     "fantasy_points": 81.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/600474/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Baltimore"
   },
   {
     "player_id": 8932,
@@ -6627,14 +7397,17 @@
       "HR": 10,
       "BB": 22,
       "SO": 57,
+      "TBF": 242,
       "ERA": 4.95,
       "WHIP": 1.33,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 9.1,
+      "BB/9": 3.53,
+      "K%": 23.6,
+      "BB%": 9.1
     },
     "fantasy_points": 80.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/518633/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Kansas City"
   },
   {
     "player_id": 10429,
@@ -6668,7 +7441,7 @@
       "SB": 0,
       "CS": 1,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.333,
       "OBP": 0.386,
       "SLG": 0.492,
       "OPS": 0.878,
@@ -6676,7 +7449,7 @@
     },
     "fantasy_points": 80.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/663624/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Baltimore"
   },
   {
     "player_id": 9302,
@@ -6709,7 +7482,7 @@
       "SB": 3,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.226,
       "OBP": 0.285,
       "SLG": 0.384,
       "OPS": 0.669,
@@ -6717,7 +7490,47 @@
     },
     "fantasy_points": 80.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/594809/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Washington"
+  },
+  {
+    "player_id": 9557,
+    "name": "Javier Báez",
+    "position_type": "B",
+    "eligible_positions": [
+      "SS",
+      "Util"
+    ],
+    "primary_position": "SS",
+    "selected_position": "SS",
+    "status": "",
+    "team_key": "398.l.17906.t.9",
+    "team_name": "Team Beer",
+    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/28689392154_b72b4c1a43.jpg",
+    "manager": "Rich",
+    "stats": {
+      "G": 59,
+      "AB": 222,
+      "PA": 235,
+      "H": 45,
+      "2B": 9,
+      "3B": 1,
+      "HR": 8,
+      "R": 27,
+      "RBI": 24,
+      "BB": 7,
+      "SO": 75,
+      "SB": 3,
+      "CS": 0,
+      "HBP": 4,
+      "AVG": 0.203,
+      "OBP": 0.238,
+      "SLG": 0.36,
+      "OPS": 0.599,
+      "1B": 27
+    },
+    "fantasy_points": 79.5,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/595879/headshot/67/current",
+    "mlb_team": "Chicago"
   },
   {
     "player_id": 8289,
@@ -6750,7 +7563,7 @@
       "SB": 3,
       "CS": 1,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.223,
       "OBP": 0.354,
       "SLG": 0.392,
       "OPS": 0.747,
@@ -6758,7 +7571,7 @@
     },
     "fantasy_points": 79.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/458731/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 9228,
@@ -6790,7 +7603,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 3,
-      "AVG": 0.0,
+      "AVG": 0.228,
       "OBP": 0.326,
       "SLG": 0.443,
       "OPS": 0.769,
@@ -6798,7 +7611,7 @@
     },
     "fantasy_points": 79.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/624585/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Kansas City"
   },
   {
     "player_id": 9582,
@@ -6828,14 +7641,17 @@
       "HR": 7,
       "BB": 8,
       "SO": 45,
+      "TBF": 222,
       "ERA": 4.5,
       "WHIP": 1.2,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 7.5,
+      "BB/9": 1.33,
+      "K%": 20.3,
+      "BB%": 3.6
     },
     "fantasy_points": 78.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/640455/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Oakland"
   },
   {
     "player_id": 9642,
@@ -6866,14 +7682,17 @@
       "HR": 9,
       "BB": 8,
       "SO": 44,
+      "TBF": 197,
       "ERA": 3.56,
       "WHIP": 1.17,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.3,
+      "BB/9": 1.5,
+      "K%": 22.3,
+      "BB%": 4.1
     },
     "fantasy_points": 77.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/547888/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 10509,
@@ -6904,14 +7723,17 @@
       "HR": 7,
       "BB": 11,
       "SO": 42,
+      "TBF": 147,
       "ERA": 3.44,
       "WHIP": 0.95,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 10.3,
+      "BB/9": 2.73,
+      "K%": 28.6,
+      "BB%": 7.5
     },
     "fantasy_points": 76.7,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/621111/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 11632,
@@ -6942,14 +7764,17 @@
       "HR": 1,
       "BB": 16,
       "SO": 53,
+      "TBF": 109,
       "ERA": 2.67,
       "WHIP": 1.11,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 17.7,
+      "BB/9": 5.33,
+      "K%": 48.6,
+      "BB%": 14.7
     },
     "fantasy_points": 76.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/675916/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Cleveland"
   },
   {
     "player_id": 10236,
@@ -6982,7 +7807,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.243,
       "OBP": 0.356,
       "SLG": 0.368,
       "OPS": 0.724,
@@ -6990,7 +7815,7 @@
     },
     "fantasy_points": 76.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/650402/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 10462,
@@ -7021,14 +7846,17 @@
       "HR": 6,
       "BB": 9,
       "SO": 42,
+      "TBF": 127,
       "ERA": 3.24,
       "WHIP": 0.9,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 11.3,
+      "BB/9": 2.45,
+      "K%": 33.1,
+      "BB%": 7.1
     },
     "fantasy_points": 75.7,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/663474/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Cleveland"
   },
   {
     "player_id": 11719,
@@ -7060,14 +7888,17 @@
       "HR": 3,
       "BB": 12,
       "SO": 24,
+      "TBF": 154,
       "ERA": 1.62,
       "WHIP": 1.03,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 5.5,
+      "BB/9": 2.77,
+      "K%": 15.6,
+      "BB%": 7.8
     },
     "fantasy_points": 75.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/547942/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "St. Louis"
   },
   {
     "player_id": 11721,
@@ -7100,7 +7931,7 @@
       "SB": 7,
       "CS": 2,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.245,
       "OBP": 0.357,
       "SLG": 0.297,
       "OPS": 0.654,
@@ -7108,7 +7939,7 @@
     },
     "fantasy_points": 75.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/673451/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Cincinnati"
   },
   {
     "player_id": 8172,
@@ -7139,14 +7970,17 @@
       "HR": 9,
       "BB": 26,
       "SO": 56,
+      "TBF": 277,
       "ERA": 5.4,
       "WHIP": 1.37,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.0,
+      "BB/9": 3.71,
+      "K%": 20.2,
+      "BB%": 9.4
     },
     "fantasy_points": 74.9,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/456501/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "San Francisco"
   },
   {
     "player_id": 10424,
@@ -7177,14 +8011,17 @@
       "HR": 1,
       "BB": 14,
       "SO": 41,
+      "TBF": 138,
       "ERA": 1.95,
       "WHIP": 1.08,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 11.4,
+      "BB/9": 3.93,
+      "K%": 29.7,
+      "BB%": 10.1
     },
     "fantasy_points": 73.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/666120/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Atlanta"
   },
   {
     "player_id": 9863,
@@ -7214,14 +8051,17 @@
       "HR": 9,
       "BB": 23,
       "SO": 46,
+      "TBF": 304,
       "ERA": 4.33,
       "WHIP": 1.42,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 5.9,
+      "BB/9": 2.95,
+      "K%": 15.1,
+      "BB%": 7.6
     },
     "fantasy_points": 73.4,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/607536/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Colorado"
   },
   {
     "player_id": 10597,
@@ -7251,14 +8091,17 @@
       "HR": 4,
       "BB": 15,
       "SO": 39,
+      "TBF": 172,
       "ERA": 3.0,
       "WHIP": 1.19,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.4,
+      "BB/9": 3.21,
+      "K%": 22.7,
+      "BB%": 8.7
     },
     "fantasy_points": 73.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/645261/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Miami"
   },
   {
     "player_id": 10713,
@@ -7291,7 +8134,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.25,
       "OBP": 0.322,
       "SLG": 0.349,
       "OPS": 0.671,
@@ -7299,7 +8142,7 @@
     },
     "fantasy_points": 72.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/657557/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "St. Louis"
   },
   {
     "player_id": 10438,
@@ -7329,14 +8172,17 @@
       "HR": 12,
       "BB": 34,
       "SO": 44,
+      "TBF": 255,
       "ERA": 4.01,
       "WHIP": 1.44,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 6.8,
+      "BB/9": 5.27,
+      "K%": 17.3,
+      "BB%": 13.3
     },
     "fantasy_points": 71.7,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/656302/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Chicago"
   },
   {
     "player_id": 10592,
@@ -7366,14 +8212,17 @@
       "HR": 6,
       "BB": 16,
       "SO": 49,
+      "TBF": 170,
       "ERA": 4.91,
       "WHIP": 1.22,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 10.9,
+      "BB/9": 3.59,
+      "K%": 28.8,
+      "BB%": 9.4
     },
     "fantasy_points": 71.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/656427/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "St. Louis"
   },
   {
     "player_id": 8781,
@@ -7404,14 +8253,17 @@
       "HR": 11,
       "BB": 20,
       "SO": 62,
+      "TBF": 239,
       "ERA": 5.56,
       "WHIP": 1.24,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 9.8,
+      "BB/9": 3.2,
+      "K%": 25.9,
+      "BB%": 8.4
     },
     "fantasy_points": 71.4,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/501985/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Oakland,Texas"
   },
   {
     "player_id": 9877,
@@ -7443,7 +8295,7 @@
       "SB": 0,
       "CS": 1,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.257,
       "OBP": 0.336,
       "SLG": 0.554,
       "OPS": 0.891,
@@ -7451,7 +8303,7 @@
     },
     "fantasy_points": 71.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/592450/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 10237,
@@ -7483,7 +8335,7 @@
       "SB": 3,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.271,
       "OBP": 0.306,
       "SLG": 0.466,
       "OPS": 0.773,
@@ -7491,7 +8343,48 @@
     },
     "fantasy_points": 70.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/645277/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Atlanta"
+  },
+  {
+    "player_id": 10465,
+    "name": "Yandy Díaz",
+    "position_type": "B",
+    "eligible_positions": [
+      "1B",
+      "3B",
+      "Util"
+    ],
+    "primary_position": "1B",
+    "selected_position": "BN",
+    "status": "",
+    "team_key": "398.l.17906.t.2",
+    "team_name": "Arizona Diamondsacks",
+    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/58622800812_a5936d.jpg",
+    "manager": "Josh",
+    "stats": {
+      "G": 34,
+      "AB": 114,
+      "PA": 138,
+      "H": 35,
+      "2B": 3,
+      "3B": 0,
+      "HR": 2,
+      "R": 16,
+      "RBI": 11,
+      "BB": 23,
+      "SO": 17,
+      "SB": 0,
+      "CS": 0,
+      "HBP": 1,
+      "AVG": 0.307,
+      "OBP": 0.428,
+      "SLG": 0.386,
+      "OPS": 0.814,
+      "1B": 30
+    },
+    "fantasy_points": 69.5,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/650490/headshot/67/current",
+    "mlb_team": "Tampa Bay"
   },
   {
     "player_id": 9889,
@@ -7524,7 +8417,7 @@
       "SB": 2,
       "CS": 0,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.156,
       "OBP": 0.252,
       "SLG": 0.393,
       "OPS": 0.645,
@@ -7532,7 +8425,7 @@
     },
     "fantasy_points": 69.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/592669/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Tampa Bay"
   },
   {
     "player_id": 10031,
@@ -7563,14 +8456,17 @@
       "HR": 5,
       "BB": 25,
       "SO": 41,
+      "TBF": 260,
       "ERA": 4.37,
       "WHIP": 1.39,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 6.2,
+      "BB/9": 3.8,
+      "K%": 15.8,
+      "BB%": 9.6
     },
     "fantasy_points": 69.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/542881/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "San Francisco"
   },
   {
     "player_id": 10873,
@@ -7605,7 +8501,7 @@
       "SB": 6,
       "CS": 1,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.234,
       "OBP": 0.287,
       "SLG": 0.383,
       "OPS": 0.671,
@@ -7613,7 +8509,7 @@
     },
     "fantasy_points": 69.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/641658/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Colorado"
   },
   {
     "player_id": 11168,
@@ -7644,14 +8540,17 @@
       "HR": 12,
       "BB": 7,
       "SO": 42,
+      "TBF": 176,
       "ERA": 4.53,
       "WHIP": 0.98,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.7,
+      "BB/9": 1.46,
+      "K%": 23.9,
+      "BB%": 4.0
     },
     "fantasy_points": 67.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/607644/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Baltimore"
   },
   {
     "player_id": 10185,
@@ -7681,14 +8580,58 @@
       "HR": 5,
       "BB": 16,
       "SO": 55,
+      "TBF": 166,
       "ERA": 3.86,
       "WHIP": 1.24,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 12.5,
+      "BB/9": 3.67,
+      "K%": 33.1,
+      "BB%": 9.6
     },
     "fantasy_points": 67.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/605397/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Pittsburgh"
+  },
+  {
+    "player_id": 9097,
+    "name": "Gary Sánchez",
+    "position_type": "B",
+    "eligible_positions": [
+      "C",
+      "Util",
+      "NA"
+    ],
+    "primary_position": "C",
+    "selected_position": "C",
+    "status": "NA",
+    "team_key": "398.l.17906.t.1",
+    "team_name": "Shrimp Fried Bryce",
+    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/c00af56635b1aee95efff66fb6509e992346527c717449678bd41099ba10c875.jpg",
+    "manager": "Josh",
+    "stats": {
+      "G": 49,
+      "AB": 156,
+      "PA": 178,
+      "H": 23,
+      "2B": 4,
+      "3B": 0,
+      "HR": 10,
+      "R": 19,
+      "RBI": 24,
+      "BB": 18,
+      "SO": 64,
+      "SB": 0,
+      "CS": 0,
+      "HBP": 4,
+      "AVG": 0.147,
+      "OBP": 0.253,
+      "SLG": 0.365,
+      "OPS": 0.618,
+      "1B": 9
+    },
+    "fantasy_points": 67.0,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/596142/headshot/67/current",
+    "mlb_team": "New York"
   },
   {
     "player_id": 10534,
@@ -7719,14 +8662,17 @@
       "HR": 10,
       "BB": 31,
       "SO": 38,
+      "TBF": 198,
       "ERA": 4.34,
       "WHIP": 1.36,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 7.5,
+      "BB/9": 6.17,
+      "K%": 19.2,
+      "BB%": 15.7
     },
     "fantasy_points": 66.9,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/643290/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Seattle"
   },
   {
     "player_id": 10027,
@@ -7757,14 +8703,17 @@
       "HR": 10,
       "BB": 23,
       "SO": 60,
+      "TBF": 237,
       "ERA": 5.6,
       "WHIP": 1.51,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 10.2,
+      "BB/9": 3.91,
+      "K%": 25.3,
+      "BB%": 9.7
     },
     "fantasy_points": 65.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/593423/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Oakland"
   },
   {
     "player_id": 10326,
@@ -7795,14 +8744,17 @@
       "HR": 8,
       "BB": 10,
       "SO": 47,
+      "TBF": 160,
       "ERA": 5.15,
       "WHIP": 1.36,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 11.5,
+      "BB/9": 2.49,
+      "K%": 29.4,
+      "BB%": 6.2
     },
     "fantasy_points": 65.4,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/607625/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 10451,
@@ -7833,14 +8785,17 @@
       "HR": 4,
       "BB": 13,
       "SO": 35,
+      "TBF": 142,
       "ERA": 3.97,
       "WHIP": 1.12,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 9.3,
+      "BB/9": 3.44,
+      "K%": 24.6,
+      "BB%": 9.2
     },
     "fantasy_points": 64.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/641540/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Chicago"
   },
   {
     "player_id": 8620,
@@ -7873,7 +8828,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.239,
       "OBP": 0.297,
       "SLG": 0.387,
       "OPS": 0.684,
@@ -7881,7 +8836,7 @@
     },
     "fantasy_points": 64.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/467092/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 8470,
@@ -7912,14 +8867,17 @@
       "HR": 2,
       "BB": 10,
       "SO": 27,
+      "TBF": 106,
       "ERA": 3.65,
       "WHIP": 1.3,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 9.9,
+      "BB/9": 3.72,
+      "K%": 25.5,
+      "BB%": 9.4
     },
     "fantasy_points": 63.4,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/453268/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Colorado"
   },
   {
     "player_id": 9168,
@@ -7950,14 +8908,17 @@
       "HR": 10,
       "BB": 18,
       "SO": 60,
+      "TBF": 295,
       "ERA": 4.66,
       "WHIP": 1.57,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.2,
+      "BB/9": 2.48,
+      "K%": 20.3,
+      "BB%": 6.1
     },
     "fantasy_points": 63.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/571578/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Washington"
   },
   {
     "player_id": 9068,
@@ -7989,14 +8950,58 @@
       "HR": 1,
       "BB": 10,
       "SO": 29,
+      "TBF": 73,
       "ERA": 1.45,
       "WHIP": 1.02,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 14.0,
+      "BB/9": 4.95,
+      "K%": 39.7,
+      "BB%": 13.7
     },
     "fantasy_points": 62.6,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/519141/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "San Diego"
+  },
+  {
+    "player_id": 10932,
+    "name": "Sixto Sánchez",
+    "position_type": "P",
+    "eligible_positions": [
+      "SP",
+      "P",
+      "NA"
+    ],
+    "primary_position": "SP",
+    "selected_position": "P",
+    "status": "NA",
+    "team_key": "398.l.17906.t.5",
+    "team_name": "Cole World",
+    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/28589546139_d2cce4.jpg",
+    "manager": "Ryan",
+    "stats": {
+      "G": 7,
+      "GS": 7,
+      "W": 3,
+      "L": 2,
+      "SV": 0,
+      "HLD": 0,
+      "IP": 39.0,
+      "H": 36,
+      "ER": 15,
+      "HR": 3,
+      "BB": 11,
+      "SO": 33,
+      "TBF": 158,
+      "ERA": 3.46,
+      "WHIP": 1.21,
+      "K/9": 7.6,
+      "BB/9": 2.54,
+      "K%": 20.9,
+      "BB%": 7.0
+    },
+    "fantasy_points": 62.2,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/664350/headshot/67/current",
+    "mlb_team": "Miami"
   },
   {
     "player_id": 9140,
@@ -8027,14 +9032,17 @@
       "HR": 2,
       "BB": 9,
       "SO": 42,
+      "TBF": 111,
       "ERA": 3.42,
       "WHIP": 1.1,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 14.4,
+      "BB/9": 3.1,
+      "K%": 37.8,
+      "BB%": 8.1
     },
     "fantasy_points": 59.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/592767/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "San Francisco"
   },
   {
     "player_id": 10227,
@@ -8066,7 +9074,7 @@
       "SB": 4,
       "CS": 1,
       "HBP": 9,
-      "AVG": 0.0,
+      "AVG": 0.22,
       "OBP": 0.293,
       "SLG": 0.315,
       "OPS": 0.608,
@@ -8074,7 +9082,7 @@
     },
     "fantasy_points": 57.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/645302/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Washington"
   },
   {
     "player_id": 8270,
@@ -8105,14 +9113,17 @@
       "HR": 4,
       "BB": 10,
       "SO": 42,
+      "TBF": 170,
       "ERA": 4.74,
       "WHIP": 1.4,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 9.9,
+      "BB/9": 2.37,
+      "K%": 24.7,
+      "BB%": 5.9
     },
     "fantasy_points": 57.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/450203/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Tampa Bay"
   },
   {
     "player_id": 8409,
@@ -8143,14 +9154,17 @@
       "HR": 6,
       "BB": 10,
       "SO": 32,
+      "TBF": 202,
       "ERA": 4.21,
       "WHIP": 1.28,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 6.1,
+      "BB/9": 1.91,
+      "K%": 15.8,
+      "BB%": 5.0
     },
     "fantasy_points": 57.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/474463/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Milwaukee"
   },
   {
     "player_id": 9612,
@@ -8183,7 +9197,7 @@
       "SB": 2,
       "CS": 1,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.205,
       "OBP": 0.296,
       "SLG": 0.371,
       "OPS": 0.667,
@@ -8191,7 +9205,7 @@
     },
     "fantasy_points": 57.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/640457/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Tampa Bay"
   },
   {
     "player_id": 9542,
@@ -8222,14 +9236,17 @@
       "HR": 1,
       "BB": 3,
       "SO": 18,
+      "TBF": 73,
       "ERA": 2.95,
       "WHIP": 1.09,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.8,
+      "BB/9": 1.49,
+      "K%": 24.7,
+      "BB%": 4.1
     },
     "fantasy_points": 56.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/605151/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Arizona,Cincinnati"
   },
   {
     "player_id": 8723,
@@ -8262,7 +9279,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.222,
       "OBP": 0.373,
       "SLG": 0.469,
       "OPS": 0.842,
@@ -8270,7 +9287,7 @@
     },
     "fantasy_points": 55.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/518626/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Minnesota"
   },
   {
     "player_id": 10011,
@@ -8300,14 +9317,58 @@
       "HR": 15,
       "BB": 22,
       "SO": 60,
+      "TBF": 271,
       "ERA": 6.71,
       "WHIP": 1.48,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 9.0,
+      "BB/9": 3.29,
+      "K%": 22.1,
+      "BB%": 8.1
     },
     "fantasy_points": 55.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/571510/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Detroit"
+  },
+  {
+    "player_id": 11505,
+    "name": "Deivi García",
+    "position_type": "P",
+    "eligible_positions": [
+      "SP",
+      "P",
+      "NA"
+    ],
+    "primary_position": "SP",
+    "selected_position": "SP",
+    "status": "NA",
+    "team_key": "398.l.17906.t.5",
+    "team_name": "Cole World",
+    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/28589546139_d2cce4.jpg",
+    "manager": "Ryan",
+    "stats": {
+      "G": 6,
+      "GS": 6,
+      "W": 3,
+      "L": 2,
+      "SV": 0,
+      "HLD": 0,
+      "IP": 34.1,
+      "H": 35,
+      "ER": 19,
+      "HR": 6,
+      "BB": 6,
+      "SO": 33,
+      "TBF": 146,
+      "ERA": 4.98,
+      "WHIP": 1.19,
+      "K/9": 8.7,
+      "BB/9": 1.58,
+      "K%": 22.6,
+      "BB%": 4.1
+    },
+    "fantasy_points": 53.0,
+    "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/665620/headshot/67/current",
+    "mlb_team": "New York"
   },
   {
     "player_id": 8634,
@@ -8339,7 +9400,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 2,
-      "AVG": 0.0,
+      "AVG": 0.25,
       "OBP": 0.387,
       "SLG": 0.5,
       "OPS": 0.887,
@@ -8347,7 +9408,7 @@
     },
     "fantasy_points": 52.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/519317/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 10133,
@@ -8378,14 +9439,17 @@
       "HR": 2,
       "BB": 4,
       "SO": 24,
+      "TBF": 91,
       "ERA": 4.05,
       "WHIP": 1.5,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 10.8,
+      "BB/9": 1.8,
+      "K%": 26.4,
+      "BB%": 4.4
     },
     "fantasy_points": 52.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/573124/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Minnesota"
   },
   {
     "player_id": 10852,
@@ -8415,14 +9479,17 @@
       "HR": 1,
       "BB": 9,
       "SO": 21,
+      "TBF": 63,
       "ERA": 0.53,
       "WHIP": 0.88,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 11.1,
+      "BB/9": 4.76,
+      "K%": 33.3,
+      "BB%": 14.3
     },
     "fantasy_points": 50.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/656557/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Boston"
   },
   {
     "player_id": 10469,
@@ -8454,14 +9521,17 @@
       "HR": 8,
       "BB": 9,
       "SO": 34,
+      "TBF": 152,
       "ERA": 3.96,
       "WHIP": 1.32,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.4,
+      "BB/9": 2.24,
+      "K%": 22.4,
+      "BB%": 5.9
     },
     "fantasy_points": 50.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/641302/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Detroit"
   },
   {
     "player_id": 8419,
@@ -8492,14 +9562,17 @@
       "HR": 5,
       "BB": 15,
       "SO": 54,
+      "TBF": 261,
       "ERA": 5.64,
       "WHIP": 1.51,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.2,
+      "BB/9": 2.29,
+      "K%": 20.7,
+      "BB%": 5.7
     },
     "fantasy_points": 49.8,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/519144/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 9558,
@@ -8532,7 +9605,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 4,
-      "AVG": 0.0,
+      "AVG": 0.206,
       "OBP": 0.293,
       "SLG": 0.351,
       "OPS": 0.644,
@@ -8540,7 +9613,7 @@
     },
     "fantasy_points": 49.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/592178/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Chicago"
   },
   {
     "player_id": 8759,
@@ -8571,14 +9644,17 @@
       "HR": 0,
       "BB": 7,
       "SO": 25,
+      "TBF": 111,
       "ERA": 3.38,
       "WHIP": 1.2,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.4,
+      "BB/9": 2.4,
+      "K%": 22.5,
+      "BB%": 6.3
     },
     "fantasy_points": 48.4,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/501381/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Minnesota"
   },
   {
     "player_id": 10643,
@@ -8611,7 +9687,7 @@
       "SB": 1,
       "CS": 1,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.2,
       "OBP": 0.252,
       "SLG": 0.364,
       "OPS": 0.616,
@@ -8619,7 +9695,7 @@
     },
     "fantasy_points": 47.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/666185/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "St. Louis"
   },
   {
     "player_id": 8401,
@@ -8652,7 +9728,7 @@
       "SB": 3,
       "CS": 1,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.194,
       "OBP": 0.252,
       "SLG": 0.33,
       "OPS": 0.582,
@@ -8660,7 +9736,7 @@
     },
     "fantasy_points": 46.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/462101/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Texas"
   },
   {
     "player_id": 10882,
@@ -8692,14 +9768,17 @@
       "HR": 2,
       "BB": 13,
       "SO": 29,
+      "TBF": 98,
       "ERA": 4.3,
       "WHIP": 1.26,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 11.3,
+      "BB/9": 5.09,
+      "K%": 29.6,
+      "BB%": 13.3
     },
     "fantasy_points": 45.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/642397/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Detroit"
   },
   {
     "player_id": 8623,
@@ -8730,14 +9809,17 @@
       "HR": 6,
       "BB": 16,
       "SO": 32,
+      "TBF": 190,
       "ERA": 5.08,
       "WHIP": 1.51,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 6.5,
+      "BB/9": 3.27,
+      "K%": 16.8,
+      "BB%": 8.4
     },
     "fantasy_points": 43.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/453562/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Philadelphia"
   },
   {
     "player_id": 8616,
@@ -8767,14 +9849,17 @@
       "HR": 2,
       "BB": 4,
       "SO": 22,
+      "TBF": 45,
       "ERA": 3.09,
       "WHIP": 0.86,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 17.0,
+      "BB/9": 3.21,
+      "K%": 48.9,
+      "BB%": 8.9
     },
     "fantasy_points": 41.4,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/547973/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "New York"
   },
   {
     "player_id": 9484,
@@ -8805,14 +9890,17 @@
       "HR": 14,
       "BB": 23,
       "SO": 41,
+      "TBF": 220,
       "ERA": 6.8,
       "WHIP": 1.74,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 7.7,
+      "BB/9": 4.39,
+      "K%": 18.6,
+      "BB%": 10.5
     },
     "fantasy_points": 33.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/543699/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Toronto"
   },
   {
     "player_id": 10565,
@@ -8842,14 +9930,17 @@
       "HR": 4,
       "BB": 18,
       "SO": 16,
+      "TBF": 87,
       "ERA": 2.91,
       "WHIP": 1.25,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 6.6,
+      "BB/9": 7.64,
+      "K%": 18.4,
+      "BB%": 20.7
     },
     "fantasy_points": 30.6,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/656605/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Pittsburgh"
   },
   {
     "player_id": 10558,
@@ -8885,7 +9976,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.159,
       "OBP": 0.228,
       "SLG": 0.283,
       "OPS": 0.511,
@@ -8893,7 +9984,7 @@
     },
     "fantasy_points": 29.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/664068/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Philadelphia"
   },
   {
     "player_id": 8590,
@@ -8924,14 +10015,17 @@
       "HR": 13,
       "BB": 13,
       "SO": 30,
+      "TBF": 190,
       "ERA": 6.48,
       "WHIP": 1.44,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 6.5,
+      "BB/9": 2.84,
+      "K%": 15.8,
+      "BB%": 6.8
     },
     "fantasy_points": 27.9,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/518516/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Arizona"
   },
   {
     "player_id": 11428,
@@ -8961,14 +10055,17 @@
       "HR": 0,
       "BB": 12,
       "SO": 22,
+      "TBF": 83,
       "ERA": 4.82,
       "WHIP": 1.45,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 10.6,
+      "BB/9": 5.93,
+      "K%": 26.5,
+      "BB%": 14.5
     },
     "fantasy_points": 27.6,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/665152/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Baltimore"
   },
   {
     "player_id": 9565,
@@ -9001,7 +10098,7 @@
       "SB": 1,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.183,
       "OBP": 0.222,
       "SLG": 0.247,
       "OPS": 0.47,
@@ -9009,7 +10106,7 @@
     },
     "fantasy_points": 24.0,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/621311/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Colorado"
   },
   {
     "player_id": 10960,
@@ -9039,14 +10136,17 @@
       "HR": 5,
       "BB": 13,
       "SO": 16,
+      "TBF": 81,
       "ERA": 6.0,
       "WHIP": 1.5,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.0,
+      "BB/9": 6.5,
+      "K%": 19.8,
+      "BB%": 16.0
     },
     "fantasy_points": 22.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/663878/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Toronto"
   },
   {
     "player_id": 11083,
@@ -9076,14 +10176,17 @@
       "HR": 7,
       "BB": 13,
       "SO": 26,
+      "TBF": 133,
       "ERA": 6.99,
       "WHIP": 1.48,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 8.3,
+      "BB/9": 4.16,
+      "K%": 19.5,
+      "BB%": 9.8
     },
     "fantasy_points": 19.7,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/663554/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Detroit"
   },
   {
     "player_id": 10893,
@@ -9115,7 +10218,7 @@
       "SB": 0,
       "CS": 1,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.161,
       "OBP": 0.212,
       "SLG": 0.266,
       "OPS": 0.478,
@@ -9123,7 +10226,7 @@
     },
     "fantasy_points": 18.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/666176/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   },
   {
     "player_id": 7590,
@@ -9154,14 +10257,17 @@
       "HR": 2,
       "BB": 1,
       "SO": 7,
+      "TBF": 21,
       "ERA": 3.0,
       "WHIP": 0.67,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 10.5,
+      "BB/9": 1.5,
+      "K%": 33.3,
+      "BB%": 4.8
     },
     "fantasy_points": 16.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/434378/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Houston"
   },
   {
     "player_id": 10978,
@@ -9193,14 +10299,17 @@
       "HR": 2,
       "BB": 4,
       "SO": 10,
+      "TBF": 52,
       "ERA": 2.38,
       "WHIP": 1.59,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 7.9,
+      "BB/9": 3.24,
+      "K%": 19.2,
+      "BB%": 7.7
     },
     "fantasy_points": 15.7,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/630023/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Tampa Bay"
   },
   {
     "player_id": 10789,
@@ -9233,7 +10342,7 @@
       "SB": 0,
       "CS": 0,
       "HBP": 1,
-      "AVG": 0.0,
+      "AVG": 0.167,
       "OBP": 0.247,
       "SLG": 0.264,
       "OPS": 0.511,
@@ -9241,7 +10350,7 @@
     },
     "fantasy_points": 12.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/641598/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Minnesota"
   },
   {
     "player_id": 10423,
@@ -9272,14 +10381,17 @@
       "HR": 0,
       "BB": 7,
       "SO": 8,
+      "TBF": 57,
       "ERA": 3.95,
       "WHIP": 1.32,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 5.3,
+      "BB/9": 4.77,
+      "K%": 14.0,
+      "BB%": 12.3
     },
     "fantasy_points": 11.9,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/647336/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Atlanta"
   },
   {
     "player_id": 10117,
@@ -9312,7 +10424,7 @@
       "SB": 2,
       "CS": 0,
       "HBP": 0,
-      "AVG": 0.0,
+      "AVG": 0.133,
       "OBP": 0.17,
       "SLG": 0.178,
       "OPS": 0.348,
@@ -9320,7 +10432,7 @@
     },
     "fantasy_points": 10.5,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/605480/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Seattle"
   },
   {
     "player_id": 9729,
@@ -9351,55 +10463,17 @@
       "HR": 2,
       "BB": 3,
       "SO": 6,
+      "TBF": 18,
       "ERA": 9.82,
       "WHIP": 1.91,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 14.7,
+      "BB/9": 8.44,
+      "K%": 33.3,
+      "BB%": 16.7
     },
     "fantasy_points": 6.2,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/571704/headshot/67/current",
-    "mlb_team": ""
-  },
-  {
-    "player_id": 7497,
-    "name": "Robinson Can\u00f3",
-    "position_type": "B",
-    "eligible_positions": [
-      "2B",
-      "Util"
-    ],
-    "primary_position": "2B",
-    "selected_position": "2B",
-    "status": "SUSP",
-    "team_key": "398.l.17906.t.7",
-    "team_name": "Finding Nimmo",
-    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/f3b91efc8b44a7f2b89c00dffb9d990310ea4cc1a53bf9a0e6c69c70bf9e1089.jpg",
-    "manager": "Red",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
-  },
-  {
-    "player_id": 10214,
-    "name": "Edwin D\u00edaz",
-    "position_type": "P",
-    "eligible_positions": [
-      "RP",
-      "P",
-      "NA"
-    ],
-    "primary_position": "RP",
-    "selected_position": "RP",
-    "status": "NA",
-    "team_key": "398.l.17906.t.7",
-    "team_name": "Finding Nimmo",
-    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/f3b91efc8b44a7f2b89c00dffb9d990310ea4cc1a53bf9a0e6c69c70bf9e1089.jpg",
-    "manager": "Red",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
+    "mlb_team": "Toronto"
   },
   {
     "player_id": 11382,
@@ -9417,48 +10491,6 @@
     "team_name": "Finding Nimmo",
     "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/f3b91efc8b44a7f2b89c00dffb9d990310ea4cc1a53bf9a0e6c69c70bf9e1089.jpg",
     "manager": "Red",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
-  },
-  {
-    "player_id": 10439,
-    "name": "Eloy Jim\u00e9nez",
-    "position_type": "B",
-    "eligible_positions": [
-      "OF",
-      "Util",
-      "NA"
-    ],
-    "primary_position": "OF",
-    "selected_position": "OF",
-    "status": "NA",
-    "team_key": "398.l.17906.t.4",
-    "team_name": "Catchers are a Myth",
-    "team_logo": "https://s.yimg.com/cv/apiv2/default/mlb/mlb_4.png",
-    "manager": "Coleman",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
-  },
-  {
-    "player_id": 10402,
-    "name": "Germ\u00e1n M\u00e1rquez",
-    "position_type": "P",
-    "eligible_positions": [
-      "SP",
-      "P",
-      "NA"
-    ],
-    "primary_position": "SP",
-    "selected_position": "SP",
-    "status": "NA",
-    "team_key": "398.l.17906.t.4",
-    "team_name": "Catchers are a Myth",
-    "team_logo": "https://s.yimg.com/cv/apiv2/default/mlb/mlb_4.png",
-    "manager": "Coleman",
     "stats": {},
     "fantasy_points": 0,
     "headshot_url": "",
@@ -9486,48 +10518,6 @@
     "mlb_team": ""
   },
   {
-    "player_id": 9097,
-    "name": "Gary S\u00e1nchez",
-    "position_type": "B",
-    "eligible_positions": [
-      "C",
-      "Util",
-      "NA"
-    ],
-    "primary_position": "C",
-    "selected_position": "C",
-    "status": "NA",
-    "team_key": "398.l.17906.t.1",
-    "team_name": "Shrimp Fried Bryce",
-    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/c00af56635b1aee95efff66fb6509e992346527c717449678bd41099ba10c875.jpg",
-    "manager": "Josh",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
-  },
-  {
-    "player_id": 9724,
-    "name": "Eugenio Su\u00e1rez",
-    "position_type": "B",
-    "eligible_positions": [
-      "3B",
-      "Util",
-      "NA"
-    ],
-    "primary_position": "3B",
-    "selected_position": "Util",
-    "status": "NA",
-    "team_key": "398.l.17906.t.1",
-    "team_name": "Shrimp Fried Bryce",
-    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/c00af56635b1aee95efff66fb6509e992346527c717449678bd41099ba10c875.jpg",
-    "manager": "Josh",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
-  },
-  {
     "player_id": 10940,
     "name": "MacKenzie Gore",
     "position_type": "P",
@@ -9542,131 +10532,6 @@
     "team_name": "Shrimp Fried Bryce",
     "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/c00af56635b1aee95efff66fb6509e992346527c717449678bd41099ba10c875.jpg",
     "manager": "Josh",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
-  },
-  {
-    "player_id": 10366,
-    "name": "Teoscar Hern\u00e1ndez",
-    "position_type": "B",
-    "eligible_positions": [
-      "OF",
-      "Util"
-    ],
-    "primary_position": "OF",
-    "selected_position": "Util",
-    "status": "",
-    "team_key": "398.l.17906.t.2",
-    "team_name": "Arizona Diamondsacks",
-    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/58622800812_a5936d.jpg",
-    "manager": "Josh",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
-  },
-  {
-    "player_id": 10465,
-    "name": "Yandy D\u00edaz",
-    "position_type": "B",
-    "eligible_positions": [
-      "1B",
-      "3B",
-      "Util"
-    ],
-    "primary_position": "1B",
-    "selected_position": "BN",
-    "status": "",
-    "team_key": "398.l.17906.t.2",
-    "team_name": "Arizona Diamondsacks",
-    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/58622800812_a5936d.jpg",
-    "manager": "Josh",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
-  },
-  {
-    "player_id": 9413,
-    "name": "Alex Colom\u00e9",
-    "position_type": "P",
-    "eligible_positions": [
-      "RP",
-      "P",
-      "NA"
-    ],
-    "primary_position": "RP",
-    "selected_position": "BN",
-    "status": "NA",
-    "team_key": "398.l.17906.t.2",
-    "team_name": "Arizona Diamondsacks",
-    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/58622800812_a5936d.jpg",
-    "manager": "Josh",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
-  },
-  {
-    "player_id": 9581,
-    "name": "Adalberto Mondesi",
-    "position_type": "B",
-    "eligible_positions": [
-      "SS",
-      "Util",
-      "NA"
-    ],
-    "primary_position": "SS",
-    "selected_position": "SS",
-    "status": "NA",
-    "team_key": "398.l.17906.t.5",
-    "team_name": "Cole World",
-    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/28589546139_d2cce4.jpg",
-    "manager": "Ryan",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
-  },
-  {
-    "player_id": 11505,
-    "name": "Deivi Garc\u00eda",
-    "position_type": "P",
-    "eligible_positions": [
-      "SP",
-      "P",
-      "NA"
-    ],
-    "primary_position": "SP",
-    "selected_position": "SP",
-    "status": "NA",
-    "team_key": "398.l.17906.t.5",
-    "team_name": "Cole World",
-    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/28589546139_d2cce4.jpg",
-    "manager": "Ryan",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
-  },
-  {
-    "player_id": 10932,
-    "name": "Sixto S\u00e1nchez",
-    "position_type": "P",
-    "eligible_positions": [
-      "SP",
-      "P",
-      "NA"
-    ],
-    "primary_position": "SP",
-    "selected_position": "P",
-    "status": "NA",
-    "team_key": "398.l.17906.t.5",
-    "team_name": "Cole World",
-    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/28589546139_d2cce4.jpg",
-    "manager": "Ryan",
     "stats": {},
     "fantasy_points": 0,
     "headshot_url": "",
@@ -9694,26 +10559,6 @@
     "mlb_team": ""
   },
   {
-    "player_id": 9557,
-    "name": "Javier B\u00e1ez",
-    "position_type": "B",
-    "eligible_positions": [
-      "SS",
-      "Util"
-    ],
-    "primary_position": "SS",
-    "selected_position": "SS",
-    "status": "",
-    "team_key": "398.l.17906.t.9",
-    "team_name": "Team Beer",
-    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/28689392154_b72b4c1a43.jpg",
-    "manager": "Rich",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
-  },
-  {
     "player_id": 10369,
     "name": "Mitch Haniger",
     "position_type": "B",
@@ -9729,154 +10574,6 @@
     "team_name": "Team Beer",
     "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/28689392154_b72b4c1a43.jpg",
     "manager": "Rich",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
-  },
-  {
-    "player_id": 9585,
-    "name": "Julio Ur\u00edas",
-    "position_type": "P",
-    "eligible_positions": [
-      "SP",
-      "RP",
-      "P",
-      "NA"
-    ],
-    "primary_position": "SP",
-    "selected_position": "P",
-    "status": "NA",
-    "team_key": "398.l.17906.t.8",
-    "team_name": "All Hitting no Pitch",
-    "team_logo": "https://s.yimg.com/cv/apiv2/default/mlb/mlb_6_d.png",
-    "manager": "Dylan",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
-  },
-  {
-    "player_id": 9110,
-    "name": "Miguel San\u00f3",
-    "position_type": "B",
-    "eligible_positions": [
-      "1B",
-      "3B",
-      "Util",
-      "NA"
-    ],
-    "primary_position": "1B",
-    "selected_position": "Util",
-    "status": "NA",
-    "team_key": "398.l.17906.t.10",
-    "team_name": "The Dali Lama",
-    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/39207099440_1c720b.jpg",
-    "manager": "John",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
-  },
-  {
-    "player_id": 10137,
-    "name": "Renato N\u00fa\u00f1ez",
-    "position_type": "B",
-    "eligible_positions": [
-      "1B",
-      "3B",
-      "Util",
-      "NA"
-    ],
-    "primary_position": "1B",
-    "selected_position": "3B",
-    "status": "NA",
-    "team_key": "398.l.17906.t.6",
-    "team_name": "GerritColeIsAYankee",
-    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/58462903262_ce07c3.jpg",
-    "manager": "Riley",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
-  },
-  {
-    "player_id": 9872,
-    "name": "Jos\u00e9 Berr\u00edos",
-    "position_type": "P",
-    "eligible_positions": [
-      "SP",
-      "P"
-    ],
-    "primary_position": "SP",
-    "selected_position": "SP",
-    "status": "",
-    "team_key": "398.l.17906.t.6",
-    "team_name": "GerritColeIsAYankee",
-    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/58462903262_ce07c3.jpg",
-    "manager": "Riley",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
-  },
-  {
-    "player_id": 11057,
-    "name": "Pablo L\u00f3pez",
-    "position_type": "P",
-    "eligible_positions": [
-      "SP",
-      "P"
-    ],
-    "primary_position": "SP",
-    "selected_position": "SP",
-    "status": "",
-    "team_key": "398.l.17906.t.6",
-    "team_name": "GerritColeIsAYankee",
-    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/58462903262_ce07c3.jpg",
-    "manager": "Riley",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
-  },
-  {
-    "player_id": 9762,
-    "name": "Christian V\u00e1zquez",
-    "position_type": "B",
-    "eligible_positions": [
-      "C",
-      "1B",
-      "Util",
-      "NA"
-    ],
-    "primary_position": "C",
-    "selected_position": "C",
-    "status": "NA",
-    "team_key": "398.l.17906.t.12",
-    "team_name": "Believe the Hype",
-    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/d5f0a512e277beba859aec55a08280dce921cd5a65822401b5ca3a68d970d572.png",
-    "manager": "Logan",
-    "stats": {},
-    "fantasy_points": 0,
-    "headshot_url": "",
-    "mlb_team": ""
-  },
-  {
-    "player_id": 9507,
-    "name": "Jos\u00e9 Ram\u00edrez",
-    "position_type": "B",
-    "eligible_positions": [
-      "3B",
-      "Util"
-    ],
-    "primary_position": "3B",
-    "selected_position": "3B",
-    "status": "",
-    "team_key": "398.l.17906.t.12",
-    "team_name": "Believe the Hype",
-    "team_logo": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/d5f0a512e277beba859aec55a08280dce921cd5a65822401b5ca3a68d970d572.png",
-    "manager": "Logan",
     "stats": {},
     "fantasy_points": 0,
     "headshot_url": "",
@@ -9911,14 +10608,17 @@
       "HR": 1,
       "BB": 1,
       "SO": 2,
+      "TBF": 23,
       "ERA": 10.8,
       "WHIP": 1.8,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 3.6,
+      "BB/9": 1.8,
+      "K%": 8.7,
+      "BB%": 4.3
     },
     "fantasy_points": -3.8,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/544931/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Washington"
   },
   {
     "player_id": 1000002,
@@ -9948,13 +10648,16 @@
       "HR": 0,
       "BB": 8,
       "SO": 3,
+      "TBF": 16,
       "ERA": 37.8,
       "WHIP": 6.6,
-      "K/9": 0.0,
-      "BB/9": 0.0
+      "K/9": 16.2,
+      "BB/9": 60.0,
+      "K%": 18.8,
+      "BB%": 50.0
     },
     "fantasy_points": -12.8,
     "headshot_url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/660271/headshot/67/current",
-    "mlb_team": ""
+    "mlb_team": "Los Angeles"
   }
 ]
