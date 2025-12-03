@@ -1912,6 +1912,33 @@
 
         // Cache for team data to avoid redundant fetches
         const teamDataCache = {};
+        
+        // Cache for player stats data to avoid redundant fetches for rank calculations
+        const playerStatsCache = {};
+
+        // Helper function to get player stats data with caching
+        async function getPlayerStatsData(year) {
+            const cacheKey = year === 2025 ? 'current' : year;
+
+            if (playerStatsCache[cacheKey]) {
+                return playerStatsCache[cacheKey];
+            }
+
+            try {
+                let statsPath = year === 2025 
+                    ? 'data/current_season/player_stats.json'
+                    : `data/historical/${year}/player_stats.json`;
+                const response = await fetch(statsPath);
+                if (response.ok) {
+                    const data = await response.json();
+                    playerStatsCache[cacheKey] = data;
+                    return data;
+                }
+            } catch (e) {
+                console.log(`Could not load player stats for ${year}`);
+            }
+            return null;
+        }
 
         // Helper function to get team data with caching
         async function getTeamData(year) {
@@ -1971,6 +1998,9 @@
 
                 allPlayersData = await response.json();
 
+                // Calculate position ranks for each player
+                calculatePositionRanks();
+
                 // Populate manager filter
                 populateManagerFilter();
 
@@ -1986,6 +2016,86 @@
                 errorEl.textContent = `Error: ${error.message}`;
                 errorEl.style.display = 'block';
             }
+        }
+
+        function calculatePositionRanks() {
+            // Define all positions to rank
+            const positions = ['C', '1B', '2B', '3B', 'SS', 'OF', 'Util', 'SP', 'RP', 'P'];
+            
+            // For each position, sort eligible players by fantasy points and assign ranks
+            positions.forEach(pos => {
+                // Get players eligible for this position
+                let eligiblePlayers;
+                if (pos === 'P') {
+                    // P includes all pitchers
+                    eligiblePlayers = allPlayersData.filter(p => p.position_type === 'P');
+                } else {
+                    eligiblePlayers = allPlayersData.filter(p => 
+                        p.eligible_positions && p.eligible_positions.includes(pos)
+                    );
+                }
+                
+                // Sort by fantasy points descending
+                eligiblePlayers.sort((a, b) => (b.fantasy_points || 0) - (a.fantasy_points || 0));
+                
+                // Assign ranks
+                eligiblePlayers.forEach((player, index) => {
+                    if (!player.position_ranks) {
+                        player.position_ranks = {};
+                    }
+                    player.position_ranks[pos] = index + 1;
+                });
+            });
+            
+            // Also calculate overall batter and pitcher ranks
+            const batters = allPlayersData.filter(p => p.position_type === 'B')
+                .sort((a, b) => (b.fantasy_points || 0) - (a.fantasy_points || 0));
+            batters.forEach((player, index) => {
+                if (!player.position_ranks) player.position_ranks = {};
+                player.position_ranks['B'] = index + 1;
+            });
+            
+            const pitchers = allPlayersData.filter(p => p.position_type === 'P')
+                .sort((a, b) => (b.fantasy_points || 0) - (a.fantasy_points || 0));
+            pitchers.forEach((player, index) => {
+                if (!player.position_ranks) player.position_ranks = {};
+                player.position_ranks['P'] = index + 1;
+            });
+        }
+
+        function getPositionWithRank(player) {
+            const positionFilter = document.getElementById('position-filter').value;
+            const pos = player.primary_position || '-';
+            
+            if (!player.position_ranks) return pos;
+            
+            // Determine which position rank to show based on filter
+            let rankPos;
+            let displayPos;
+            
+            if (positionFilter === 'all') {
+                // Show primary position rank
+                rankPos = pos;
+                displayPos = pos;
+            } else if (positionFilter === 'B') {
+                // Show overall batter rank with primary position
+                rankPos = 'B';
+                displayPos = pos;
+            } else if (positionFilter === 'P') {
+                // Show overall pitcher rank with primary position
+                rankPos = 'P';
+                displayPos = pos;
+            } else {
+                // Specific position filter - show that position's rank
+                rankPos = positionFilter;
+                displayPos = positionFilter;
+            }
+            
+            const rank = player.position_ranks[rankPos];
+            if (rank) {
+                return `${displayPos}${rank}`;
+            }
+            return pos;
         }
 
         function populateManagerFilter() {
@@ -2226,7 +2336,7 @@
                                 <span class="player-fantasy-team" title="${player.team_name}">${player.manager}</span>
                             </div>
                         </td>
-                        <td class="player-position">${player.primary_position || '-'}</td>
+                        <td class="player-position">${getPositionWithRank(player)}</td>
                 `;
 
                 // STAT CELLS BASED ON MODE
@@ -2380,6 +2490,8 @@
 
             if (playerHistory && playerHistory.seasons && playerHistory.seasons.length > 0) {
                 const historyLogos = {};
+                const historyRanks = {};
+                
                 // We use a for...of loop here to allow await
                 for (const season of playerHistory.seasons) {
                     // Helper function gets cached data if available, or fetches it
@@ -2389,6 +2501,30 @@
                         if (team) {
                             historyLogos[`${season.year}_${season.team_name}`] = team.team_logo;
                         }
+                    }
+                    
+                    // Load player stats for this year to calculate ranks (uses cache)
+                    const yearPlayers = await getPlayerStatsData(season.year);
+                    if (yearPlayers) {
+                        // Calculate overall rank (among same position type: B or P)
+                        const sameType = yearPlayers
+                            .filter(p => p.position_type === player.position_type)
+                            .sort((a, b) => (b.fantasy_points || 0) - (a.fantasy_points || 0));
+                        const overallRank = sameType.findIndex(p => p.name === player.name) + 1;
+                        
+                        // Calculate position rank using primary position
+                        const primaryPos = player.primary_position;
+                        const samePos = yearPlayers
+                            .filter(p => p.eligible_positions && p.eligible_positions.includes(primaryPos))
+                            .sort((a, b) => (b.fantasy_points || 0) - (a.fantasy_points || 0));
+                        const posRank = samePos.findIndex(p => p.name === player.name) + 1;
+                        
+                        historyRanks[season.year] = {
+                            overall: overallRank > 0 ? overallRank : '-',
+                            position: posRank > 0 ? `${primaryPos}${posRank}` : '-'
+                        };
+                    } else {
+                        historyRanks[season.year] = { overall: '-', position: '-' };
                     }
                 }
                 bodyHTML += `<div class="player-modal-section">
@@ -2400,6 +2536,8 @@
                                 <th>Team</th>
                                 <th>Manager</th>
                                 <th>Fantasy Pts</th>
+                                <th>Ovr Rk</th>
+                                <th>Pos Rk</th>
                             </tr>
                         </thead>
                         <tbody>`;
@@ -2411,6 +2549,7 @@
                     const logoKey = `${season.year}_${season.team_name}`;
                     const logoUrl = historyLogos[logoKey];
                     const logoImg = logoUrl ? `<img src="${logoUrl}" alt="" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover; margin-right: 8px;">` : '';
+                    const ranks = historyRanks[season.year] || { overall: '-', position: '-' };
 
                     bodyHTML += `
                         <tr>
@@ -2423,6 +2562,8 @@
                             </td>
                             <td>${season.manager}</td>
                             <td><strong>${(season.fantasy_points || 0).toFixed(1)}</strong></td>
+                            <td>${ranks.overall}</td>
+                            <td>${ranks.position}</td>
                         </tr>
                     `;
                 });
