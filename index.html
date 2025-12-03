@@ -2408,10 +2408,19 @@
                 const sortedSeasons = [...playerHistory.seasons].sort((a, b) => b.year - a.year);
 
                 sortedSeasons.forEach(season => {
+                    const logoKey = `${season.year}_${season.team_name}`;
+                    const logoUrl = historyLogos[logoKey];
+                    const logoImg = logoUrl ? `<img src="${logoUrl}" alt="" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover; margin-right: 8px;">` : '';
+
                     bodyHTML += `
                         <tr>
                             <td>${season.year}</td>
-                            <td>${season.team_name}</td>
+                            <td>
+                                <div style="display: flex; align-items: center;">
+                                    ${logoImg}
+                                    <span>${season.team_name}</span>
+                                </div>
+                            </td>
                             <td>${season.manager}</td>
                             <td><strong>${(season.fantasy_points || 0).toFixed(1)}</strong></td>
                         </tr>
