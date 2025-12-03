@@ -2379,6 +2379,18 @@
             const playerHistory = playerHistoryData[normalizedName];
 
             if (playerHistory && playerHistory.seasons && playerHistory.seasons.length > 0) {
+                const historyLogos = {};
+                // We use a for...of loop here to allow await
+                for (const season of playerHistory.seasons) {
+                    // Helper function gets cached data if available, or fetches it
+                    const teams = await getTeamData(season.year);
+                    if (teams) {
+                        const team = teams.find(t => t.team_name === season.team_name);
+                        if (team) {
+                            historyLogos[`${season.year}_${season.team_name}`] = team.team_logo;
+                        }
+                    }
+                }
                 bodyHTML += `<div class="player-modal-section">
                     <h3>League History</h3>
                     <table class="player-history-table">
