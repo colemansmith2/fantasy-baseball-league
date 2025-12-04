@@ -1164,92 +1164,367 @@
 
         /* Player Modal Styles */
         .player-modal-content {
-            max-width: 800px;
+            max-width: 420px;
+            background: transparent;
+            box-shadow: none;
+            border-radius: 12px;
+            overflow: visible;
         }
 
-        #player-modal-header {
+        /* Baseball Card Design */
+        .baseball-card {
+            background: linear-gradient(135deg, #f5d742 0%, #e8c92e 50%, #d4b82a 100%);
+            border-radius: 12px;
+            border: 4px solid #1e3c72;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-header {
+            background: linear-gradient(180deg, #1e3c72 0%, #2a5298 100%);
+            padding: 0.75rem 1rem;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 1.5rem;
-            padding: 1.5rem;
-            padding-right: 3.5rem;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            border-radius: 8px 8px 0 0;
+            border-bottom: 3px solid #f5d742;
         }
 
-        .player-modal-headshot {
-            width: 80px;
-            height: 80px;
+        .card-team-logo {
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
-            object-fit: cover;
+            object-fit: contain;
             background: white;
-            border: 3px solid white;
+            padding: 4px;
+            border: 2px solid #f5d742;
         }
 
-        .player-modal-info h2 {
-            margin: 0 0 0.25rem 0;
-            font-size: 1.5rem;
+        .card-player-name {
             color: white;
-            border-bottom: none;
-        }
-
-        .player-modal-info .player-details {
-            display: flex;
-            gap: 1rem;
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        .player-modal-points {
-            margin-left: auto;
-            text-align: right;
-        }
-
-        .player-modal-points .points-value {
-            font-size: 2rem;
+            font-size: 1.4rem;
             font-weight: bold;
-        }
-
-        .player-modal-points .points-label {
-            font-size: 0.8rem;
-            opacity: 0.8;
-        }
-
-        .player-modal-section {
-            margin-bottom: 1.5rem;
-        }
-
-        .player-modal-section h3 {
-            color: #1e3c72;
-            margin-bottom: 0.75rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #eee;
-        }
-
-        .player-stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-            gap: 0.75rem;
-        }
-
-        .player-stat-box {
-            background: #f8f9fa;
-            padding: 0.75rem;
-            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            flex: 1;
             text-align: center;
         }
 
-        .player-stat-box .stat-value {
-            font-size: 1.25rem;
+        .card-fantasy-points {
+            background: #f5d742;
+            color: #1e3c72;
+            font-size: 1.3rem;
             font-weight: bold;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            border: 2px solid #1e3c72;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .card-photo-section {
+            position: relative;
+            background: linear-gradient(180deg, #87CEEB 0%, #4a90c2 60%, #2d6a9f 100%);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            min-height: 180px;
+        }
+
+        .card-photo-frame {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: white;
+            padding: 5px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border: 3px solid #f5d742;
+        }
+
+        .card-headshot {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #e0e0e0;
+        }
+
+        .card-position-badge {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background: #1e3c72;
+            color: #f5d742;
+            font-weight: bold;
+            font-size: 0.85rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            border: 2px solid #f5d742;
+        }
+
+        .card-team-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: #1e3c72;
+            border: 2px solid #1e3c72;
+        }
+
+        .card-info-strip {
+            background: #1e3c72;
+            color: white;
+            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            border-top: 2px solid #f5d742;
+            border-bottom: 2px solid #f5d742;
+        }
+
+        .card-info-strip span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .card-stats-section {
+            background: #fffef5;
+            padding: 0.75rem;
+        }
+
+        .card-stats-title {
+            background: #1e3c72;
+            color: #f5d742;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.3rem 0.5rem;
+            margin: -0.75rem -0.75rem 0.5rem -0.75rem;
+            text-align: center;
+        }
+
+        .card-stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.75rem;
+        }
+
+        .card-stats-table th {
+            background: #2a5298;
+            color: white;
+            padding: 0.35rem 0.25rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            border: 1px solid #1e3c72;
+        }
+
+        .card-stats-table td {
+            background: white;
+            padding: 0.35rem 0.25rem;
+            text-align: center;
+            border: 1px solid #ddd;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .card-stats-table tr:nth-child(even) td {
+            background: #f8f8f0;
+        }
+
+        .card-history-section {
+            background: #fffef5;
+            padding: 0.5rem 0.75rem 0.75rem;
+            border-top: 2px dashed #ccc;
+        }
+
+        .card-history-title {
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: #1e3c72;
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+            text-align: center;
+        }
+
+        .card-history-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.65rem;
+        }
+
+        .card-history-table th {
+            background: #1e3c72;
+            color: white;
+            padding: 0.25rem;
+            text-align: center;
+            font-size: 0.6rem;
+        }
+
+        .card-history-table td {
+            padding: 0.25rem;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .card-history-table .team-logo-small {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-right: 3px;
+        }
+
+        .card-footer {
+            background: linear-gradient(180deg, #1e3c72 0%, #152a52 100%);
+            color: #f5d742;
+            padding: 0.5rem 1rem;
+            font-size: 0.65rem;
+            text-align: center;
+            border-top: 3px solid #f5d742;
+        }
+
+        .card-footer .owner-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-footer .owner-logo {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid #f5d742;
+        }
+
+        /* Scrollable stats area */
+        .card-scrollable {
+            max-height: 280px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #1e3c72 #f5d742;
+        }
+
+        .card-scrollable::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .card-scrollable::-webkit-scrollbar-track {
+            background: #f5d742;
+        }
+
+        .card-scrollable::-webkit-scrollbar-thumb {
+            background: #1e3c72;
+            border-radius: 3px;
+        }
+
+        /* Hide the default modal body scroll for player modal */
+        #player-modal .modal-body-scroll {
+            padding: 0;
+            max-height: none;
+            overflow: visible;
+        }
+
+        #player-modal .modal-close {
+            color: white;
+            background: #1e3c72;
+            border: 2px solid #f5d742;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            top: 8px;
+            right: 8px;
+        }
+
+        #player-modal .modal-close:hover {
+            background: #f5d742;
             color: #1e3c72;
         }
 
-        .player-stat-box .stat-label {
-            font-size: 0.75rem;
-            color: #666;
-            text-transform: uppercase;
+        #player-modal-header {
+            display: none; /* Hide default header, we'll build card structure in body */
+        }
+
+        /* Mobile styles for baseball card */
+        @media (max-width: 480px) {
+            .player-modal-content {
+                max-width: 95vw;
+                margin: 0.5rem;
+            }
+
+            .baseball-card {
+                border-width: 3px;
+            }
+
+            .card-header {
+                padding: 0.5rem 0.75rem;
+            }
+
+            .card-team-logo {
+                width: 35px;
+                height: 35px;
+            }
+
+            .card-player-name {
+                font-size: 1.1rem;
+            }
+
+            .card-fantasy-points {
+                font-size: 1rem;
+                padding: 0.2rem 0.4rem;
+            }
+
+            .card-photo-section {
+                min-height: 140px;
+                padding: 0.75rem;
+            }
+
+            .card-photo-frame {
+                width: 120px;
+                height: 120px;
+            }
+
+            .card-position-badge {
+                font-size: 0.75rem;
+            }
+
+            .card-team-badge {
+                font-size: 0.65rem;
+            }
+
+            .card-info-strip {
+                font-size: 0.7rem;
+                padding: 0.4rem 0.75rem;
+            }
+
+            .card-stats-table th,
+            .card-stats-table td {
+                padding: 0.25rem 0.15rem;
+                font-size: 0.6rem;
+            }
+
+            .card-history-table {
+                font-size: 0.6rem;
+            }
+
+            .card-scrollable {
+                max-height: 220px;
+            }
         }
 
         .player-history-table {
@@ -2918,79 +3193,107 @@
                 }
             }
 
-            // Render header - use base64 placeholder for modal (white version for dark header)
-            const modalPlaceholder = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZiIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMzUiIHI9IjIwIiBmaWxsPSIjZGRkIi8+PGVsbGlwc2UgY3g9IjUwIiBjeT0iODUiIHJ4PSIzMCIgcnk9IjIwIiBmaWxsPSIjZGRkIi8+PC9zdmc+';
-            const headshot = (player.headshot_url && player.headshot_url.trim()) ? player.headshot_url : modalPlaceholder;
+            // Placeholders
+            const placeholderHeadshot = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwZTBlMCIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMzUiIHI9IjIwIiBmaWxsPSIjYmRiZGJkIi8+PGVsbGlwc2UgY3g9IjUwIiBjeT0iODUiIHJ4PSIzMCIgcnk9IjIwIiBmaWxsPSIjYmRiZGJkIi8+PC9zdmc+';
+            const placeholderLogo = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzFlM2M3MiIvPjx0ZXh0IHg9IjUwIiB5PSI1NSIgZm9udC1zaXplPSI0MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZiI+4pqB77iPPC90ZXh0Pjwvc3ZnPg==';
 
-            headerEl.innerHTML = `
-                <img src="${headshot}" alt="${player.name}" class="player-modal-headshot" onerror="this.src='${modalPlaceholder}'">
-                <div class="player-modal-info">
-                    <h2>${player.name}</h2>
-                    <div class="player-details">
-                        <span>${player.mlb_team || 'FA'}</span>
-                        <span>${player.eligible_positions ? player.eligible_positions.join(', ') : player.primary_position}</span>
-                        <span>Owner: ${player.manager}</span>
-                    </div>
-                </div>
-                <div class="player-modal-points">
-                    <div class="points-value">${(player.fantasy_points || 0).toFixed(1)}</div>
-                    <div class="points-label">${selectedYear} Fantasy Pts</div>
-                </div>
-            `;
-
-            // Render body
-            let bodyHTML = '';
-
-            // Current season stats
+            const headshot = (player.headshot_url && player.headshot_url.trim()) ? player.headshot_url : placeholderHeadshot;
+            const teamLogo = player.team_logo || placeholderLogo;
             const stats = player.stats || {};
             const isBatter = player.position_type === 'B';
+            const fantasyPts = (player.fantasy_points || 0).toFixed(1);
 
-            bodyHTML += `<div class="player-modal-section">
-                <h3>${selectedYear} Season Stats</h3>
-                <div class="player-stats-grid">`;
+            // Clear header (we're using body for the card)
+            headerEl.innerHTML = '';
+
+            // Build baseball card HTML
+            let cardHTML = `
+            <div class="baseball-card">
+                <div class="card-header">
+                    <img src="${teamLogo}" alt="" class="card-team-logo" onerror="this.src='${placeholderLogo}'">
+                    <div class="card-player-name">${player.name}</div>
+                    <div class="card-fantasy-points">${fantasyPts}</div>
+                </div>
+                
+                <div class="card-photo-section">
+                    <div class="card-team-badge">${player.mlb_team || 'FA'}</div>
+                    <div class="card-photo-frame">
+                        <img src="${headshot}" alt="${player.name}" class="card-headshot" onerror="this.src='${placeholderHeadshot}'">
+                        <div class="card-position-badge">${player.primary_position}</div>
+                    </div>
+                </div>
+
+                <div class="card-info-strip">
+                    <span>📊 ${selectedYear} Stats</span>
+                    <span>${player.eligible_positions ? player.eligible_positions.join('/') : player.primary_position}</span>
+                    <span>⚾ ${isBatter ? 'Batter' : 'Pitcher'}</span>
+                </div>
+
+                <div class="card-scrollable">
+                    <div class="card-stats-section">
+                        <div class="card-stats-title">${selectedYear} Season Statistics</div>`;
 
             if (isBatter) {
-                bodyHTML += `
-                    <div class="player-stat-box"><div class="stat-value">${stats.G || 0}</div><div class="stat-label">Games</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.AB || 0}</div><div class="stat-label">At Bats</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.H || 0}</div><div class="stat-label">Hits</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.HR || 0}</div><div class="stat-label">HR</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.RBI || 0}</div><div class="stat-label">RBI</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.R || 0}</div><div class="stat-label">Runs</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.SB || 0}</div><div class="stat-label">SB</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.BB || 0}</div><div class="stat-label">Walks</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats['2B'] || 0}</div><div class="stat-label">2B</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats['3B'] || 0}</div><div class="stat-label">3B</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.AVG ? stats.AVG.toFixed(3) : '.000'}</div><div class="stat-label">AVG</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.OBP ? stats.OBP.toFixed(3) : '.000'}</div><div class="stat-label">OBP</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.SLG ? stats.SLG.toFixed(3) : '.000'}</div><div class="stat-label">SLG</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.OPS ? stats.OPS.toFixed(3) : '.000'}</div><div class="stat-label">OPS</div></div>
-                `;
+                cardHTML += `
+                        <table class="card-stats-table">
+                            <tr>
+                                <th>G</th><th>AB</th><th>H</th><th>HR</th><th>RBI</th><th>R</th><th>SB</th>
+                            </tr>
+                            <tr>
+                                <td>${stats.G || 0}</td>
+                                <td>${stats.AB || 0}</td>
+                                <td>${stats.H || 0}</td>
+                                <td>${stats.HR || 0}</td>
+                                <td>${stats.RBI || 0}</td>
+                                <td>${stats.R || 0}</td>
+                                <td>${stats.SB || 0}</td>
+                            </tr>
+                            <tr>
+                                <th>BB</th><th>2B</th><th>3B</th><th>AVG</th><th>OBP</th><th>SLG</th><th>OPS</th>
+                            </tr>
+                            <tr>
+                                <td>${stats.BB || 0}</td>
+                                <td>${stats['2B'] || 0}</td>
+                                <td>${stats['3B'] || 0}</td>
+                                <td>${stats.AVG ? stats.AVG.toFixed(3) : '.000'}</td>
+                                <td>${stats.OBP ? stats.OBP.toFixed(3) : '.000'}</td>
+                                <td>${stats.SLG ? stats.SLG.toFixed(3) : '.000'}</td>
+                                <td>${stats.OPS ? stats.OPS.toFixed(3) : '.000'}</td>
+                            </tr>
+                        </table>`;
             } else {
-                bodyHTML += `
-                    <div class="player-stat-box"><div class="stat-value">${stats.G || 0}</div><div class="stat-label">Games</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.GS || 0}</div><div class="stat-label">Starts</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.W || 0}</div><div class="stat-label">Wins</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.L || 0}</div><div class="stat-label">Losses</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.SV || 0}</div><div class="stat-label">Saves</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.HLD || 0}</div><div class="stat-label">Holds</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.IP || 0}</div><div class="stat-label">IP</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.TBF || 0}</div><div class="stat-label">TBF</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.SO || 0}</div><div class="stat-label">K</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.BB || 0}</div><div class="stat-label">BB</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.H || 0}</div><div class="stat-label">Hits</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.ER || 0}</div><div class="stat-label">ER</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.ERA ? stats.ERA.toFixed(2) : '0.00'}</div><div class="stat-label">ERA</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats.WHIP ? stats.WHIP.toFixed(2) : '0.00'}</div><div class="stat-label">WHIP</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats['K/9'] ? stats['K/9'].toFixed(2) : '0.00'}</div><div class="stat-label">K/9</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats['K%'] ? stats['K%'].toFixed(1) + '%' : '0.0%'}</div><div class="stat-label">K%</div></div>
-                    <div class="player-stat-box"><div class="stat-value">${stats['BB%'] ? stats['BB%'].toFixed(1) + '%' : '0.0%'}</div><div class="stat-label">BB%</div></div>
-                `;
+                cardHTML += `
+                        <table class="card-stats-table">
+                            <tr>
+                                <th>W</th><th>L</th><th>SV</th><th>G</th><th>GS</th><th>IP</th><th>K</th>
+                            </tr>
+                            <tr>
+                                <td>${stats.W || 0}</td>
+                                <td>${stats.L || 0}</td>
+                                <td>${stats.SV || 0}</td>
+                                <td>${stats.G || 0}</td>
+                                <td>${stats.GS || 0}</td>
+                                <td>${stats.IP || 0}</td>
+                                <td>${stats.SO || 0}</td>
+                            </tr>
+                            <tr>
+                                <th>BB</th><th>ERA</th><th>WHIP</th><th>K/9</th><th>K%</th><th>BB%</th><th>HLD</th>
+                            </tr>
+                            <tr>
+                                <td>${stats.BB || 0}</td>
+                                <td>${stats.ERA ? stats.ERA.toFixed(2) : '0.00'}</td>
+                                <td>${stats.WHIP ? stats.WHIP.toFixed(2) : '0.00'}</td>
+                                <td>${stats['K/9'] ? stats['K/9'].toFixed(1) : '0.0'}</td>
+                                <td>${stats['K%'] ? stats['K%'].toFixed(0) : '0'}%</td>
+                                <td>${stats['BB%'] ? stats['BB%'].toFixed(0) : '0'}%</td>
+                                <td>${stats.HLD || 0}</td>
+                            </tr>
+                        </table>`;
             }
 
-            bodyHTML += '</div></div>';
+            cardHTML += `</div>`;
 
-            // Career history
+            // Career history section
             const normalizedName = playerName.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
             const playerHistory = playerHistoryData[normalizedName];
 
@@ -2998,9 +3301,7 @@
                 const historyLogos = {};
                 const historyRanks = {};
                 
-                // We use a for...of loop here to allow await
                 for (const season of playerHistory.seasons) {
-                    // Helper function gets cached data if available, or fetches it
                     const teams = await getTeamData(season.year);
                     if (teams) {
                         const team = teams.find(t => t.team_name === season.team_name);
@@ -3009,16 +3310,13 @@
                         }
                     }
                     
-                    // Load player stats for this year to calculate ranks (uses cache)
                     const yearPlayers = await getPlayerStatsData(season.year);
                     if (yearPlayers) {
-                        // Calculate overall rank (among same position type: B or P)
                         const sameType = yearPlayers
                             .filter(p => p.position_type === player.position_type)
                             .sort((a, b) => (b.fantasy_points || 0) - (a.fantasy_points || 0));
                         const overallRank = sameType.findIndex(p => p.name === player.name) + 1;
                         
-                        // Calculate position rank using primary position
                         const primaryPos = player.primary_position;
                         const samePos = yearPlayers
                             .filter(p => p.eligible_positions && p.eligible_positions.includes(primaryPos))
@@ -3033,60 +3331,62 @@
                         historyRanks[season.year] = { overall: '-', position: '-' };
                     }
                 }
-                bodyHTML += `<div class="player-modal-section">
-                    <h3>League History</h3>
-                    <table class="player-history-table">
-                        <thead>
-                            <tr>
-                                <th>Year</th>
-                                <th>Team</th>
-                                <th>Manager</th>
-                                <th>Fantasy Pts</th>
-                                <th>Ovr Rk</th>
-                                <th>Pos Rk</th>
-                            </tr>
-                        </thead>
-                        <tbody>`;
 
-                // Sort by year descending
-                const sortedSeasons = [...playerHistory.seasons].sort((a, b) => b.year - a.year);
+                cardHTML += `
+                    <div class="card-history-section">
+                        <div class="card-history-title">📜 League History</div>
+                        <table class="card-history-table">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Team</th>
+                                    <th>Pts</th>
+                                    <th>Rk</th>
+                                    <th>Pos</th>
+                                </tr>
+                            </thead>
+                            <tbody>`;
 
-                sortedSeasons.forEach(season => {
-                    const logoKey = `${season.year}_${season.team_name}`;
-                    const logoUrl = historyLogos[logoKey];
-                    const logoImg = logoUrl ? `<img src="${logoUrl}" alt="" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover; margin-right: 8px;">` : '';
+                playerHistory.seasons.sort((a, b) => b.year - a.year).forEach(season => {
+                    const logo = historyLogos[`${season.year}_${season.team_name}`] || '';
                     const ranks = historyRanks[season.year] || { overall: '-', position: '-' };
-
-                    bodyHTML += `
-                        <tr>
-                            <td>${season.year}</td>
-                            <td>
-                                <div style="display: flex; align-items: center;">
-                                    ${logoImg}
-                                    <span>${season.team_name}</span>
-                                </div>
-                            </td>
-                            <td>${season.manager}</td>
-                            <td><strong>${(season.fantasy_points || 0).toFixed(1)}</strong></td>
-                            <td>${ranks.overall}</td>
-                            <td>${ranks.position}</td>
-                        </tr>
-                    `;
+                    cardHTML += `
+                                <tr>
+                                    <td><strong>${season.year}</strong></td>
+                                    <td>${logo ? `<img src="${logo}" class="team-logo-small" alt="">` : ''}${season.manager || ''}</td>
+                                    <td>${(season.fantasy_points || 0).toFixed(0)}</td>
+                                    <td>${ranks.overall}</td>
+                                    <td>${ranks.position}</td>
+                                </tr>`;
                 });
 
-                bodyHTML += `</tbody></table>
-                    <div style="margin-top: 0.75rem; color: #666; font-size: 0.9rem;">
-                        Career Total: <strong>${(playerHistory.career_fantasy_points || 0).toFixed(1)}</strong> fantasy points
-                    </div>
-                </div>`;
+                cardHTML += `
+                            </tbody>
+                        </table>
+                    </div>`;
             }
 
-            bodyEl.innerHTML = bodyHTML;
-            modal.style.display = 'flex';
+            cardHTML += `</div>`; // Close card-scrollable
+
+            // Footer with owner info
+            cardHTML += `
+                <div class="card-footer">
+                    <div class="owner-info">
+                        <span>Owned by:</span>
+                        ${player.team_logo ? `<img src="${player.team_logo}" class="owner-logo" alt="">` : ''}
+                        <strong>${player.manager || 'Free Agent'}</strong>
+                        <span>•</span>
+                        <span>${player.team_name || ''}</span>
+                    </div>
+                </div>
+            </div>`; // Close baseball-card
+
+            bodyEl.innerHTML = cardHTML;
+            modal.classList.add('active');
         }
 
         function closePlayerModal() {
-            document.getElementById('player-modal').style.display = 'none';
+            document.getElementById('player-modal').classList.remove('active');
         }
 
         // Close player modal on outside click
