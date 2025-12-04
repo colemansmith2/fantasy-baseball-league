@@ -996,10 +996,44 @@
 
         .player-control-row .season-selector,
         .player-control-row .position-filter,
-        .player-control-row .manager-filter {
+        .player-control-row .manager-filter,
+        .player-control-row .stat-type-toggle {
             display: flex;
             flex-direction: column;
             gap: 0.25rem;
+        }
+
+        .stat-type-toggle .toggle-buttons {
+            display: flex;
+            gap: 0;
+        }
+
+        .toggle-btn {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #1e3c72;
+            background: white;
+            color: #1e3c72;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .toggle-btn:first-child {
+            border-radius: 4px 0 0 4px;
+        }
+
+        .toggle-btn:last-child {
+            border-radius: 0 4px 4px 0;
+            border-left: none;
+        }
+
+        .toggle-btn:hover {
+            background: #f0f4f8;
+        }
+
+        .toggle-btn.active {
+            background: #1e3c72;
+            color: white;
         }
 
         .player-control-row label {
@@ -1359,6 +1393,52 @@
             padding: 0.3rem 0.5rem;
             margin: -0.75rem -0.75rem 0.5rem -0.75rem;
             text-align: center;
+        }
+
+        .card-stats-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-stats-header .card-stats-title {
+            margin: 0;
+            padding: 0;
+            background: none;
+        }
+
+        .card-stat-toggle {
+            display: flex;
+            gap: 0;
+        }
+
+        .card-toggle-btn {
+            padding: 0.25rem 0.5rem;
+            border: 1px solid #1e3c72;
+            background: white;
+            color: #1e3c72;
+            font-size: 0.65rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .card-toggle-btn:first-child {
+            border-radius: 3px 0 0 3px;
+        }
+
+        .card-toggle-btn:last-child {
+            border-radius: 0 3px 3px 0;
+            border-left: none;
+        }
+
+        .card-toggle-btn:hover {
+            background: #f0f4f8;
+        }
+
+        .card-toggle-btn.active {
+            background: #1e3c72;
+            color: white;
         }
 
         .card-stats-table {
@@ -1905,8 +1985,18 @@
 
             .player-control-row .season-selector,
             .player-control-row .position-filter,
-            .player-control-row .manager-filter {
+            .player-control-row .manager-filter,
+            .player-control-row .stat-type-toggle {
                 width: 100%;
+            }
+
+            .stat-type-toggle .toggle-buttons {
+                width: 100%;
+            }
+
+            .toggle-btn {
+                flex: 1;
+                text-align: center;
             }
 
             .player-control-row select {
@@ -2618,6 +2708,14 @@
                         </select>
                     </div>
 
+                    <div class="stat-type-toggle">
+                        <label>Stats:</label>
+                        <div class="toggle-buttons">
+                            <button id="fantasy-season-btn" class="toggle-btn active" onclick="setStatType('fantasy')">Fantasy Season</button>
+                            <button id="full-season-btn" class="toggle-btn" onclick="setStatType('full')">Full MLB Season</button>
+                        </div>
+                    </div>
+
                     <div class="position-filter">
                         <label for="position-filter">Position:</label>
                         <select id="position-filter" onchange="filterPlayers()">
@@ -2752,6 +2850,7 @@
         let filteredPlayersData = [];
         let playerHistoryData = {};
         let currentPlayerSort = { column: 'fantasy_points', direction: 'desc' };
+        let currentStatType = 'fantasy'; // 'fantasy' for fantasy season, 'full' for full MLB season
 
         // Chart state
         let currentChartData = null;
@@ -2882,8 +2981,8 @@
                     );
                 }
                 
-                // Sort by fantasy points descending
-                eligiblePlayers.sort((a, b) => (b.fantasy_points || 0) - (a.fantasy_points || 0));
+                // Sort by fantasy points descending (using current stat type)
+                eligiblePlayers.sort((a, b) => getPlayerFantasyPoints(b) - getPlayerFantasyPoints(a));
                 
                 // Assign ranks
                 eligiblePlayers.forEach((player, index) => {
@@ -2896,14 +2995,14 @@
             
             // Also calculate overall batter and pitcher ranks
             const batters = allPlayersData.filter(p => p.position_type === 'B')
-                .sort((a, b) => (b.fantasy_points || 0) - (a.fantasy_points || 0));
+                .sort((a, b) => getPlayerFantasyPoints(b) - getPlayerFantasyPoints(a));
             batters.forEach((player, index) => {
                 if (!player.position_ranks) player.position_ranks = {};
                 player.position_ranks['B'] = index + 1;
             });
             
             const pitchers = allPlayersData.filter(p => p.position_type === 'P')
-                .sort((a, b) => (b.fantasy_points || 0) - (a.fantasy_points || 0));
+                .sort((a, b) => getPlayerFantasyPoints(b) - getPlayerFantasyPoints(a));
             pitchers.forEach((player, index) => {
                 if (!player.position_ranks) player.position_ranks = {};
                 player.position_ranks['P'] = index + 1;
@@ -2957,6 +3056,143 @@
                 option.textContent = manager;
                 managerFilter.appendChild(option);
             });
+        }
+
+        function setStatType(type) {
+            currentStatType = type;
+            
+            // Update button states
+            document.getElementById('fantasy-season-btn').classList.toggle('active', type === 'fantasy');
+            document.getElementById('full-season-btn').classList.toggle('active', type === 'full');
+            
+            // Re-calculate position ranks and re-render
+            calculatePositionRanks();
+            filterPlayers();
+        }
+
+        function setModalStatType(type) {
+            currentStatType = type;
+            
+            // Update main page toggle buttons too
+            document.getElementById('fantasy-season-btn').classList.toggle('active', type === 'fantasy');
+            document.getElementById('full-season-btn').classList.toggle('active', type === 'full');
+            
+            // Update modal toggle buttons
+            document.querySelectorAll('.card-toggle-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.toLowerCase().includes(type === 'fantasy' ? 'fantasy' : 'full'));
+            });
+            
+            // Re-render the modal with the current player
+            if (window.currentModalPlayer) {
+                updateModalStats(window.currentModalPlayer);
+            }
+            
+            // Re-calculate position ranks and re-render main table
+            calculatePositionRanks();
+            filterPlayers();
+        }
+
+        function updateModalStats(player) {
+            const stats = getPlayerStats(player);
+            const fantasyPts = getPlayerFantasyPoints(player);
+            const isBatter = player.position_type === 'B';
+            
+            // Update points display in the card
+            const ptsEl = document.querySelector('.card-fantasy-points');
+            if (ptsEl) {
+                ptsEl.innerHTML = `${fantasyPts.toFixed(1)}<span class="pts-label">PTS</span>`;
+            }
+            
+            // Update position rank
+            const primaryPos = player.primary_position;
+            const samePos = allPlayersData
+                .filter(p => p.eligible_positions && p.eligible_positions.includes(primaryPos))
+                .sort((a, b) => getPlayerFantasyPoints(b) - getPlayerFantasyPoints(a));
+            const posRank = samePos.findIndex(p => p.name === player.name) + 1;
+            const posRankDisplay = posRank > 0 ? `${primaryPos}${posRank}` : primaryPos;
+            
+            const rankEl = document.querySelector('.card-position-rank');
+            if (rankEl) {
+                rankEl.textContent = posRankDisplay;
+            }
+            
+            // Update stats table
+            const statsContent = document.getElementById('modal-stats-content');
+            if (statsContent) {
+                if (isBatter) {
+                    statsContent.innerHTML = `
+                        <table class="card-stats-table">
+                            <tr>
+                                <th>G</th><th>AB</th><th>H</th><th>HR</th><th>RBI</th><th>R</th><th>SB</th>
+                            </tr>
+                            <tr>
+                                <td>${stats.G || 0}</td>
+                                <td>${stats.AB || 0}</td>
+                                <td>${stats.H || 0}</td>
+                                <td>${stats.HR || 0}</td>
+                                <td>${stats.RBI || 0}</td>
+                                <td>${stats.R || 0}</td>
+                                <td>${stats.SB || 0}</td>
+                            </tr>
+                            <tr>
+                                <th>BB</th><th>2B</th><th>3B</th><th>AVG</th><th>OBP</th><th>SLG</th><th>OPS</th>
+                            </tr>
+                            <tr>
+                                <td>${stats.BB || 0}</td>
+                                <td>${stats['2B'] || 0}</td>
+                                <td>${stats['3B'] || 0}</td>
+                                <td>${stats.AVG ? stats.AVG.toFixed(3) : '.000'}</td>
+                                <td>${stats.OBP ? stats.OBP.toFixed(3) : '.000'}</td>
+                                <td>${stats.SLG ? stats.SLG.toFixed(3) : '.000'}</td>
+                                <td>${stats.OPS ? stats.OPS.toFixed(3) : '.000'}</td>
+                            </tr>
+                        </table>`;
+                } else {
+                    statsContent.innerHTML = `
+                        <table class="card-stats-table">
+                            <tr>
+                                <th>W</th><th>L</th><th>SV</th><th>G</th><th>GS</th><th>IP</th><th>K</th>
+                            </tr>
+                            <tr>
+                                <td>${stats.W || 0}</td>
+                                <td>${stats.L || 0}</td>
+                                <td>${stats.SV || 0}</td>
+                                <td>${stats.G || 0}</td>
+                                <td>${stats.GS || 0}</td>
+                                <td>${stats.IP || 0}</td>
+                                <td>${stats.SO || 0}</td>
+                            </tr>
+                            <tr>
+                                <th>BB</th><th>ERA</th><th>WHIP</th><th>K/9</th><th>K%</th><th>BB%</th><th>HLD</th>
+                            </tr>
+                            <tr>
+                                <td>${stats.BB || 0}</td>
+                                <td>${stats.ERA ? stats.ERA.toFixed(2) : '0.00'}</td>
+                                <td>${stats.WHIP ? stats.WHIP.toFixed(2) : '0.00'}</td>
+                                <td>${stats['K/9'] ? stats['K/9'].toFixed(1) : '0.0'}</td>
+                                <td>${stats['K%'] ? stats['K%'].toFixed(0) : '0'}%</td>
+                                <td>${stats['BB%'] ? stats['BB%'].toFixed(0) : '0'}%</td>
+                                <td>${stats.HLD || 0}</td>
+                            </tr>
+                        </table>`;
+                }
+            }
+        }
+
+        function getPlayerStats(player) {
+            // Returns the appropriate stats object based on currentStatType
+            if (currentStatType === 'full') {
+                return player.full_season_stats || player.stats || {};
+            }
+            return player.stats || {};
+        }
+
+        function getPlayerFantasyPoints(player) {
+            // Returns the appropriate fantasy points based on currentStatType
+            if (currentStatType === 'full') {
+                return player.full_season_fantasy_points || player.fantasy_points || 0;
+            }
+            return player.fantasy_points || 0;
         }
 
         function filterPlayers() {
@@ -3092,11 +3328,15 @@
 
             filteredPlayersData.sort((a, b) => {
                 let aVal, bVal;
+                const aStats = getPlayerStats(a);
+                const bStats = getPlayerStats(b);
+                const aPoints = getPlayerFantasyPoints(a);
+                const bPoints = getPlayerFantasyPoints(b);
 
                 if (column === 'rank') {
                     // Rank is determined by fantasy points
-                    aVal = a.fantasy_points || 0;
-                    bVal = b.fantasy_points || 0;
+                    aVal = aPoints;
+                    bVal = bPoints;
                 } else if (column === 'name') {
                     aVal = a.name.toLowerCase();
                     bVal = b.name.toLowerCase();
@@ -3104,18 +3344,18 @@
                     aVal = a.primary_position || '';
                     bVal = b.primary_position || '';
                 } else if (column === 'fantasy_points') {
-                    aVal = a.fantasy_points || 0;
-                    bVal = b.fantasy_points || 0;
+                    aVal = aPoints;
+                    bVal = bPoints;
                 } else if (column === 'PPG') {
                     // Points Per Game = fantasy_points / G
-                    const aGames = (a.stats && a.stats.G) || 0;
-                    const bGames = (b.stats && b.stats.G) || 0;
-                    aVal = aGames > 0 ? (a.fantasy_points || 0) / aGames : 0;
-                    bVal = bGames > 0 ? (b.fantasy_points || 0) / bGames : 0;
+                    const aGames = aStats.G || 0;
+                    const bGames = bStats.G || 0;
+                    aVal = aGames > 0 ? aPoints / aGames : 0;
+                    bVal = bGames > 0 ? bPoints / bGames : 0;
                 } else {
                     // Stat column
-                    aVal = (a.stats && a.stats[column]) || 0;
-                    bVal = (b.stats && b.stats[column]) || 0;
+                    aVal = aStats[column] || 0;
+                    bVal = bStats[column] || 0;
                 }
 
                 if (typeof aVal === 'string') {
@@ -3157,13 +3397,13 @@
             const placeholderImg = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwZTBlMCIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMzUiIHI9IjIwIiBmaWxsPSIjYmRiZGJkIi8+PGVsbGlwc2UgY3g9IjUwIiBjeT0iODUiIHJ4PSIzMCIgcnk9IjIwIiBmaWxsPSIjYmRiZGJkIi8+PC9zdmc+';
 
             tbody.innerHTML = filteredPlayersData.map((player, index) => {
-                const stats = player.stats || {};
+                const stats = getPlayerStats(player);
+                const fantasyPoints = getPlayerFantasyPoints(player);
                 const isBatter = player.position_type === 'B';
                 const headshot = (player.headshot_url && player.headshot_url.trim()) ? player.headshot_url : placeholderImg;
 
                 // Calculate PPG
                 const games = stats.G || 0;
-                const fantasyPoints = player.fantasy_points || 0;
                 const ppg = games > 0 ? (fantasyPoints / games).toFixed(2) : '-';
 
                 // Get MLB logo URL
@@ -3292,34 +3532,37 @@
                 }
             }
             
-            // Unambiguous city mappings
+            // Convert to uppercase for case-insensitive city matching
+            const teamUpper = team.toUpperCase();
+            
+            // Unambiguous city mappings (uppercase for comparison)
             const cityMap = {
-                'Baltimore': 'bal', 'Boston': 'bos', 'Tampa Bay': 'tb', 'Toronto': 'tor',
-                'Cleveland': 'cle', 'Detroit': 'det', 'Kansas City': 'kc', 'Minnesota': 'min',
-                'Houston': 'hou', 'Oakland': 'oak', 'Seattle': 'sea', 'Texas': 'tex',
-                'Atlanta': 'atl', 'Miami': 'mia', 'Philadelphia': 'phi', 'Washington': 'wsh',
-                'Cincinnati': 'cin', 'Milwaukee': 'mil', 'Pittsburgh': 'pit', 'St. Louis': 'stl', 'St Louis': 'stl',
-                'Arizona': 'ari', 'Colorado': 'col', 'San Diego': 'sd', 'San Francisco': 'sf'
+                'BALTIMORE': 'bal', 'BOSTON': 'bos', 'TAMPA BAY': 'tb', 'TORONTO': 'tor',
+                'CLEVELAND': 'cle', 'DETROIT': 'det', 'KANSAS CITY': 'kc', 'MINNESOTA': 'min',
+                'HOUSTON': 'hou', 'OAKLAND': 'oak', 'SEATTLE': 'sea', 'TEXAS': 'tex',
+                'ATLANTA': 'atl', 'MIAMI': 'mia', 'PHILADELPHIA': 'phi', 'WASHINGTON': 'wsh',
+                'CINCINNATI': 'cin', 'MILWAUKEE': 'mil', 'PITTSBURGH': 'pit', 'ST. LOUIS': 'stl', 'ST LOUIS': 'stl',
+                'ARIZONA': 'ari', 'COLORADO': 'col', 'SAN DIEGO': 'sd', 'SAN FRANCISCO': 'sf'
             };
             
             // Check unambiguous cities
             for (const [city, abbrev] of Object.entries(cityMap)) {
-                if (team.includes(city)) {
+                if (teamUpper.includes(city)) {
                     return `https://a.espncdn.com/i/teamlogos/mlb/500/${abbrev}.png`;
                 }
             }
             
             // Handle ambiguous cities - use MLB logo as fallback or make best guess
             // New York, Los Angeles, Chicago all have 2 teams
-            if (team === 'New York' || team === 'NY') {
+            if (teamUpper === 'NEW YORK' || teamUpper === 'NY') {
                 // Default to Yankees (more popular), but this is a guess
                 return `https://a.espncdn.com/i/teamlogos/mlb/500/nyy.png`;
             }
-            if (team === 'Los Angeles' || team === 'LA') {
+            if (teamUpper === 'LOS ANGELES' || teamUpper === 'LA') {
                 // Default to Dodgers (more popular)
                 return `https://a.espncdn.com/i/teamlogos/mlb/500/lad.png`;
             }
-            if (team === 'Chicago' || team === 'Chi') {
+            if (teamUpper === 'CHICAGO' || teamUpper === 'CHI') {
                 // Default to Cubs (more popular)
                 return `https://a.espncdn.com/i/teamlogos/mlb/500/chc.png`;
             }
@@ -3335,6 +3578,9 @@
             // Find player in current data
             const player = allPlayersData.find(p => p.name === playerName);
             if (!player) return;
+
+            // Store current player for modal stat toggle
+            window.currentModalPlayer = player;
 
             const seasonSelect = document.getElementById('scoring-season');
             const selectedYear = parseInt(seasonSelect.value);
@@ -3358,15 +3604,15 @@
             const headshot = (player.headshot_url && player.headshot_url.trim()) ? player.headshot_url : placeholderHeadshot;
             const fantasyTeamLogo = player.team_logo || placeholderLogo;
             const mlbLogo = getMLBTeamLogo(player.mlb_team) || placeholderLogo;
-            const stats = player.stats || {};
+            const stats = getPlayerStats(player);
             const isBatter = player.position_type === 'B';
-            const fantasyPts = (player.fantasy_points || 0).toFixed(1);
+            const fantasyPts = getPlayerFantasyPoints(player).toFixed(1);
 
-            // Calculate position rank for current season
+            // Calculate position rank for current season (using current stat type)
             const primaryPos = player.primary_position;
             const samePos = allPlayersData
                 .filter(p => p.eligible_positions && p.eligible_positions.includes(primaryPos))
-                .sort((a, b) => (b.fantasy_points || 0) - (a.fantasy_points || 0));
+                .sort((a, b) => getPlayerFantasyPoints(b) - getPlayerFantasyPoints(a));
             const posRank = samePos.findIndex(p => p.name === player.name) + 1;
             const posRankDisplay = posRank > 0 ? `${primaryPos}${posRank}` : primaryPos;
 
@@ -3405,7 +3651,14 @@
 
                 <div class="card-scrollable">
                     <div class="card-stats-section">
-                        <div class="card-stats-title">${selectedYear} Season Statistics</div>`;
+                        <div class="card-stats-header">
+                            <div class="card-stats-title">${selectedYear} Season Statistics</div>
+                            <div class="card-stat-toggle">
+                                <button class="card-toggle-btn ${currentStatType === 'fantasy' ? 'active' : ''}" onclick="setModalStatType('fantasy')">Fantasy</button>
+                                <button class="card-toggle-btn ${currentStatType === 'full' ? 'active' : ''}" onclick="setModalStatType('full')">Full MLB</button>
+                            </div>
+                        </div>
+                        <div id="modal-stats-content">`;
 
             if (isBatter) {
                 cardHTML += `
@@ -3465,7 +3718,7 @@
                         </table>`;
             }
 
-            cardHTML += `</div>`;
+            cardHTML += `</div></div>`;  // Close modal-stats-content and card-stats-section
 
             // Career history section
             const normalizedName = playerName.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
