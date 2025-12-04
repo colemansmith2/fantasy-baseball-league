@@ -1205,9 +1205,6 @@
             width: 40px;
             height: 40px;
             object-fit: contain;
-            border-radius: 4px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2px;
         }
 
         .card-mlb-team {
@@ -3232,53 +3229,83 @@
         }
 
         // MLB Team abbreviation to ESPN CDN logo mapping
-        function getMLBTeamLogo(mlbTeam) {
+        function getMLBTeamLogo(mlbTeam, playerPosition) {
             if (!mlbTeam) return null;
             
-            // Map common team names/abbreviations to ESPN CDN abbreviations
-            const mlbTeamMap = {
+            // Normalize input
+            const team = mlbTeam.trim();
+            
+            // Direct abbreviation mappings (most reliable)
+            // Covers both Fangraphs and Yahoo abbreviation styles
+            const abbreviationMap = {
                 // American League East
-                'BAL': 'bal', 'Orioles': 'bal', 'Baltimore': 'bal',
-                'BOS': 'bos', 'Red Sox': 'bos', 'Boston': 'bos',
-                'NYY': 'nyy', 'Yankees': 'nyy', 'NY Yankees': 'nyy',
-                'TB': 'tb', 'Rays': 'tb', 'Tampa Bay': 'tb', 'TBR': 'tb',
-                'TOR': 'tor', 'Blue Jays': 'tor', 'Toronto': 'tor',
-                // American League Central
-                'CWS': 'chw', 'White Sox': 'chw', 'Chi White Sox': 'chw', 'CHW': 'chw',
-                'CLE': 'cle', 'Guardians': 'cle', 'Cleveland': 'cle', 'Indians': 'cle',
-                'DET': 'det', 'Tigers': 'det', 'Detroit': 'det',
-                'KC': 'kc', 'Royals': 'kc', 'Kansas City': 'kc', 'KCR': 'kc',
-                'MIN': 'min', 'Twins': 'min', 'Minnesota': 'min',
+                'BAL': 'bal', 'BOS': 'bos', 'NYY': 'nyy', 'TB': 'tb', 'TBR': 'tb', 'TAM': 'tb', 'TOR': 'tor',
+                // American League Central  
+                'CWS': 'chw', 'CHW': 'chw', 'CLE': 'cle', 'DET': 'det', 'KC': 'kc', 'KCR': 'kc', 'MIN': 'min',
                 // American League West
-                'HOU': 'hou', 'Astros': 'hou', 'Houston': 'hou',
-                'LAA': 'laa', 'Angels': 'laa', 'Los Angeles Angels': 'laa', 'LA Angels': 'laa',
-                'OAK': 'oak', 'Athletics': 'oak', 'Oakland': 'oak', "A's": 'oak',
-                'SEA': 'sea', 'Mariners': 'sea', 'Seattle': 'sea',
-                'TEX': 'tex', 'Rangers': 'tex', 'Texas': 'tex',
+                'HOU': 'hou', 'LAA': 'laa', 'ANA': 'laa', 'OAK': 'oak', 'SEA': 'sea', 'TEX': 'tex',
                 // National League East
-                'ATL': 'atl', 'Braves': 'atl', 'Atlanta': 'atl',
-                'MIA': 'mia', 'Marlins': 'mia', 'Miami': 'mia',
-                'NYM': 'nym', 'Mets': 'nym', 'NY Mets': 'nym',
-                'PHI': 'phi', 'Phillies': 'phi', 'Philadelphia': 'phi',
-                'WSH': 'wsh', 'Nationals': 'wsh', 'Washington': 'wsh', 'WAS': 'wsh',
+                'ATL': 'atl', 'MIA': 'mia', 'FLA': 'mia', 'NYM': 'nym', 'PHI': 'phi', 'WSH': 'wsh', 'WAS': 'wsh', 'WSN': 'wsh',
                 // National League Central
-                'CHC': 'chc', 'Cubs': 'chc', 'Chi Cubs': 'chc',
-                'CIN': 'cin', 'Reds': 'cin', 'Cincinnati': 'cin',
-                'MIL': 'mil', 'Brewers': 'mil', 'Milwaukee': 'mil',
-                'PIT': 'pit', 'Pirates': 'pit', 'Pittsburgh': 'pit',
-                'STL': 'stl', 'Cardinals': 'stl', 'St. Louis': 'stl', 'St Louis': 'stl',
+                'CHC': 'chc', 'CIN': 'cin', 'MIL': 'mil', 'PIT': 'pit', 'STL': 'stl',
                 // National League West
-                'ARI': 'ari', 'Diamondbacks': 'ari', 'Arizona': 'ari', 'AZ': 'ari', 'D-backs': 'ari',
-                'COL': 'col', 'Rockies': 'col', 'Colorado': 'col',
-                'LAD': 'lad', 'Dodgers': 'lad', 'Los Angeles Dodgers': 'lad', 'LA Dodgers': 'lad',
-                'SD': 'sd', 'Padres': 'sd', 'San Diego': 'sd', 'SDP': 'sd',
-                'SF': 'sf', 'Giants': 'sf', 'San Francisco': 'sf', 'SFG': 'sf'
+                'ARI': 'ari', 'AZ': 'ari', 'COL': 'col', 'LAD': 'lad', 'SD': 'sd', 'SDP': 'sd', 'SF': 'sf', 'SFG': 'sf'
             };
             
-            const abbrev = mlbTeamMap[mlbTeam];
-            if (abbrev) {
-                return `https://a.espncdn.com/i/teamlogos/mlb/500/${abbrev}.png`;
+            // Check abbreviation first
+            if (abbreviationMap[team]) {
+                return `https://a.espncdn.com/i/teamlogos/mlb/500/${abbreviationMap[team]}.png`;
             }
+            
+            // Nickname mappings (unambiguous)
+            const nicknameMap = {
+                'Orioles': 'bal', 'Red Sox': 'bos', 'Yankees': 'nyy', 'Rays': 'tb', 'Blue Jays': 'tor',
+                'White Sox': 'chw', 'Guardians': 'cle', 'Indians': 'cle', 'Tigers': 'det', 'Royals': 'kc', 'Twins': 'min',
+                'Astros': 'hou', 'Angels': 'laa', 'Athletics': 'oak', "A's": 'oak', 'Mariners': 'sea', 'Rangers': 'tex',
+                'Braves': 'atl', 'Marlins': 'mia', 'Mets': 'nym', 'Phillies': 'phi', 'Nationals': 'wsh',
+                'Cubs': 'chc', 'Reds': 'cin', 'Brewers': 'mil', 'Pirates': 'pit', 'Cardinals': 'stl',
+                'Diamondbacks': 'ari', 'D-backs': 'ari', 'Rockies': 'col', 'Dodgers': 'lad', 'Padres': 'sd', 'Giants': 'sf'
+            };
+            
+            // Check if team contains a nickname
+            for (const [nickname, abbrev] of Object.entries(nicknameMap)) {
+                if (team.includes(nickname)) {
+                    return `https://a.espncdn.com/i/teamlogos/mlb/500/${abbrev}.png`;
+                }
+            }
+            
+            // Unambiguous city mappings
+            const cityMap = {
+                'Baltimore': 'bal', 'Boston': 'bos', 'Tampa Bay': 'tb', 'Toronto': 'tor',
+                'Cleveland': 'cle', 'Detroit': 'det', 'Kansas City': 'kc', 'Minnesota': 'min',
+                'Houston': 'hou', 'Oakland': 'oak', 'Seattle': 'sea', 'Texas': 'tex',
+                'Atlanta': 'atl', 'Miami': 'mia', 'Philadelphia': 'phi', 'Washington': 'wsh',
+                'Cincinnati': 'cin', 'Milwaukee': 'mil', 'Pittsburgh': 'pit', 'St. Louis': 'stl', 'St Louis': 'stl',
+                'Arizona': 'ari', 'Colorado': 'col', 'San Diego': 'sd', 'San Francisco': 'sf'
+            };
+            
+            // Check unambiguous cities
+            for (const [city, abbrev] of Object.entries(cityMap)) {
+                if (team.includes(city)) {
+                    return `https://a.espncdn.com/i/teamlogos/mlb/500/${abbrev}.png`;
+                }
+            }
+            
+            // Handle ambiguous cities - use MLB logo as fallback or make best guess
+            // New York, Los Angeles, Chicago all have 2 teams
+            if (team === 'New York' || team === 'NY') {
+                // Default to Yankees (more popular), but this is a guess
+                return `https://a.espncdn.com/i/teamlogos/mlb/500/nyy.png`;
+            }
+            if (team === 'Los Angeles' || team === 'LA') {
+                // Default to Dodgers (more popular)
+                return `https://a.espncdn.com/i/teamlogos/mlb/500/lad.png`;
+            }
+            if (team === 'Chicago' || team === 'Chi') {
+                // Default to Cubs (more popular)
+                return `https://a.espncdn.com/i/teamlogos/mlb/500/chc.png`;
+            }
+            
             return null;
         }
 
