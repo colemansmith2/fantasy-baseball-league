@@ -4311,6 +4311,9 @@
 
         function renderWinPctChart(container, chartData) {
             container.innerHTML = '';
+            
+            // 1. Ensure container is positioned relative so tooltip works correctly
+            container.style.position = 'relative';
 
             const { managers, weeks, weekLabels, seasonStartWeeks, maxWeek } = chartData;
             
@@ -4346,10 +4349,9 @@
 
             // Scale functions
             const xScale = (globalWeek) => margin.left + ((globalWeek - minWeek) / (maxWeek - minWeek || 1)) * width;
-            // Y Scale: Top is maxNet, Bottom is minNet
             const yScale = (val) => margin.top + ((maxNet - val) / yRange) * (height - margin.top - margin.bottom);
 
-            // Generate colors for managers
+            // Generate colors
             const colors = generateTeamColors(managers.length);
             const managerColorMap = {};
             managers.forEach((m, i) => {
@@ -4363,7 +4365,15 @@
             svg.setAttribute('class', 'chart-svg winpct-chart');
             svg.style.display = 'block';
 
-            // Draw horizontal grid lines (Steps of 5)
+            // Click background to deselect
+            svg.addEventListener('click', (e) => {
+                if(e.target === svg) {
+                    selectedManager = null;
+                    resetHighlights();
+                }
+            });
+
+            // Draw horizontal grid lines
             for (let val = minNet; val <= maxNet; val += 5) {
                 const y = yScale(val);
                 const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
@@ -4373,7 +4383,6 @@
                 line.setAttribute('y2', y);
                 
                 if (val === 0) {
-                    // Bold line at 0 (.500 record)
                     line.setAttribute('stroke', '#000');
                     line.setAttribute('stroke-width', '2');
                 } else {
@@ -4383,7 +4392,6 @@
                 }
                 svg.appendChild(line);
 
-                // Y-axis labels
                 const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 label.setAttribute('x', margin.left - 10);
                 label.setAttribute('y', y + 4);
@@ -4391,8 +4399,6 @@
                 label.setAttribute('font-size', '11px');
                 label.setAttribute('fill', val === 0 ? '#000' : '#666');
                 label.setAttribute('font-weight', val === 0 ? 'bold' : 'normal');
-                
-                // Format label: +5, 0, -5
                 const labelText = val > 0 ? `+${val}` : `${val}`;
                 label.textContent = labelText;
                 svg.appendChild(label);
@@ -4414,9 +4420,8 @@
                 }
             });
 
-            // Draw X-axis labels (weeks)
+            // Draw X-axis labels
             weekLabels.forEach((wl, idx) => {
-                // Only show some labels to avoid crowding
                 const showLabel = wl.isSeasonStart || idx % (isMobile ? 8 : 4) === 0;
                 if (!showLabel && !wl.isSeasonStart) return;
 
@@ -4439,6 +4444,30 @@
             tooltip.style.display = 'none';
             container.appendChild(tooltip);
 
+            // --- STATE MANAGEMENT ---
+            let selectedManager = null; // Track locked line
+
+            // Helper to apply visual styles
+            const applyHighlight = (managerName) => {
+                document.querySelectorAll('.winpct-chart .chart-line').forEach(line => {
+                    if (line.getAttribute('data-manager') === managerName) {
+                        line.classList.add('highlighted');
+                        line.classList.remove('faded');
+                        // Move to end of SVG to be on top of others
+                        line.parentNode.appendChild(line);
+                    } else {
+                        line.classList.add('faded');
+                        line.classList.remove('highlighted');
+                    }
+                });
+            };
+
+            const resetHighlights = () => {
+                document.querySelectorAll('.winpct-chart .chart-line').forEach(line => {
+                    line.classList.remove('highlighted', 'faded');
+                });
+            };
+
             // Draw lines for each manager
             const lineGroups = [];
             
@@ -4454,7 +4483,7 @@
                 let pathD = '';
                 manager.data.forEach((point, i) => {
                     const x = xScale(point.globalWeek);
-                    const y = yScale(point.netWins); // CHANGED: Use netWins instead of winPct
+                    const y = yScale(point.netWins);
                     pathD += (i === 0 ? 'M' : 'L') + `${x},${y} `;
                 });
 
@@ -4476,14 +4505,13 @@
                 hoverPath.style.cursor = 'pointer';
                 group.appendChild(hoverPath);
 
-                // Logo at the END of the line (manager's last data point)
+                // Logo/End marker
                 const lastPoint = manager.data[manager.data.length - 1];
                 const logoX = xScale(lastPoint.globalWeek);
                 const logoY = yScale(lastPoint.netWins);
                 const logoRadius = 14;
 
                 if (manager.logo) {
-                    // Clip path for circular logo
                     const clipId = `winpct-clip-${idx}`;
                     const clipPath = document.createElementNS('http://www.w3.org/2000/svg', 'clipPath');
                     clipPath.setAttribute('id', clipId);
@@ -4494,7 +4522,6 @@
                     clipPath.appendChild(clipCircle);
                     svg.appendChild(clipPath);
 
-                    // White background circle
                     const bgCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
                     bgCircle.setAttribute('cx', logoX);
                     bgCircle.setAttribute('cy', logoY);
@@ -4504,7 +4531,6 @@
                     bgCircle.setAttribute('stroke-width', '2');
                     group.appendChild(bgCircle);
 
-                    // Logo image
                     const logoImg = document.createElementNS('http://www.w3.org/2000/svg', 'image');
                     logoImg.setAttribute('x', logoX - logoRadius);
                     logoImg.setAttribute('y', logoY - logoRadius);
@@ -4515,7 +4541,6 @@
                     logoImg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
                     group.appendChild(logoImg);
                 } else {
-                    // Fallback circle with first letter
                     const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
                     circle.setAttribute('cx', logoX);
                     circle.setAttribute('cy', logoY);
@@ -4536,20 +4561,28 @@
                     group.appendChild(initial);
                 }
 
-                // Hover events
                 const finalNetWins = lastPoint.netWins;
                 
+                // --- EVENTS ---
+
+                // Click to toggle Highlight
+                group.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Prevent SVG background click
+                    if (selectedManager === manager.manager) {
+                        // Deselect if clicking the same one
+                        selectedManager = null;
+                        resetHighlights();
+                    } else {
+                        // Select new one
+                        selectedManager = manager.manager;
+                        applyHighlight(manager.manager);
+                    }
+                });
+
+                // Hover Effects
                 group.addEventListener('mouseenter', (e) => {
-                    // Highlight this line
-                    document.querySelectorAll('.winpct-chart .chart-line').forEach(line => {
-                        if (line === group) {
-                            line.classList.add('highlighted');
-                            line.classList.remove('faded');
-                        } else {
-                            line.classList.add('faded');
-                            line.classList.remove('highlighted');
-                        }
-                    });
+                    // Always highlight on hover, even if something else is selected (transient view)
+                    applyHighlight(manager.manager);
 
                     // Show tooltip
                     const sign = finalNetWins > 0 ? '+' : '';
@@ -4557,23 +4590,33 @@
                     tooltip.style.display = 'block';
                 });
 
+                // Tooltip follow mouse (FIXED for scrolling)
                 group.addEventListener('mousemove', (e) => {
                     const rect = container.getBoundingClientRect();
-                    tooltip.style.left = (e.clientX - rect.left + 10) + 'px';
+                    // Add scrollLeft to account for horizontal scrolling
+                    const scrollLeft = container.scrollLeft;
+                    
+                    tooltip.style.left = (e.clientX - rect.left + scrollLeft + 15) + 'px';
                     tooltip.style.top = (e.clientY - rect.top - 10) + 'px';
                 });
 
+                // Mouse Leave
                 group.addEventListener('mouseleave', () => {
-                    document.querySelectorAll('.winpct-chart .chart-line').forEach(line => {
-                        line.classList.remove('highlighted', 'faded');
-                    });
                     tooltip.style.display = 'none';
+                    
+                    // If a manager is selected, revert to highlighting them
+                    if (selectedManager) {
+                        applyHighlight(selectedManager);
+                    } else {
+                        // Otherwise reset to all visible
+                        resetHighlights();
+                    }
                 });
 
                 lineGroups.push(group);
             });
 
-            // Add lines to SVG (in reverse order so top lines are rendered last)
+            // Add lines to SVG
             lineGroups.reverse().forEach(g => svg.appendChild(g));
 
             // Y-axis title
