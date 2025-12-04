@@ -1122,6 +1122,15 @@
         .player-mlb-team {
             font-size: 0.75rem;
             color: #888;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .player-mlb-logo {
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
         }
 
         .player-team-cell {
@@ -1940,6 +1949,11 @@
 
             .player-mlb-team {
                 font-size: 0.65rem;
+            }
+
+            .player-mlb-logo {
+                width: 12px;
+                height: 12px;
             }
 
             .player-fantasy-team {
@@ -3152,6 +3166,10 @@
                 const fantasyPoints = player.fantasy_points || 0;
                 const ppg = games > 0 ? (fantasyPoints / games).toFixed(2) : '-';
 
+                // Get MLB logo URL
+                const mlbLogoUrl = getMLBTeamLogo(player.mlb_team);
+                const mlbLogoHtml = mlbLogoUrl ? `<img src="${mlbLogoUrl}" alt="" class="player-mlb-logo" onerror="this.style.display='none'">` : '';
+
                 // Common cells (Rank, Name, Team, Pos)
                 let rowHTML = `
                     <tr>
@@ -3161,7 +3179,7 @@
                                 <img src="${headshot}" alt="" class="player-headshot" onerror="this.src='${placeholderImg}'">
                                 <div>
                                     <div class="player-name">${player.name}</div>
-                                    <div class="player-mlb-team">${player.mlb_team || ''}</div>
+                                    <div class="player-mlb-team">${mlbLogoHtml}${player.mlb_team || ''}</div>
                                 </div>
                             </div>
                         </td>
