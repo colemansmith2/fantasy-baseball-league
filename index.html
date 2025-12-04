@@ -410,9 +410,12 @@
 
             /* Team Name */
 
-            .standings-table th:nth-child(4),
-            .standings-table td:nth-child(4) {
-                width: 10%;
+            .standings-table th:nth-child(3),
+            .standings-table td:nth-child(3) {
+                width: 28%;
+                white-space: normal; /* Changed from nowrap to normal */
+                line-height: 1.2;    /* Tighter line height for 2 lines */
+                overflow: visible;   /* Allow text to be seen */
             }
 
             /* Wins */
@@ -1886,7 +1889,11 @@
             /* Opponent Column (Give this the most space) */
             .champion-schedule-table th:nth-child(2),
             .champion-schedule-table td:nth-child(2) {
-                width: 42%;
+                width: 40%;
+                white-space: normal; /* Allow wrapping */
+                line-height: 1.2;    /* Tighter spacing */
+                text-overflow: clip; /* Remove the "..." */
+                overflow: visible;   /* Show content */
             }
 
             /* Score Column */
