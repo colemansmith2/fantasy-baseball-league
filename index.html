@@ -4235,7 +4235,7 @@
         }
 
         function processWinPctData(scoresData, managers, managerLogos, seasonStartWeeks) {
-            // Group scores by manager and calculate cumulative win pct
+            // Group scores by manager and calculate cumulative stats
             const managerData = {};
 
             // Sort by globalWeek
@@ -4276,12 +4276,13 @@
                 if (score.isWin) md.wins++;
                 if (score.isLoss) md.losses++;
 
-                const totalGames = md.wins + md.losses;
-                const winPct = totalGames > 0 ? md.wins / totalGames : 0.5;
+                // Calculate Net Wins (Distance from .500)
+                // Win = +1, Loss = -1, Tie = 0
+                const netWins = md.wins - md.losses;
 
                 md.data.push({
                     globalWeek: score.globalWeek,
-                    winPct: winPct,
+                    netWins: netWins, // CHANGED: Store net wins instead of win %
                     wins: md.wins,
                     losses: md.losses,
                     year: score.year,
@@ -4291,11 +4292,11 @@
                 md.lastGlobalWeek = Math.max(md.lastGlobalWeek, score.globalWeek);
             });
 
-            // Convert to array and sort by final win pct
+            // Convert to array and sort by final net wins
             const managerArray = Object.values(managerData);
             managerArray.sort((a, b) => {
-                const aFinal = a.data.length > 0 ? a.data[a.data.length - 1].winPct : 0;
-                const bFinal = b.data.length > 0 ? b.data[b.data.length - 1].winPct : 0;
+                const aFinal = a.data.length > 0 ? a.data[a.data.length - 1].netWins : 0;
+                const bFinal = b.data.length > 0 ? b.data[b.data.length - 1].netWins : 0;
                 return bFinal - aFinal;
             });
 
@@ -4327,9 +4328,26 @@
 
             const minWeek = Math.min(...weeks);
 
-            // Scale functions - Y axis centered at 0.5
+            // Determine Y-axis domain (Min/Max Net Wins)
+            let maxNet = 0;
+            let minNet = 0;
+            
+            managers.forEach(m => {
+                m.data.forEach(d => {
+                    if (d.netWins > maxNet) maxNet = d.netWins;
+                    if (d.netWins < minNet) minNet = d.netWins;
+                });
+            });
+
+            // Add padding to Y axis
+            maxNet = Math.ceil(Math.max(maxNet, 5) / 5) * 5 + 5;
+            minNet = Math.floor(Math.min(minNet, -5) / 5) * 5 - 5;
+            const yRange = maxNet - minNet;
+
+            // Scale functions
             const xScale = (globalWeek) => margin.left + ((globalWeek - minWeek) / (maxWeek - minWeek || 1)) * width;
-            const yScale = (winPct) => margin.top + (1 - winPct) * (height - margin.top - margin.bottom);
+            // Y Scale: Top is maxNet, Bottom is minNet
+            const yScale = (val) => margin.top + ((maxNet - val) / yRange) * (height - margin.top - margin.bottom);
 
             // Generate colors for managers
             const colors = generateTeamColors(managers.length);
@@ -4345,18 +4363,17 @@
             svg.setAttribute('class', 'chart-svg winpct-chart');
             svg.style.display = 'block';
 
-            // Draw horizontal grid lines
-            const gridLines = [0.3, 0.4, 0.5, 0.6, 0.7];
-            gridLines.forEach(pct => {
-                const y = yScale(pct);
+            // Draw horizontal grid lines (Steps of 5)
+            for (let val = minNet; val <= maxNet; val += 5) {
+                const y = yScale(val);
                 const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
                 line.setAttribute('x1', margin.left);
                 line.setAttribute('y1', y);
                 line.setAttribute('x2', margin.left + width);
                 line.setAttribute('y2', y);
                 
-                if (pct === 0.5) {
-                    // Bold line at .500
+                if (val === 0) {
+                    // Bold line at 0 (.500 record)
                     line.setAttribute('stroke', '#000');
                     line.setAttribute('stroke-width', '2');
                 } else {
@@ -4372,11 +4389,14 @@
                 label.setAttribute('y', y + 4);
                 label.setAttribute('text-anchor', 'end');
                 label.setAttribute('font-size', '11px');
-                label.setAttribute('fill', pct === 0.5 ? '#000' : '#666');
-                label.setAttribute('font-weight', pct === 0.5 ? 'bold' : 'normal');
-                label.textContent = `.${(pct * 1000).toFixed(0).padStart(3, '0')}`;
+                label.setAttribute('fill', val === 0 ? '#000' : '#666');
+                label.setAttribute('font-weight', val === 0 ? 'bold' : 'normal');
+                
+                // Format label: +5, 0, -5
+                const labelText = val > 0 ? `+${val}` : `${val}`;
+                label.textContent = labelText;
                 svg.appendChild(label);
-            });
+            }
 
             // Draw vertical season separator lines
             Object.entries(seasonStartWeeks).forEach(([year, startWeek]) => {
@@ -4434,7 +4454,7 @@
                 let pathD = '';
                 manager.data.forEach((point, i) => {
                     const x = xScale(point.globalWeek);
-                    const y = yScale(point.winPct);
+                    const y = yScale(point.netWins); // CHANGED: Use netWins instead of winPct
                     pathD += (i === 0 ? 'M' : 'L') + `${x},${y} `;
                 });
 
@@ -4459,7 +4479,7 @@
                 // Logo at the END of the line (manager's last data point)
                 const lastPoint = manager.data[manager.data.length - 1];
                 const logoX = xScale(lastPoint.globalWeek);
-                const logoY = yScale(lastPoint.winPct);
+                const logoY = yScale(lastPoint.netWins);
                 const logoRadius = 14;
 
                 if (manager.logo) {
@@ -4517,7 +4537,7 @@
                 }
 
                 // Hover events
-                const finalWinPct = lastPoint.winPct;
+                const finalNetWins = lastPoint.netWins;
                 
                 group.addEventListener('mouseenter', (e) => {
                     // Highlight this line
@@ -4532,7 +4552,8 @@
                     });
 
                     // Show tooltip
-                    tooltip.innerHTML = `<strong>${manager.manager}</strong><br>Win%: ${(finalWinPct * 100).toFixed(1)}%<br>Record: ${manager.wins}-${manager.losses}`;
+                    const sign = finalNetWins > 0 ? '+' : '';
+                    tooltip.innerHTML = `<strong>${manager.manager}</strong><br>Games > .500: ${sign}${finalNetWins}<br>Record: ${manager.wins}-${manager.losses}`;
                     tooltip.style.display = 'block';
                 });
 
@@ -4563,7 +4584,7 @@
             yTitle.setAttribute('font-size', '12px');
             yTitle.setAttribute('fill', '#666');
             yTitle.setAttribute('transform', `rotate(-90, 15, ${height / 2})`);
-            yTitle.textContent = 'Win Percentage';
+            yTitle.textContent = 'Games Above .500';
             svg.appendChild(yTitle);
 
             container.appendChild(svg);
