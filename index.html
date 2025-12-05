@@ -512,11 +512,16 @@
             display: flex;
             gap: 1.5rem;
             margin-top: 1rem;
+            align-items: flex-start;
         }
 
         .standings-panel {
             flex: 1;
             min-width: 0;
+        }
+
+        .standings-panel .table-wrapper {
+            margin-top: 0;
         }
 
         .draft-panel {
@@ -527,9 +532,10 @@
         .panel-title {
             color: #1e3c72;
             font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid #2a5298;
+            margin-top: 0;
         }
 
         .draft-table-wrapper {
@@ -4516,13 +4522,19 @@
                     playerStatsResponse = await fetch(`data/historical/${seasonNum}/player_stats.json`);
                 }
 
-                let playerStats = {};
+                let playerStatsByKey = {};
+                let playerStatsByName = {};
                 let positionRanks = {};
                 if (playerStatsResponse.ok) {
                     const statsData = await playerStatsResponse.json();
-                    // Create lookup by player_key
+                    // Create lookups by player_key and by name
                     statsData.forEach(player => {
-                        playerStats[player.player_key] = player;
+                        if (player.player_key) {
+                            playerStatsByKey[player.player_key] = player;
+                        }
+                        if (player.name) {
+                            playerStatsByName[player.name.toLowerCase()] = player;
+                        }
                     });
                     // Calculate position ranks
                     positionRanks = calculateDraftPositionRanks(statsData);
@@ -4532,15 +4544,27 @@
                 draftData.forEach(pick => {
                     const row = document.createElement('tr');
                     
-                    // Get player stats if available
+                    // Get player stats - try player_key first, then fall back to name match
                     const playerKey = pick.player_key;
-                    const playerData = playerStats[playerKey] || {};
+                    let playerData = playerStatsByKey[playerKey];
+                    
+                    // If not found by key, try matching by name
+                    if (!playerData && pick.player_name) {
+                        playerData = playerStatsByName[pick.player_name.toLowerCase()];
+                    }
+                    
+                    playerData = playerData || {};
+                    
                     const fantasyPoints = playerData.fantasy_points || 0;
                     const position = pick.position || playerData.position || '';
                     const primaryPos = position.split(',')[0].trim();
                     
-                    // Get position rank
-                    const posRank = positionRanks[playerKey] || '-';
+                    // Get position rank - try by player_key first, then by matched player's key
+                    let posRank = positionRanks[playerKey];
+                    if (!posRank && playerData.player_key) {
+                        posRank = positionRanks[playerData.player_key];
+                    }
+                    posRank = posRank || '-';
                     const posRankClass = getRankClass(posRank);
                     
                     // Team logo from draft
