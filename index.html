@@ -507,6 +507,203 @@
             border-radius: 5px;
         }
 
+        /* Standings and Draft side-by-side layout */
+        .standings-draft-container {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .standings-panel {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .draft-panel {
+            flex: 0 0 400px;
+            min-width: 0;
+        }
+
+        .panel-title {
+            color: #1e3c72;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #2a5298;
+        }
+
+        .draft-table-wrapper {
+            max-height: 500px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .draft-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .draft-table thead {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .draft-table th {
+            background: #2a5298;
+            color: white;
+            padding: 0.5rem 0.4rem;
+            text-align: left;
+            font-size: 0.75rem;
+        }
+
+        .draft-table td {
+            padding: 0.4rem;
+            border-bottom: 1px solid #eee;
+            vertical-align: middle;
+        }
+
+        .draft-table tr:hover {
+            background: #f5f5f5;
+        }
+
+        .draft-player-cell {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .draft-headshot {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #e0e0e0;
+        }
+
+        .draft-player-info {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .draft-player-name {
+            font-weight: 500;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .draft-player-pos {
+            font-size: 0.7rem;
+            color: #666;
+        }
+
+        .draft-team-cell {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .draft-team-logo {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+
+        .draft-pts {
+            font-weight: 600;
+            color: #1e3c72;
+        }
+
+        .draft-rank {
+            font-size: 0.75rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .draft-rank.top-10 {
+            background: #c6efce;
+            color: #006400;
+        }
+
+        .draft-rank.top-25 {
+            background: #ffeb9c;
+            color: #9c5700;
+        }
+
+        .draft-rank.top-50 {
+            background: #ffc7ce;
+            color: #9c0006;
+        }
+
+        .draft-empty {
+            padding: 2rem;
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        @media (max-width: 1024px) {
+            .standings-draft-container {
+                flex-direction: column;
+            }
+
+            .draft-panel {
+                flex: 1;
+            }
+
+            .draft-table-wrapper {
+                max-height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .standings-draft-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .draft-panel {
+                flex: 1;
+            }
+
+            .draft-table-wrapper {
+                max-height: 350px;
+            }
+
+            .draft-table {
+                font-size: 0.75rem;
+            }
+
+            .draft-table th,
+            .draft-table td {
+                padding: 0.3rem 0.25rem;
+            }
+
+            .draft-headshot {
+                width: 24px;
+                height: 24px;
+            }
+
+            .draft-player-name {
+                font-size: 0.7rem;
+            }
+
+            .draft-player-pos {
+                font-size: 0.6rem;
+            }
+
+            .draft-team-logo {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
         .manager-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -2459,22 +2656,52 @@
             <div id="standings-loading" class="loading">Loading standings...</div>
             <div id="standings-error" class="error" style="display: none;"></div>
 
-            <div class="table-wrapper">
-                <table class="standings-table" id="standings-table" style="display: none;">
-                    <thead>
-                        <tr>
-                            <th>Rank</th>
-                            <th>Manager</th>
-                            <th>Team Name</th>
-                            <th>Wins</th>
-                            <th>Losses</th>
-                            <th>Win %</th>
-                            <th>Total Points</th>
-                        </tr>
-                    </thead>
-                    <tbody id="standings-body">
-                    </tbody>
-                </table>
+            <!-- Container for standings and draft side by side -->
+            <div class="standings-draft-container">
+                <!-- Standings Table -->
+                <div class="standings-panel">
+                    <h3 class="panel-title">Final Standings</h3>
+                    <div class="table-wrapper">
+                        <table class="standings-table" id="standings-table" style="display: none;">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Manager</th>
+                                    <th>Team Name</th>
+                                    <th>Wins</th>
+                                    <th>Losses</th>
+                                    <th>Win %</th>
+                                    <th>Total Points</th>
+                                </tr>
+                            </thead>
+                            <tbody id="standings-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Draft Results Table -->
+                <div class="draft-panel">
+                    <h3 class="panel-title">Draft Results</h3>
+                    <div class="draft-table-wrapper">
+                        <table class="draft-table" id="draft-table" style="display: none;">
+                            <thead>
+                                <tr>
+                                    <th>Rd</th>
+                                    <th>Pick</th>
+                                    <th>Player</th>
+                                    <th>Team</th>
+                                    <th>Pts</th>
+                                    <th>Rank</th>
+                                </tr>
+                            </thead>
+                            <tbody id="draft-body">
+                            </tbody>
+                        </table>
+                        <div id="draft-loading" class="loading" style="display: none;">Loading draft...</div>
+                        <div id="draft-empty" class="draft-empty" style="display: none;">No draft data available</div>
+                    </div>
+                </div>
             </div>
 
             <!-- Season Points Chart -->
@@ -4233,6 +4460,9 @@
                 loadingEl.style.display = 'none';
                 tableEl.style.display = 'table';
 
+                // Load draft data for this season
+                await loadDraftResults(seasonNum, isCurrentSeason, teamLogos);
+
                 // Load and render the season chart
                 await loadSeasonChart(seasonNum, isCurrentSeason, standings, teamLogos, teamData);
 
@@ -4242,6 +4472,156 @@
                 errorEl.textContent = `Error loading ${season} standings: ${error.message}`;
                 errorEl.style.display = 'block';
             }
+        }
+
+        // ===== DRAFT RESULTS FUNCTIONS =====
+        async function loadDraftResults(seasonNum, isCurrentSeason, teamLogos) {
+            const draftTable = document.getElementById('draft-table');
+            const draftBody = document.getElementById('draft-body');
+            const draftLoading = document.getElementById('draft-loading');
+            const draftEmpty = document.getElementById('draft-empty');
+
+            // Reset state
+            draftTable.style.display = 'none';
+            draftLoading.style.display = 'block';
+            draftEmpty.style.display = 'none';
+            draftBody.innerHTML = '';
+
+            try {
+                // Load draft data
+                let draftResponse;
+                if (isCurrentSeason) {
+                    draftResponse = await fetch('data/current_season/draft.json');
+                } else {
+                    draftResponse = await fetch(`data/historical/${seasonNum}/draft.json`);
+                }
+
+                if (!draftResponse.ok) {
+                    throw new Error('Draft data not available');
+                }
+
+                const draftData = await draftResponse.json();
+
+                if (!draftData || draftData.length === 0) {
+                    draftLoading.style.display = 'none';
+                    draftEmpty.style.display = 'block';
+                    return;
+                }
+
+                // Load player stats to get fantasy points and position ranks
+                let playerStatsResponse;
+                if (isCurrentSeason) {
+                    playerStatsResponse = await fetch('data/current_season/player_stats.json');
+                } else {
+                    playerStatsResponse = await fetch(`data/historical/${seasonNum}/player_stats.json`);
+                }
+
+                let playerStats = {};
+                let positionRanks = {};
+                if (playerStatsResponse.ok) {
+                    const statsData = await playerStatsResponse.json();
+                    // Create lookup by player_key
+                    statsData.forEach(player => {
+                        playerStats[player.player_key] = player;
+                    });
+                    // Calculate position ranks
+                    positionRanks = calculateDraftPositionRanks(statsData);
+                }
+
+                // Render draft table
+                draftData.forEach(pick => {
+                    const row = document.createElement('tr');
+                    
+                    // Get player stats if available
+                    const playerKey = pick.player_key;
+                    const playerData = playerStats[playerKey] || {};
+                    const fantasyPoints = playerData.fantasy_points || 0;
+                    const position = pick.position || playerData.position || '';
+                    const primaryPos = position.split(',')[0].trim();
+                    
+                    // Get position rank
+                    const posRank = positionRanks[playerKey] || '-';
+                    const posRankClass = getRankClass(posRank);
+                    
+                    // Team logo from draft
+                    const teamLogo = teamLogos[pick.team_key] || '';
+                    
+                    // Player headshot
+                    const headshot = pick.headshot_url || playerData.headshot_url || '';
+                    const headshotImg = headshot 
+                        ? `<img src="${headshot}" class="draft-headshot" alt="" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%23e0e0e0%22 width=%22100%22 height=%22100%22/><text x=%2250%22 y=%2250%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2240%22>⚾</text></svg>'">`
+                        : '<div class="draft-headshot" style="display:flex;align-items:center;justify-content:center;font-size:14px;">⚾</div>';
+                    
+                    row.innerHTML = `
+                        <td>${pick.round || '-'}</td>
+                        <td>${pick.pick || '-'}</td>
+                        <td>
+                            <div class="draft-player-cell">
+                                ${headshotImg}
+                                <div class="draft-player-info">
+                                    <span class="draft-player-name">${pick.player_name || 'Unknown'}</span>
+                                    <span class="draft-player-pos">${primaryPos}</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="draft-team-cell">
+                                ${teamLogo ? `<img src="${teamLogo}" class="draft-team-logo" alt="">` : ''}
+                            </div>
+                        </td>
+                        <td class="draft-pts">${fantasyPoints > 0 ? Math.round(fantasyPoints).toLocaleString() : '-'}</td>
+                        <td><span class="draft-rank ${posRankClass}">${primaryPos}${posRank !== '-' ? posRank : ''}</span></td>
+                    `;
+                    draftBody.appendChild(row);
+                });
+
+                draftLoading.style.display = 'none';
+                draftTable.style.display = 'table';
+
+            } catch (error) {
+                console.error('Error loading draft:', error);
+                draftLoading.style.display = 'none';
+                draftEmpty.textContent = 'Draft data not available for this season';
+                draftEmpty.style.display = 'block';
+            }
+        }
+
+        function calculateDraftPositionRanks(players) {
+            // Group players by primary position
+            const positionGroups = {};
+            
+            players.forEach(player => {
+                const pos = (player.position || '').split(',')[0].trim();
+                if (!pos) return;
+                
+                if (!positionGroups[pos]) {
+                    positionGroups[pos] = [];
+                }
+                positionGroups[pos].push({
+                    player_key: player.player_key,
+                    fantasy_points: player.fantasy_points || 0
+                });
+            });
+            
+            // Sort each position group by fantasy points and assign ranks
+            const ranks = {};
+            Object.keys(positionGroups).forEach(pos => {
+                positionGroups[pos].sort((a, b) => b.fantasy_points - a.fantasy_points);
+                positionGroups[pos].forEach((player, index) => {
+                    ranks[player.player_key] = index + 1;
+                });
+            });
+            
+            return ranks;
+        }
+
+        function getRankClass(rank) {
+            if (rank === '-' || !rank) return '';
+            const numRank = parseInt(rank);
+            if (numRank <= 10) return 'top-10';
+            if (numRank <= 25) return 'top-25';
+            if (numRank <= 50) return 'top-50';
+            return '';
         }
 
         // ===== SEASON CHART FUNCTIONS =====
