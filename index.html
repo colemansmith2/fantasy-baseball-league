@@ -525,7 +525,7 @@
         }
 
         .draft-panel {
-            flex: 0 0 400px;
+            flex: 0 0 440px;
             min-width: 0;
         }
 
@@ -541,6 +541,7 @@
         .draft-table-wrapper {
             max-height: 600px;
             overflow-y: auto;
+            overflow-x: hidden;
             border: 1px solid #ddd;
             border-radius: 8px;
             margin-top: 1.5rem;
@@ -550,6 +551,7 @@
             width: 100%;
             border-collapse: collapse;
             font-size: 0.85rem;
+            table-layout: fixed;
         }
 
         .draft-table thead {
@@ -579,6 +581,20 @@
             text-align: left;
             font-size: 0.75rem;
         }
+
+        /* Column widths for draft table */
+        .draft-table th:nth-child(1),
+        .draft-table td:nth-child(1) { width: 30px; }  /* Rd */
+        .draft-table th:nth-child(2),
+        .draft-table td:nth-child(2) { width: 35px; }  /* Pick */
+        .draft-table th:nth-child(3),
+        .draft-table td:nth-child(3) { width: auto; }  /* Player - takes remaining space */
+        .draft-table th:nth-child(4),
+        .draft-table td:nth-child(4) { width: 40px; text-align: center; }  /* Team */
+        .draft-table th:nth-child(5),
+        .draft-table td:nth-child(5) { width: 50px; text-align: right; }  /* Pts */
+        .draft-table th:nth-child(6),
+        .draft-table td:nth-child(6) { width: 55px; text-align: center; }  /* Rank */
 
         .draft-table td {
             padding: 0.4rem;
