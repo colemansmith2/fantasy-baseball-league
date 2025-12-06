@@ -645,6 +645,10 @@
             gap: 0.3rem;
         }
 
+        .draft-team-cell {
+            position: relative;
+        }
+
         .draft-team-logo {
             width: 24px;
             height: 24px;
@@ -653,6 +657,41 @@
             background: white;
             padding: 2px;
             box-shadow: 0 0 2px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+
+        .draft-team-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            padding: 0.4rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.15s, visibility 0.15s;
+            z-index: 100;
+            pointer-events: none;
+            margin-bottom: 4px;
+        }
+
+        .draft-team-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: rgba(0, 0, 0, 0.85);
+        }
+
+        .draft-team-cell:hover .draft-team-tooltip {
+            opacity: 1;
+            visibility: visible;
         }
 
         .draft-pts {
@@ -4650,7 +4689,7 @@
                         </td>
                         <td>
                             <div class="draft-team-cell">
-                                ${teamLogo ? `<img src="${teamLogo}" class="draft-team-logo" alt="${teamDetails.name}" title="${teamTooltip}">` : ''}
+                                ${teamLogo ? `<img src="${teamLogo}" class="draft-team-logo" alt="${teamDetails.name}"><span class="draft-team-tooltip">${teamTooltip}</span>` : ''}
                             </div>
                         </td>
                         <td class="draft-pts">${fantasyPoints > 0 ? Math.round(fantasyPoints).toLocaleString() : '-'}</td>
