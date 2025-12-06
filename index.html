@@ -4675,16 +4675,18 @@
             const numRank = parseInt(rank);
             const pos = (position || '').toUpperCase();
             
-            // Pitcher positions
-            const isPitcher = ['SP', 'RP', 'P'].includes(pos);
-            
             // Outfield positions
             const isOutfield = ['OF', 'LF', 'CF', 'RF'].includes(pos);
             
-            if (isPitcher) {
-                // Pitchers: Green = top 12, Yellow = top 60, Red = below
+            if (pos === 'SP') {
+                // Starting Pitchers: Green = top 12, Yellow = top 60, Red = below
                 if (numRank <= 12) return 'top-10';
                 if (numRank <= 60) return 'top-25';
+                return 'top-50';
+            } else if (pos === 'RP' || pos === 'P') {
+                // Relief Pitchers: Green = top 3, Yellow = top 10, Red = below
+                if (numRank <= 3) return 'top-10';
+                if (numRank <= 10) return 'top-25';
                 return 'top-50';
             } else if (isOutfield) {
                 // Outfielders: Green = top 9, Yellow = top 25, Red = below
