@@ -1442,22 +1442,6 @@
             width: 16px;
             height: 16px;
             object-fit: contain;
-            background: white;
-            border-radius: 50%;
-            padding: 2px;
-        }
-
-        .player-mlb-fa {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 16px;
-            height: 16px;
-            background: white;
-            border-radius: 50%;
-            font-size: 0.5rem;
-            font-weight: bold;
-            color: #1e3c72;
         }
 
         .player-team-cell {
@@ -1538,25 +1522,25 @@
         }
 
         .card-mlb-logo {
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             object-fit: contain;
             background: white;
             border-radius: 50%;
-            padding: 4px;
+            padding: 6px;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
         }
 
         .card-mlb-fa {
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             background: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 0.85rem;
+            font-size: 1rem;
             color: #1e3c72;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
         }
@@ -1623,6 +1607,24 @@
             padding: 4px;
             border: 2px solid #f5d742;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-team-fa-corner {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid #f5d742;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1rem;
+            color: #1e3c72;
         }
 
         .card-stats-corner {
@@ -3751,9 +3753,16 @@
                 const mlbLogoUrl = getMLBTeamLogo(player.mlb_team);
                 const hasMlbTeam = player.mlb_team && player.mlb_team.trim() && player.mlb_team.trim() !== 'FA' && mlbLogoUrl;
                 const mlbLogoHtml = hasMlbTeam 
-                    ? `<img src="${mlbLogoUrl}" alt="" class="player-mlb-logo" onerror="this.outerHTML='<span class=\\'player-mlb-fa\\'>FA</span>'">`
-                    : '<span class="player-mlb-fa">FA</span>';
+                    ? `<img src="${mlbLogoUrl}" alt="" class="player-mlb-logo" onerror="this.style.display='none'">`
+                    : '';
                 const mlbTeamDisplay = player.mlb_team && player.mlb_team.trim() ? player.mlb_team : 'FA';
+                
+                // Check if player is on a fantasy team
+                const hasFantasyTeam = player.team_key && player.team_key.trim() && player.team_name && player.team_name !== 'Free Agent' && player.team_name !== 'Drafted (Dropped)' && player.team_name !== 'Previously Rostered';
+                const fantasyTeamHtml = hasFantasyTeam
+                    ? `<img src="${player.team_logo}" alt="" class="player-team-logo" onerror="this.style.display='none'">
+                       <span class="player-fantasy-team" title="${player.team_name}">${player.manager}</span>`
+                    : '<span class="player-fantasy-team">FA</span>';
 
                 // Common cells (Rank, Name, Team, Pos)
                 let rowHTML = `
@@ -3770,8 +3779,7 @@
                         </td>
                         <td>
                             <div class="player-team-cell">
-                                <img src="${player.team_logo}" alt="" class="player-team-logo" onerror="this.style.display='none'">
-                                <span class="player-fantasy-team" title="${player.team_name}">${player.manager}</span>
+                                ${fantasyTeamHtml}
                             </div>
                         </td>
                         <td class="player-position">${getPositionWithRank(player)}</td>
@@ -3947,12 +3955,18 @@
             const placeholderLogo = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzFlM2M3MiIvPjx0ZXh0IHg9IjUwIiB5PSI1NSIgZm9udC1zaXplPSI0MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZiI+4pqB77iPPC90ZXh0Pjwvc3ZnPg==';
 
             const headshot = (player.headshot_url && player.headshot_url.trim()) ? player.headshot_url : placeholderHeadshot;
-            const fantasyTeamLogo = player.team_logo || placeholderLogo;
             const mlbLogoUrl = getMLBTeamLogo(player.mlb_team);
             const hasMlbTeam = player.mlb_team && player.mlb_team.trim() && player.mlb_team.trim() !== 'FA' && mlbLogoUrl;
             const mlbLogoHtml = hasMlbTeam 
                 ? `<img src="${mlbLogoUrl}" alt="" class="card-mlb-logo" onerror="this.outerHTML='<div class=\\'card-mlb-fa\\'>FA</div>'">`
                 : `<div class="card-mlb-fa">FA</div>`;
+            
+            // Check if player has a fantasy team
+            const hasFantasyTeam = player.team_key && player.team_key.trim() && player.team_logo && player.team_name && player.team_name !== 'Free Agent' && player.team_name !== 'Drafted (Dropped)' && player.team_name !== 'Previously Rostered';
+            const fantasyTeamLogoHtml = hasFantasyTeam
+                ? `<img src="${player.team_logo}" alt="" class="card-team-logo-corner" onerror="this.outerHTML='<div class=\\'card-team-fa-corner\\'>FA</div>'">`
+                : `<div class="card-team-fa-corner">FA</div>`;
+            
             const stats = getPlayerStats(player);
             const isBatter = player.position_type === 'B';
             const fantasyPts = getPlayerFantasyPoints(player).toFixed(1);
@@ -3977,7 +3991,7 @@
                 </div>
                 
                 <div class="card-photo-section">
-                    <img src="${fantasyTeamLogo}" alt="" class="card-team-logo-corner" onerror="this.style.display='none'">
+                    ${fantasyTeamLogoHtml}
                     <div class="card-stats-corner">
                         <div class="card-team-badge">${player.mlb_team || 'FA'}</div>
                         <div class="card-fantasy-points">
