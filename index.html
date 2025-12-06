@@ -4502,7 +4502,7 @@
                 tableEl.style.display = 'table';
 
                 // Load draft data for this season
-                await loadDraftResults(seasonNum, isCurrentSeason, teamLogos);
+                await loadDraftResults(seasonNum, isCurrentSeason, teamLogos, teamData);
 
                 // Load and render the season chart
                 await loadSeasonChart(seasonNum, isCurrentSeason, standings, teamLogos, teamData);
@@ -4516,11 +4516,22 @@
         }
 
         // ===== DRAFT RESULTS FUNCTIONS =====
-        async function loadDraftResults(seasonNum, isCurrentSeason, teamLogos) {
+        async function loadDraftResults(seasonNum, isCurrentSeason, teamLogos, teamData) {
             const draftTable = document.getElementById('draft-table');
             const draftBody = document.getElementById('draft-body');
             const draftLoading = document.getElementById('draft-loading');
             const draftEmpty = document.getElementById('draft-empty');
+
+            // Build team info lookup by team_key
+            const teamInfo = {};
+            if (teamData && teamData.length > 0) {
+                teamData.forEach(team => {
+                    teamInfo[team.team_key] = {
+                        name: team.team_name || team.name || 'Unknown Team',
+                        manager: team.manager || 'Unknown'
+                    };
+                });
+            }
 
             // Reset state
             draftTable.style.display = 'none';
@@ -4616,6 +4627,8 @@
                     
                     // Team logo from draft
                     const teamLogo = teamLogos[pick.team_key] || '';
+                    const teamDetails = teamInfo[pick.team_key] || { name: 'Unknown Team', manager: 'Unknown' };
+                    const teamTooltip = `${teamDetails.name} (${teamDetails.manager})`;
                     
                     // Player headshot
                     const headshot = pick.headshot_url || playerData.headshot_url || '';
@@ -4637,7 +4650,7 @@
                         </td>
                         <td>
                             <div class="draft-team-cell">
-                                ${teamLogo ? `<img src="${teamLogo}" class="draft-team-logo" alt="">` : ''}
+                                ${teamLogo ? `<img src="${teamLogo}" class="draft-team-logo" alt="${teamDetails.name}" title="${teamTooltip}">` : ''}
                             </div>
                         </td>
                         <td class="draft-pts">${fantasyPoints > 0 ? Math.round(fantasyPoints).toLocaleString() : '-'}</td>
